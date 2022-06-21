@@ -6,19 +6,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: "5.x"
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.7
+        with:
+          useConfigFile: true
+          configFilePath: GitVersion.yml
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.EGDE_GH_NPMJS_AT }}
+          scope: "@egde"
       - name: Configure git
         run: |
           git config user.email "noreply@egde.no"
           git config user.name "Egde"
       - run: yarn install --frozen-lockfile
-      - run: yarn publish
+      - run: yarn publish -new-version ${{ steps.gitversion.outputs.semVer }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.EGDE_GH_NPMJS_AT }}
