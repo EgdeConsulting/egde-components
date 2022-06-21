@@ -1,6 +1,6 @@
 {
-  "name": "@egde/egde-components",
-  "version": "0.0.1",
+  "name": "egde-components",
+  "version": "0.0.2",
   "description": "Egde Rect Component library",
   "scripts": {
     "rollup": "rollup -c",
