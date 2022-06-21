@@ -2,6 +2,8 @@ name: Publish Package to npmjs
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,7 +32,17 @@ jobs:
           git config user.email "noreply@egde.no"
           git config user.name "Egde"
       - run: yarn install --frozen-lockfile
+      - name: yarn test
+        if: github.event_name != 'pull_request'
+        run: |
+          yarn test --watchAll=false
+      - uses: mattallty/jest-github-action@v1
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          test-command: yarn test --watchAll
       - run: yarn publish --access public --new-version ${{ steps.gitversion.outputs.semVer }}
+        if: github.event_name != 'pull_request'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.EGDE_GH_NPMJS_AT }}
           scope: "@egde"
