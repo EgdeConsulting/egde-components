@@ -24,13 +24,13 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-          scope: "@egde"
+          scope: "egde"
       - name: Configure git
         run: |
           git config user.email "noreply@egde.no"
           git config user.name "Egde"
       - run: yarn install --frozen-lockfile
-      - run: yarn publish --access public --new-version ${{ steps.gitversion.outputs.semVer }}
+      - run: npm publish --access public --new-version ${{ steps.gitversion.outputs.semVer }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.EGDE_GH_NPMJS_AT }}
           scope: "@egde"

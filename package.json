@@ -1,7 +1,7 @@
 {
-  "name": "egde-components",
+  "name": "@egde/egde-components",
   "version": "0.0.2",
-  "description": "Egde Rect Component library",
+  "description": "Egde React Component library",
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
