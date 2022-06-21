@@ -10,9 +10,9 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
+          node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn
+      - run: yarn install --frozen-lockfile
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.EGDE_GH_NPMJS_AT }}
