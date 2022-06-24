@@ -27,4 +27,6 @@ This will open the storybook locally on the PC with local changes. For a online 
 https://egdeconsulting.github.io/egde-components
 ```
 
+## Project Structure
 
+When creating a new stories-file ensure to use the path-enums defined in **LibPath.ts** when setting the **title-property**.
