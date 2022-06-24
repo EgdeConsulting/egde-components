@@ -30,3 +30,10 @@ https://egdeconsulting.github.io/egde-components
 ## Project Structure
 
 When creating a new stories-file ensure to use the path-enums defined in **LibPath.ts** when setting the **title-property**.
+
+
+## Lint
+
+```sh
+ yarn run lint
+ ```
