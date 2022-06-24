@@ -1,0 +1,71 @@
+{
+    "plugins": ["prettier"],
+    "extends": [
+      "prettier",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:storybook/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "no-console": "warn",
+      "prefer-const": "warn",
+      "sort-imports": [
+        "warn",
+        {
+          "ignoreCase": true,
+          "ignoreDeclarationSort": true,
+          "ignoreMemberSort": true,
+          "memberSyntaxSortOrder": ["all", "single", "multiple", "none"]
+        }
+        
+      ],
+      "complexity": "error",
+      "curly": ["error", "all"],
+      "eqeqeq": ["error", "smart"],
+      "max-classes-per-file": ["error", 2],
+      "no-magic-numbers": [
+        "error",
+        {
+          "ignoreArrayIndexes": true,
+          "ignore": [-1, 0, 1]
+        }
+      ],
+      "no-multi-spaces": "error",
+      "no-multi-str": "error",
+      "no-useless-return": "error",
+      "block-spacing": ["error", "always"],
+      "brace-style": ["error", "1tbs"],
+      "camelcase": ["error", { "properties": "always" }],
+      "comma-dangle": ["error", "always-multiline"],
+      "comma-spacing": ["error", { "before": false, "after": true }],
+      "comma-style": ["error", "last"],
+      "consistent-this": ["error", "that"],
+      "eol-last": ["error", "always"],
+      "func-call-spacing": ["error", "never"],
+      "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+      "max-len": ["error", { "code": 120, "ignorePattern": "^import .*" }],
+      "max-lines": ["error", 500],
+      "new-cap": "error",
+      "no-nested-ternary": "error",
+      "no-trailing-spaces": "error",
+      "no-whitespace-before-property": ["error"],
+      "object-curly-spacing": ["error", "always"],
+      "operator-linebreak": ["error", "before"],
+      "semi": ["error", "always"],
+      "semi-spacing": ["error", { "before": false, "after": true }],
+      "space-before-blocks": ["error", "always"],
+      "space-before-function-paren": ["error", "never"],
+      "space-in-parens": ["error", "never"],
+      "space-infix-ops": "error",
+      "arrow-spacing": ["error", { "before": true, "after": true }],
+      "generator-star-spacing": ["error", "after"],
+      "no-duplicate-imports": "error",
+      "no-useless-constructor": "error",
+      "yield-star-spacing": ["error", "after"],
+      
+    }
+  }
