@@ -47,8 +47,4 @@ function Tabs(props: TabProps): ReactElement {
 }
 
 
-<<<<<<< Updated upstream
-export default Tabs;
-=======
 export { Tabs };
->>>>>>> Stashed changes
