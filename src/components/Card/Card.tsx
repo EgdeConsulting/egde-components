@@ -1,4 +1,5 @@
 import { Heading, Box, Flex, Text, useStyleConfig } from '@chakra-ui/react';
+import { CSSObject } from '@storybook/theming';
 import React, { ReactElement } from 'react';
 
 
@@ -12,6 +13,12 @@ type CardProps = {
     cardHeight?: string;
     cardWidth?: string;
     titleSize?: string;
+    backgroundColor?: string;
+    borderRadius?: string;
+    px?: string;
+    paddingTop?: string;
+    paddingBottom?: string;
+    _hover?: CSSObject;
 };
 
 function Card(props: CardProps): ReactElement {
@@ -24,8 +31,15 @@ function Card(props: CardProps): ReactElement {
         cardHeight,
         cardWidth,
         titleSize,
+        backgroundColor,
+        borderRadius,
+        px,
+        paddingTop,
+        paddingBottom,
+        _hover
+        
     } = props;
-
+  
     // Her må styling legges til
     const cardStyles = useStyleConfig('Card');
 
@@ -36,6 +50,12 @@ function Card(props: CardProps): ReactElement {
             onClick={onClick}
             height={cardHeight || '100%'}
             width={cardWidth || '100%'}
+            backgroundColor={backgroundColor}
+            borderRadius={borderRadius}
+            px={px}
+            paddingTop={paddingTop}
+            paddingBottom={paddingBottom}
+            _hover={_hover}
         >
             <Flex direction='column' justify='space-between'>
                 <Flex width='100%' direction='row' align='center'>
