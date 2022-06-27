@@ -24,10 +24,6 @@ type Tab = {
     children: JSX.Element[] | JSX.Element;
 };
 
-
-
-
-
 function Tabs(props: TabProps): ReactElement {
     const { tabs, centerTabs} = props;
 
