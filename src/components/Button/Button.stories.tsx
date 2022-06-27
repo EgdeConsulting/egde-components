@@ -1,11 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { LibPath } from '../LibPath';
 
 import Button from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'ReactComponentLibrary/Button',
+  title: LibPath.Button.toString(),
   component: Button,
 } as ComponentMeta<typeof Button>;
 
