@@ -5,7 +5,7 @@ import { LibPath } from 'Types';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: LibPath.Input || 'undefined',
+  title: LibPath.Button || 'undefined',
   component: Button,
 } as ComponentMeta<typeof Button>;
 
