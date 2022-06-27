@@ -6,27 +6,17 @@ import {
     Tab,
     TabPanel,
     Center,
+
 } from '@chakra-ui/react';
+import { TabProps } from '../../Types';
 
 
-type TabProps = {
-    tabs: Tab[];
-    centerTabs?: boolean;
-    //tabColor: string;
-    //fontSize: string;
-    //selectedTabColor: string;
-    //selectedFontWeight: string;
-    //selectedBorderBottom: string; */
-};
-
-type Tab = {
-    title: string;
-    children: JSX.Element[] | JSX.Element;
-};
 
 function Tabs(props: TabProps): ReactElement {
-    const { tabs, centerTabs} = props;
-
+    const { 
+        tabs,
+        centerTabs,
+    } = props;
 
     return (
         <ChakraTabs>
@@ -57,4 +47,8 @@ function Tabs(props: TabProps): ReactElement {
 }
 
 
+<<<<<<< Updated upstream
 export default Tabs;
+=======
+export { Tabs };
+>>>>>>> Stashed changes

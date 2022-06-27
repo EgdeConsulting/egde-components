@@ -1,7 +1,6 @@
-import { Heading, Box, Flex, Text, useStyleConfig } from '@chakra-ui/react';
+import { Box, Text, useStyleConfig } from '@chakra-ui/react';
 import { CSSObject } from '@storybook/theming';
 import React, { ReactElement } from 'react';
-
 
 // Byttes til Import Types mappe når den er klar
 type CardProps = {
@@ -23,23 +22,19 @@ type CardProps = {
 
 function Card(props: CardProps): ReactElement {
     const {
-        title,
         body,
         onClick,
-        titleIcon,
         actionIcon,
         cardHeight,
         cardWidth,
-        titleSize,
         backgroundColor,
         borderRadius,
         px,
         paddingTop,
         paddingBottom,
-        _hover
-        
+        _hover,
     } = props;
-  
+
     // Her må styling legges til
     const cardStyles = useStyleConfig('Card');
 
@@ -57,31 +52,13 @@ function Card(props: CardProps): ReactElement {
             paddingBottom={paddingBottom}
             _hover={_hover}
         >
-            <Flex direction='column' justify='space-between'>
-                <Flex width='100%' direction='row' align='center'>
-                    {titleIcon && titleIcon}
-                    <Heading
-                        size={titleSize || 'md'}
-                        marginLeft={titleIcon ? '0.5rem' : ''}
-                    >
-                        {title}
-                    </Heading>
-                </Flex>
-                <Flex
-                    width='100%'
-                    direction='row'
-                    alignContent='center'
-                    justify='space-between'
-                    margin='0.5rem 0.25rem 0 0'
-                >
-                    <Text textAlign='left' fontSize='1rem'>
-                        {body}
-                    </Text>
-                    {actionIcon && actionIcon}
-                </Flex>
-            </Flex>
-        </Box>
-    );
+          <Text textAlign="left" fontSize="1rem">
+            {body}
+          </Text>
+          {actionIcon && actionIcon}
+
+    </Box>
+  );
 }
 
 export default Card;
