@@ -16,20 +16,21 @@ function Tabs(props: TabProps): ReactElement {
     const { 
         tabs,
         centerTabs,
+        styles,
     } = props;
 
     return (
-        <ChakraTabs>
+        <ChakraTabs __css={styles}>
             {centerTabs ? (
                 <Center>
-                    <TabList>
+                    <TabList >
                         {tabs.map((tab, index) => {
                             return <Tab key={`tl${index}`}>{tab.title}</Tab>;
                         })}
                     </TabList>
                 </Center>
             ) : (
-                <TabList>
+                <TabList >
                     {tabs.map((tab, index) => {
                         return <Tab key={`tl${index}`}>{tab.title}</Tab>;
                     })}

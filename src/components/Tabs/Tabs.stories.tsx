@@ -7,11 +7,7 @@ import { LibPath } from "Types";
 export default {
     title: LibPath.Tabs || "undefined",
     component: Tabs,
-    parameters: {
-        // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-        layout: 'centered',
-        title: 'Tabs title',
-    },
+
     argTypes: {
         tabs: {
             defaultValue: [
@@ -25,6 +21,24 @@ export default {
                 }]
         },
         centerTabs: { defaultValue: false },
+        styles: {
+            defaultValue: {
+                
+                    color: 'darkgrey',
+                    fontSize: '18px',
+                    _focus: {
+                        boxShadow: 'none',
+                    },
+                    _selected: {
+                        color: 'blue',
+                        fontWeight: 'bold',
+                        borderBottom: '2px solid',
+                    },
+
+                
+            }
+        },
+
 
     },
 } as ComponentMeta<typeof Tabs>;
