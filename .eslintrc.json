@@ -65,7 +65,6 @@
       "generator-star-spacing": ["error", "after"],
       "no-duplicate-imports": "error",
       "no-useless-constructor": "error",
-      "yield-star-spacing": ["error", "after"],
-      
+      "yield-star-spacing": ["error", "after"]
     }
   }
