@@ -4,7 +4,6 @@ import { Card } from './Card';
 import { LibPath } from 'Types';
 
 export default {
-
   title: LibPath.Card || 'undefined',
   component: Card,
   parameters: {
@@ -15,21 +14,19 @@ export default {
   argTypes: {
     title: { defaultValue: 'My title' },
   },
-
 } as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} /> ;
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const HeadingOnly = Template.bind({});
 
 export const HeadingAndBody = Template.bind({});
 HeadingAndBody.args = {
-    title: 'Title',
-    body: 'And some fancy body',
+  title: 'Title',
+  body: 'And some fancy body',
 };
 
 export const ColorTest = Template.bind({});
 ColorTest.args = {
   title: 'Test',
-  bodyTextColor: 'red'
 };
