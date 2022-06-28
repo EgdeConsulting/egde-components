@@ -1,7 +1,5 @@
-import { ActionTypes } from '@mui/base';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { variantPriorityOrder } from 'framer-motion/types/render/utils/animation-state';
-import { Alignment } from 'index';
 import React from 'react';
 import { Modal } from './Modal';
 
@@ -26,7 +24,7 @@ export default {
           variant: '',
           onClick: undefined,
         },
-        alignment: Alignment.Left,
+        alignment: "left"
       },
     },
   },
