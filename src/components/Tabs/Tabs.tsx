@@ -6,30 +6,47 @@ import {
     Tab,
     TabPanel,
     Center,
-
 } from '@chakra-ui/react';
 import { TabProps } from 'Types';
 
+/* 
+    EXAMPLE USE:
+    function TabsExample(): JSX.Element {
+        const tabs = [
+            { title: 'Text', children: <TextExample /> },
+            { title: 'TextArea', children: <TextAreaExample /> },
+            { title: 'Number', children: <NumberExample /> },
+            { title: 'Radio', children: <RadioExample /> },
+            { title: 'Checkbox', children: <CheckboxExample /> },
+            { title: 'Modal', children: <ModalExample /> },
+            { title: 'Card', children: <CardExample /> },
+            { title: 'Accordion', children: <AccordionExample /> },
+        ];
 
+        return (
+            <PageContainer
+                title='Tabs example'
+            >
+                <Tabs tabs={tabs} />
+            </PageContainer>
+        );
+    }
+*/
 
-function Tabs(props: TabProps): ReactElement {
-    const { 
-        tabs,
-        centerTabs,
-    } = props;
-
+export function Tabs(props: TabProps): ReactElement {
+    const { tabs, centerTabs } = props;
     return (
         <ChakraTabs>
             {centerTabs ? (
                 <Center>
-                    <TabList >
+                    <TabList>
                         {tabs.map((tab, index) => {
                             return <Tab key={`tl${index}`}>{tab.title}</Tab>;
                         })}
                     </TabList>
                 </Center>
             ) : (
-                <TabList >
+                <TabList>
                     {tabs.map((tab, index) => {
                         return <Tab key={`tl${index}`}>{tab.title}</Tab>;
                     })}
@@ -45,6 +62,3 @@ function Tabs(props: TabProps): ReactElement {
         </ChakraTabs>
     );
 }
-
-
-export { Tabs };

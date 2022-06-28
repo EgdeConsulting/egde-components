@@ -14,20 +14,17 @@ export default {
   },
   argTypes: {
     title: { defaultValue: 'My title' },
-    cardWidth: { defaultValue: '320px' },
-    cardHeight: { defaultValue: '112px' },
-    backgroundColor: { defaultValue: 'lightblue' },
-    titleSize: { defaultValue: 'md' },
-    borderRadius: { defaultValue: '6px' },
-    px: { defaultValue: '24px' },
-    paddingTop: { defaultValue: '16px' },
-    paddingBottom: { defaultValue: '20px' },
-    _hover: {
-      defaultValue: {
-        outline: '2px solid',
-        outlineColor: 'blue',
-      },
-    },
+    body: { defaultValue: 'My body' },
+    textColors: { defaultValue: '#000' },
+    titleTextColor: { defaultValue: '#000' },
+    bodyTextColor: { defaultValue: '#000' },
+    titleTextSize: { defaultValue: 'md' },
+    bodyTextSize: { defaultValue: 'md' },
+    onClick: { defaultValue: () => {} },
+    titleIcon: { defaultValue: null },
+    actionIcon: { defaultValue: null },
+    cardHeight: { defaultValue: 'auto' },
+    cardWidth: { defaultValue: 'auto' },
   },
 
 } as ComponentMeta<typeof Card>;
@@ -42,10 +39,4 @@ HeadingAndBody.args = {
     body: 'And some fancy body',
 };
 
-export const ColorTest = Template.bind({});
-ColorTest.args = {
 
-  title: 'Test',
-  backgroundColor: 'red',
-
-};
