@@ -1,7 +1,3 @@
-/* eslint-disable */
-
-import { CSSObject } from '@chakra-ui/react';
-import { CSSProperties } from '@emotion/serialize';
 import {
     Dispatch,
     MutableRefObject,
@@ -9,21 +5,7 @@ import {
     ReactElement,
 } from 'react';
 
-enum ButtonType {
-    Primary = 'primary',
-    Secondary = 'secondary',
-    Delete = 'delete',
-}
-
-enum Direction {
-    Row = 'row',
-    Column = 'column',
-}
-
-enum Alignment {
-    Left = 'left',
-    Right = 'right',
-}
+type Direction = 'row' | 'column';
 
 enum IconTestID {
     AlertWarning = 'alertWarningIcon',
@@ -51,11 +33,6 @@ enum AlertDialogIconType {
     Warning = 'warning',
 }
 
-enum AccordionBadgeEnum {
-    OK = 'Alle obligatoriske felt er fylt ut',
-    InProgress = 'Under arbeid',
-}
-
 type PageContainerProps = {
     title: string;
     titleAlignment?: 'left' | 'right' | 'center';
@@ -73,7 +50,7 @@ type PageContainerProps = {
     titlePadding?: string | (string | number)[];
     titleMargin?: string | (string | number)[];
     borderColor?: string;
-    borderWidth?: string;
+    borderWidth?: string | (string | number)[];
     contentBorderColor?: string;
     contentBorderWidth?: string;
     titleBadge?: { badgeColor: string; textColor: string; label: string };
@@ -83,7 +60,10 @@ type PageContainerProps = {
     height?: string | (string | number)[];
     width?: string | (string | number)[];
     containerMinWidth?: string | (string | number)[];
+    containerMaxWidth?: string | (string | number)[];
     shouldContentFillContainer?: boolean;
+    /** Use a single or array of 'ch' values, such as '60ch' or ['50ch', '60ch', '80ch'] for responsive breakpoints */
+    containerSize?: string | string[];
 };
 
 interface BaseInputProps extends InputProps {
@@ -100,6 +80,7 @@ type InputProps = {
     padding?: string;
     width?: string;
     minWidth?: string;
+    maxWidth?: string;
 };
 interface InputComponentProps extends InputProps {
     isDisabled?: boolean;
@@ -111,6 +92,7 @@ interface TextInputProps extends InputComponentProps {
     value: string;
     onChange: Dispatch<SetStateAction<string>>;
     characterLimit?: number;
+    textAlign?: 'right' | 'center';
 }
 
 interface NumberInputProps extends InputComponentProps {
@@ -122,6 +104,7 @@ interface NumberInputProps extends InputComponentProps {
     maxValueLength?: number;
     isCurrency?: boolean;
     currencySpacer?: string;
+    textAlign?: 'right' | 'center';
 }
 
 type CardProps = {
@@ -137,6 +120,7 @@ type CardProps = {
 
 type ModalProps = {
     isModalOpen: boolean;
+    isCentered: boolean;
     iconVariant?: ModalIconType;
     title: string;
     subtitle?: string;
@@ -151,7 +135,7 @@ type ModalProps = {
 type ModalButtons = {
     primary: ModalButton;
     secondary: ModalButton;
-    alignment: Alignment;
+    alignment: 'left' | 'right';
 };
 
 type ModalButton = {
@@ -182,13 +166,11 @@ type AccordionProps = {
 type AccordionItem = {
     title: string;
     content: JSX.Element[] | JSX.Element;
-    badge?: AccordionBadgeEnum;
 };
 
 type TabProps = {
     tabs: Tab[];
     centerTabs?: boolean;
-     
 };
 
 type Tab = {
@@ -196,13 +178,14 @@ type Tab = {
     children: JSX.Element[] | JSX.Element;
 };
 
-type HorizontalStepperProps = {
+type StepperProps = {
     activeStep: number;
     setActiveStep: Dispatch<SetStateAction<number>>;
     stepsContent: StepContent[];
     buttonTexts: StepperButtonTexts;
     finalStep: finalStep;
-    centerButtons?: boolean;
+    buttonAlignment?: 'left' | 'center' | 'right';
+    buttonMargin?: string;
     clickableSteps?: boolean;
     completedSteps?: number[];
     onFinalStep: () => void;
@@ -245,7 +228,7 @@ type AlertDialogProps = {
 
 type AlertDialogButton = {
     label: string;
-    variant: ButtonType;
+    variant: string;
     onClick: () => void;
 };
 
@@ -288,6 +271,18 @@ interface RichTextAreaProps extends TextInputProps {
         unorderedList?: boolean;
     };
 }
+interface FileUploadProps extends InputProps {
+    uploadLabel?: string;
+    dropLabel?: string;
+    maxFileSizeLabel?: string;
+    maxUploadSizeLabel?: string;
+    maxFileSize: number;
+    maxUploadSize: number;
+    disabled?: boolean;
+    showIcon?: boolean;
+    size?: string;
+    variant?: string;
+}
 
 export type {
     PageContainerProps,
@@ -302,7 +297,7 @@ export type {
     AccordionItem,
     CheckboxProps,
     TabProps,
-    HorizontalStepperProps,
+    StepperProps,
     AlertProps,
     AlertDialogProps,
     SelectProps,
@@ -311,15 +306,7 @@ export type {
     AlertDialogButton,
     DatePickerProps,
     RichTextAreaProps,
+    FileUploadProps,
 };
 
-export {
-    ButtonType,
-    Direction,
-    Alignment,
-    IconTestID,
-    AlertStatus,
-    AlertDialogIconType,
-    ModalIconType,
-    AccordionBadgeEnum,
-};
+export { IconTestID, AlertStatus, AlertDialogIconType, ModalIconType };

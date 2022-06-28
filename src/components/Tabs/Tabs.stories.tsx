@@ -21,24 +21,7 @@ export default {
                 }]
         },
         centerTabs: { defaultValue: false },
-        styles: {
-            defaultValue: {
-                
-                    color: 'darkgrey',
-                    fontSize: '18px',
-                    _focus: {
-                        boxShadow: 'none',
-                    },
-                    _selected: {
-                        color: 'blue',
-                        fontWeight: 'bold',
-                        borderBottom: '2px solid',
-                    },
-
-                
-            }
-        },
-
+        
 
     },
 } as ComponentMeta<typeof Tabs>;
