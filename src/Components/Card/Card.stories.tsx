@@ -14,22 +14,11 @@ export default {
   },
   argTypes: {
     title: { defaultValue: 'My title' },
-    body: { defaultValue: 'My body' },
-    textColors: { defaultValue: '#000' },
-    titleTextColor: { defaultValue: '#000' },
-    bodyTextColor: { defaultValue: '#000' },
-    titleTextSize: { defaultValue: 'md' },
-    bodyTextSize: { defaultValue: 'md' },
-    onClick: { defaultValue: () => {} },
-    titleIcon: { defaultValue: null },
-    actionIcon: { defaultValue: null },
-    cardHeight: { defaultValue: 'auto' },
-    cardWidth: { defaultValue: 'auto' },
   },
 
 } as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} /> ;
 
 export const HeadingOnly = Template.bind({});
 
@@ -39,4 +28,8 @@ HeadingAndBody.args = {
     body: 'And some fancy body',
 };
 
-
+export const ColorTest = Template.bind({});
+ColorTest.args = {
+  title: 'Test',
+  bodyTextColor: 'red'
+};

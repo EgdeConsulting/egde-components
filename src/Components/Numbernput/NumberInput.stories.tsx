@@ -26,7 +26,7 @@ export default {
         minWidth: { defaultValue: 'auto' },
         backgroundColor: { defaultValue: '#fff' },
         autoFocus: { defaultValue: false },
-        textAlign: { defaultValue: 'left' },
+        textAlign: { defaultValue: 'right' },
     },
 
 } as ComponentMeta<typeof NumberInput>;
@@ -66,6 +66,17 @@ NumberInputInvalid.args = {
     value: 'Test',
     invalidText: 'Invalid',
 
+}
+
+export const NumberInputCaption = Template.bind({});
+NumberInputCaption.args = {
+    captionText: 'Caption',
+}
+
+export const NumbrInputTextCenter = Template.bind({});
+NumbrInputTextCenter.args = {
+    textAlign: 'center',
+    value: '123456789',
 }
 
 

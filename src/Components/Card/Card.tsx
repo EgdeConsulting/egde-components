@@ -30,6 +30,7 @@ function Card(props: CardProps): ReactElement {
         actionIcon,
         cardHeight,
         cardWidth,
+        
     } = props;
 
     const cardStyles = useStyleConfig('Card');
