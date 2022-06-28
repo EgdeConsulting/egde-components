@@ -12,7 +12,7 @@ export default {
         label: { defaultValue: 'Number Input' },
         labelTextMargin: { defaultValue: '0' },
         value: { defaultValue: '' },
-        maxValueLength: { defaultValue: '10' },
+        maxValueLength: { defaultValue: 15 },
         onChange: { defaultValue: () => { } },
         invalidText: { defaultValue: '' },
         isDisabled: { defaultValue: false },
@@ -36,6 +36,7 @@ const Template: ComponentStory<typeof NumberInput> = (args) => <NumberInput {...
 
 
 export const NumberInputStd = Template.bind({});
+
 
 /* export const NumberInputAutoFokus = Template.bind({});
 NumberInputAutoFokus.args = {
