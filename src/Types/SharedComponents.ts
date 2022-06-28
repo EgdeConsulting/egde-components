@@ -1,3 +1,7 @@
+/* eslint-disable */
+
+import { CSSObject } from '@chakra-ui/react';
+import { CSSProperties } from '@emotion/serialize';
 import {
     Dispatch,
     MutableRefObject,
@@ -184,6 +188,8 @@ type AccordionItem = {
 type TabProps = {
     tabs: Tab[];
     centerTabs?: boolean;
+    styles?: CSSObject;
+    
 };
 
 type Tab = {

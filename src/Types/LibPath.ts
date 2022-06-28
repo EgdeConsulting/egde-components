@@ -10,6 +10,7 @@ export enum LibPath {
   Input = Root.Main + 'Input',
   Button = Root.Main + 'Button',
   Card = Root.Main + 'Card',
+  Tabs = Root.Main + "Tabs",
   // Example of new sub-directory
   // Dropdown = Root.Layout + "Dropdown",
 }

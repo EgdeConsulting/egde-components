@@ -1,4 +1,4 @@
-import { Heading, Box, Flex, Text, useStyleConfig } from '@chakra-ui/react';
+import { Box, Text, useStyleConfig } from '@chakra-ui/react';
 import { CSSObject } from '@storybook/theming';
 import React, { ReactElement } from 'react';
 // import { CardProps } from 'Types';
@@ -22,6 +22,7 @@ type CardProps = {
 };
 
 function Card(props: CardProps): ReactElement {
+
   const {
     title,
     body,
@@ -38,6 +39,7 @@ function Card(props: CardProps): ReactElement {
     paddingBottom,
     _hover,
   } = props;
+
 
   // Her må styling legges til
   const cardStyles = useStyleConfig('Card');
@@ -77,8 +79,7 @@ function Card(props: CardProps): ReactElement {
             {body}
           </Text>
           {actionIcon && actionIcon}
-        </Flex>
-      </Flex>
+
     </Box>
   );
 }
