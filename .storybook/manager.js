@@ -1,12 +1,13 @@
 import { addons } from '@storybook/addons';
 import egdeTheme from './egdeTheme';
 import favicon from '../docs/favicon.ico';
+import fonts from '../src/Styles/Fonts/fonts.css'; // This import allows the fontBase in egdeTheme.js to load correctly
 
 // Solution fetched from https://github.com/storybookjs/storybook/issues/6155
-const link = document.createElement('link');
-link.setAttribute('rel', 'shortcut icon');
-link.setAttribute('href', favicon);
-document.head.appendChild(link);
+const iconLink = document.createElement('link');
+iconLink.setAttribute('rel', 'shortcut icon');
+iconLink.setAttribute('href', favicon);
+document.head.appendChild(iconLink);
 
 addons.setConfig({
   theme: egdeTheme,
@@ -15,7 +16,7 @@ addons.setConfig({
   },
   options: {
     storySort: {
-      order: ["Egde Library", ["Startpage"]],
-    }
+      order: ['Egde Library', ['Startpage']],
+    },
   },
 });

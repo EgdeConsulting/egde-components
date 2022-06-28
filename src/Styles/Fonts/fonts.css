@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Standard';
+  src: url('standard-book-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Standard';
+  src: url('standard-book-italic-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Standard';
+  src: url('standard-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Standard';
+  src: url('standard-bold-italic-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+}

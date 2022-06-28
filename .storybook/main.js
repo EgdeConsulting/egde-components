@@ -10,7 +10,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@chakra-ui/storybook-addon'
+    '@chakra-ui/storybook-addon',
   ],
   framework: '@storybook/react',
   core: {
@@ -24,7 +24,7 @@ module.exports = {
       ...(config.resolve.modules || []),
       path.resolve(__dirname, '../src/'),
     ];
-    
+
     return config;
   },
 };
