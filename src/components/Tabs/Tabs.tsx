@@ -16,11 +16,10 @@ function Tabs(props: TabProps): ReactElement {
     const { 
         tabs,
         centerTabs,
-        styles,
     } = props;
 
     return (
-        <ChakraTabs __css={styles}>
+        <ChakraTabs>
             {centerTabs ? (
                 <Center>
                     <TabList >
