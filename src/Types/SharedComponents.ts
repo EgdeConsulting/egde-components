@@ -188,8 +188,7 @@ type AccordionItem = {
 type TabProps = {
     tabs: Tab[];
     centerTabs?: boolean;
-    styles?: CSSObject;
-    
+     
 };
 
 type Tab = {

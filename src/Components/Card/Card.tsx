@@ -1,4 +1,4 @@
-import { Box, Text, useStyleConfig } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, useStyleConfig } from '@chakra-ui/react';
 import { CSSObject } from '@storybook/theming';
 import React, { ReactElement } from 'react';
 // import { CardProps } from 'Types';
@@ -79,7 +79,8 @@ function Card(props: CardProps): ReactElement {
             {body}
           </Text>
           {actionIcon && actionIcon}
-
+        </Flex>
+      </Flex>
     </Box>
   );
 }
