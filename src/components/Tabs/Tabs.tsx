@@ -8,7 +8,7 @@ import {
     Center,
 
 } from '@chakra-ui/react';
-import { TabProps } from '../../Types';
+import { TabProps } from 'Types';
 
 
 
