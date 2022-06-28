@@ -1,10 +1,8 @@
-const Input = {};
-
 import React, { ReactElement } from 'react';
 import { Box, Text } from '@chakra-ui/react';
 import { BaseInputProps } from 'Types';
 
-/* 
+/*
     Wrapper for all input components
     Not to be used directly
 */

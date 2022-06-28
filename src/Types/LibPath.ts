@@ -11,6 +11,7 @@ export enum LibPath {
   Button = Root.Main + 'Button',
   Card = Root.Main + 'Card',
   PageContainer = Root.Main + 'PageContainer',
+  Tabs = Root.Main + "Tabs",
   // Example of new sub-directory
   // Dropdown = Root.Layout + "Dropdown",
 }
