@@ -1,3 +1,5 @@
+const theme = require('../src/Styles');
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,6 +8,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  chakra: {
+    theme,
+  }
 }
 
 // Ref https://issuehunt.io/r/storybookjs/storybook/issues/13128
@@ -28,5 +33,12 @@ function clickDocsButtonOnFirstLoad() {
     // Do nothing if it wasn't able to click on Docs button.
   }
 }
+
+// .storybook/preview.js
+
+
+
+
+  
 
 window.addEventListener("load", clickDocsButtonOnFirstLoad);
