@@ -60,8 +60,6 @@ function Card(props: CardProps): ReactElement {
             {body}
           </Text>
           {actionIcon && actionIcon}
-        </Flex>
-      </Flex>
     </Box>
   );
 }
