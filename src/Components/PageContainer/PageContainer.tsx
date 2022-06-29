@@ -3,7 +3,7 @@ import { Box, Heading, Text, Badge, Center, Container } from '@chakra-ui/react';
 import { PageContainerProps } from 'Types';
 
 
-function Content(props: PageContainerProps) {
+const Content = (props: PageContainerProps) => {
     const {
         title,
         titleAlignment,
@@ -98,9 +98,9 @@ function Content(props: PageContainerProps) {
             </Box>
         </Center>
     );
-}
+};
 
-function PageContainer(props: PageContainerProps): ReactElement {
+const PageContainer = (props: PageContainerProps): ReactElement => {
     const {
         title,
         titleAlignment,
@@ -188,6 +188,6 @@ function PageContainer(props: PageContainerProps): ReactElement {
             )}
         </Box>
     );
-}
+};
 
 export { PageContainer };
