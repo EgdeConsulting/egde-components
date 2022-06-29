@@ -1,7 +1,6 @@
-
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { Modal } from './Modal';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
   title: 'Egde Library/Modal',
@@ -24,7 +23,7 @@ export default {
           variant: '',
           onClick: undefined,
         },
-        alignment: "left",
+        alignment: 'left',
       },
     },
   },

@@ -72,7 +72,7 @@ const NumberInput = (props: NumberInputProps): ReactElement => {
         isInvalid={!!invalidText}
         placeholder={placeholder}
         isDisabled={isDisabled}
-        onChange={(e) => {
+        onChange={(e: any) => {
           handleOnChange(e.target.value);
         }}
         value={formatValue(value)}
