@@ -1,17 +1,19 @@
 /* eslint-disable */
 
 export enum Root {
-  Main = 'Egde Library/',
+  Introduction = 'Introduction/',
+  Components = 'Components/',
   // Example of new root:
   // Layout = "Layout/",
 }
 
 export enum LibPath {
-  Input = Root.Main + 'Input',
-  Button = Root.Main + 'Button',
-  Card = Root.Main + 'Card',
-  PageContainer = Root.Main + 'PageContainer',
-  Tabs = Root.Main + "Tabs",
+  Buttons = Root.Components + 'Buttons/',
+  Cards = Root.Components + 'Cards/',
+  Containers = Root.Components + 'Containers/',
+  Form = Root.Components + 'Form/',
+  Navigation = Root.Components + 'Navigation/',
+  Overlay = Root.Components + 'Overlay/',
   // Example of new sub-directory
-  // Dropdown = Root.Layout + "Dropdown",
+  // Headers = Root.Layout + "Headers/",
 }

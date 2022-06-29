@@ -4,7 +4,7 @@ import { NumberInput } from './NumberInput';
 import { LibPath } from 'Types';
 
 export default {
-  title: LibPath.Input || 'undefined',
+  title: LibPath.Form + 'NumberInput' || 'undefined',
   component: NumberInput,
 
   argTypes: {
