@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LibPath } from 'Types';
-import { Modal } from './Modal';
+import { Modal } from '../Modal';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Button } from '@chakra-ui/react';
 
 export default {
   title: LibPath.Overlay + 'Modal' || 'undefined',
@@ -9,18 +10,20 @@ export default {
   parameters: {
     layout: 'centered',
   },
+ 
   argTypes: {
     isModalOpen: { defaultValue: false },
     hasCloseButton: { defaultValue: true },
+    onClose: { action: 'onClose' },
     buttons: {
       variant: {
         primary: {
-          label: '',
+          label: 'Ok',
           variant: '',
           onClick: undefined,
         },
         secondary: {
-          label: '',
+          label: 'close',
           variant: '',
           onClick: undefined,
         },
@@ -30,8 +33,31 @@ export default {
   },
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
+
+
+const Template: ComponentStory<typeof Modal> = (args) => {
+  const[isModalOpen, setIsModalOpen] = useState(true);
+  const handleClose = () => setIsModalOpen(false);
+  return (
+    <div>
+      <Button onClick={ ()=> setIsModalOpen(true)}>Open Modal</Button>
+      <Modal {...args} isModalOpen={isModalOpen} onClose={handleClose} />
+    </div>
+  )
+  
+  
+  };
+
+
+
+
+
+
+
+
+/* const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
+ */
 export const Standard = Template.bind({});
 Standard.args = {
   title: 'Title',
@@ -43,7 +69,7 @@ Standard.args = {
       variant: 'primary',
     },
     secondary: {
-      label: 'Secondary Button',
+      label: 'Close',
       variant: 'secondary',
     },
     alignment: 'left',
@@ -61,7 +87,7 @@ ModalWithError.args = {
       variant: 'primary',
     },
     secondary: {
-      label: 'Secondary Button',
+      label: 'Close',
       variant: 'secondary',
     },
     alignment: 'left',

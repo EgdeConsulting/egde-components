@@ -11,6 +11,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@chakra-ui/storybook-addon',
+    "@storybook/addon-actions",
   ],
   framework: '@storybook/react',
   core: {

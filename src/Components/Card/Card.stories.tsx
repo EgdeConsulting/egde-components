@@ -13,7 +13,7 @@ export default {
   },
   argTypes: {
     title: { defaultValue: 'My title' },
-    cardStyles: {defaultValue: {
+    cardStyles: { defaultValue: {
         backgroundColor: 'lightblue',
         borderRadius: '6px',
         width: '25rem',
@@ -26,14 +26,13 @@ export default {
             outlineColor: 'blue',
             cursor: 'pointer',
         },
-    }}
+    } },
   },
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const HeadingOnly = Template.bind({});
-
 export const HeadingAndBody = Template.bind({});
 HeadingAndBody.args = {
   title: 'Title',
