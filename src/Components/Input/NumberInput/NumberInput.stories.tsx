@@ -68,8 +68,8 @@ NumberInputCaption.args = {
   captionText: 'Caption',
 };
 
-export const NumbrInputTextCenter = Template.bind({});
-NumbrInputTextCenter.args = {
+export const NumberInputTextCenter = Template.bind({});
+NumberInputTextCenter.args = {
   textAlign: 'center',
   value: '123456789',
 };

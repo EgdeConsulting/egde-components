@@ -16,7 +16,7 @@ import {
 import { ModalProps, IconTestID, ModalIconType } from 'Types';
 import { PriorityHighRounded, CheckRounded } from '../../Icons/';
 
-/* 
+/*
     EXAMPLE USE:
     function ModalExample(): ReactElement {
         const [modalOpen, setmodalOpen] = useState<boolean>(false);
@@ -174,6 +174,6 @@ const Modal = (props: ModalProps): ReactElement => {
             </ModalContent>
         </ChakraModal>
     );
-}
+};
 
 export { Modal };

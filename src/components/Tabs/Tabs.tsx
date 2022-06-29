@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { TabProps } from 'Types';
 
-/* 
+/*
     EXAMPLE USE:
     function TabsExample(): JSX.Element {
         const tabs = [

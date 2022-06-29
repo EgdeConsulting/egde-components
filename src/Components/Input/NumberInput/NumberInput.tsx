@@ -3,8 +3,8 @@ import React, { ReactElement } from 'react';
 import { NumberInputProps } from 'Types';
 import { BaseInput } from '../BaseInput/BaseInput';
 
-/* 
-    EXAMPLE USE: 
+/*
+    EXAMPLE USE:
     function NumberExample(): ReactElement {
         const [num, setNum] = useState<string>('');
         return <Number title='Number Title' value={num} onChange={setNum} />;
