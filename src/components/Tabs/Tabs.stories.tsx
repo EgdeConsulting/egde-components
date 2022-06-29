@@ -11,12 +11,12 @@ export default {
     tabs: {
       defaultValue: [
         {
-          title: 'Tab 1',
-          children: [<div>Tab 1 content</div>],
+          title: 'The first tab',
+          children: [<div key={'1.1'}>Content of tab 1</div>],
         },
         {
-          title: 'Tab 2',
-          children: <div>Tab 2 content</div>,
+          title: 'The second tab',
+          children: [<div key={'2.1'}>Content og tab 2</div>],
         },
       ],
     },

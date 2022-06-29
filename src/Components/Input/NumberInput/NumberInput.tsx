@@ -1,10 +1,10 @@
 import { Input } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
 import { NumberInputProps } from 'Types';
-import { BaseInput } from '../Input';
+import { BaseInput } from '../BaseInput';
 
-/* 
-    EXAMPLE USE: 
+/*
+    EXAMPLE USE:
     function NumberExample(): ReactElement {
         const [num, setNum] = useState<string>('');
         return <Number title='Number Title' value={num} onChange={setNum} />;

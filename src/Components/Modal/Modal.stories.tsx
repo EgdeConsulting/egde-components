@@ -24,7 +24,7 @@ export default {
           variant: '',
           onClick: undefined,
         },
-        alignment: "left"
+        alignment: "left",
       },
     },
   },

@@ -16,7 +16,7 @@ type CardProps = {
   cardWidth?: string | (number | string)[];
 };
 
-function Card(props: CardProps): ReactElement {
+const Card = (props: CardProps): ReactElement => {
   const {
     title,
     body,
@@ -71,6 +71,6 @@ function Card(props: CardProps): ReactElement {
       </Flex>
     </Box>
   );
-}
+};
 
 export { Card };
