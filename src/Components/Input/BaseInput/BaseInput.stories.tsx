@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseInput } from './BaseInput';
+import { BaseInput } from '../NumberInput';
 import { ComponentStory } from '@storybook/react';
 import { LibPath } from 'Types';
 

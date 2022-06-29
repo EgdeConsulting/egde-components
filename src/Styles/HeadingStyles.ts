@@ -1,7 +1,7 @@
 const HeadingStyles = {
-    baseStyle: {
-        color: 'darkgrey'
-    },
+  baseStyle: {
+    color: 'darkgrey',
+  },
 };
 
 export { HeadingStyles };

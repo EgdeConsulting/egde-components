@@ -1,7 +1,7 @@
 const theme = require('../src/Styles');
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -10,12 +10,12 @@ export const parameters = {
   },
   chakra: {
     theme,
-  }
-}
+  },
+};
 
 // Ref https://issuehunt.io/r/storybookjs/storybook/issues/13128
 function clickDocsButtonOnFirstLoad() {
-  window.removeEventListener("load", clickDocsButtonOnFirstLoad);
+  window.removeEventListener('load', clickDocsButtonOnFirstLoad);
 
   try {
     const docsButtonSelector = window.parent.document.evaluate(
@@ -23,7 +23,7 @@ function clickDocsButtonOnFirstLoad() {
       window.parent.document,
       null,
       XPathResult.ANY_TYPE,
-      null
+      null,
     );
 
     const button = docsButtonSelector.iterateNext();
@@ -36,9 +36,4 @@ function clickDocsButtonOnFirstLoad() {
 
 // .storybook/preview.js
 
-
-
-
-  
-
-window.addEventListener("load", clickDocsButtonOnFirstLoad);
+window.addEventListener('load', clickDocsButtonOnFirstLoad);

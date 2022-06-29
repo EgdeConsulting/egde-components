@@ -1,9 +1,16 @@
 import { Meta, Canvas } from '@storybook/addon-docs';
 import { Root } from 'Types';
+import fonts from '../Styles/Fonts/fonts.css';
 
 <Meta
   title={Root.Main + 'Startpage'}
   parameters={{ previewTabs: { canvas: { hidden: true } } }}
 />
 
-Instructions, Changelog, etc. can be added to .mdx-files like this one.
+# This is the startpage.
+
+Instructions, `Changelog`, etc. can be added to .mdx-files like this one.
+
+<Canvas>
+  <p>Code components can go here!</p>
+</Canvas>
