@@ -4,7 +4,7 @@ import { Radio } from './Radio';
 import { LibPath } from 'Types';
 
 export default {
-    title: LibPath.Input || 'undefined',
+    title: LibPath.Form + 'Radio' || 'undefined',
     component: Radio,
 
     argTypes: {
