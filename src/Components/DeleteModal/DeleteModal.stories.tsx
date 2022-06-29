@@ -8,21 +8,18 @@ export default {
   component: DeleteModal,
 
   argTypes: {
-    isModalOpen: { defaultValue: true },
+    isModalOpen: { defaultValue: false },
     isCentered: { defaultValue: false },
     setIsModalOpen: { action: 'setIsModalOpen' },
-    onSubmit: { action: 'onSubmit' },
+    onSubmit: { action: 'Submit' },
     deleteButtonLabel: { defaultValue: 'Delete' },
     deleteText: { defaultValue: 'Are you sure you want to delete this?' },
-    title: { defaultValue: 'Delete' },
+    title: { defaultValue: 'Delete Modal' },
     cancelButtonLabel: { defaultValue: 'Cancel' },
     disablePortal: { defaultValue: true },
 
   },
-  docs: {
-    inlineStories: false,
-    iframeHeight: 500,
-  },
+  
 } as ComponentMeta<typeof DeleteModal>;
 
 const Template: ComponentStory<typeof DeleteModal> = (args) => <DeleteModal {...args} />;
