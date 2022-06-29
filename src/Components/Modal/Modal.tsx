@@ -14,7 +14,7 @@ import {
     Text,
 } from '@chakra-ui/react';
 import { ModalProps, IconTestID, ModalIconType } from 'Types';
-import { PriorityHighRounded, CheckRounded } from '../../Icons/';
+import { PriorityHighRounded, CheckRounded } from '../../Icons';
 
 /*
     EXAMPLE USE:

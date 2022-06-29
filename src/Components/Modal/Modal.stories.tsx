@@ -1,6 +1,6 @@
 import React from 'react';
 import { LibPath } from 'Types';
-import { Modal } from './Modal';
+import { Modal } from '../Modal';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
@@ -9,18 +9,23 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  docs: {
+    inlineStories: false,
+    iframeHeight: 500,
+  },
   argTypes: {
+    disablePortal: { defaultValue: true },
     isModalOpen: { defaultValue: false },
     hasCloseButton: { defaultValue: true },
     buttons: {
       variant: {
         primary: {
-          label: '',
+          label: 'Ok',
           variant: '',
           onClick: undefined,
         },
         secondary: {
-          label: '',
+          label: 'close',
           variant: '',
           onClick: undefined,
         },
