@@ -100,7 +100,7 @@ const Content = (props: PageContainerProps) => {
     );
 };
 
-const PageContainer = (props: PageContainerProps): ReactElement =>{
+const PageContainer = (props: PageContainerProps): ReactElement => {
     const {
         title,
         titleAlignment,
@@ -188,6 +188,6 @@ const PageContainer = (props: PageContainerProps): ReactElement =>{
             )}
         </Box>
     );
-}
+};
 
 export { PageContainer };
