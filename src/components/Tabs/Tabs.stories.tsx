@@ -4,7 +4,7 @@ import { Tabs } from './Tabs';
 import { LibPath } from 'Types';
 
 export default {
-  title: LibPath.Tabs || 'undefined',
+  title: LibPath.Navigation + 'Tabs' || 'undefined',
   component: Tabs,
 
   argTypes: {

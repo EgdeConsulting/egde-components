@@ -1,9 +1,10 @@
 import React from 'react';
+import { LibPath } from 'Types';
 import { Modal } from './Modal';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'Egde Library/Modal',
+  title: LibPath.Overlay + 'Modal' || 'undefined',
   component: Modal,
   parameters: {
     layout: 'centered',

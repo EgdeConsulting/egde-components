@@ -4,7 +4,7 @@ import { Checkbox } from './Checkbox';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: LibPath.Input || 'undefined',
+  title: LibPath.Form + 'Checkbox' || 'undefined',
   component: Checkbox,
   argTypes: {
     direction: { defaultValue: 'column' },

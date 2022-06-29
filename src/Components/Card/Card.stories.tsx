@@ -4,7 +4,7 @@ import { Card } from './Card';
 import { LibPath } from 'Types';
 
 export default {
-  title: LibPath.Card || 'undefined',
+  title: LibPath.Cards + 'Card' || 'undefined',
   component: Card,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout

@@ -4,7 +4,7 @@ import { ComponentStory } from '@storybook/react';
 import { LibPath } from 'Types';
 
 export default {
-  title: LibPath.Input || 'undefined',
+  title: LibPath.Form + 'BaseInput' || 'undefined',
   component: BaseInput,
 };
 

@@ -4,7 +4,7 @@ import { TextInput } from './TextInput';
 import { LibPath } from 'Types';
 
 export default {
-  title: LibPath.Input || 'undefined',
+  title: LibPath.Form + 'TextInput' || 'undefined',
   component: TextInput,
 
   argTypes: {
@@ -44,7 +44,6 @@ export const TextInputDisabled = Template.bind({});
 TextInputDisabled.args = {
   isDisabled: true,
 };
-
 
 export const TextInputInvalid = Template.bind({});
 TextInputInvalid.args = {
