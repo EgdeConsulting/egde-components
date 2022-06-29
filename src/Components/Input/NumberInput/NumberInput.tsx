@@ -1,7 +1,7 @@
 import { Input } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
 import { NumberInputProps } from 'Types';
-import { BaseInput } from '..';
+import { BaseInput } from '../BaseInput';
 
 /*
     EXAMPLE USE:

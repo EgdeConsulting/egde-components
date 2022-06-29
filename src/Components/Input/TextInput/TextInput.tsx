@@ -1,7 +1,7 @@
 import { Input } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
 import { TextInputProps } from 'Types';
-import { BaseInput } from '../BaseInput';
+import { BaseInput } from '../BaseInput/BaseInput';
 
 /*
     EXAMPLE USE:
