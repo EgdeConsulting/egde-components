@@ -34,6 +34,4 @@ function clickDocsButtonOnFirstLoad() {
   }
 }
 
-// .storybook/preview.js
-
 window.addEventListener('load', clickDocsButtonOnFirstLoad);

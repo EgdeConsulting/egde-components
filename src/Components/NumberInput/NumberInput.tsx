@@ -1,7 +1,7 @@
 import { Input } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
 import { NumberInputProps } from 'Types';
-import { BaseInput } from '../Input';
+import { BaseInput } from 'Components/Input';
 
 /* 
     EXAMPLE USE: 
@@ -72,7 +72,7 @@ const NumberInput = (props: NumberInputProps): ReactElement => {
         isInvalid={!!invalidText}
         placeholder={placeholder}
         isDisabled={isDisabled}
-        onChange={(e) => {
+        onChange={(e: any) => {
           handleOnChange(e.target.value);
         }}
         value={formatValue(value)}
