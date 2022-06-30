@@ -10,7 +10,7 @@ export default {
   parameters: {
     layout: 'centered',
   },
- 
+
   argTypes: {
     isModalOpen: { defaultValue: false },
     hasCloseButton: { defaultValue: true },
@@ -37,23 +37,17 @@ export default {
 
 
 const Template: ComponentStory<typeof Modal> = (args) => {
-  const[isModalOpen, setIsModalOpen] = useState(true);
+  const[isModalOpen, setIsModalOpen] = useState(false);
   const handleClose = () => setIsModalOpen(false);
   return (
     <div>
-      <Button onClick={ ()=> setIsModalOpen(true)}>Open Modal</Button>
+      <Button onClick={ () => setIsModalOpen(true)}>Open Modal</Button>
       <Modal {...args} isModalOpen={isModalOpen} onClose={handleClose} />
     </div>
-  )
-  
-  
+  );
+
+
   };
-
-
-
-
-
-
 
 
 /* const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;

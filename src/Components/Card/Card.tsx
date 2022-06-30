@@ -1,4 +1,4 @@
-import { Heading, Box, Flex, Text, useStyleConfig, CSSObject } from '@chakra-ui/react';
+import { Heading, Box, Flex, Text, useStyleConfig } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
 
 type CardProps = {
@@ -14,7 +14,7 @@ type CardProps = {
   actionIcon?: ReactElement;
   cardHeight?: string | (number | string)[];
   cardWidth?: string | (number | string)[];
-  cardStyles?: CSSObject;
+
 };
 
 const Card = (props: CardProps): ReactElement => {
@@ -31,10 +31,10 @@ const Card = (props: CardProps): ReactElement => {
     actionIcon,
     cardHeight,
     cardWidth,
-    cardStyles= useStyleConfig('Card'),
+
   } = props;
 
-  // const cardStyles = useStyleConfig('Card');
+  const cardStyles = useStyleConfig('Card');
 
   return (
     <Box

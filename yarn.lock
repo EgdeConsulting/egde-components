@@ -1302,7 +1302,7 @@
 
 "@chakra-ui/icons@^2.0.2":
   version "2.0.2"
-  resolved "https://registry.npmjs.org/@chakra-ui/icons/-/icons-2.0.2.tgz"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/icons/-/icons-2.0.2.tgz#4ef4c3e1c6eb7a8f7d5de59635811f0c68104d4b"
   integrity sha512-UY7vP8E5pv2a4sd1SiezgVbmq1/tRfnehk6PatunrTvGMxQNhSKJJoiRI/wCtUfMoMz+yp9+ekc1ksJVCnokRg==
   dependencies:
     "@chakra-ui/icon" "3.0.2"
@@ -1473,7 +1473,7 @@
 
 "@chakra-ui/react@^2.2.1":
   version "2.2.1"
-  resolved "https://registry.npmjs.org/@chakra-ui/react/-/react-2.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/react/-/react-2.2.1.tgz#606a112350145e1bbd722db970dac7114a973d88"
   integrity sha512-m2vFICTUO3GivTkJROnTTJT+w8otcYMraKqOSdrAGmsjqtZAp8/FaGS+1bxzeZnZTszMn65LoLvlgBUDrTHhQA==
   dependencies:
     "@chakra-ui/accordion" "2.0.3"
@@ -1570,7 +1570,7 @@
 
 "@chakra-ui/storybook-addon@^4.0.1":
   version "4.0.1"
-  resolved "https://registry.npmjs.org/@chakra-ui/storybook-addon/-/storybook-addon-4.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/storybook-addon/-/storybook-addon-4.0.1.tgz#7b46e1b34dac4a3bc66aba6cce8eb82f7a5560f7"
   integrity sha512-23/Iq6LlEavpHIuqfb/+qpTxhbUrJFNnowetWv4NEKqOVrmat3HhniyoM+QfNBSggrZBkxJtdAuhmvePPmmM5g==
   dependencies:
     "@chakra-ui/icons" "^2.0.2"
@@ -1832,9 +1832,9 @@
   resolved "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.5.tgz"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
 
-"@emotion/react@^11.9.3":
+"@emotion/react@^11":
   version "11.9.3"
-  resolved "https://registry.npmjs.org/@emotion/react/-/react-11.9.3.tgz"
+  resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.9.3.tgz#f4f4f34444f6654a2e550f5dab4f2d360c101df9"
   integrity sha512-g9Q1GcTOlzOEjqwuLF/Zd9LC+4FljjPjDfxSM7KmEakm+hsHXk+bYZ2q+/hTJzr0OUNkujo72pXLQvXj6H+GJQ==
   dependencies:
     "@babel/runtime" "^7.13.10"
@@ -1861,9 +1861,9 @@
   resolved "https://registry.npmjs.org/@emotion/sheet/-/sheet-1.1.1.tgz"
   integrity sha512-J3YPccVRMiTZxYAY0IOq3kd+hUP8idY8Kz6B/Cyo+JuXq52Ek+zbPbSQUrVQp95aJ+lsAW7DPL1P2Z+U1jGkKA==
 
-"@emotion/styled@^11.9.3":
+"@emotion/styled@^11":
   version "11.9.3"
-  resolved "https://registry.npmjs.org/@emotion/styled/-/styled-11.9.3.tgz"
+  resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-11.9.3.tgz#47f0c71137fec7c57035bf3659b52fb536792340"
   integrity sha512-o3sBNwbtoVz9v7WB1/Y/AmXl69YHmei2mrVnK7JgyBJ//Rst5yqPZCecEJlMlJrFeWHp+ki/54uN265V2pEcXA==
   dependencies:
     "@babel/runtime" "^7.13.10"
@@ -7162,10 +7162,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^6.3.11:
-  version "6.3.11"
-  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-6.3.11.tgz"
-  integrity sha512-xQLk+ZSklNs5QNCUmdWPpKMOuWiB8ZETsvcIOWw8xvri9K3TamuifgCI/B6XpaEDR0/V2ZQF2Wm+gUAZrXo+rw==
+framer-motion@^6:
+  version "6.3.16"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.3.16.tgz#2e6e3b6e106aaaa0b36c72f52b79da162587efde"
+  integrity sha512-1kuXvOVss/Rzi+XHuYq6RPjwnZGkfnfvtBpCpZm+kYhLGA6ICHwfAJtG1ohz1ruSAFVMz3RSpanTf6TOPG979A==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
