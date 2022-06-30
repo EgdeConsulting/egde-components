@@ -16,10 +16,10 @@ export default {
 
 
 const Template: ComponentStory<typeof DeleteModal> = (args) => {
-const[isModalOpen, setIsModalOpen] = useState(true);
+const[isModalOpen, setIsModalOpen] = useState(false);
 return (
   <div>
-    <Button onClick={ () => setIsModalOpen(true)}>Open Modal</Button>
+    <Button onClick={ () => setIsModalOpen(true) }>Open Modal</Button>
     <DeleteModal {...args} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
   </div>
 );

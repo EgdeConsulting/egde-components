@@ -11,7 +11,7 @@ export default {
       layout: 'centered',
     },
     args: {
-      status: 'info'
+      status: 'info',
     }
 
 } as ComponentMeta<typeof Alert>;
