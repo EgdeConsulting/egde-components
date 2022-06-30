@@ -1,7 +1,7 @@
 import { Alert } from "./Alert";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import { LibPath } from "Types";
+import { AlertStatus, LibPath } from "Types";
 
 
 export default {
@@ -10,6 +10,9 @@ export default {
     parameters: {
       layout: 'centered',
     },
+    args: {
+      status: 'info'
+    }
 
 } as ComponentMeta<typeof Alert>;
   
