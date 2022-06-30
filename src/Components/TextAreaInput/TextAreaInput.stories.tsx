@@ -22,6 +22,7 @@ export default {
         minWidth: { defaultValue: '0' },
         backgroundColor: { defaultValue: 'transparent' },
         autoFocus: { defaultValue: false },
+        characterLimit: { defaultValue: 500 },
     }
 } as ComponentMeta<typeof TextAreaInput>;
 
@@ -34,5 +35,10 @@ export const TextAreaInputTest = Template.bind({});
 export const TextAreaInputInvallidText = Template.bind({});
 TextAreaInputInvallidText.args = {
     invalidText: 'InvalidText' ,
+}
+   
+export const TextAreaInputDisabled = Template.bind({});
+TextAreaInputDisabled.args = {
+    isDisabled: true ,
 }
    
