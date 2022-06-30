@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Radio as ChakraRadio, RadioGroup, Stack } from '@chakra-ui/react';
 import { RadioProps } from 'Types';
-import { BaseInput } from '../BaseInput';
+import { BaseInput } from '../Input/BaseInput';
 
 
 export const Radio = (props: RadioProps): ReactElement => {
