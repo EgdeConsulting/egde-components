@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from 'react';
-import { BaseInput } from '../Input/BaseInput';
+import { BaseInput } from '../BaseInput';
 import { FileUploadProps } from 'Types';
 import Dropzone from 'react-dropzone';
 import {
