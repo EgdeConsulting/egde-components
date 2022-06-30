@@ -13,8 +13,16 @@ const DeleteModal = (props: {
   deleteButtonLabel?: string;
   cancelButtonLabel?: string;
 }): JSX.Element => {
-  const { isModalOpen, isCentered, setIsModalOpen, onSubmit, deleteButtonLabel, deleteText, title, cancelButtonLabel } =
-    props;
+  const {
+    isModalOpen,
+    isCentered,
+    setIsModalOpen,
+    onSubmit,
+    deleteButtonLabel,
+    deleteText,
+    title,
+    cancelButtonLabel,
+  } = props;
 
   const deleteGrantModalButtons: ModalButtons = {
     primary: {

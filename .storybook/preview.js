@@ -1,5 +1,6 @@
-const theme = require('../src/Styles');
-
+import { styles } from '../src/Styles';
+//const theme = required('../src/Styles');
+//import { theme } from "@chakra-ui/react";
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -9,7 +10,7 @@ export const parameters = {
     },
   },
   chakra: {
-    theme,
+    theme: styles,
   },
 };
 
