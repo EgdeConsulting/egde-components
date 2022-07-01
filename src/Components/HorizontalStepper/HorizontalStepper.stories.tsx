@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LibPath } from 'Types';
 import { HorizontalStepper } from './HorizontalStepper';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -50,7 +50,7 @@ export default {
     buttonAlignment: { defaultValue: 'left' },
     buttonMargin: { defaultValue: '10px' },
     clickableSteps: { defaultValue: true },
-    completedSteps: { defaultValue: [0, 1, 2] },
+    completedSteps: { defaultValue: [] },
     onFinalize: { defaultValue: () => {} },
     buttonCaption: {
       defaultValue: {
@@ -63,9 +63,15 @@ export default {
   },
 } as ComponentMeta<typeof HorizontalStepper>;
 
-const Template: ComponentStory<typeof HorizontalStepper> = (args) => (
-  <HorizontalStepper {...args} />
-);
+const Template: ComponentStory<typeof HorizontalStepper> = (args) => {
+  const [activeStep, setActiveStep] = useState(0);
+  return (
+      <div>
+           <HorizontalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />
+      </div>
+  )
+ 
+}
 
 export const HorizontalStepperStd = Template.bind({});
 HorizontalStepperStd.args = {};
