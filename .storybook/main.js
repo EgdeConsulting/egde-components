@@ -9,9 +9,10 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    "@storybook/addon-actions",
     '@storybook/addon-interactions',
     '@chakra-ui/storybook-addon',
-    "@storybook/addon-actions",
+   
   ],
   framework: '@storybook/react',
   core: {
