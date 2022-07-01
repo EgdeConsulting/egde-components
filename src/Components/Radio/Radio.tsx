@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { Radio as ChakraRadio, RadioGroup, Stack } from '@chakra-ui/react';
 import { RadioProps } from 'Types';
-import { BaseInput } from '../BaseInput'
-import React from 'react';
+import { BaseInput } from '../Input/BaseInput';
 
-export function Radio(props: RadioProps): ReactElement {
+
+export const Radio = (props: RadioProps): ReactElement => {
     const {
         direction = 'column',
         options,
@@ -39,4 +39,4 @@ export function Radio(props: RadioProps): ReactElement {
             </RadioGroup>
         </BaseInput>
     );
-}
+};

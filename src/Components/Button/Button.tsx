@@ -6,7 +6,7 @@ export interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  return <ChakraButton colorScheme="blue">{props.label}</ChakraButton>;
+  return <ChakraButton >{props.label}</ChakraButton>;
 };
 
 export { Button };
