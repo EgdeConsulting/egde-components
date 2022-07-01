@@ -14,23 +14,23 @@ export default {
       defaultValue: [
         {
           label: 'Step 1',
-          children: <div>Step 1</div>,
+          children: <div> Content of Step 1</div>,
         },
         {
           label: 'Step 2',
-          children: <div>Step 2</div>,
+          children: <div>Content of Step 2</div>,
         },
         {
           label: 'Step 3',
-          children: <div>Step 3</div>,
+          children: <div>Content of Step 3</div>,
         },
         {
           label: 'Step 4',
-          children: <div>Step 4</div>,
+          children: <div>Content of Step 4</div>,
         },
         {
           label: 'Step 5',
-          children: <div>Step 5</div>,
+          children: <div>Content of Step 5</div>,
         },
       ],
     },
