@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   stories: [
-    '../src/Components/Startpage.stories.mdx',
+    '../src/Pages/Startpage.stories.mdx',
     '../src/**/*.stories.mdx',
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
@@ -11,7 +11,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@chakra-ui/storybook-addon',
-    "@storybook/addon-actions",
+    '@storybook/addon-actions',
   ],
   framework: '@storybook/react',
   core: {
