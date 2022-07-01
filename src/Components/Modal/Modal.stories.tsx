@@ -8,23 +8,23 @@ export default {
   title: LibPath.Overlay + 'Modal' || 'undefined',
   component: Modal,
   parameters: {
-    layout: 'centered',
+   
   },
 
   argTypes: {
     isModalOpen: { defaultValue: false },
     hasCloseButton: { defaultValue: true },
     onClose: { action: 'onClose' },
-    buttons: {
-      variant: {
+    buttons: { defaultValue:  
+       {
         primary: {
           label: 'Ok',
-          variant: '',
+          variant: 'primary',
           onClick: undefined,
         },
         secondary: {
           label: 'close',
-          variant: '',
+          variant: 'secondary',
           onClick: undefined,
         },
         alignment: 'left',
@@ -56,25 +56,12 @@ export const Standard = Template.bind({});
 Standard.args = {
   title: 'Title',
   subtitle: 'And som explanation',
-  width: '300px',
-  buttons: {
-    primary: {
-      label: 'Primary Button',
-      variant: 'primary',
-    },
-    secondary: {
-      label: 'Close',
-      variant: 'secondary',
-    },
-    alignment: 'left',
-  },
 };
 
 export const ModalWithError = Template.bind({});
 ModalWithError.args = {
   title: 'Title',
   subtitle: 'And som explanation',
-  width: '300px',
   buttons: {
     primary: {
       label: 'Primary Button',
@@ -87,4 +74,21 @@ ModalWithError.args = {
     alignment: 'left',
   },
   errorMessage: 'Woops, something went wrong',
+};
+
+export const ButtonsAlignedRight = Template.bind({});
+ButtonsAlignedRight.args = {
+  title: 'Title',
+  subtitle: 'And som explanation',
+  buttons: {
+    primary: {
+      label: 'Primary Button',
+      variant: 'primary',
+    },
+    secondary: {
+      label: 'Close',
+      variant: 'secondary',
+    },
+    alignment: 'right',
+  },
 };
