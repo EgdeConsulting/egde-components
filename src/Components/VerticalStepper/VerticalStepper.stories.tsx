@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { VerticalStepper } from './VerticalStepper';
 import { LibPath } from 'Types';
@@ -7,8 +7,6 @@ export default {
   title: LibPath.Navigation + 'VerticalStepper' || 'undefined',
   component: VerticalStepper,
   argTypes: {
-    activeStep: { defaultValue: 0 },
-    setActiveStep: { defaultValue: () => {} },
     stepsContent: {
       defaultValue: [
         {
@@ -34,13 +32,12 @@ export default {
       ],
     },
     buttonTexts: {
-      defaultValue: [
+      defaultValue:
         {
           previous: 'Previous',
           next: 'Next',
           complete: 'Complete',
         },
-      ],
     },
     finalStep: {
       defaultValue: {
@@ -49,8 +46,8 @@ export default {
       },
     },
     completedSteps: { defaultValue: [] },
-    onFinalize: { defaultValue: () => {} },
-    onFinalStep: { defaultValue: () => {} },
+    onFinalize: { action: 'onFinalize' },
+    onFinalStep: { action: 'onClose' },
     isCompleteButtonDisabled: { defaultValue: false },
     buttonCaption: {
       defaultValue: {
@@ -61,6 +58,15 @@ export default {
   },
 } as ComponentMeta<typeof VerticalStepper>;
 
-const Template: ComponentStory<typeof VerticalStepper> = (args) => <VerticalStepper {...args} />;
+const Template: ComponentStory<typeof VerticalStepper> = (args) => {
+    const [activeStep, setActiveStep] = useState(0);
+    return (
+        <div>
+             <VerticalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />;
+        </div>
+    )
+   
+}
+
 
 export const VerticalStepperTest = Template.bind({});

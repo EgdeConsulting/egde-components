@@ -8,9 +8,6 @@ export default {
   title: LibPath.Overlay + 'DeleteModal' || 'undefined',
   component: DeleteModal,
 
-  argTypes: {
-
-  },
 
 } as ComponentMeta<typeof DeleteModal>;
 
