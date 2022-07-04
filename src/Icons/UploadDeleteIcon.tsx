@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React, { ReactElement } from 'react';
 
-function UploadDeleteIcon(): ReactElement {
+const UploadDeleteIcon = (): ReactElement => {
     return (
         <svg
             width='10'
@@ -15,6 +16,6 @@ function UploadDeleteIcon(): ReactElement {
             />
         </svg>
     );
-}
+};
 
 export { UploadDeleteIcon };

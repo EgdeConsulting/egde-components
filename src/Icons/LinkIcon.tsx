@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { ReactElement } from 'react';
 import { IconContainer } from '.';
 
-function LinkIcon(): ReactElement {
+const LinkIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path

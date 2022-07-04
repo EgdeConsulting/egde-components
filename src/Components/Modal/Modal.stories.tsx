@@ -8,14 +8,13 @@ export default {
   title: LibPath.Overlay + 'Modal' || 'undefined',
   component: Modal,
   parameters: {
-   
   },
 
   argTypes: {
     isModalOpen: { defaultValue: false },
     hasCloseButton: { defaultValue: true },
     onClose: { action: 'onClose' },
-    buttons: { defaultValue:  
+    buttons: { defaultValue:
        {
         primary: {
           label: 'Ok',

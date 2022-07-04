@@ -64,6 +64,7 @@ const HorizontalStepper = (props: StepperProps): ReactElement => {
         <Flex
           width="100%"
           justify={
+            // eslint-disable-next-line no-nested-ternary
             buttonAlignment === 'right'
               ? 'flex-end'
               : buttonAlignment === 'left'
@@ -83,8 +84,8 @@ const HorizontalStepper = (props: StepperProps): ReactElement => {
           <Flex direction="column">
             <Button
               isDisabled={
-                isCompleteButtonDisabled &&
-                activeStep === stepsContent.length - 1
+                isCompleteButtonDisabled
+                && activeStep === stepsContent.length - 1
               }
               variant={'primary'}
               onClick={

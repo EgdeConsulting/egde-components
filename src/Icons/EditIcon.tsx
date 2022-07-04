@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { ReactElement } from 'react';
 import { IconContainer } from '.';
 
-function EditIcon(): ReactElement {
+const EditIcon = (): ReactElement => {
   return (
     <IconContainer>
       <path
@@ -10,6 +11,6 @@ function EditIcon(): ReactElement {
       />
     </IconContainer>
   );
-}
+};
 
 export { EditIcon };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LibPath } from 'Types';
 import { HorizontalStepper } from './HorizontalStepper';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -14,23 +14,23 @@ export default {
       defaultValue: [
         {
           label: 'Step 1',
-          children: <div>Step 1</div>,
+          children: <div> Content of Step 1</div>,
         },
         {
           label: 'Step 2',
-          children: <div>Step 2</div>,
+          children: <div>Content of Step 2</div>,
         },
         {
           label: 'Step 3',
-          children: <div>Step 3</div>,
+          children: <div>Content of Step 3</div>,
         },
         {
           label: 'Step 4',
-          children: <div>Step 4</div>,
+          children: <div>Content of Step 4</div>,
         },
         {
           label: 'Step 5',
-          children: <div>Step 5</div>,
+          children: <div>Content of Step 5</div>,
         },
       ],
     },
@@ -50,7 +50,7 @@ export default {
     buttonAlignment: { defaultValue: 'left' },
     buttonMargin: { defaultValue: '10px' },
     clickableSteps: { defaultValue: true },
-    completedSteps: { defaultValue: [0, 1, 2] },
+    completedSteps: { defaultValue: [] },
     onFinalize: { defaultValue: () => {} },
     buttonCaption: {
       defaultValue: {
@@ -63,9 +63,14 @@ export default {
   },
 } as ComponentMeta<typeof HorizontalStepper>;
 
-const Template: ComponentStory<typeof HorizontalStepper> = (args) => (
-  <HorizontalStepper {...args} />
-);
+const Template: ComponentStory<typeof HorizontalStepper> = (args) => {
+  const [activeStep, setActiveStep] = useState(0);
+  return (
+      <div>
+           <HorizontalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />
+      </div>
+  );
+};
 
 export const HorizontalStepperStd = Template.bind({});
 HorizontalStepperStd.args = {};
