@@ -5,14 +5,14 @@ import {
   Canvas,
   Preview,
 } from '@storybook/addon-docs/blocks';
-import { Alert } from './Alert';
+import { Card } from './Card';
 import { LibPath } from 'Types';
 
-export const Template = (args) => <Alert {...args} />;
+export const Template = (args) => <Card {...args} />;
 
 <Meta
-  title={ LibPath.Overlay + 'Alert' }
-  component={ Alert }
+  title={ LibPath.Cards + 'Card' }
+  component={ Card }
   parameters={{
     toolbar: {
       title: { hidden: true },
@@ -27,7 +27,7 @@ export const Template = (args) => <Alert {...args} />;
   }}
 />
 
-# Alert
+# Card
 
 <div
   style={{
@@ -90,24 +90,30 @@ export const Template = (args) => <Alert {...args} />;
 
 <Preview withToolbar>
   <Story
-    name="Info Alert"
+    name="Card"
     args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: '',
-      linkHref: '',
-      onClose: () => {},
+        title: 'Title',
+        textColors: '#D23F47',
+        titleTextColor: '#000000',
+        bodyTextColor: '#000000',
+        titleTextSize: '14px',
+        bodyTextSize: '14px',
+        onClick: () => {},
+        titleIcon: undefined,
+        actionIcon: undefined,
+        cardHeight: 'auto',
+        cardWidth: 'auto',
+        body: ' ',
     }}
   >
     { Template.bind({}) }
   </Story>
 </Preview>
 
-Change some of the props and see how the `Base` component changes.
 
 <br />
 
-<Props story="Info Alert" />
+<Props story="Card" />
 
 # Stories
 
@@ -115,57 +121,17 @@ Change some of the props and see how the `Base` component changes.
 
 Look at some example usecases
 
-### Warning Alert 
+### Card with title and body
 <Canvas withToolbar>
   <Story
-    name="Warning Alert"
+    name="Title and body"
     args={{
-      description: 'This is a warning alert',
-      status: 'warning',
+        title: 'Title',
+        body: 'And some fancy body',
     }}
   >
-    {Template.bind({})}
+    { Template.bind({}) }
   </Story>
 </Canvas>
 
 
-### Error Alert
-<Canvas withToolbar>
-  <Story
-    name="Error Alert"
-    args={{
-      description: 'This is an error alert',
-      status: 'error',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Success Alert
-<Canvas withToolbar>
-  <Story
-    name="Success Alert"
-    args={{
-      description: 'This is a Success alert',
-      status: 'success',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Alert with link
-<Canvas withToolbar>
-  <Story
-    name="Alert with link"
-    args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: 'Learn more',
-      linkHref: 'https://www.google.com',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
