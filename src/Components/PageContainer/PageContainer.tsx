@@ -51,6 +51,7 @@ const Content = (props: PageContainerProps) => {
                     <Box
                         display='flex'
                         alignItems={
+                            // eslint-disable-next-line no-nested-ternary
                             titleAlignment === 'right'
                                 ? 'end'
                                 : titleAlignment === 'left'

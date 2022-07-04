@@ -3,7 +3,7 @@ import React, { ReactElement } from 'react';
 import { TextInputProps } from 'Types';
 import { BaseInput } from '..';
 
-/* 
+/*
     EXAMPLE USE:
     function TextAreaExample(): ReactElement {
         const [text, setText] = useState<string>('');
@@ -18,7 +18,7 @@ import { BaseInput } from '..';
     }
 */
 
-export const TextAreaInput = (props: TextInputProps): ReactElement =>{
+export const TextAreaInput = (props: TextInputProps): ReactElement => {
     const {
         label,
         labelTextMargin,
@@ -57,4 +57,4 @@ export const TextAreaInput = (props: TextInputProps): ReactElement =>{
             />
         </BaseInput>
     );
-}
+};

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { Box } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
 
@@ -23,7 +24,7 @@ export const IconContainer = (props: {
     );
 };
 
-function ProfileIcon(): ReactElement {
+const ProfileIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -36,9 +37,9 @@ function ProfileIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
+};
 
-function InvoiceIcon(): ReactElement {
+const InvoiceIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -91,9 +92,9 @@ function InvoiceIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
+};
 
-function MailIcon(): ReactElement {
+const MailIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -130,8 +131,8 @@ function MailIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
-function FormIcon(): ReactElement {
+};
+const FormIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -168,8 +169,8 @@ function FormIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
-function PropertyIcon(): ReactElement {
+};
+const PropertyIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -182,8 +183,8 @@ function PropertyIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
-function TaxIcon(): ReactElement {
+};
+const TaxIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -216,8 +217,8 @@ function TaxIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
-function CasesIcon(): ReactElement {
+};
+const CasesIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -242,8 +243,8 @@ function CasesIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
-function ReportIcon(): ReactElement {
+};
+const ReportIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -256,8 +257,8 @@ function ReportIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
-function ParkingIcon(): ReactElement {
+};
+const ParkingIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -270,9 +271,9 @@ function ParkingIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
+};
 
-function FamilyIcon(): ReactElement {
+const FamilyIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -285,9 +286,9 @@ function FamilyIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
+};
 
-function ArrowRightIcon(): ReactElement {
+const ArrowRightIcon = (): ReactElement => {
     return (
         <Box
             as='svg'
@@ -302,8 +303,8 @@ function ArrowRightIcon(): ReactElement {
             />
         </Box>
     );
-}
-function GrantIcon(): ReactElement {
+};
+const GrantIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -328,21 +329,21 @@ function GrantIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
-function ActorIcon(): ReactElement {
+};
+const ActorIcon = (): ReactElement => {
     return (
         <IconContainer>
-            <path 
+            <path
                 d="M22.0016 44C26.3532 44 30.607 42.7096 34.2251 40.2921C37.8433 37.8745 40.6633 34.4383 42.3285 30.418C43.9938 26.3977 44.4295 21.9739 43.5805 17.706C42.7316 13.4381 40.6361 9.51783 37.5592 6.44085C34.4822 3.36386 30.5619 1.26841 26.294 0.419469C22.0261 -0.429469 17.6023 0.00623693 13.582 1.67149C9.5617 3.33674 6.12552 6.15675 3.70795 9.7749C1.29037 13.3931 0 17.6468 0 21.9984C0 27.8336 2.31802 33.4298 6.44413 37.5559C10.5702 41.682 16.1664 44 22.0016 44Z" 
                 fill="#01459E"
             />
-            <path 
+            <path
                 d="M33.34595,11.940851 h -8.0986 v -1.27198 c 4e-4,-0.06228 -0.0115,-0.12402 -0.0352,-0.18164 -0.0236,-0.05762 -0.0585,-0.10997 -0.1025,-0.15401 -0.044,-0.04404 -0.0964,-0.07888 -0.154,-0.10251 -0.0576,-0.02363 -0.1194,-0.03558 -0.1816,-0.03514 h -3.77 c -0.1255,0 -0.2459,0.04987 -0.3346,0.13863 -0.0888,0.08876 -0.1387,0.20914 -0.1387,0.33467 v 1.27198 h -1.2818 c -0.12383,-3e-5 -0.24275,0.04848 -0.33123,0.13512 -0.08848,0.08664 -0.13948,0.2045 -0.14206,0.32831 v 9.34426 l -1.14708,-0.8973 c -0.08313,-0.0647 -0.1855,-0.0999 -0.29088,-0.0999 -0.10538,0 -0.20775,0.0352 -0.29088,0.0999 l -4.45358,3.4249 c -0.05785,0.0437 -0.10464,0.1003 -0.1366,0.1654 -0.03197,0.0651 -0.04823,0.1367 -0.04746,0.2092 v 2.9581 l -1.932616,0.7757 c -0.0874,0.0349 -0.162323,0.0952 -0.215063,0.1731 -0.05274,0.078 -0.08087,0.17 -0.08075,0.2641 v 4.5127 c 0,0.1246 0.04952,0.2442 0.137663,0.3323 0.08814,0.0882 0.207691,0.1377 0.332345,0.1377 H 33.34595 c 0.1249,0 0.2448,-0.0494 0.3335,-0.1375 0.0886,-0.088 0.1389,-0.2076 0.1398,-0.3325 v -20.93016 c -0.0026,-0.12381 -0.0536,-0.24167 -0.1421,-0.32831 -0.0885,-0.08664 -0.2074,-0.13515 -0.3312,-0.13512 z m -11.8686,-0.80198 h 2.8267 v 0.70337 h -2.8267 z m -10.35329,21.71237 v -3.7173 l 1.28512,-0.516 0.47001,-0.1907 0.4733,-0.1906 1.75513,-0.7132 3.66804,1.4955 v 3.8225 h -7.6516 z m 2.22843,-7.9572 3.98028,-3.0633 1.44289,1.1274 v 5.0616 l -3.49055,-1.433 c -0.11275,-0.0459 -0.23894,-0.0459 -0.35169,0 l -1.58093,0.6343 z m 19.53656,-12.00989 v 2.09038 H 19.74197 v -2.09038 z m 0,7.52669 H 19.74197 v -1.99506 h 13.14708 z m 0,-2.70171 H 19.74197 v -2.01808 h 13.14708 z m 0,10.93511 H 19.74197 v -2.0674 h 13.14708 z m 0,-2.7642 H 19.74197 v -2.0411 h 13.14708 z m -13.14708,-3.3821 v -1.3771 h 13.14708 v 2.0115 H 19.78141 l -0.05916,-0.0461 z m 0.24651,10.3665 v -0.0329 h -0.24651 v -3.4807 h 13.14708 v 3.5004 H 19.96876 Z"
                 fill="white"
             />
         </IconContainer>
     );
-}
+};
 export {
     ProfileIcon,
     InvoiceIcon,

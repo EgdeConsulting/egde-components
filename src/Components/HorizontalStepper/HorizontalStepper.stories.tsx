@@ -69,9 +69,8 @@ const Template: ComponentStory<typeof HorizontalStepper> = (args) => {
       <div>
            <HorizontalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />
       </div>
-  )
- 
-}
+  );
+};
 
 export const HorizontalStepperStd = Template.bind({});
 HorizontalStepperStd.args = {};

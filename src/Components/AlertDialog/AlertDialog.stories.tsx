@@ -14,7 +14,7 @@ export default {
     isOpen: { defaultValue: true },
     cancelRef: { defaultValue: React.createRef() },
     onClose: { action: 'onClose' },
-    buttons: { defaultValue: [{ label: 'OK', onClick: () => {}, variant: 'primary'}] },
+    buttons: { defaultValue: [{ label: 'OK', onClick: () => {}, variant: 'primary' }] },
   },
 } as ComponentMeta<typeof AlertDialog>;
 
@@ -25,14 +25,16 @@ export default {
 const Template: ComponentStory<typeof AlertDialog> = (args) => {
 	const[isOpen, setIsOpen] = useState(false);
 	const handleClose = () => setIsOpen(false);
-	const buttons = [{ label: 'OK', onClick: () => {setIsOpen(false)}, variant: 'primary'}];
+	const buttons = [{ label: 'OK', onClick: () => {
+		setIsOpen(false);
+	}, variant: 'primary' }];
 	return (
-	  <div>
-		<Button onClick={ () => setIsOpen(true) }>Open Alert Dialog</Button>
-		<AlertDialog {...args} onClose={handleClose} isOpen={isOpen} buttons={buttons} />
-	  </div>
+		<div>
+			<Button onClick={ () => setIsOpen(true) }>Open Alert Dialog</Button>
+			<AlertDialog {...args} onClose={handleClose} isOpen={isOpen} buttons={buttons} />
+		</div>
 	);
-	
+
 	};
 
 	export const AlertDialogTest = Template.bind({});

@@ -160,6 +160,7 @@ const Modal = (props: ModalProps): ReactElement => {
                         <Text
                             color='red'
                             textAlign={
+                                // eslint-disable-next-line no-nested-ternary
                                 alignment === 'right'
                                     ? 'end'
                                     : alignment === 'left'

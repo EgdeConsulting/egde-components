@@ -1,6 +1,7 @@
-import  React, { ReactElement } from 'react';
+/* eslint-disable */
+import React, { ReactElement } from 'react';
 
-function UploadIconHover(): ReactElement {
+const UploadIconHover = (): ReactElement => {
     return (
         <svg
             width='32'
@@ -15,6 +16,6 @@ function UploadIconHover(): ReactElement {
             />
         </svg>
     );
-}
+};
 
 export { UploadIconHover };

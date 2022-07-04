@@ -64,9 +64,8 @@ const Template: ComponentStory<typeof VerticalStepper> = (args) => {
         <div>
              <VerticalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />
         </div>
-    )
-   
-}
+    );
+};
 
 
 export const VerticalStepperSTD = Template.bind({});

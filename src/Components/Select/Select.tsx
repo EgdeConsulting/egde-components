@@ -41,7 +41,7 @@ const SINGLE_SELECT_STYLES = {
     }),
 };
 
-function Select(props: SelectProps): JSX.Element {
+const Select = (props: SelectProps): JSX.Element => {
     const {
         options,
         invalidText,
@@ -50,7 +50,7 @@ function Select(props: SelectProps): JSX.Element {
         isDisabled,
         placeholder,
         value,
-        /*  
+        /*
        // TODO: Make these props do something
        backgroundColor,
         autoFocus, */
@@ -79,6 +79,6 @@ function Select(props: SelectProps): JSX.Element {
             />
         </BaseInput>
     );
-}
+};
 
 export { Select };

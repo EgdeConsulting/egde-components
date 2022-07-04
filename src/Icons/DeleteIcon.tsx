@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React, { ReactElement } from 'react';
 import { IconContainer } from '.';
 
-function DeleteIcon(): ReactElement {
+const DeleteIcon = (): ReactElement => {
     return (
         <IconContainer>
             <path
@@ -10,6 +11,6 @@ function DeleteIcon(): ReactElement {
             />
         </IconContainer>
     );
-}
+};
 
 export { DeleteIcon };
