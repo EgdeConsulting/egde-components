@@ -15,7 +15,7 @@ const Checkbox = (props: CheckboxProps): ReactElement => {
     autoFocus,
   } = props;
 
-  function handleOnChange(optionIndex: number): void {
+  const handleOnChange = (optionIndex: number): void => {
     let newValue = [];
     if (value.includes(optionIndex)) {
       newValue = value.filter((e) => e !== optionIndex);
@@ -23,7 +23,7 @@ const Checkbox = (props: CheckboxProps): ReactElement => {
       newValue = [...value, optionIndex];
     }
     onChange(newValue);
-  }
+  };
 
   return (
     <BaseInput {...props}>

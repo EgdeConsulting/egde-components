@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { LibPath } from 'Types';
 import { Checkbox } from './Checkbox';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -29,4 +29,5 @@ const Template: ComponentStory<typeof Checkbox> = (args) => (
 );
 
 export const CheckboxStd = Template.bind({});
-CheckboxStd.args = {};
+CheckboxStd.args = {}; */
+// eslint-disable-next-line storybook/default-exports
