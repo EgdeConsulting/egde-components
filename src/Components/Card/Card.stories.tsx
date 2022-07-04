@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { Card } from './Card';
 import { LibPath } from 'Types';
@@ -30,3 +30,5 @@ export const ColorTest = Template.bind({});
 ColorTest.args = {
   title: 'Test',
 };
+ */
+// eslint-disable-next-line storybook/default-exports
