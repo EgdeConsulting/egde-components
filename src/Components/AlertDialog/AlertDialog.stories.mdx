@@ -5,14 +5,30 @@ import {
   Canvas,
   Preview,
 } from '@storybook/addon-docs/blocks';
-import { Alert } from './Alert';
+import { AlertDialog } from './AlertDialog';
 import { LibPath } from 'Types';
+import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
 
-export const Template = (args) => <Alert {...args} />;
+export const Template = (args) => {
+    const[isOpen, setIsOpen] = useState(false);
+	const handleClose = () => setIsOpen(false);
+	const buttons = [{ label: 'OK', onClick: () => {
+		setIsOpen(false);
+	}, variant: 'primary' }];
+	return (
+		<div>
+			<Button onClick={ () => setIsOpen(true)} > Open Alert Dialog </Button>
+			<AlertDialog {...args} onClose={handleClose} isOpen={isOpen} buttons={buttons} />
+		</div>
+	);
+}
+	
+
 
 <Meta
-  title={ LibPath.Overlay + 'Alert' }
-  component={ Alert }
+  title={ LibPath.Overlay + 'AlertDialog' }
+  component={ AlertDialog }
   parameters={{
     toolbar: {
       title: { hidden: true },
@@ -22,12 +38,11 @@ export const Template = (args) => <Alert {...args} />;
       // fullscreen: { hidden: true },
       // 'storybook/background': { hidden: true },
       // 'storybook/viewport': { hidden: true },
-    },
-   
+    },   
   }}
 />
 
-# Alert
+# Alert Dialog
 
 <div
   style={{
@@ -90,82 +105,18 @@ export const Template = (args) => <Alert {...args} />;
 
 <Canvas withToolbar>
   <Story
-    name="Info Alert"
+    name="AlertDialog"
     args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: '',
-      linkHref: '',
-      onClose: () => {},
-    }}
+    iconVariant: 'warning',
+    heading: 'Heading',
+    text: 'Alert Dialog Text',
+    isOpen: true,
+    cancelRef: React.createRef(),
+    onClose: () => {},
+    buttons:{ label: 'OK', onClick: () => {}, variant: 'primary' } 
+    }
+    }
   >
     { Template.bind({}) }
-  </Story>
-</Canvas>
-
-Change some of the props and see how the `Base` component changes.
-
-<br />
-
-<Props story="Info Alert" />
-
-# Stories
-
-<hr />
-
-Look at some example usecases
-
-### Warning Alert 
-<Canvas withToolbar>
-  <Story
-    name="Warning Alert"
-    args={{
-      description: 'This is a warning alert',
-      status: 'warning',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-
-### Error Alert
-<Canvas withToolbar>
-  <Story
-    name="Error Alert"
-    args={{
-      description: 'This is an error alert',
-      status: 'error',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Success Alert
-<Canvas withToolbar>
-  <Story
-    name="Success Alert"
-    args={{
-      description: 'This is a Success alert',
-      status: 'success',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Alert with link
-<Canvas withToolbar>
-  <Story
-    name="Alert with link"
-    args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: 'Learn more',
-      linkHref: 'https://www.google.com',
-    }}
-  >
-    {Template.bind({})}
   </Story>
 </Canvas>

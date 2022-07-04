@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/* import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AlertDialog } from './AlertDialog';
 import { LibPath } from 'Types';
@@ -38,3 +38,5 @@ const Template: ComponentStory<typeof AlertDialog> = (args) => {
 	};
 
 	export const AlertDialogTest = Template.bind({});
+ */
+// eslint-disable-next-line storybook/default-exports
