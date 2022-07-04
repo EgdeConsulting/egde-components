@@ -52,7 +52,7 @@
     "func-call-spacing": ["error", "never"],
     "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
     "max-len": ["error", { "code": 120, "ignorePattern": "^import .*" }],
-    "max-lines": ["error", 500],
+    "max-lines": ["error", 700],
     "new-cap": "error",
     "no-nested-ternary": "error",
     "no-trailing-spaces": "error",

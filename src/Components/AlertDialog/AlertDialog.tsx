@@ -15,17 +15,16 @@ import React, { ReactElement } from 'react';
 import { AlertDialogProps, IconTestID, AlertDialogIconType } from 'Types';
 import { Warning } from 'Icons';
 
-export const AlertDialog = (props: AlertDialogProps): ReactElement =>{
-    const { 
+export const AlertDialog = (props: AlertDialogProps): ReactElement => {
+    const {
         iconVariant,
         heading,
         text,
         isOpen,
         cancelRef,
         onClose,
-        buttons } =
-        props;
-        
+        buttons } = props;
+
     const iconStyle = {
         color: 'red',
         marginRight: '8px',
@@ -77,4 +76,4 @@ export const AlertDialog = (props: AlertDialogProps): ReactElement =>{
             </AlertDialogOverlay>
         </ChakraAlertDialog>
     );
-}
+};

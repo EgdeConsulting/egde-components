@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { AlertProps, IconTestID, AlertStatus } from 'Types';
 import {
     Alert as ChakraAlert,
@@ -15,9 +15,9 @@ import {
     InfoRounded,
     CheckCircleRounded,
 } from '../../Icons';
-import React from 'react';
 
-export function Alert(props: AlertProps): ReactElement {
+
+export const Alert = (props: AlertProps): ReactElement => {
     const { status, description, onClose, linkText, linkHref } = props;
     // styling should ideally be abstracted to ./Styles,
     // but didn't manage that with useMultiStyleConfig
@@ -88,4 +88,4 @@ export function Alert(props: AlertProps): ReactElement {
             />
         </ChakraAlert>
     );
-}
+};

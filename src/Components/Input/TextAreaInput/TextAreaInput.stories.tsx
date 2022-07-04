@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextAreaInput } from './TextAreaInput';
-import { ComponentStory , ComponentMeta} from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { LibPath } from 'Types';
 
 export default {
@@ -23,7 +23,7 @@ export default {
         backgroundColor: { defaultValue: 'transparent' },
         autoFocus: { defaultValue: false },
         characterLimit: { defaultValue: 500 },
-    }
+    },
 } as ComponentMeta<typeof TextAreaInput>;
 
 const Template: ComponentStory<typeof TextAreaInput> = (args) => (
@@ -34,11 +34,10 @@ export const TextAreaInputTest = Template.bind({});
 
 export const TextAreaInputInvallidText = Template.bind({});
 TextAreaInputInvallidText.args = {
-    invalidText: 'InvalidText' ,
-}
-   
+    invalidText: 'InvalidText',
+};
+
 export const TextAreaInputDisabled = Template.bind({});
 TextAreaInputDisabled.args = {
-    isDisabled: true ,
-}
-   
+    isDisabled: true,
+};

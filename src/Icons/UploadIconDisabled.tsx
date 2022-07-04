@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React, { ReactElement } from 'react';
 
-function UploadIconDisabled(): ReactElement {
+const UploadIconDisabled = (): ReactElement => {
     return (
         <svg
             width='32'
@@ -15,6 +16,6 @@ function UploadIconDisabled(): ReactElement {
             />
         </svg>
     );
-}
+};
 
 export { UploadIconDisabled };

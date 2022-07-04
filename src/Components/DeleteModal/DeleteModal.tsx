@@ -6,6 +6,7 @@ import React from 'react';
 const DeleteModal = (props: {
   isModalOpen: boolean;
   isCentered?: boolean;
+  // eslint-disable-next-line no-unused-vars
   setIsModalOpen: (isOpen: boolean) => void;
   onSubmit: () => void;
   deleteText?: string;

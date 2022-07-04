@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { ReactElement } from 'react';
 import {
     Menu,
@@ -32,9 +33,9 @@ const EditIcon = (): ReactElement => {
             />
         </svg>
     );
-}
+};
 
-const CheckIcon = (): ReactElement =>{
+const CheckIcon = (): ReactElement => {
     return (
         <svg
             width='41'
@@ -53,7 +54,7 @@ const CheckIcon = (): ReactElement =>{
             />
         </svg>
     );
-}
+};
 
 export const VerticalStepper = (props: StepperProps): ReactElement => {
     const {
@@ -161,8 +162,8 @@ export const VerticalStepper = (props: StepperProps): ReactElement => {
 
                     <Button
                         isDisabled={
-                            isCompleteButtonDisabled &&
-                            activeStep === stepsContent.length - 1
+                            isCompleteButtonDisabled
+                            && activeStep === stepsContent.length - 1
                         }
                         variant='primary'
                         marginStart='0.75rem'
@@ -191,4 +192,4 @@ export const VerticalStepper = (props: StepperProps): ReactElement => {
             )}
         </Flex>
     );
-}
+};
