@@ -4,14 +4,15 @@ module.exports = {
   stories: [
     '../src/Components/Startpage.stories.mdx',
     '../src/**/*.stories.mdx',
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'
   ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    "@storybook/addon-actions",
+    '@storybook/addon-actions',
     '@storybook/addon-interactions',
     '@chakra-ui/storybook-addon',
+    '@storybook/addon-docs',
    
   ],
   framework: '@storybook/react',

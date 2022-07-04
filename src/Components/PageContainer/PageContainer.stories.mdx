@@ -5,14 +5,14 @@ import {
   Canvas,
   Preview,
 } from '@storybook/addon-docs/blocks';
-import { Alert } from './Alert';
+import { PageContainer } from './PageContainer';
 import { LibPath } from 'Types';
 
-export const Template = (args) => <Alert {...args} />;
+export const Template = (args) => <PageContainer {...args} />;
 
 <Meta
-  title={ LibPath.Overlay + 'Alert' }
-  component={ Alert }
+  title={LibPath.Containers + 'PageContainer'}
+  component={PageContainer}
   parameters={{
     toolbar: {
       title: { hidden: true },
@@ -23,11 +23,10 @@ export const Template = (args) => <Alert {...args} />;
       // 'storybook/background': { hidden: true },
       // 'storybook/viewport': { hidden: true },
     },
-   
   }}
 />
 
-# Alert
+# PageContainer
 
 <div
   style={{
@@ -88,26 +87,30 @@ export const Template = (args) => <Alert {...args} />;
 
 <hr />
 
-<Canvas withToolbar>
+With `MDX` we write longform markdown documentation for our `PageContainer` component
+and embed Doc Blocks inline.
+
+<Preview withToolbar>
   <Story
-    name="Info Alert"
+    name="Base"
     args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: '',
-      linkHref: '',
-      onClose: () => {},
+      title: 'Title',
+      titleAlignment: 'center',
+      titleTextColor: '#01233D',
+      subtitle: 'Subtitle',
+      shouldContentFillContainer: true,
+      width: '100%',
     }}
   >
-    { Template.bind({}) }
+    {Template.bind({})}
   </Story>
-</Canvas>
+</Preview>
 
 Change some of the props and see how the `Base` component changes.
 
 <br />
 
-<Props story="Info Alert" />
+<Props story="Base" />
 
 # Stories
 
@@ -115,55 +118,30 @@ Change some of the props and see how the `Base` component changes.
 
 Look at some example usecases
 
-### Warning Alert 
 <Canvas withToolbar>
   <Story
-    name="Warning Alert"
+    name="Story 1"
     args={{
-      description: 'This is a warning alert',
-      status: 'warning',
+      title: 'Title 1',
+      titleAlignment: 'left',
+      titleTextColor: 'red',
+      subtitle: 'Subtitle',
+      shouldContentFillContainer: true,
     }}
   >
     {Template.bind({})}
   </Story>
 </Canvas>
 
-
-### Error Alert
 <Canvas withToolbar>
   <Story
-    name="Error Alert"
+    name="Story 2"
     args={{
-      description: 'This is an error alert',
-      status: 'error',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Success Alert
-<Canvas withToolbar>
-  <Story
-    name="Success Alert"
-    args={{
-      description: 'This is a Success alert',
-      status: 'success',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
-</Canvas>
-
-### Alert with link
-<Canvas withToolbar>
-  <Story
-    name="Alert with link"
-    args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: 'Learn more',
-      linkHref: 'https://www.google.com',
+      title: 'Title 2',
+      titleAlignment: 'right',
+      titleTextColor: 'blue',
+      subtitle: 'Subtitle',
+      shouldContentFillContainer: true,
     }}
   >
     {Template.bind({})}

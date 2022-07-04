@@ -1,4 +1,4 @@
-import { Alert } from './Alert';
+/* import { Alert } from './Alert';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
 import { LibPath } from 'Types';
@@ -25,34 +25,36 @@ export default {
 
 const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
 
-export const InfoAlertJsx = Template.bind({});
-InfoAlertJsx.args = {
+export const InfoAlert = Template.bind({});
+InfoAlert.args = {
   description: 'This is an info alert',
   status: AlertStatus.Info,
 };
 
-export const WarningAlertJsx = Template.bind({});
-WarningAlertJsx.args = {
+export const WarningAlert = Template.bind({});
+WarningAlert.args = {
   description: 'This is a warning alert',
   status: AlertStatus.Warning,
 };
 
-export const ErrorAlertJsx = Template.bind({});
-ErrorAlertJsx.args = {
+export const ErrorAlert = Template.bind({});
+ErrorAlert.args = {
   description: 'This is an error alert',
   status: AlertStatus.Error,
 };
 
-export const SuccessAlertJsx = Template.bind({});
-SuccessAlertJsx.args = {
+export const SuccessAlert = Template.bind({});
+SuccessAlert.args = {
   description: 'This is a success alert',
   status: AlertStatus.Success,
 };
 
-export const AlertWithLinkJsx = Template.bind({});
-AlertWithLinkJsx.args = {
+export const AlertWithLink = Template.bind({});
+AlertWithLink.args = {
   description: 'This is a Error alert',
   status: AlertStatus.Error,
   linkText: 'Learn More',
   linkHref: 'https://www.google.com',
 };
+ */
+// eslint-disable-next-line storybook/default-exports
