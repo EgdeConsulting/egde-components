@@ -10,6 +10,7 @@ import {
     Heading,
     Center,
     Text,
+    Link,
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { StepperProps } from 'Types';
@@ -33,7 +34,7 @@ const EditIcon = (): ReactElement => {
             />
         </svg>
     );
-};
+}
 
 const CheckIcon = (): ReactElement => {
     return (
@@ -114,19 +115,21 @@ export const VerticalStepper = (props: StepperProps): ReactElement => {
                 </MenuButton>
                 <MenuList>
                     {stepsContent.map(({ label }, index) => (
-                        <MenuItem>
+                        <MenuItem key={index}>
                             {label === activeStepContent?.label ? (
                                 <Text marginBottom='0'>
                                     {index + 1} av {stepsContent.length} {label}
                                 </Text>
                             ) : (
-                                <Button
-                                    variant='link'
+                                <Link
+                                    margin='-0.1375rem 0 -0.1375rem 0'
                                     fontWeight='normal'
                                     onClick={() => setActiveStep(index)}
+                                    color='blue'
+                                    textDecor={'underline'}
                                 >
                                     {index + 1} av {stepsContent.length} {label}
-                                </Button>
+                                </Link>
                             )}
                         </MenuItem>
                     ))}
