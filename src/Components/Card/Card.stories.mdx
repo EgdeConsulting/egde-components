@@ -101,9 +101,9 @@ export const Template = (args) => <Card {...args} />;
         onClick: () => {},
         titleIcon: undefined,
         actionIcon: undefined,
-        cardHeight: 'auto',
-        cardWidth: 'auto',
-        body: ' ',
+        cardHeight: '',
+        cardWidth: '',
+        body: 'And a body ',
     }}
   >
     { Template.bind({}) }
@@ -119,19 +119,6 @@ export const Template = (args) => <Card {...args} />;
 
 <hr />
 
-Look at some example usecases
 
-### Card with title and body
-<Canvas withToolbar>
-  <Story
-    name="Title and body"
-    args={{
-        title: 'Title',
-        body: 'And some fancy body',
-    }}
-  >
-    { Template.bind({}) }
-  </Story>
-</Canvas>
 
 
