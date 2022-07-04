@@ -1,0 +1,100 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { Alert } from './Alert';
+import { LibPath } from 'Types';
+
+export const Template = (args) => <Alert {...args} />;
+
+<Meta
+  title={LibPath.Overlay + 'Alert'}
+  component={Alert}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+/>
+
+# Alert
+
+<Preview withToolbar>
+  <Story
+    name="Info Alert"
+    args={{
+      description: 'This is an info alert',
+      status: 'info',
+      linkText: '',
+      linkHref: '',
+      onClose: () => {},
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+Change some of the props and see how the `Base` component changes.
+
+<br />
+
+<Props story="Info Alert" />
+
+# Stories
+
+<hr />
+
+Look at some example usecases
+
+<Canvas withToolbar>
+  <Story
+    name="Warning Alert"
+    args={{
+      description: 'This is a warning alert',
+      status: 'warning',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story
+    name="Error Alert"
+    args={{
+      description: 'This is an error alert',
+      status: 'error',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story
+    name="Success Alert"
+    args={{
+      description: 'This is an Success alert',
+      status: 'success',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story
+    name="Alert with link"
+    args={{
+      description: 'This is an info alert',
+      status: 'info',
+      linkText: 'Learn more',
+      linkHref: 'https://www.google.com',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
