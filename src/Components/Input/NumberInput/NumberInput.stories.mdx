@@ -1,0 +1,194 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { NumberInput } from './NumberInput';
+import { LibPath } from 'Types';
+
+export const Template = (args) => <NumberInput {...args} />;
+
+<Meta
+  title={LibPath.Form + 'NumberInput'}
+  component={NumberInput}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+  args={{
+    label: 'Number Input',
+    labelTextMargin: '0',
+    value: '',
+    maxValueLength: 15,
+    onChange: () => {},
+    invalidText: '',
+    isDisabled: false,
+    placeholder: 'Placeholder',
+    captionText: '',
+    isCurrency: false,
+    currencySpacer: ' ',
+    margin: '0',
+    padding: '0',
+    width: '100%',
+    minWidth: '0',
+    backgroundColor: '#ffffff',
+    autoFocus: false,
+    textAlign: 'right',
+    allowNegative: false,
+    captionTextMargin: '0',
+    maxWidth: '100%',
+    maxValue: '10',
+  }}
+/>
+
+# NumberInput
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story name="NumberInput">{Template.bind({})}</Story>
+</Preview>
+
+<Props story="NumberInput" />
+
+# Stories
+
+<Canvas>
+  <Story
+    name="Disable number input"
+    args={{
+      isDisabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Invalide numberInput
+<Canvas>
+  <Story
+    name="Invalid numberInput"
+    args={{
+      invalidText: 'Invalid text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Input formate
+
+### Space
+
+<Canvas>
+  <Story
+    name="Input value with Space"
+    args={{
+      isCurrency: true,
+      value: '123456789',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### without Space
+
+<Canvas>
+  <Story
+    name="Spaceless input value"
+    args={{
+      value: '123456789',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Text Alignment
+
+### Right
+<Canvas>
+  <Story
+    name="Alignment Right"
+    args={{
+        textAlign: 'right',
+      value: '123456789',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Center
+<Canvas>
+  <Story
+    name="Alignment Center"
+    args={{
+        textAlign: 'center',
+      value: '123456789',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
