@@ -25,6 +25,20 @@ export const Template = (args) => <Card {...args} />;
     },
    
   }}
+  args={{
+        title: 'Title',
+        textColors: '#D23F47',
+        titleTextColor: '#000000',
+        bodyTextColor: '#000000',
+        titleTextSize: '14px',
+        bodyTextSize: '14px',
+        onClick: () => {},
+        titleIcon: undefined,
+        actionIcon: undefined,
+        cardHeight: '',
+        cardWidth: '',
+        body: 'And a body ',
+    }}
 />
 
 # Card
@@ -89,23 +103,7 @@ export const Template = (args) => <Card {...args} />;
 <hr />
 
 <Preview withToolbar>
-  <Story
-    name="Card"
-    args={{
-        title: 'Title',
-        textColors: '#D23F47',
-        titleTextColor: '#000000',
-        bodyTextColor: '#000000',
-        titleTextSize: '14px',
-        bodyTextSize: '14px',
-        onClick: () => {},
-        titleIcon: undefined,
-        actionIcon: undefined,
-        cardHeight: '',
-        cardWidth: '',
-        body: 'And a body ',
-    }}
-  >
+  <Story name="Card"  >
     { Template.bind({}) }
   </Story>
 </Preview>
