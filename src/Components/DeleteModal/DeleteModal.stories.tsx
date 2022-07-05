@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React, { useState } from 'react';
 import { DeleteModal } from './DeleteModal';
 import { LibPath } from 'Types';
@@ -25,6 +25,5 @@ return (
 
 export const DeleteModalTest = Template.bind({});
 
-
-
-
+ */
+// eslint-disable-next-line storybook/default-exports
