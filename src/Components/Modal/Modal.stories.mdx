@@ -1,0 +1,201 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { Modal } from './Modal';
+import { LibPath } from 'Types';
+import { Button } from '@chakra-ui/react';
+import { useState } from 'react';
+
+export const Template = (args) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleClose = () => setIsModalOpen(false);
+  return (
+    <div>
+      <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
+      <Modal {...args} isModalOpen={isModalOpen} onClose={handleClose} />
+    </div>
+  );
+};
+
+<Meta
+  title={LibPath.Overlay + 'Modal'}
+  component={Modal}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+  args={{
+    isModalOpen: false,
+    isCentered: false,
+    iconVariant: 'check',
+    title: 'Modal Title',
+    subtitle: 'Modal Subtitle',
+    children: <div>Modal Content</div>,
+    buttons: {
+      primary: {
+        label: 'Primary Button',
+        variant: 'primary',
+        onClick: () => {},
+      },
+      secondary: {
+        label: 'Close',
+        variant: 'secondary',
+        onClick: () => {},
+      },
+      alignment: 'left',
+    },
+    onClose: () => {},
+    hasCloseButton: true,
+    errorMessage: '',
+    width: '25%',
+  }}
+/>
+
+# Modal
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story name="Modal">{Template.bind({})}</Story>
+</Preview>
+
+<Props story="Modal" />
+
+# Stories
+
+
+### Buttons right
+<Canvas>
+  <Story
+    name="button right"
+    args={{
+      buttons: {
+      primary: {
+        label: 'Primary Button',
+        variant: 'primary',
+        onClick: () => {},
+      },
+      secondary: {
+        label: 'Close',
+        variant: 'secondary',
+        onClick: () => {},
+      },
+      alignment: 'right',
+    },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Error message
+<Canvas>
+  <Story
+    name="error message"
+    args={{
+      errorMessage: 'This is an error message',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Centered Modal
+
+<Canvas>
+    <Story
+    name="Centered Modal"
+    args={{
+        isCentered: true,
+    }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>
+
+## Icon variants
+### check
+<Canvas>
+    <Story
+    name="Check"
+    args={{
+        iconVariant: 'check',
+    }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>
+
+### exclamation
+<Canvas>
+    <Story
+    name="Exclamation"
+    args={{
+        iconVariant: 'exclamation',
+    }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>

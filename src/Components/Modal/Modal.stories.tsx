@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/* import React, { useState } from 'react';
 import { LibPath } from 'Types';
 import { Modal } from '../Modal';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
@@ -50,7 +50,7 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 
 
 /* const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
- */
+
 export const Standard = Template.bind({});
 Standard.args = {
   title: 'Title',
@@ -91,3 +91,5 @@ ButtonsAlignedRight.args = {
     alignment: 'right',
   },
 };
+ */
+// eslint-disable-next-line storybook/default-exports
