@@ -1,0 +1,143 @@
+import {
+  Meta,
+  Story,
+  Props,
+  Canvas,
+  Preview,
+} from '@storybook/addon-docs/blocks';
+import { DeleteModal } from './DeleteModal';
+import { LibPath } from 'Types';
+import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
+
+export const Template = (args) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  return (
+    <div>
+      <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
+      <DeleteModal
+        {...args}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
+    </div>
+  );
+};
+
+<Meta
+  title={LibPath.Overlay + 'DeleteModal'}
+  component={DeleteModal}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+/>
+
+# Delete Modal
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story
+    name="DeleteModal"
+    args={{
+      isModalOpen: false,
+      isCentered: false,
+      setIsModalOpen: () => {},
+      onSubmit: () => {},
+      deleteButtonLabel: 'Delete',
+      deleteText: 'Are you sure you want to delete this?',
+      title: 'Delete Modal',
+      cancelButtonLabel: 'Cancel',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story="DeleteModal" />
+
+# Stories
+
+### Centered Delete Modal
+
+<Canvas withToolbar>
+    <Story 
+    name="Centered DeleteModal" 
+    args={{ 
+        isModalOpen: false,
+        isCentered: true,
+        setIsModalOpen: () => {},
+        onSubmit: () => {},
+        deleteButtonLabel: 'Delete',
+        deleteText: 'Are you sure you want to delete this?',
+        title: 'Delete Modal',
+        cancelButtonLabel: 'Cancel',
+        }}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
