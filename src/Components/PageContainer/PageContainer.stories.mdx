@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Story,
-  Props,
-  Canvas,
-  Preview,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
 import { PageContainer } from './PageContainer';
 import { LibPath } from 'Types';
 
@@ -23,6 +17,37 @@ export const Template = (args) => <PageContainer {...args} />;
       // 'storybook/background': { hidden: true },
       // 'storybook/viewport': { hidden: true },
     },
+  }}
+  args={{
+    title: 'Title',
+    titleAlignment: 'center',
+    titleTextColor: '#01233D',
+    subtitle: 'Subtitle',
+    subtitleAlignment: 'center',
+    subtitleTextColor: '#01233D',
+    children: <div>Content</div>,
+    containerPadding: '0px',
+    containerMargin: '0px',
+    contentPadding: '0px',
+    contentMargin: '0px',
+    subtitlePadding: '0px',
+    titlePadding: '0px',
+    titleMargin: '0px',
+    borderColor: '#FAFAFD',
+    borderWidth: '1px',
+    contentBorderColor: '#FAFAFD',
+    contentBorderWidth: '1px',
+    titleBadge: '0px',
+    backgroundColor: '#FAFAFD',
+    contentColor: '#FAFAFD',
+    titlesColor: '#FAFAFD',
+    height: '100%',
+    width: '100%',
+    containerMinWidth: '0px',
+    containerMaxWidth: '100%',
+    containerSideMargins: '0px',
+    shouldContentFillContainer: true,
+    containerSize: 'auto',
   }}
 />
 
@@ -91,19 +116,7 @@ With `MDX` we write longform markdown documentation for our `PageContainer` comp
 and embed Doc Blocks inline.
 
 <Preview withToolbar>
-  <Story
-    name="Base"
-    args={{
-      title: 'Title',
-      titleAlignment: 'center',
-      titleTextColor: '#01233D',
-      subtitle: 'Subtitle',
-      shouldContentFillContainer: true,
-      width: '100%',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+  <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
 Change some of the props and see how the `Base` component changes.
@@ -125,8 +138,7 @@ Look at some example usecases
       title: 'Title 1',
       titleAlignment: 'left',
       titleTextColor: 'red',
-      subtitle: 'Subtitle',
-      shouldContentFillContainer: true,
+      subtitleAlignment: 'left',
     }}
   >
     {Template.bind({})}
@@ -137,11 +149,38 @@ Look at some example usecases
   <Story
     name="Story 2"
     args={{
+      title: 'Title 1',
+      titleAlignment: 'left',
+      titleTextColor: 'red',
+      subtitleAlignment: 'center',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story
+    name="Story 3"
+    args={{
+      title: 'Title 1',
+      titleAlignment: 'left',
+      titleTextColor: 'red',
+      subtitleAlignment: 'right',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story
+    name="Story 4"
+    args={{
       title: 'Title 2',
       titleAlignment: 'right',
       titleTextColor: 'blue',
-      subtitle: 'Subtitle',
-      shouldContentFillContainer: true,
+      subtitleAlignment: 'left',
     }}
   >
     {Template.bind({})}
