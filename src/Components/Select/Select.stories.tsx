@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { Select } from './Select';
 import { LibPath } from 'Types';
@@ -20,3 +20,5 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 
 export const Standard = Template.bind({});
+ */
+// eslint-disable-next-line storybook/default-exports

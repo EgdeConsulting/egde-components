@@ -1,0 +1,114 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { Select } from './Select';
+import { LibPath } from 'Types';
+
+export const Template = (args) => <Select {...args} />;
+
+<Meta
+  title={LibPath.Form + 'Select'}
+  component={Select}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+  args={{
+    label: 'Select',
+    options: [
+      { label: 'Option 1', value: 'option-1' },
+      { label: 'Option 2', value: 'option-2' },
+      { label: 'Option 3', value: 'option-3' },
+    ],
+    value: 'option-1',
+    placeholder: 'Select an option',
+    filterText: '',
+    isDisabled: false,
+    backgroundColor: '#fff',
+    autoFocus: false,
+    labelTextMargin: '0',
+    invalidText: '',
+    captionText: '',
+    captionTextMargin: '0',
+    margin: '0',
+    padding: '0',
+    width: '100%',
+    minWidth: '0',
+    maxWidth: '100%',
+    onChange: () => {},
+  }}
+/>
+
+# Select
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story name="Select">{Template.bind({})}</Story>
+</Preview>
+
+<Props story="Select" />
+
+# Stories
