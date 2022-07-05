@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/* import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { VerticalStepper } from './VerticalStepper';
 import { LibPath } from 'Types';
@@ -69,3 +69,5 @@ const Template: ComponentStory<typeof VerticalStepper> = (args) => {
 
 
 export const VerticalStepperSTD = Template.bind({});
+ */
+// eslint-disable-next-line storybook/default-exports
