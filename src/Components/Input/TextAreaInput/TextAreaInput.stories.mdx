@@ -1,0 +1,129 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { TextAreaInput } from './TextAreaInput';
+import { LibPath } from 'Types';
+
+export const Template = (args) => <TextAreaInput {...args} />;
+
+<Meta
+  title={LibPath.Form + 'TextAreaInput'}
+  component={TextAreaInput}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+  args={{
+    label: 'TextareaInput',
+        labelTextMargin: '0',
+        placeholder: 'Placeholder',
+        onChange: () => {},
+        value: '',
+        invalidText: '',
+        captionText: '',
+        isDisabled: false,
+        margin: '0',
+        padding: '0',
+        width: '100%',
+        minWidth: '0',
+        backgroundColor: 'transparent',
+        autoFocus: false,
+        maxWidth: '100%',
+        textAlign: 'right',
+        characterLimit: 1000,
+        captionTextMargin: '0',
+  }}
+/>
+
+# TextreaInput
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story
+    name="Textarea Input"
+    args={{
+      
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+<Props story="Textarea Input" />
+
+# Stories
+
+### Disabled Textarea Input
+<Canvas withToolbar>
+  <Story
+    name="Textarea Input disabled"
+    args={{
+      isDisabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
