@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { NumberInput } from './NumberInput';
 import { LibPath } from 'Types';
@@ -38,7 +38,7 @@ export const NumberInputStd = Template.bind({});
 /* export const NumberInputAutoFokus = Template.bind({});
 NumberInputAutoFokus.args = {
     autoFocus: true,
-} */
+}
 
 export const NumberInputDisabled = Template.bind({});
 NumberInputDisabled.args = {
@@ -73,3 +73,5 @@ NumberInputTextCenter.args = {
   textAlign: 'center',
   value: '123456789',
 };
+ */
+//  eslint-disable-next-line storybook/default-exports
