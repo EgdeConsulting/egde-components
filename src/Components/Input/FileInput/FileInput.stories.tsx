@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { FileInput } from './FileInput';
 import { LibPath } from 'Types';
@@ -13,3 +13,5 @@ export default {
 const Template: ComponentStory<typeof FileInput> = (args) => <FileInput {...args} />;
 
 export const DeleteModalTest = Template.bind({});
+ */
+//  eslint-disable-next-line storybook/default-exports
