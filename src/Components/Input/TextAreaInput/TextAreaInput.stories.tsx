@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { TextAreaInput } from './TextAreaInput';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { LibPath } from 'Types';
@@ -41,3 +41,5 @@ export const TextAreaInputDisabled = Template.bind({});
 TextAreaInputDisabled.args = {
     isDisabled: true,
 };
+ */
+// eslint-disable-next-line storybook/default-exports
