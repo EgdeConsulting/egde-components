@@ -1,10 +1,4 @@
-import {
-  Meta,
-  Story,
-  Props,
-  Canvas,
-  Preview,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
 import { DeleteModal } from './DeleteModal';
 import { LibPath } from 'Types';
 import { useState } from 'react';
@@ -15,11 +9,7 @@ export const Template = (args) => {
   return (
     <div>
       <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
-      <DeleteModal
-        {...args}
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-      />
+      <DeleteModal {...args} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
 };
@@ -37,6 +27,16 @@ export const Template = (args) => {
       // 'storybook/background': { hidden: true },
       // 'storybook/viewport': { hidden: true },
     },
+  }}
+  args={{
+    isModalOpen: false,
+    isCentered: false,
+    setIsModalOpen: () => {},
+    onSubmit: () => {},
+    deleteButtonLabel: 'Delete',
+    deleteText: 'Are you sure you want to delete this?',
+    title: 'Delete Modal',
+    cancelButtonLabel: 'Cancel',
   }}
 />
 
@@ -102,21 +102,7 @@ export const Template = (args) => {
 <hr />
 
 <Preview withToolbar>
-  <Story
-    name="DeleteModal"
-    args={{
-      isModalOpen: false,
-      isCentered: false,
-      setIsModalOpen: () => {},
-      onSubmit: () => {},
-      deleteButtonLabel: 'Delete',
-      deleteText: 'Are you sure you want to delete this?',
-      title: 'Delete Modal',
-      cancelButtonLabel: 'Cancel',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+  <Story name="DeleteModal">{Template.bind({})}</Story>
 </Preview>
 
 <Props story="DeleteModal" />
@@ -126,18 +112,12 @@ export const Template = (args) => {
 ### Centered Delete Modal
 
 <Canvas withToolbar>
-    <Story 
-    name="Centered DeleteModal" 
-    args={{ 
-        isModalOpen: false,
-        isCentered: true,
-        setIsModalOpen: () => {},
-        onSubmit: () => {},
-        deleteButtonLabel: 'Delete',
-        deleteText: 'Are you sure you want to delete this?',
-        title: 'Delete Modal',
-        cancelButtonLabel: 'Cancel',
-        }}>
-        {Template.bind({})}
-    </Story>
+  <Story
+    name="Centered DeleteModal"
+    args={{
+      isCentered: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
 </Canvas>

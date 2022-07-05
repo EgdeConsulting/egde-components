@@ -40,6 +40,16 @@ export const Template = (args) => {
       // 'storybook/viewport': { hidden: true },
     },   
   }}
+  args={{
+    iconVariant: 'warning',
+    heading: 'Heading',
+    text: 'Alert Dialog Text',
+    isOpen: true,
+    cancelRef: React.createRef(),
+    onClose: () => {},
+    buttons:{ label: 'OK', onClick: () => {}, variant: 'primary' } 
+    }
+    }
 />
 
 # Alert Dialog
@@ -105,28 +115,11 @@ export const Template = (args) => {
 
 <Preview withToolbar>
   <Story
-    name="Alert Dialog"
-    args={{
-    iconVariant: 'warning',
-    heading: 'Heading',
-    text: 'Alert Dialog Text',
-    isOpen: true,
-    cancelRef: React.createRef(),
-    onClose: () => {},
-    buttons:{ label: 'OK', onClick: () => {}, variant: 'primary' } 
-    }
-    }
-  >
+    name="Alert Dialog"  >
     { Template.bind({}) }
   </Story>
 </Preview>
 
-Change some of the props and see how the `Base` component changes.
-
-<br />
-
 <Props story="Alert Dialog" />
 
 # Stories
-
-<hr />

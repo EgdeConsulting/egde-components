@@ -1,18 +1,12 @@
-import {
-  Meta,
-  Story,
-  Props,
-  Canvas,
-  Preview,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
 import { Alert } from './Alert';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <Alert {...args} />;
 
 <Meta
-  title={ LibPath.Overlay + 'Alert' }
-  component={ Alert }
+  title={LibPath.Overlay + 'Alert'}
+  component={Alert}
   parameters={{
     toolbar: {
       title: { hidden: true },
@@ -23,8 +17,14 @@ export const Template = (args) => <Alert {...args} />;
       // 'storybook/background': { hidden: true },
       // 'storybook/viewport': { hidden: true },
     },
-   
   }}
+    args={{
+      description: 'This is an info alert',
+      status: 'info',
+      linkText: '',
+      linkHref: '',
+      onClose: () => {},
+    }}
 />
 
 # Alert
@@ -89,18 +89,7 @@ export const Template = (args) => <Alert {...args} />;
 <hr />
 
 <Preview withToolbar>
-  <Story
-    name="Info Alert"
-    args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: '',
-      linkHref: '',
-      onClose: () => {},
-    }}
-  >
-    { Template.bind({}) }
-  </Story>
+  <Story name="Info Alert">{Template.bind({})}</Story>
 </Preview>
 
 Change some of the props and see how the `Base` component changes.
@@ -115,7 +104,8 @@ Change some of the props and see how the `Base` component changes.
 
 Look at some example usecases
 
-### Warning Alert 
+### Warning Alert
+
 <Canvas withToolbar>
   <Story
     name="Warning Alert"
@@ -128,8 +118,8 @@ Look at some example usecases
   </Story>
 </Canvas>
 
-
 ### Error Alert
+
 <Canvas withToolbar>
   <Story
     name="Error Alert"
@@ -143,6 +133,7 @@ Look at some example usecases
 </Canvas>
 
 ### Success Alert
+
 <Canvas withToolbar>
   <Story
     name="Success Alert"
@@ -156,6 +147,7 @@ Look at some example usecases
 </Canvas>
 
 ### Alert with link
+
 <Canvas withToolbar>
   <Story
     name="Alert with link"

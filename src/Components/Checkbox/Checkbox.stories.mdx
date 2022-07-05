@@ -24,6 +24,25 @@ export const Template = (args) => {
       // 'storybook/viewport': { hidden: true },
     },
   }}
+  args={{
+     direction: 'column',
+      options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
+      value: [0],
+      onChange: () => {},
+      invalidText: '',
+      isDisabled: false,
+      backgroundColor: '#ffffff',
+      autoFocus: false,
+      label: 'Checkbox',
+      labelTextMargin: '0px',
+      captionText: '',
+      captionTextMargin: '0px',
+      margin: '0px',
+      padding: '0px',
+      width: '100%',
+      minWidth: '0px',
+      maxWidth: '100%',
+  }}
 />
 
 # Checkbox
@@ -89,27 +108,7 @@ export const Template = (args) => {
 
 <Preview withToolbar>
   <Story
-    name="Checkbox"
-    args={{
-      direction: 'column',
-      options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
-      value: [0],
-      onChange: () => {},
-      invalidText: '',
-      isDisabled: false,
-      backgroundColor: '#ffffff',
-      autoFocus: false,
-      label: 'Checkbox',
-      labelTextMargin: '0px',
-      captionText: '',
-      captionTextMargin: '0px',
-      margin: '0px',
-      padding: '0px',
-      width: '100%',
-      minWidth: '0px',
-      maxWidth: '100%',
-    }}
-  >
+    name="Checkbox">
     {Template.bind({})}
   </Story>
 </Preview>
@@ -127,24 +126,8 @@ export const Template = (args) => {
 <Canvas withToolbar>
   <Story
     name="Checkbox Row"
-    args={{
-      direction: 'row',
-      options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
-      value: [2],
-      onChange: () => {},
-      invalidText: '',
-      isDisabled: false,
-      backgroundColor: '#ffffff',
-      autoFocus: false,
-      label: 'Checkbox',
-      labelTextMargin: '0px',
-      captionText: '',
-      captionTextMargin: '0px',
-      margin: '0px',
-      padding: '0px',
-      width: '100%',
-      minWidth: '0px',
-      maxWidth: '100%',
+    args={{ 
+        direction: 'row',
     }}
   >
     {Template.bind({})}
@@ -158,23 +141,7 @@ export const Template = (args) => {
   <Story
     name="Invalid Checkbox"
     args={{
-      direction: 'column',
-      options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
-      value: [],
-      onChange: () => {},
       invalidText: 'Invalide',
-      isDisabled: false,
-      backgroundColor: '#ffffff',
-      autoFocus: false,
-      label: 'Checkbox',
-      labelTextMargin: '0px',
-      captionText: '',
-      captionTextMargin: '0px',
-      margin: '0px',
-      padding: '0px',
-      width: '100%',
-      minWidth: '0px',
-      maxWidth: '100%',
     }}
   >
     {Template.bind({})}
@@ -189,23 +156,8 @@ export const Template = (args) => {
   <Story
     name="Disabled Checkbox"
     args={{
-      direction: 'column',
-      options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
-      value: [],
-      onChange: () => {},
-      invalidText: '',
       isDisabled: true,
-      backgroundColor: '#ffffff',
-      autoFocus: false,
-      label: 'Checkbox',
-      labelTextMargin: '0px',
-      captionText: '',
-      captionTextMargin: '0px',
-      margin: '0px',
-      padding: '0px',
-      width: '100%',
-      minWidth: '0px',
-      maxWidth: '100%',
+      value: [],
     }}
   >
     {Template.bind({})}
@@ -219,23 +171,7 @@ export const Template = (args) => {
   <Story
     name="Multi Checked"
     args={{
-      direction: 'column',
-      options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
       value: [0,1,2],
-      onChange: () => {},
-      invalidText: '',
-      isDisabled: false,
-      backgroundColor: '#ffffff',
-      autoFocus: false,
-      label: 'Checkbox',
-      labelTextMargin: '0px',
-      captionText: '',
-      captionTextMargin: '0px',
-      margin: '0px',
-      padding: '0px',
-      width: '100%',
-      minWidth: '0px',
-      maxWidth: '100%',
     }}
   >
     {Template.bind({})}
