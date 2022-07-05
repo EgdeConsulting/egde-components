@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { Radio } from './Radio';
 import { LibPath } from 'Types';
@@ -17,3 +17,5 @@ export default {
 const Template: ComponentStory<typeof Radio> = (args) => <Radio {...args} />;
 
 export const RadioStd = Template.bind({});
+ */
+// eslint-disable-next-line storybook/default-exports
