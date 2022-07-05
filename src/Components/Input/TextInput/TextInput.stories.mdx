@@ -1,0 +1,162 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { TextInput } from './TextInput';
+import { LibPath } from 'Types';
+
+export const Template = (args) => <TextInput {...args} />;
+
+<Meta
+  title={LibPath.Form + 'TextInput'}
+  component={TextInput}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+  args={{
+    label: 'Number Input',
+    labelTextMargin: '0',
+    placeholder: 'Placeholder',
+    onChange: () => {},
+    value: '',
+    invalidText: '',
+    captionText: '',
+    isDisabled: false,
+    margin: '0',
+    padding: '0',
+    width: '100%',
+    minWidth: '0',
+    backgroundColor: '#ffffff',
+    autoFocus: false,
+    textAlign: 'right',
+    characterLimit: 0,
+    captionTextMargin: '0',
+    maxWidth: '100%',
+  }}
+/>
+
+# TextInput
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story name="Text Input">{Template.bind({})}</Story>
+</Preview>
+
+<Props story="Text Input" />
+
+# Stories
+
+<Canvas>
+  <Story
+    name="Disable text input"
+    args={{
+      isDisabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Invalide TextInput
+<Canvas>
+  <Story
+    name="Invalid Text Input"
+    args={{
+      invalidText: 'Invalid text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+
+## Text Alignment
+
+### Right
+<Canvas>
+  <Story
+    name="Alignment Right"
+    args={{
+        textAlign: 'right',
+      value: 'Hello World!',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Center
+<Canvas>
+  <Story
+    name="Alignment Center"
+    args={{
+        textAlign: 'center',
+      value: 'Hello World!',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

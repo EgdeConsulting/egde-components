@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+/* import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { TextInput } from './TextInput';
 import { LibPath } from 'Types';
@@ -38,7 +38,7 @@ export const TextInputStd = Template.bind({});
 /* export const TextInputAutoFokus = Template.bind({});
 TextInputAutoFokus.args = {
     autoFocus: true,
-} */
+}
 
 export const TextInputDisabled = Template.bind({});
 TextInputDisabled.args = {
@@ -61,3 +61,5 @@ TextInputTextCenter.args = {
   textAlign: 'center',
   value: 'Hello World',
 };
+ */
+// eslint-disable-next-line storybook/default-exports
