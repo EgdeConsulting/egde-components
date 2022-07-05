@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { BaseInput } from './BaseInput';
 import { ComponentStory } from '@storybook/react';
 import { LibPath } from 'Types';
@@ -16,3 +16,5 @@ export const BaseInputStd = Template.bind({});
 BaseInputStd.args = {
   label: 'It works',
 };
+ */
+//  eslint-disable-next-line storybook/default-exports
