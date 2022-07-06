@@ -1,8 +1,19 @@
 import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
 import { Select } from './Select';
 import { LibPath } from 'Types';
+import { useState } from 'react';
 
-export const Template = (args) => <Select {...args} />;
+export const Template = (args) => {
+  const [value, setValue] = useState('');
+  const handleChange = (e) => {
+    setValue(e);
+  }
+  return (
+    <div>
+      <Select {...args} value={value} onChange={handleChange}/>
+    </div>
+  );
+}
 
 <Meta
   title={LibPath.Form + 'Select'}
@@ -25,7 +36,8 @@ export const Template = (args) => <Select {...args} />;
       { label: 'Option 2', value: 'option-2' },
       { label: 'Option 3', value: 'option-3' },
     ],
-    value: 'option-1',
+    value: 
+      { label: '', value: '' },
     placeholder: 'Select an option',
     filterText: '',
     isDisabled: false,
@@ -112,3 +124,14 @@ export const Template = (args) => <Select {...args} />;
 <Props story="Select" />
 
 # Stories
+
+
+### Disabled Select
+<Canvas>
+  <Story name="Disabled Select"
+  args={{
+    isDisabled: true,
+  }}
+  >
+    {Template.bind({})}</Story>
+</Canvas>
