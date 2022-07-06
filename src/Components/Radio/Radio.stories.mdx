@@ -1,8 +1,24 @@
 import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
 import { Radio } from './Radio';
 import { LibPath } from 'Types';
+import  {useState} from 'react';
 
-export const Template = (args) => <Radio {...args} />;
+export const Template = (args) => {
+  const [value, setValue] = useState('');
+  const handleChange = (e) => {
+    setValue(+e);
+  }
+  return (
+    <div>
+      <Radio
+       {...args}
+        value={value}
+        onChange={handleChange}
+      />
+    </div>
+  );
+}
+
 
 <Meta
   title={LibPath.Form + 'Radio'}
