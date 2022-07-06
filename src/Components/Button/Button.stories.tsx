@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './Button';
 import { LibPath } from 'Types';
@@ -7,6 +7,14 @@ import { LibPath } from 'Types';
 export default {
   title: LibPath.Buttons + 'Button' || 'undefined',
   component: Button,
+  argTypes: {
+    label: {
+      defaultValue: 'Button',
+    },
+    variant: {
+      defaultValue: 'primary',
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -23,3 +31,5 @@ export const ClickMe = Template.bind({});
 ClickMe.args = {
   label: 'Click me!',
 };
+ */
+// eslint-disable-next-line storybook/default-exports
