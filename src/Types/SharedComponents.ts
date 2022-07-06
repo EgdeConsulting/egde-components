@@ -34,6 +34,11 @@ enum AlertDialogIconType {
 	Warning = 'warning',
 }
 
+enum AccordionBadgeEnum {
+    OK = 'Alle obligatoriske felt er fylt ut',
+    InProgress = 'Under arbeid',
+}
+
 type PageContainerProps = {
 	title: string;
 	titleAlignment?: 'left' | 'right' | 'center';
@@ -165,8 +170,9 @@ type AccordionProps = {
 };
 
 type AccordionItem = {
-	title: string;
-	content: JSX.Element[] | JSX.Element;
+    title: string;
+    content: JSX.Element[] | JSX.Element;
+    badge?: AccordionBadgeEnum;
 };
 
 type TabProps = {
@@ -310,4 +316,4 @@ export type {
 	FileUploadProps,
 };
 
-export { IconTestID, AlertStatus, AlertDialogIconType, ModalIconType };
+export { IconTestID, AlertStatus, AlertDialogIconType, ModalIconType, AccordionBadgeEnum };
