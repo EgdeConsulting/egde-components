@@ -1,0 +1,212 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { Accordion } from './Accordion';
+import { LibPath } from 'Types';
+
+export const Template = (args) => <Accordion {...args} />;
+
+<Meta
+  title={LibPath.Disclosure + 'Accordion'}
+  component={Accordion}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+  args={{
+    items: [
+      {
+        title: 'Accordion 1',
+        content: <div>Content 1</div>,
+        badge: '',
+      },
+      {
+        title: 'Accordion 2',
+        content: <div>Content 2</div>,
+        badge: '',
+      },
+    ],
+    allowMultiple: true,
+  }}
+/>
+
+# Accordion
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story name="Accordion">{Template.bind({})}</Story>
+</Preview>
+
+<Props story="Accordion" />
+
+# Stories
+
+### Accordion OK
+
+<Canvas>
+    <Story 
+    name= 'Accordion Ok'
+    args={{
+    items: [
+      {
+        title: 'Accordion 1',
+        content: <div>Content 1</div>,
+        badge: 'OK',
+      },
+      {
+        title: 'Accordion 2',
+        content: <div>Content 2</div>,
+        badge: 'OK',
+      },
+    ],
+  }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Accordion InProgress
+
+<Canvas>
+    <Story 
+    name= 'Accordion InProgress'
+    args={{
+    items: [
+      {
+        title: 'Accordion 1',
+        content: <div>Content 1</div>,
+        badge: 'InProgress',
+      },
+      {
+        title: 'Accordion 2',
+        content: <div>Content 2</div>,
+        badge: 'InProgress',
+      },
+    ],
+  }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>
+
+### More Accordion
+
+<Canvas>
+    <Story 
+    name= 'More Accordion'
+    args={{
+    items: [
+      {
+        title: 'Accordion 1',
+        content: <div>Content 1</div>,
+        badge: '',
+      },
+      {
+        title: 'Accordion 2',
+        content: <div>Content 2</div>,
+        badge: '',
+      },
+       {
+        title: 'Accordion 3',
+        content: <div>Content 3</div>,
+        badge: '',
+      },
+      {
+        title: 'Accordion 4',
+        content: <div>Content 4</div>,
+        badge: '',
+      },
+       {
+        title: 'Accordion 5',
+        content: <div>Content 5</div>,
+        badge: '',
+      },
+      {
+        title: 'Accordion 6',
+        content: <div>Content 6</div>,
+        badge: '',
+      },
+    ],
+  }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>
+
+
+### Allow only one Accordion open
+
+<Canvas>
+    <Story 
+    name= 'Only Accordion open'
+    args={{
+    allowMultiple: false,
+    }}
+    >
+    {Template.bind({})}
+    </Story>
+</Canvas>
+
