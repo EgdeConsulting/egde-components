@@ -1,0 +1,155 @@
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import { Tabs } from './Tabs';
+import { LibPath } from 'Types';
+
+export const Template = (args) => <Tabs {...args} />;
+
+<Meta
+  title={LibPath.Navigation + 'Tabs'}
+  component={Tabs}
+  parameters={{
+    toolbar: {
+      title: { hidden: true },
+      // zoom: { hidden: true },
+      // eject: { hidden: true },
+      // copy: { hidden: true },
+      // fullscreen: { hidden: true },
+      // 'storybook/background': { hidden: true },
+      // 'storybook/viewport': { hidden: true },
+    },
+  }}
+  args={{
+    tabs: [
+      {
+        title: 'The first tab',
+        children: [<div key={'1.1'}>Content of tab 1</div>],
+      },
+      {
+        title: 'The second tab',
+        children: [<div key={'2.1'}>Content of tab 2</div>],
+      },
+    ],
+    centerTabs: false,
+  }}
+/>
+
+# Tabs
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#138849',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Stable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D2CB3F',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Unstable
+</div>
+
+<div
+  style={{
+    borderRadius: '999999px',
+    display: 'inline-block',
+    padding: '2px 8px',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '700',
+    textAlign: 'center',
+    letterSpacing: '0.25px',
+    backgroundColor: '#D23F47',
+    color: '#ffffff',
+    marginBottom: '16px',
+    marginRight: '3px',
+  }}
+>
+  Deprecated
+</div>
+
+<hr />
+
+<Preview withToolbar>
+  <Story name="Tabs">{Template.bind({})}</Story>
+</Preview>
+
+<Props story="Tabs" />
+
+# Stories
+
+### More tabs
+
+<Canvas>
+  <Story
+    name="More tabs"
+    args={{
+      tabs: [
+        {
+          title: 'The first tab',
+          children: [<div key={'1.1'}>Content of tab 1</div>],
+        },
+        {
+          title: 'The second tab',
+          children: [<div key={'2.1'}>Content of tab 2</div>],
+        },
+        {
+          title: 'The third tab',
+          children: [<div key={'3.1'}>Content of tab 3</div>],
+        },
+        {
+          title: 'The fourth tab',
+          children: [<div key={'4.1'}>Content of tab 4</div>],
+        },
+        {
+          title: 'The fifth tab',
+          children: [<div key={'5.1'}>Content of tab 5</div>],
+        },
+        {
+          title: 'The sixth tab',
+          children: [<div key={'6.1'}>Content of tab 6</div>],
+        },
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Center tabs
+
+<Canvas>
+  <Story
+    name="Center tabs"
+    args={{
+      
+      centerTabs: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
