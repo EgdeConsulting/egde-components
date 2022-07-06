@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { AlertProps, IconTestID, AlertStatus } from 'Types';
+import { AlertProps, IconTestID } from 'Types';
 import {
     Alert as ChakraAlert,
     AlertIcon,
@@ -8,49 +8,47 @@ import {
     Spacer,
     Stack,
     Link,
+    Text,
 } from '@chakra-ui/react';
-import {
-    ErrorRounded,
-    ErrorRoundedWarning,
-    InfoRounded,
-    CheckCircleRounded,
-} from '../../Icons';
-
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 export const Alert = (props: AlertProps): ReactElement => {
-    const { status, description, onClose, linkText, linkHref } = props;
+    const {
+        status,
+        description,
+        onClose,
+        linkText,
+        linkHref,
+        hasNoCloseButton,
+        route,
+    } = props;
     // styling should ideally be abstracted to ./Styles,
     // but didn't manage that with useMultiStyleConfig
     const styleComposition = {
         textColor: 'darkgrey',
-        borderRadius: '6px',
-        width: '400px',
-        ...(status === AlertStatus.Warning && {
+        borderRadius: '0.375rem',
+        width: '25.0rem',
+        ...(status === 'warning' && {
             backgroundColor: 'yellow',
             iconColor: 'amber',
-            icon: ErrorRoundedWarning,
             iconTestID: IconTestID.AlertWarning,
         }),
-        ...(status === AlertStatus.Info && {
+        ...(status === 'info' && {
             backgroundColor: 'lightblue',
             iconColor: 'blue',
-            icon: InfoRounded,
             iconTestID: IconTestID.AlertInfo,
         }),
-        ...(status === AlertStatus.Error && {
+        ...(status === 'error' && {
             backgroundColor: 'lightred',
             iconColor: 'red',
-            icon: ErrorRounded,
             iconTestID: IconTestID.AlertError,
         }),
-        ...(status === AlertStatus.Success && {
+        ...(status === 'success' && {
             backgroundColor: 'lightgreen',
             iconColor: 'green',
-            icon: CheckCircleRounded,
             iconTestID: IconTestID.AlertSuccess,
         }),
     };
-
     return (
         <ChakraAlert
             status={status}
@@ -61,13 +59,12 @@ export const Alert = (props: AlertProps): ReactElement => {
         >
             <AlertIcon
                 color={styleComposition.iconColor}
-                as={styleComposition.icon}
                 data-testid={styleComposition.iconTestID}
                 position='absolute'
-                left='12px'
-                top='12px'
+                left='0.75rem'
+                top='0.75rem'
             />
-            <Stack px='28px'>
+            <Stack px='1.75rem'>
                 <AlertDescription>{description}</AlertDescription>
                 {linkText && linkHref && (
                     <Link
@@ -78,14 +75,21 @@ export const Alert = (props: AlertProps): ReactElement => {
                         {linkText}
                     </Link>
                 )}
+                {route && linkText && (
+                    <ReactRouterLink to={{ pathname: route }}>
+                        <Text variant='link'>{linkText}</Text>
+                    </ReactRouterLink>
+                )}
             </Stack>
             <Spacer />
-            <CloseButton
-                position='absolute'
-                right='8px'
-                top='8px'
-                onClick={onClose}
-            />
+            {!hasNoCloseButton && (
+                <CloseButton
+                    position='absolute'
+                    right='0.5rem'
+                    top='0.5rem'
+                    onClick={onClose}
+                />
+            )}
         </ChakraAlert>
     );
 };
