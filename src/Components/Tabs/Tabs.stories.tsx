@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Tabs } from './Tabs';
 import { LibPath } from 'Types';
@@ -29,3 +29,5 @@ const Templates: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 export const TestTabs = Templates.bind({});
 
 TestTabs.args = {};
+ */
+// eslint-disable-next-line storybook/default-exports
