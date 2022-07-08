@@ -30,7 +30,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
-    "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/react": "^1.7.3",
     "@chakra-ui/storybook-addon": "^4.0.1",
     "@emotion/react": "^11",
@@ -49,9 +49,11 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.9",
-    "@testing-library/react": "^13.3.0",
+    "@testing-library/react": "^12.1.5",
+    "@types/babel__core": "^7.1.19",
+    "@types/babel__traverse": "^7.17.1",
     "@types/jest": "^28.1.2",
-    "@types/react": "^18.0.14",
+    "@types/react": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "^28.1.1",
@@ -65,8 +67,8 @@
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
     "prettier": "2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "rollup": "^2.75.7",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -101,7 +103,7 @@
     "@fontsource/lato": "^4.5.8",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.6",
-    "chakra-react-select": "^4.1.2",
+    "chakra-react-select": "^3.3.8",
     "chakra-ui-steps": "^1.7.3",
     "dropzone": "^6.0.0-beta.2",
     "lint": "^0.7.0",
@@ -110,5 +112,9 @@
     "react-dropzone-component": "^3.2.0",
     "react-dropzone-uploader": "^2.11.0",
     "react-router-dom": "^6.3.0"
-  }
+  },
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
 }

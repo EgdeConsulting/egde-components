@@ -4,15 +4,15 @@ import { LibPath } from 'Types';
 import { useState } from 'react';
 
 export const Template = (args) => {
-  const [value, setValue] = useState('');
-  const handleChange = (e) => {
-    setValue(e);
-  }
-  return (
-    <div>
-      <Select {...args} value={value} onChange={handleChange}/>
-    </div>
-  );
+    const [value, setValue] = useState();
+    const handleChange = (e) => {
+        setValue(e);
+    }
+    return (
+        <div>
+            <Select {...args} value={value} onChange={handleChange}/>
+        </div>
+    );
 }
 
 <Meta
@@ -32,12 +32,14 @@ export const Template = (args) => {
   args={{
     label: 'Select',
     options: [
-      { label: 'Option 1', value: 'option-1' },
-      { label: 'Option 2', value: 'option-2' },
-      { label: 'Option 3', value: 'option-3' },
+      { label: 'Option 1', value: 0 },
+      { label: 'Option 2', value: 1 },
+      { label: 'Option 3', value: 2 }
     ],
-    value: 
-      { label: '', value: '' },
+    value: { 
+        label: '', 
+        value: 0 
+    },
     placeholder: 'Select an option',
     filterText: '',
     isDisabled: false,
@@ -52,7 +54,7 @@ export const Template = (args) => {
     width: '100%',
     minWidth: '0',
     maxWidth: '100%',
-    onChange: () => {},
+    onChange: () => {}
   }}
 />
 
