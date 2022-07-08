@@ -2,11 +2,10 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { HorizontalStepper } from './HorizontalStepper';
 
-
 // Snapshot Test
 describe('Snapshot HorizontalStepper', () => {
   it('should render correctly', () => {
-    const tree = render(<HorizontalStepper 
+    const tree = render(<HorizontalStepper
         activeStep= {0}
         setActiveStep= {() => {}}
         stepsContent= {[
@@ -32,26 +31,31 @@ describe('Snapshot HorizontalStepper', () => {
             },
         ]}
         buttonTexts= {{
-            previous: 'previous',
-            next: 'next',
-            complete: 'complete',
+            previous: 'Previous',
+            next: 'Next',
+            complete: 'Complete',
         }}
-        finalStep= {{
-            finalText: 'finalText',
-            finalButtonText: 'fintalButtonText',
+
+        finalStep={{
+            finalText: 'Final Step',
+            finalButtonText: 'Finish',
         }}
-        buttonAlignment= 'left'
-        buttonMargin= '0px'
-        clickableSteps= {false}
+        buttonAlignment= 'center'
+        buttonMargin= '0'
+        clickableSteps= {true}
         completedSteps= {[]}
         onFinalize= {() => {}}
         buttonCaption= {{
-            text: 'Placeholder',
-            color: '#ffffff',
+            text: 'Caption:',
+            color: '#000000',
         }}
         onFinalStep= {() => {}}
-        isCompleteButtonDisabled= {true}
-            />);
+        isCompleteButtonDisabled= {false}
+        
+        />
+        );
     expect(tree).toMatchSnapshot();
   });
 });
+
+
