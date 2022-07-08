@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
   "trailingComma": "all",
-  "quoteProps": "preserve"
+  "quoteProps": "preserve",
+  "tabWidth": 4
 }

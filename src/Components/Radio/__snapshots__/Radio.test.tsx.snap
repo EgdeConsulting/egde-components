@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Radio should render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div
+      id="chakra-toast-portal"
+    >
+      <ul
+        id="chakra-toast-manager-top"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        id="chakra-toast-manager-top-left"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-top-right"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom-left"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom-right"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+    </div>
+    <div>
+      <div
+        class="css-k456he"
+      >
+        <p
+          class="chakra-text css-154u26z"
+        >
+          Radio
+        </p>
+        <div
+          class="css-1o2srd0"
+        >
+          <div
+            class="chakra-radio-group css-1k9ek97"
+            role="radiogroup"
+          >
+            <div
+              class="chakra-stack css-n21gh5"
+            >
+              <label
+                class="chakra-radio css-1pw4d56"
+                data-checked=""
+              >
+                <input
+                  checked=""
+                  class="chakra-radio__input"
+                  id="radio-1"
+                  name="radio-4"
+                  style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                  type="radio"
+                  value="0"
+                />
+                <span
+                  aria-hidden="true"
+                  class="chakra-radio__control css-ssalds"
+                  data-checked=""
+                />
+                <span
+                  class="chakra-radio__label css-1y8kf23"
+                  data-checked=""
+                >
+                  option 1
+                </span>
+              </label>
+              <label
+                class="chakra-radio css-1pw4d56"
+              >
+                <input
+                  class="chakra-radio__input"
+                  id="radio-2"
+                  name="radio-4"
+                  style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                  type="radio"
+                  value="1"
+                />
+                <span
+                  aria-hidden="true"
+                  class="chakra-radio__control css-ssalds"
+                />
+                <span
+                  class="chakra-radio__label css-1y8kf23"
+                >
+                  option 2
+                </span>
+              </label>
+              <label
+                class="chakra-radio css-1pw4d56"
+              >
+                <input
+                  class="chakra-radio__input"
+                  id="radio-3"
+                  name="radio-4"
+                  style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                  type="radio"
+                  value="2"
+                />
+                <span
+                  aria-hidden="true"
+                  class="chakra-radio__control css-ssalds"
+                />
+                <span
+                  class="chakra-radio__label css-1y8kf23"
+                >
+                  option 3
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-k456he"
+    >
+      <p
+        class="chakra-text css-154u26z"
+      >
+        Radio
+      </p>
+      <div
+        class="css-1o2srd0"
+      >
+        <div
+          class="chakra-radio-group css-1k9ek97"
+          role="radiogroup"
+        >
+          <div
+            class="chakra-stack css-n21gh5"
+          >
+            <label
+              class="chakra-radio css-1pw4d56"
+              data-checked=""
+            >
+              <input
+                checked=""
+                class="chakra-radio__input"
+                id="radio-1"
+                name="radio-4"
+                style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                type="radio"
+                value="0"
+              />
+              <span
+                aria-hidden="true"
+                class="chakra-radio__control css-ssalds"
+                data-checked=""
+              />
+              <span
+                class="chakra-radio__label css-1y8kf23"
+                data-checked=""
+              >
+                option 1
+              </span>
+            </label>
+            <label
+              class="chakra-radio css-1pw4d56"
+            >
+              <input
+                class="chakra-radio__input"
+                id="radio-2"
+                name="radio-4"
+                style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                type="radio"
+                value="1"
+              />
+              <span
+                aria-hidden="true"
+                class="chakra-radio__control css-ssalds"
+              />
+              <span
+                class="chakra-radio__label css-1y8kf23"
+              >
+                option 2
+              </span>
+            </label>
+            <label
+              class="chakra-radio css-1pw4d56"
+            >
+              <input
+                class="chakra-radio__input"
+                id="radio-3"
+                name="radio-4"
+                style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                type="radio"
+                value="2"
+              />
+              <span
+                aria-hidden="true"
+                class="chakra-radio__control css-ssalds"
+              />
+              <span
+                class="chakra-radio__label css-1y8kf23"
+              >
+                option 3
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
