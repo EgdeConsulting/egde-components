@@ -1,201 +1,155 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas,
+    Preview,
+} from '@storybook/addon-docs/blocks';
 import { Modal } from './Modal';
+import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 import { Button } from '@chakra-ui/react';
 import { useState } from 'react';
 
 export const Template = (args) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const handleClose = () => setIsModalOpen(false);
-  return (
-    <div>
-      <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
-      <Modal {...args} isModalOpen={isModalOpen} onClose={handleClose} />
-    </div>
-  );
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const handleClose = () => setIsModalOpen(false);
+    return (
+        <div>
+            <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
+            <Modal {...args} isModalOpen={isModalOpen} onClose={handleClose} />
+        </div>
+    );
 };
 
 <Meta
-  title={LibPath.Overlay + 'Modal'}
-  component={Modal}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
-    },
-  }}
-  args={{
-    isModalOpen: false,
-    isCentered: false,
-    iconVariant: 'check',
-    title: 'Modal Title',
-    subtitle: 'Modal Subtitle',
-    children: <div>Modal Content</div>,
-    buttons: {
-      primary: {
-        label: 'Primary Button',
-        variant: 'primary',
-        onClick: () => {},
-      },
-      secondary: {
-        label: 'Close',
-        variant: 'secondary',
-        onClick: () => {},
-      },
-      alignment: 'left',
-    },
-    onClose: () => {},
-    hasCloseButton: true,
-    errorMessage: '',
-    width: '25%',
-  }}
+    title={LibPath.Overlay + 'Modal'}
+    component={Modal}
+    args={{
+        isModalOpen: false,
+        isCentered: false,
+        iconVariant: 'check',
+        title: 'Modal Title',
+        subtitle: 'Modal Subtitle',
+        children: <div>Modal Content</div>,
+        buttons: {
+            primary: {
+                label: 'Primary Button',
+                variant: 'primary',
+                onClick: () => {},
+            },
+            secondary: {
+                label: 'Close',
+                variant: 'secondary',
+                onClick: () => {},
+            },
+            alignment: 'left',
+        },
+        onClose: () => {},
+        hasCloseButton: true,
+        errorMessage: '',
+        width: '25%',
+    }}
 />
 
 # Modal
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
+<ComponentStability variant="stable" />
 
 <hr />
 
+This component is used to create a popup-box which can contain interactive content.
+
 <Preview withToolbar>
-  <Story name="Modal">{Template.bind({})}</Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
-<Props story="Modal" />
+Change some of the props and see how the `Base` component changes.
+
+<Props story="Base" />
 
 # Stories
 
+<hr />
+
+Below are shown different implementations of the component in regards to varying
+use cases.
+
+<br />
 
 ### Buttons right
+
 <Canvas>
-  <Story
-    name="button right"
-    args={{
-      buttons: {
-      primary: {
-        label: 'Primary Button',
-        variant: 'primary',
-        onClick: () => {},
-      },
-      secondary: {
-        label: 'Close',
-        variant: 'secondary',
-        onClick: () => {},
-      },
-      alignment: 'right',
-    },
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Buttons right"
+        args={{
+            buttons: {
+                primary: {
+                    label: 'Primary Button',
+                    variant: 'primary',
+                    onClick: () => {},
+                },
+                secondary: {
+                    label: 'Close',
+                    variant: 'secondary',
+                    onClick: () => {},
+                },
+                alignment: 'right',
+            },
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Error message
+
 <Canvas>
-  <Story
-    name="error message"
-    args={{
-      errorMessage: 'This is an error message',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Error message"
+        args={{
+            errorMessage: 'This is an error message',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Centered Modal
 
 <Canvas>
     <Story
-    name="Centered Modal"
-    args={{
-        isCentered: true,
-    }}
+        name="Centered Modal"
+        args={{
+            isCentered: true,
+        }}
     >
-    {Template.bind({})}
+        {Template.bind({})}
     </Story>
 </Canvas>
 
-## Icon variants
-### check
+### Icon variant: Check
+
 <Canvas>
     <Story
-    name="Check"
-    args={{
-        iconVariant: 'check',
-    }}
+        name="Icon variant: Check"
+        args={{
+            iconVariant: 'check',
+        }}
     >
-    {Template.bind({})}
+        {Template.bind({})}
     </Story>
 </Canvas>
 
-### exclamation
+### Icon variant: Exclamation
+
 <Canvas>
     <Story
-    name="Exclamation"
-    args={{
-        iconVariant: 'exclamation',
-    }}
+        name="Icon variant: Exclamation"
+        args={{
+            iconVariant: 'exclamation',
+        }}
     >
-    {Template.bind({})}
+        {Template.bind({})}
     </Story>
 </Canvas>

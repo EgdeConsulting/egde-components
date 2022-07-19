@@ -1,177 +1,129 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas,
+    Preview,
+} from '@storybook/addon-docs/blocks';
 import { Checkbox } from './Checkbox';
+import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 import { useState } from 'react';
 
 export const Template = (args) => {
-  const [values, setValues] = useState([...args.value]);
-  const handleOnChange = (newValue) => {
-    setValues(newValue);
-  };
-  return (
-    <div>
-      <Checkbox {...args}  onChange={handleOnChange} value={values} />
-    </div>
-  );
+    const [values, setValues] = useState([...args.value]);
+    const handleOnChange = (newValue) => {
+        setValues(newValue);
+    };
+    return (
+        <div>
+            <Checkbox {...args} onChange={handleOnChange} value={values} />
+        </div>
+    );
 };
 
 <Meta
-  title={LibPath.Form + 'Checkbox'}
-  component={Checkbox}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
-    },
-  }}
-  args={{
-    direction: 'column',
-    options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
-    value: [0],
-    onChange: () => {},
-    invalidText: '',
-    isDisabled: false,
-    backgroundColor: '#ffffff',
-    autoFocus: false,
-    label: 'Checkbox',
-    labelTextMargin: '0px',
-    captionText: '',
-    captionTextMargin: '0px',
-    margin: '0px',
-    padding: '0px',
-    width: '100%',
-    minWidth: '0px',
-    maxWidth: '100%',
-  }}
+    title={LibPath.Form + 'Checkbox'}
+    component={Checkbox}
+    args={{
+        direction: 'column',
+        options: [
+            'Checkbox Option One',
+            'Checkbox Option Two',
+            'Checkbox Option Three',
+        ],
+        value: [0],
+        onChange: () => {},
+        invalidText: '',
+        isDisabled: false,
+        backgroundColor: '#ffffff',
+        autoFocus: false,
+        label: 'Checkbox',
+        labelTextMargin: '0px',
+        captionText: '',
+        captionTextMargin: '0px',
+        margin: '0px',
+        padding: '0px',
+        width: '100%',
+        minWidth: '0px',
+        maxWidth: '100%',
+    }}
 />
 
 # Checkbox
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
+<ComponentStability variant="stable" />
 
 <hr />
 
+This component is used to create a checklist where multiple answers can be checked off.
+
 <Preview withToolbar>
-  <Story name="Checkbox">{Template.bind({})}</Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
-<br />
+Change some of the props and see how the `Base` component changes.
 
-<Props story="Checkbox" />
+<Props story="Base" />
 
 # Stories
 
 <hr />
 
+Below are shown different implementations of the component in regards to varying
+use cases.
+
+<br />
+
 ### Checkbox Row
 
 <Canvas withToolbar>
-  <Story
-    name="Checkbox Row"
-    args={{
-      direction: 'row',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Checkbox Row"
+        args={{
+            direction: 'row',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Invalide Checkbox
 
 <Canvas withToolbar>
-  <Story
-    name="Invalid Checkbox"
-    args={{
-      invalidText: 'Invalide',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Invalid Checkbox"
+        args={{
+            invalidText: 'Invalide',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Disabled Checkbox
 
 <Canvas withToolbar>
-  <Story
-    name="Disabled Checkbox"
-    args={{
-      isDisabled: true,
-      value: [],
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Disabled Checkbox"
+        args={{
+            isDisabled: true,
+            value: [],
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
-### Multi Checked
+### Multiple Checked
 
 <Canvas withToolbar>
-  <Story
-    name="Multi Checked"
-    args={{
-      value: [0, 1, 2],
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Multiple Checked"
+        args={{
+            value: [0, 1, 2],
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
