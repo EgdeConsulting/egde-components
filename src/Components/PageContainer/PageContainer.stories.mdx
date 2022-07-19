@@ -1,126 +1,66 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas,
+    Preview,
+} from '@storybook/addon-docs/blocks';
 import { PageContainer } from './PageContainer';
+import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <PageContainer {...args} />;
 
 <Meta
-  title={LibPath.Containers + 'PageContainer'}
-  component={PageContainer}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
-    },
-  }}
-  args={{
-    title: 'Title',
-    titleAlignment: 'center',
-    titleTextColor: '#01233D',
-    subtitle: 'Subtitle',
-    subtitleAlignment: 'center',
-    subtitleTextColor: '#01233D',
-    children: <div>Content</div>,
-    containerPadding: '0px',
-    containerMargin: '0px',
-    contentPadding: '0px',
-    contentMargin: '0px',
-    subtitlePadding: '0px',
-    titlePadding: '0px',
-    titleMargin: '0px',
-    borderColor: '#FAFAFD',
-    borderWidth: '1px',
-    contentBorderColor: '#FAFAFD',
-    contentBorderWidth: '1px',
-    titleBadge: { 
-      badgeColor: '#ffffff', 
-      textColor: '#ffffff', 
-      label: '#ffffff', 
-      },
-    backgroundColor: '#FAFAFD',
-    contentColor: '#FAFAFD',
-    titlesColor: '#FAFAFD',
-    height: '100%',
-    width: '100%',
-    containerMinWidth: '0px',
-    containerMaxWidth: '100%',
-    containerSideMargins: '0px',
-    shouldContentFillContainer: true,
-    containerSize: 'auto',
-  }}
+    title={LibPath.Containers + 'PageContainer'}
+    component={PageContainer}
+    args={{
+        title: 'Title',
+        titleAlignment: 'center',
+        titleTextColor: '#01233D',
+        subtitle: 'Subtitle',
+        subtitleAlignment: 'center',
+        subtitleTextColor: '#01233D',
+        children: <div>Content</div>,
+        containerPadding: '0px',
+        containerMargin: '0px',
+        contentPadding: '0px',
+        contentMargin: '0px',
+        subtitlePadding: '0px',
+        titlePadding: '0px',
+        titleMargin: '0px',
+        borderColor: '#FAFAFD',
+        borderWidth: '1px',
+        contentBorderColor: '#FAFAFD',
+        contentBorderWidth: '1px',
+        titleBadge: {
+            badgeColor: '#ffffff',
+            textColor: '#ffffff',
+            label: '#ffffff',
+        },
+        backgroundColor: '#FAFAFD',
+        contentColor: '#FAFAFD',
+        titlesColor: '#FAFAFD',
+        height: '100%',
+        width: '100%',
+        containerMinWidth: '0px',
+        containerMaxWidth: '100%',
+        containerSideMargins: '0px',
+        shouldContentFillContainer: true,
+        containerSize: 'auto',
+    }}
 />
 
 # PageContainer
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
+<ComponentStability variant="stable" />
 
 <hr />
 
-With `MDX` we write longform markdown documentation for our `PageContainer` component
-and embed Doc Blocks inline.
+This component is used to create a container which is supposed to stretch over a bigger area of the page. It can hold information like a title and text.
 
 <Preview withToolbar>
-  <Story name="Base">{Template.bind({})}</Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
 Change some of the props and see how the `Base` component changes.
@@ -133,60 +73,63 @@ Change some of the props and see how the `Base` component changes.
 
 <hr />
 
-Look at some example usecases
+Below are shown different implementations of the component in regards to varying
+use cases.
+
+<br />
 
 <Canvas withToolbar>
-  <Story
-    name="Story 1"
-    args={{
-      title: 'Title 1',
-      titleAlignment: 'left',
-      titleTextColor: 'red',
-      subtitleAlignment: 'left',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Story 1"
+        args={{
+            title: 'Title 1',
+            titleAlignment: 'left',
+            titleTextColor: 'red',
+            subtitleAlignment: 'left',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 <Canvas withToolbar>
-  <Story
-    name="Story 2"
-    args={{
-      title: 'Title 1',
-      titleAlignment: 'left',
-      titleTextColor: 'red',
-      subtitleAlignment: 'center',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Story 2"
+        args={{
+            title: 'Title 1',
+            titleAlignment: 'left',
+            titleTextColor: 'red',
+            subtitleAlignment: 'center',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 <Canvas withToolbar>
-  <Story
-    name="Story 3"
-    args={{
-      title: 'Title 1',
-      titleAlignment: 'left',
-      titleTextColor: 'red',
-      subtitleAlignment: 'right',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Story 3"
+        args={{
+            title: 'Title 1',
+            titleAlignment: 'left',
+            titleTextColor: 'red',
+            subtitleAlignment: 'right',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 <Canvas withToolbar>
-  <Story
-    name="Story 4"
-    args={{
-      title: 'Title 2',
-      titleAlignment: 'right',
-      titleTextColor: 'blue',
-      subtitleAlignment: 'left',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Story 4"
+        args={{
+            title: 'Title 2',
+            titleAlignment: 'right',
+            titleTextColor: 'blue',
+            subtitleAlignment: 'left',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>

@@ -10,13 +10,18 @@ iconLink.setAttribute('href', icon);
 document.head.appendChild(iconLink);
 
 addons.setConfig({
-  theme: egdeTheme,
-  previewTabs: {
-    'storybook/docs/panel': { index: -1 },
-  },
-  options: {
-    storySort: {
-      order: ['Egde Library', ['Startpage']],
+    theme: egdeTheme,
+    previewTabs: {
+        'storybook/docs/panel': { index: -1 },
     },
-  },
+    //showToolbar: false,
+    toolbar: {
+        title: { hidden: true },
+        zoom: { hidden: true },
+        eject: { hidden: true },
+        copy: { hidden: true },
+        // fullscreen: { hidden: true },
+        'storybook/background': { hidden: true },
+        'storybook/viewport': { hidden: true },
+    },
 });

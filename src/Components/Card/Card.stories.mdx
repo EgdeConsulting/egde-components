@@ -1,31 +1,20 @@
 import {
-  Meta,
-  Story,
-  Props,
-  Canvas,
-  Preview,
+    Meta,
+    Story,
+    Props,
+    Canvas,
+    Preview,
 } from '@storybook/addon-docs/blocks';
 import { Card } from './Card';
+import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <Card {...args} />;
 
 <Meta
-  title={ LibPath.Cards + 'Card' }
-  component={ Card }
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
-    },
-   
-  }}
-  args={{
+    title={LibPath.Cards + 'Card'}
+    component={Card}
+    args={{
         title: 'Title',
         textColors: '#D23F47',
         titleTextColor: '#000000',
@@ -43,80 +32,39 @@ export const Template = (args) => <Card {...args} />;
 
 # Card
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
+<ComponentStability variant="stable" />
 
 <hr />
 
+This component is used to create a card-like container which can hold information like a title and text.
+
 <Preview withToolbar>
-  <Story name="Card"  >
-    { Template.bind({}) }
-  </Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
+Change some of the props and see how the `Base` component changes.
 
-<br />
-
-<Props story="Card" />
+<Props story="Base" />
 
 # Stories
 
 <hr />
 
+Below are shown different implementations of the component in regards to varying
+use cases.
 
+<br />
 
-
+<Canvas withToolbar>
+    <Story
+        name="Customer information"
+        args={{
+            title: 'Ola Nordmann',
+            body: 'Age: 420',
+            cardHeight: '100px',
+            cardWidth: '200px',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

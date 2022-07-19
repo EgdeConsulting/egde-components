@@ -1,211 +1,167 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas,
+    Preview,
+} from '@storybook/addon-docs/blocks';
 import { HorizontalStepper } from './HorizontalStepper';
+import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 
 export const Template = (args) => {
-  const [activeStep, setActiveStep] = useState(0);
-  return (
-    <div>
-      <HorizontalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />
-    </div>
-  );
+    const [activeStep, setActiveStep] = useState(0);
+    return (
+        <div>
+            <HorizontalStepper
+                {...args}
+                setActiveStep={setActiveStep}
+                activeStep={activeStep}
+            />
+        </div>
+    );
 };
 
 <Meta
-  title={LibPath.Navigation + 'HorizontalStepper'}
-  component={HorizontalStepper}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
-    },
-  }}
-  args={{
-    activeStep: 0,
-    setActiveStep: () => {},
-    stepsContent: [
-      {
-        label: 'Step 1',
-        children: <div> Content of Step 1</div>,
-      },
-      {
-        label: 'Step 2',
-        children: <div>Content of Step 2</div>,
-      },
-      {
-        label: 'Step 3',
-        children: <div>Content of Step 3</div>,
-      },
-      {
-        label: 'Step 4',
-        children: <div>Content of Step 4</div>,
-      },
-      {
-        label: 'Step 5',
-        children: <div>Content of Step 5</div>,
-      },
-    ],
-    buttonTexts: {
-      previous: 'previous',
-      next: 'next',
-      complete: 'complete',
-    },
-    finalStep: {
-      finalText: 'finalText',
-      finalButtonText: 'fintalButtonText',
-    },
-    buttonAlignment: 'left',
-    buttonMargin: '0px',
-    clickableSteps: false,
-    completedSteps: [],
-    onFinalize: () => {},
-    buttonCaption: {
-      defaultValue: {
-        text: 'Placeholder',
-        color: '#ffffff',
-      },
-      onFinalStep: () => {},
-      isCompleteButtonDisabled: true,
-    },
-  }}
+    title={LibPath.Navigation + 'HorizontalStepper'}
+    component={HorizontalStepper}
+    args={{
+        activeStep: 0,
+        setActiveStep: () => {},
+        stepsContent: [
+            {
+                label: 'Step 1',
+                children: <div> Content of Step 1</div>,
+            },
+            {
+                label: 'Step 2',
+                children: <div>Content of Step 2</div>,
+            },
+            {
+                label: 'Step 3',
+                children: <div>Content of Step 3</div>,
+            },
+            {
+                label: 'Step 4',
+                children: <div>Content of Step 4</div>,
+            },
+            {
+                label: 'Step 5',
+                children: <div>Content of Step 5</div>,
+            },
+        ],
+        buttonTexts: {
+            previous: 'previous',
+            next: 'next',
+            complete: 'complete',
+        },
+        finalStep: {
+            finalText: 'finalText',
+            finalButtonText: 'fintalButtonText',
+        },
+        buttonAlignment: 'left',
+        buttonMargin: '0px',
+        clickableSteps: false,
+        completedSteps: [],
+        onFinalize: () => {},
+        buttonCaption: {
+            defaultValue: {
+                text: 'Placeholder',
+                color: '#ffffff',
+            },
+            onFinalStep: () => {},
+            isCompleteButtonDisabled: true,
+        },
+    }}
 />
 
 # Horizontal Stepper
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
+<ComponentStability variant="stable" />
 
 <hr />
 
+This component is used to create a horizontal step-overview which shows the user the step he's on.
+
 <Preview withToolbar>
-  <Story
-    name="Horizontal Stepper"
-    args={{
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Base"
+        args={{
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Preview>
 
-<Props story="Horizontal Stepper" />
+Change some of the props and see how the `Base` component changes.
+
+<Props story="Base" />
 
 # Stories
+
+<hr />
+
+Below are shown different implementations of the component in regards to varying
+use cases.
+
+<br />
 
 ### Completed steps
 
 <Canvas withToolbar>
-  <Story
-    name="Completed steps"
-    args={{
-      activeStep: 4,
-      completedSteps: [0, 1, 2, 3, 4],
-      isCompleteButtonDisabled: false,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Completed steps"
+        args={{
+            activeStep: 4,
+            completedSteps: [0, 1, 2, 3, 4],
+            isCompleteButtonDisabled: false,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Clickable steps
 
 <Canvas withToolbar>
-  <Story
-    name="Clickable steps"
-    args={{
-      clickableSteps: true,
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Clickable steps"
+        args={{
+            clickableSteps: true,
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Fewer steps
 
 <Canvas withToolbar>
     <Story
-    name="Fewer steps"
-    args={{
-        stepsContent: [
-        {
-            label: 'Step 1',
-            children: <div> Content of Step 1</div>,
-        },
-        {
-            label: 'Step 2',
-            children: <div>Content of Step 2</div>,
-        },
-        {
-            label: 'Step 3',
-            children: <div>Content of Step 3</div>,
-        },
-        ],
-        isCompleteButtonDisabled: true,
-    }}
+        name="Fewer steps"
+        args={{
+            stepsContent: [
+                {
+                    label: 'Step 1',
+                    children: <div> Content of Step 1</div>,
+                },
+                {
+                    label: 'Step 2',
+                    children: <div>Content of Step 2</div>,
+                },
+                {
+                    label: 'Step 3',
+                    children: <div>Content of Step 3</div>,
+                },
+            ],
+            isCompleteButtonDisabled: true,
+        }}
     >
-    {Template.bind({})}
+        {Template.bind({})}
     </Story>
 </Canvas>
 
@@ -213,117 +169,115 @@ export const Template = (args) => {
 
 <Canvas withToolbar>
     <Story
-    name="More steps"
-    args={{
-        stepsContent: [
-        {
-            label: 'Step 1',
-            children: <div> Content of Step 1</div>,
-        },
-        {
-            label: 'Step 2',
-            children: <div>Content of Step 2</div>,
-        },
-        {
-            label: 'Step 3',
-            children: <div>Content of Step 3</div>,
-        },
-        {
-            label: 'Step 4',
-            children: <div>Content of Step 4</div>,
-        },
-        {
-            label: 'Step 5',
-            children: <div>Content of Step 5</div>,
-        },
-        {
-            label: 'Step 6',
-            children: <div>Content of Step 6</div>,
-        },
-        {
-            label: 'Step 7',
-            children: <div>Content of Step 7</div>,
-        },
-        {
-            label: 'Step 8',
-            children: <div>Content of Step 8</div>,
-        },
-        {
-            label: 'Step 9',
-            children: <div>Content of Step 9</div>,
-        },
-        {
-            label: 'Step 10',
-            children: <div>Content of Step 10</div>,
-        },
-        {
-            label: 'Step 11',
-            children: <div>Content of Step 11</div>,
-        },
-        {
-            label: 'Step 12',
-            children: <div>Content of Step 12</div>,
-        },
-        {
-            label: 'Step 13',
-            children: <div>Content of Step 13</div>,
-        },
-        {
-            label: 'Step 14',
-            children: <div>Content of Step 14</div>,
-        },
-        {
-            label: 'Step 15',
-            children: <div>Content of Step 15</div>,
-        },
-        ],
-        isCompleteButtonDisabled: true,
-    }}
+        name="More steps"
+        args={{
+            stepsContent: [
+                {
+                    label: 'Step 1',
+                    children: <div> Content of Step 1</div>,
+                },
+                {
+                    label: 'Step 2',
+                    children: <div>Content of Step 2</div>,
+                },
+                {
+                    label: 'Step 3',
+                    children: <div>Content of Step 3</div>,
+                },
+                {
+                    label: 'Step 4',
+                    children: <div>Content of Step 4</div>,
+                },
+                {
+                    label: 'Step 5',
+                    children: <div>Content of Step 5</div>,
+                },
+                {
+                    label: 'Step 6',
+                    children: <div>Content of Step 6</div>,
+                },
+                {
+                    label: 'Step 7',
+                    children: <div>Content of Step 7</div>,
+                },
+                {
+                    label: 'Step 8',
+                    children: <div>Content of Step 8</div>,
+                },
+                {
+                    label: 'Step 9',
+                    children: <div>Content of Step 9</div>,
+                },
+                {
+                    label: 'Step 10',
+                    children: <div>Content of Step 10</div>,
+                },
+                {
+                    label: 'Step 11',
+                    children: <div>Content of Step 11</div>,
+                },
+                {
+                    label: 'Step 12',
+                    children: <div>Content of Step 12</div>,
+                },
+                {
+                    label: 'Step 13',
+                    children: <div>Content of Step 13</div>,
+                },
+                {
+                    label: 'Step 14',
+                    children: <div>Content of Step 14</div>,
+                },
+                {
+                    label: 'Step 15',
+                    children: <div>Content of Step 15</div>,
+                },
+            ],
+            isCompleteButtonDisabled: true,
+        }}
     >
-    {Template.bind({})}
+        {Template.bind({})}
     </Story>
 </Canvas>
 
-## Button Alignment
-
-### Left
+### Button Alignment: Left
 
 <Canvas withToolbar>
-  <Story
-    name="Button Alignment left"
-    args={{
-      buttonAlignment: 'left',
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Button Alignment: Left"
+        args={{
+            buttonAlignment: 'left',
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
-### Center
+### Button Alignment: Center
 
 <Canvas withToolbar>
-  <Story
-    name="Button Alignment center"
-    args={{
-      buttonAlignment: 'center',
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Button Alignment: Center"
+        args={{
+            buttonAlignment: 'center',
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
-### Right
+### Button Alignment: Right
 
 <Canvas withToolbar>
-  <Story
-    name="Button Alignment right"
-    args={{
-      buttonAlignment: 'right',
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Button Alignment: Right"
+        args={{
+            buttonAlignment: 'right',
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>

@@ -1,165 +1,110 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import {
+    Meta,
+    Story,
+    Props,
+    Canvas,
+    Preview,
+} from '@storybook/addon-docs/blocks';
 import { Alert } from './Alert';
+import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <Alert {...args} />;
 
 <Meta
-  title={LibPath.Feedback + 'Alert'}
-  component={Alert}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
-    },
-  }}
+    title={LibPath.Feedback + 'Alert'}
+    component={Alert}
     args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: '',
-      linkHref: '',
-      onClose: () => {},
-      hasNoCloseButton: false,
-      route: '',
+        description: 'This is an info alert',
+        status: 'info',
+        linkText: '',
+        linkHref: '',
+        onClose: () => {},
+        hasNoCloseButton: false,
+        route: '',
     }}
 />
 
 # Alert
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
+<ComponentStability variant="stable" />
 
 <hr />
 
+This component is used to display a info-box which displays important information
+whom the user must see.
+
 <Preview withToolbar>
-  <Story name="Info Alert">{Template.bind({})}</Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
 Change some of the props and see how the `Base` component changes.
 
-<br />
-
-<Props story="Info Alert" />
+<Props story="Base" />
 
 # Stories
 
 <hr />
 
-Look at some example usecases
+Below are shown different implementations of the component in regards to varying
+use cases.
+
+<br />
 
 ### Warning Alert
 
 <Canvas withToolbar>
-  <Story
-    name="Warning Alert"
-    args={{
-      description: 'This is a warning alert',
-      status: 'warning',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Warning Alert"
+        args={{
+            description: 'This is a warning alert',
+            status: 'warning',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Error Alert
 
 <Canvas withToolbar>
-  <Story
-    name="Error Alert"
-    args={{
-      description: 'This is an error alert',
-      status: 'error',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Error Alert"
+        args={{
+            description: 'This is an error alert',
+            status: 'error',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Success Alert
 
 <Canvas withToolbar>
-  <Story
-    name="Success Alert"
-    args={{
-      description: 'This is a Success alert',
-      status: 'success',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Success Alert"
+        args={{
+            description: 'This is a Success alert',
+            status: 'success',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Alert with link
 
 <Canvas withToolbar>
-  <Story
-    name="Alert with link"
-    args={{
-      description: 'This is an info alert',
-      status: 'info',
-      linkText: 'Learn more',
-      linkHref: 'https://www.google.com',
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Alert with link"
+        args={{
+            description: 'This is an info alert',
+            status: 'info',
+            linkText: 'Learn more',
+            linkHref: 'https://www.google.com',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>

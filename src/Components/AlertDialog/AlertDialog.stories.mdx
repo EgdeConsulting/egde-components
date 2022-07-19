@@ -1,125 +1,90 @@
 import {
-  Meta,
-  Story,
-  Props,
-  Canvas,
-  Preview,
+    Meta,
+    Story,
+    Props,
+    Canvas,
+    Preview,
 } from '@storybook/addon-docs/blocks';
 import { AlertDialog } from './AlertDialog';
+import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 
 export const Template = (args) => {
-    const[isOpen, setIsOpen] = useState(false);
-	const handleClose = () => setIsOpen(false);
-	const buttons = [{ label: 'OK', onClick: () => {
-		setIsOpen(false);
-	}, variant: 'primary' }];
-	return (
-		<div>
-			<Button onClick={ () => setIsOpen(true)} > Open Alert Dialog </Button>
-			<AlertDialog {...args} onClose={handleClose} isOpen={isOpen} buttons={buttons} />
-		</div>
-	);
-}
-	
-
+    const [isOpen, setIsOpen] = useState(false);
+    const handleClose = () => setIsOpen(false);
+    const buttons = [
+        {
+            label: 'OK',
+            onClick: () => {
+                setIsOpen(false);
+            },
+            variant: 'primary',
+        },
+    ];
+    return (
+        <div>
+            <Button onClick={() => setIsOpen(true)}> Open Alert Dialog </Button>
+            <AlertDialog
+                {...args}
+                onClose={handleClose}
+                isOpen={isOpen}
+                buttons={buttons}
+            />
+        </div>
+    );
+};
 
 <Meta
-  title={ LibPath.Overlay + 'AlertDialog' }
-  component={ AlertDialog }
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
-    },   
-  }}
-  args={{
-    iconVariant: 'warning',
-    heading: 'Heading',
-    text: 'Alert Dialog Text',
-    isOpen: true,
-    cancelRef: React.createRef(),
-    onClose: () => {},
-    buttons:{ label: 'OK', onClick: () => {}, variant: 'primary' } 
-    }
-    }
+    title={LibPath.Overlay + 'AlertDialog'}
+    component={AlertDialog}
+    args={{
+        iconVariant: 'information',
+        heading: 'Heading',
+        text: 'Alert Dialog Text',
+        isOpen: true,
+        cancelRef: React.createRef(),
+        onClose: () => {},
+        buttons: { label: 'OK', onClick: () => {}, variant: 'primary' },
+    }}
 />
 
 # Alert Dialog
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
+<ComponentStability variant="stable" />
 
 <hr />
 
+This component is used to display a popup-box which displays important information
+whom the user must see.
+
 <Preview withToolbar>
-  <Story
-    name="Alert Dialog"  >
-    { Template.bind({}) }
-  </Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
-<Props story="Alert Dialog" />
+Change some of the props and see how the `Base` component changes.
+
+<Props story="Base" />
 
 # Stories
+
+<hr />
+
+Below are shown different implementations of the component in regards to varying
+use cases.
+
+<br />
+
+<Canvas withToolbar>
+    <Story
+        name="Warning Alert"
+        args={{
+            iconVariant: 'warning',
+            heading: 'Something went wrong!',
+            text: 'Please try again',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
