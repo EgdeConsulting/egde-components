@@ -1,20 +1,20 @@
 /* eslint-disable */
 
 export enum Root {
-  Introduction = 'Introduction/',
-  Components = 'Components/',
-  // Example of new root:
-  // Layout = "Layout/",
+    Introduction = 'Getting Started/',
+    Components = 'Components/',
+    // Example of new root:
+    // Layout = "Layout/",
 }
 
 export enum LibPath {
-  Cards = Root.Components + 'Cards/',
-  Containers = Root.Components + 'Containers/',
-  Form = Root.Components + 'Form/',
-  Navigation = Root.Components + 'Navigation/',
-  Overlay = Root.Components + 'Overlay/',
-  Disclosure = Root.Components + 'Disclosure/',
-  Feedback = Root.Components + 'Feedback/',
-  // Example of new sub-directory
-  // Headers = Root.Layout + "Headers/",
+    Cards = Root.Components + 'Cards/',
+    Containers = Root.Components + 'Containers/',
+    Form = Root.Components + 'Form/',
+    Navigation = Root.Components + 'Navigation/',
+    Overlay = Root.Components + 'Overlay/',
+    Disclosure = Root.Components + 'Disclosure/',
+    Feedback = Root.Components + 'Feedback/',
+    // Example of new sub-directory
+    // Headers = Root.Layout + "Headers/",
 }

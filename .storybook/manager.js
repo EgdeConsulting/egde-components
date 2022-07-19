@@ -1,6 +1,6 @@
 import { addons } from '@storybook/addons';
 import egdeTheme from './egdeTheme';
-import icon from '../docs/favicon.ico';
+import icon from './egdeIcon.ico';
 import fonts from '../src/Styles/Fonts/fonts.css'; // This import allows the fontBase in egdeTheme.js to load correctly
 
 // Solution fetched from https://github.com/storybookjs/storybook/issues/6155
