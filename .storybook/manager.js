@@ -11,10 +11,10 @@ document.head.appendChild(iconLink);
 
 addons.setConfig({
     theme: egdeTheme,
-    previewTabs: {
-        'storybook/docs/panel': { index: -1 },
-    },
-    //showToolbar: false,
+    // previewTabs: {
+    //     'storybook/docs/panel': { index: -1 },
+    // },
+    // showToolbar: false,
     toolbar: {
         title: { hidden: true },
         zoom: { hidden: true },

@@ -14,7 +14,7 @@ import {
     Text,
 } from '@chakra-ui/react';
 import { ModalProps, IconTestID, ModalIconType } from 'Types';
-import { PriorityHighRounded, CheckRounded } from '../../Icons';
+import { PriorityHighRounded, CheckRounded } from 'Icons';
 
 /*
     EXAMPLE USE:
@@ -96,7 +96,7 @@ const Modal = (props: ModalProps): ReactElement => {
             <ModalOverlay />
             <ModalContent maxW={width}>
                 <ModalHeader>
-                    <Flex width='100%' direction='row'>
+                    <Flex width="100%" direction="row">
                         {iconVariant && (
                             <Icon
                                 as={iconStyle.icon}
@@ -110,11 +110,11 @@ const Modal = (props: ModalProps): ReactElement => {
                             />
                         )}
 
-                        <Flex direction='column'>
-                            <Heading size='md' marginBottom='8px'>
+                        <Flex direction="column">
+                            <Heading size="md" marginBottom="8px">
                                 {title}
                             </Heading>
-                            <Heading size='sm' fontWeight='normal'>
+                            <Heading size="sm" fontWeight="normal">
                                 {subtitle}
                             </Heading>
                         </Flex>
@@ -122,9 +122,9 @@ const Modal = (props: ModalProps): ReactElement => {
                 </ModalHeader>
                 {hasCloseButton && <ModalCloseButton />}
                 <ModalBody>{children}</ModalBody>
-                <Box padding='0 24px 24px 24px'>
+                <Box padding="0 24px 24px 24px">
                     {alignment === 'right' && (
-                        <Flex justify='end'>
+                        <Flex justify="end">
                             <Button
                                 variant={secondary.variant}
                                 onClick={onClose}
@@ -132,7 +132,7 @@ const Modal = (props: ModalProps): ReactElement => {
                                 {secondary.label}
                             </Button>
                             <Button
-                                marginEnd='0px'
+                                marginEnd="0px"
                                 variant={primary.variant}
                                 onClick={primary.onClick}
                             >
@@ -141,7 +141,7 @@ const Modal = (props: ModalProps): ReactElement => {
                         </Flex>
                     )}
                     {alignment === 'left' && (
-                        <Flex justify='start'>
+                        <Flex justify="start">
                             <Button
                                 variant={primary.variant}
                                 onClick={primary.onClick}
@@ -158,7 +158,7 @@ const Modal = (props: ModalProps): ReactElement => {
                     )}
                     {errorMessage && (
                         <Text
-                            color='red'
+                            color="red"
                             textAlign={
                                 // eslint-disable-next-line no-nested-ternary
                                 alignment === 'right'

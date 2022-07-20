@@ -33,7 +33,7 @@ export const Template = (args) => {
         stepsContent: [
             {
                 label: 'Step 1',
-                children: <div> Content of Step 1</div>,
+                children: <div>Content of Step 1</div>,
             },
             {
                 label: 'Step 2',
@@ -86,14 +86,7 @@ export const Template = (args) => {
 This component is used to create a horizontal step-overview which shows the user the step he's on.
 
 <Preview withToolbar>
-    <Story
-        name="Base"
-        args={{
-            isCompleteButtonDisabled: true,
-        }}
-    >
-        {Template.bind({})}
-    </Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Preview>
 
 Change some of the props and see how the `Base` component changes.

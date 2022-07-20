@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Input } from '@chakra-ui/react';
 import { TextInputProps } from 'Types';
-import { BaseInput } from '../BaseInput';
+import { BaseInput } from 'Components';
 
 /*
     EXAMPLE USE:
@@ -12,44 +12,44 @@ import { BaseInput } from '../BaseInput';
 */
 
 export const TextInput = (props: TextInputProps): ReactElement => {
-  const {
-    label,
-    labelTextMargin,
-    placeholder,
-    onChange,
-    value,
-    invalidText,
-    captionText,
-    isDisabled,
-    margin,
-    padding,
-    width,
-    minWidth,
-    backgroundColor,
-    autoFocus,
-    textAlign,
-  } = props;
-  return (
-    <BaseInput
-      label={label}
-      labelTextMargin={labelTextMargin}
-      invalidText={invalidText}
-      captionText={captionText}
-      margin={margin}
-      padding={padding}
-      width={width}
-      minWidth={minWidth}
-    >
-      <Input
-        textAlign={textAlign}
-        isInvalid={!!invalidText}
-        isDisabled={isDisabled}
-        placeholder={placeholder}
-        onChange={(e: any) => onChange(e.target.value as string)}
-        value={value}
-        backgroundColor={backgroundColor}
-        autoFocus={autoFocus}
-      />
-    </BaseInput>
-  );
+    const {
+        label,
+        labelTextMargin,
+        placeholder,
+        onChange,
+        value,
+        invalidText,
+        captionText,
+        isDisabled,
+        margin,
+        padding,
+        width,
+        minWidth,
+        backgroundColor,
+        autoFocus,
+        textAlign,
+    } = props;
+    return (
+        <BaseInput
+            label={label}
+            labelTextMargin={labelTextMargin}
+            invalidText={invalidText}
+            captionText={captionText}
+            margin={margin}
+            padding={padding}
+            width={width}
+            minWidth={minWidth}
+        >
+            <Input
+                textAlign={textAlign}
+                isInvalid={!!invalidText}
+                isDisabled={isDisabled}
+                placeholder={placeholder}
+                onChange={(e: any) => onChange(e.target.value as string)}
+                value={value}
+                backgroundColor={backgroundColor}
+                autoFocus={autoFocus}
+            />
+        </BaseInput>
+    );
 };

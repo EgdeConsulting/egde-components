@@ -1,7 +1,7 @@
 import { Textarea } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
 import { TextInputProps } from 'Types';
-import { BaseInput } from '..';
+import { BaseInput } from 'Components';
 
 /*
     EXAMPLE USE:
@@ -50,7 +50,7 @@ export const TextAreaInput = (props: TextInputProps): ReactElement => {
                 isInvalid={!!invalidText}
                 isDisabled={isDisabled}
                 placeholder={placeholder}
-                onChange={(e) => onChange(e.target.value as string)}
+                onChange={(e: any) => onChange(e.target.value as string)}
                 value={value}
                 backgroundColor={backgroundColor}
                 autoFocus={autoFocus}
