@@ -3,6 +3,7 @@
 export enum Root {
     Introduction = 'Getting Started/',
     Components = 'Components/',
+    Templates = 'Templates/',
     // Example of new root:
     // Layout = "Layout/",
 }

@@ -1,8 +1,7 @@
 import React, { ReactElement } from 'react';
 import { Radio as ChakraRadio, RadioGroup, Stack } from '@chakra-ui/react';
 import { RadioProps } from 'Types';
-import { BaseInput } from '../Input/BaseInput';
-
+import { BaseInput } from 'Components';
 
 export const Radio = (props: RadioProps): ReactElement => {
     const {
@@ -19,7 +18,7 @@ export const Radio = (props: RadioProps): ReactElement => {
         <BaseInput {...props}>
             <RadioGroup
                 isDisabled={isDisabled}
-                onChange={(e) => onChange(+e)}
+                onChange={(e: any) => onChange(+e)}
                 value={value}
                 backgroundColor={backgroundColor}
             >
