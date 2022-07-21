@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { HorizontalStepper } from '../HorizontalStepper';
+import { Checkbox } from '../Checkbox';
+import { NumberInput } from '../Input/NumberInput';
+import * as stories from './Registration.stories.tsx';
+import { Root } from 'Types';
+
+<Meta title={Root.Templates + 'Registration'} component={Checkbox} />
+
+# HEY HEY
+
+# Registration
+
+This template uses the following components: ...
+
+<Canvas withToolbar>
+    <Story name="Registration" story={stories.Base} />
+</Canvas>
+
+<Canvas withToolbar>
+    <Story name="Another story" story={stories.SecondStory} />
+</Canvas>
