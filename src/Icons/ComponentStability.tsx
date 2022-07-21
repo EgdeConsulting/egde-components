@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { ReactElement } from 'react';
 
-interface ComponentStabilityProps {
+export interface ComponentStabilityProps {
     variant?: 'stable' | 'unstable' | 'deprecated';
 }
 
