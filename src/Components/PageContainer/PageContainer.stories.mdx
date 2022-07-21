@@ -1,15 +1,21 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { PageContainer } from './PageContainer';
-import { ComponentStability } from 'Icons';
+import { DocsPage } from 'Components';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <PageContainer {...args} />;
+
+export const componentName = 'PageContainer';
+export const storyNames = ['Story 1', 'Story 2', 'Story 3', 'Story 4'];
+
+<DocsPage
+    componentName={componentName}
+    componentDescription="This component is used to create a container which is supposed to stretch over a bigger area of the page. It can hold information like a title and text."
+    addStories={true}
+    storyNames={storyNames}
+    addImportantNote={false}
+    variant="stable"
+/>
 
 <Meta
     title={LibPath.Containers + 'PageContainer'}
@@ -51,32 +57,9 @@ export const Template = (args) => <PageContainer {...args} />;
     }}
 />
 
-# PageContainer
-
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to create a container which is supposed to stretch over a bigger area of the page. It can hold information like a title and text.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
-
-Change some of the props and see how the `Base` component changes.
-
-<br />
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
+</Canvas>
 
 <Canvas withToolbar>
     <Story
