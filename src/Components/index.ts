@@ -1,4 +1,5 @@
 export * from './Alert';
+export * from './Accordion';
 export * from './Button';
 export * from './Card';
 export * from './Checkbox';
@@ -8,4 +9,4 @@ export * from './Modal';
 export * from './PageContainer';
 export * from './Radio';
 export * from './Tabs';
-
+export * from './DocsPage';

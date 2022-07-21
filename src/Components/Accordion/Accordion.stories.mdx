@@ -1,18 +1,30 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Accordion } from './Accordion';
-import { ComponentStability } from 'Icons';
+import { DocsPage } from 'Components';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <Accordion {...args} />;
 
+export const componentName = 'Accordion';
+export const storyNames = [
+    'Accordion OK',
+    'Accordion InProgress',
+    'More Accordion',
+    'Only one Accordion open',
+];
+
+<DocsPage
+    componentName={componentName}
+    componentDescription="This component is used to display content in a vertical dropdown-like manner."
+    addStories={true}
+    storyNames={storyNames}
+    addImportantNote={true}
+    noteMessage="There is a bug with the 'Show Code' where nested components inside of props are being enclosed by a MDXCreateElement-tag."
+    variant="stable"
+/>
+
 <Meta
-    title={LibPath.Disclosure + 'Accordion'}
+    title={LibPath.Disclosure + componentName}
     component={Accordion}
     args={{
         items: [
@@ -31,32 +43,9 @@ export const Template = (args) => <Accordion {...args} />;
     }}
 />
 
-# Accordion
-
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to display content in a vertical dropdown-like manner.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
-
-Change some of the props and see how the `Base` component changes.
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
-
-### Accordion OK
+</Canvas>
 
 <Canvas withToolbar>
     <Story
@@ -80,8 +69,6 @@ use cases.
     </Story>
 </Canvas>
 
-### Accordion InProgress
-
 <Canvas withToolbar>
     <Story
         name="Accordion InProgress"
@@ -103,8 +90,6 @@ use cases.
         {Template.bind({})}
     </Story>
 </Canvas>
-
-### More Accordion
 
 <Canvas withToolbar>
     <Story
@@ -148,11 +133,9 @@ use cases.
     </Story>
 </Canvas>
 
-### Allow only one Accordion open
-
 <Canvas withToolbar>
     <Story
-        name="Only Accordion open"
+        name="Only one Accordion open"
         args={{
             allowMultiple: false,
         }}
@@ -160,3 +143,25 @@ use cases.
         {Template.bind({})}
     </Story>
 </Canvas>
+
+<!--
+<>
+    {storiesOf('Components/Accordion'}, module).add('storiesOfTest', () => (
+        <Accordion
+            items={[
+                {
+                    title: 'Accordion 69',
+                    content: <div>Content 69</div>,
+                    badge: AccordionBadgeEnum.OK,
+                },
+                {
+                    title: 'Accordion 420',
+                    content: <div>Content 420</div>,
+                    badge: AccordionBadgeEnum.OK,
+                },
+            ]}
+            allowMultiple={true}
+        />
+    ))}
+</>
+-->
