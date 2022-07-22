@@ -2,14 +2,15 @@ import React from 'react';
 import { useEffect } from 'react';
 
 interface DocsPageScriptProps {
-    variant: 'moveStories' | 'createStoryHeadings';
+    variant: 'moveStories' | 'setAlertWidth' | 'createStoryHeadings';
 }
 
-const useScriptMoveComponents = (async = true) => {
+const useScriptMoveStories = (async = true) => {
     useEffect(() => {
         const script = document.createElement('script');
 
-        script.innerHTML = `setTimeout(() => {
+        script.innerHTML = `
+            setTimeout(() => {
                 let stories = document.getElementsByClassName(
                     'sbdocs sbdocs-preview css-1fqqvvq',
                 );
@@ -31,7 +32,34 @@ const useScriptMoveComponents = (async = true) => {
                         }
                     }
                 }
-            }, 10)`;
+            }, 1)
+        `;
+
+        script.async = async;
+
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, [async]);
+};
+
+const useScriptSetAlertWidth = (async = true) => {
+    useEffect(() => {
+        const script = document.createElement('script');
+
+        script.innerHTML = `
+            setTimeout(() => {
+                let parent = document.getElementById('importantNote');
+                if (parent) {
+                    let alert = parent.getElementsByTagName('div')[0];
+                    if (alert) {
+                        alert.style.width = '100%';
+                    }
+                }
+            }, 1)
+        `;
 
         script.async = async;
 
@@ -47,44 +75,46 @@ const useScriptCreateStoryHeadings = (async = true) => {
     useEffect(() => {
         const script = document.createElement('script');
 
-        script.innerHTML = `document
-        .querySelectorAll('[id^="story--"]')
-        .forEach((element, key) => {
-            if (key !== 0) {
-                const rawId = element.getAttribute('id');
+        script.innerHTML = `
+            document
+            .querySelectorAll('[id^="story--"]')
+            .forEach((element, key) => {
+                if (key !== 0) {
+                    const rawId = element.getAttribute('id');
 
-                if (rawId !== null) {
-                    const matches = Array.from(rawId.matchAll(/--/g)).map(
-                        (x) => x.index,
-                    );
-                    const index = (matches[1] || 0) + 2;
-                    const headingTitleRaw = rawId
-                        .substring(index)
-                        .replace(/-/g, ' ');
+                    if (rawId !== null) {
+                        const matches = Array.from(rawId.matchAll(/--/g)).map(
+                            (x) => x.index,
+                        );
+                        const index = (matches[1] || 0) + 2;
+                        const headingTitleRaw = rawId
+                            .substring(index)
+                            .replace(/-/g, ' ');
 
-                    const arr = headingTitleRaw.split(' ');
+                        const arr = headingTitleRaw.split(' ');
 
-                    for (let i = 0; i < arr.length; i++) {
-                        arr[i] =
-                            arr[i].charAt(0).toUpperCase() +
-                            arr[i].slice(1);
-                    }
+                        for (let i = 0; i < arr.length; i++) {
+                            arr[i] =
+                                arr[i].charAt(0).toUpperCase() +
+                                arr[i].slice(1);
+                        }
 
-                    const headingTitle = arr.join(' ');
+                        const headingTitle = arr.join(' ');
 
-                    const parent =
-                        document.getElementById('storiesContent');
+                        const parent =
+                            document.getElementById('storiesContent');
 
-                    if (parent) {
-                        const child = document.createElement('h3');
-                        child.id = 'storyHeading' + (key - 1);
-                        child.classList.add('css-ypcfyr');
-                        child.innerHTML = headingTitle;
-                        parent.appendChild(child);
+                        if (parent) {
+                            const child = document.createElement('h3');
+                            child.id = 'storyHeading' + (key - 1);
+                            child.classList.add('css-ypcfyr');
+                            child.innerHTML = headingTitle;
+                            parent.appendChild(child);
+                        }
                     }
                 }
-            }
-        });`;
+            });
+        `;
 
         script.async = async;
 
@@ -101,7 +131,10 @@ const DocsPageScript = (props: DocsPageScriptProps) => {
 
     switch (variant) {
         case 'moveStories':
-            useScriptMoveComponents();
+            useScriptMoveStories();
+            break;
+        case 'setAlertWidth':
+            useScriptSetAlertWidth();
             break;
         case 'createStoryHeadings':
             useScriptCreateStoryHeadings();

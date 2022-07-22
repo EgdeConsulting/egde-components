@@ -3,6 +3,8 @@ import { ComponentStability, ComponentStabilityProps } from 'Icons';
 import { DocsPageScript } from 'Components';
 import { Props } from '@storybook/addon-docs/blocks';
 import { Alert } from 'Components';
+import { styles } from 'Styles';
+import { ChakraProvider } from '@chakra-ui/react';
 
 interface ImportantNoteProps {
     noteMessage?: string;
@@ -63,14 +65,16 @@ const DocsPage = (props: DocsPageProps) => {
     return (
         <div id="docsContent">
             {addImportantNote && (
-                <div>
-                    {/* Alert component doesn't get its styling */}
-                    <Alert
-                        description={noteMessage || ''}
-                        status="warning"
-                        hasNoCloseButton={true}
-                    />
+                <div id="importantNote">
+                    <ChakraProvider theme={styles}>
+                        <Alert
+                            description={noteMessage || ''}
+                            status="warning"
+                            hasNoCloseButton={true}
+                        />
+                    </ChakraProvider>
                     <br />
+                    <DocsPageScript variant="setAlertWidth" />
                 </div>
             )}
             {/* The default MDX styling (i.e. class css-1d8ls76) isn't rendered into the DOM, 

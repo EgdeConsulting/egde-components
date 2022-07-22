@@ -1,18 +1,29 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Alert } from './Alert';
-import { ComponentStability } from 'Icons';
+import { DocsPage } from 'Components';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <Alert {...args} />;
 
+export const componentName = 'Alert';
+export const storyNames = [
+    'Warning Alert',
+    'Error Alert',
+    'Success Alert',
+    'Alert with link',
+];
+
+<DocsPage
+    componentName={componentName}
+    componentDescription="This component is used to display a info-box which displays important information whom the user must see."
+    addStories={true}
+    storyNames={storyNames}
+    addImportantNote={false}
+    variant="stable"
+/>
+
 <Meta
-    title={LibPath.Feedback + 'Alert'}
+    title={LibPath.Feedback + componentName}
     component={Alert}
     args={{
         description: 'This is an info alert',
@@ -25,33 +36,9 @@ export const Template = (args) => <Alert {...args} />;
     }}
 />
 
-# Alert
-
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to display a info-box which displays important information
-whom the user must see.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
-
-Change some of the props and see how the `Base` component changes.
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
-
-### Warning Alert
+</Canvas>
 
 <Canvas withToolbar>
     <Story
@@ -65,8 +52,6 @@ use cases.
     </Story>
 </Canvas>
 
-### Error Alert
-
 <Canvas withToolbar>
     <Story
         name="Error Alert"
@@ -79,8 +64,6 @@ use cases.
     </Story>
 </Canvas>
 
-### Success Alert
-
 <Canvas withToolbar>
     <Story
         name="Success Alert"
@@ -92,8 +75,6 @@ use cases.
         {Template.bind({})}
     </Story>
 </Canvas>
-
-### Alert with link
 
 <Canvas withToolbar>
     <Story
