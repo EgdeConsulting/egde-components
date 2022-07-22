@@ -2,7 +2,7 @@
 import React, { ReactElement } from 'react';
 
 export interface ComponentStabilityProps {
-    variant?: 'stable' | 'unstable' | 'deprecated';
+    variant: 'stable' | 'unstable' | 'deprecated';
 }
 
 const ComponentStability = (props: ComponentStabilityProps): ReactElement => {

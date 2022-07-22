@@ -1,18 +1,30 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Button } from './Button';
-import { ComponentStability } from 'Icons';
+import { DocsPage } from 'Components';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <Button {...args} />;
 
+export const componentName = 'Button';
+export const storyNames = [
+    'Secondary Button',
+    'Delete Button',
+    'Icon Button',
+    'Icon and Text Button',
+    'Link Button',
+];
+
+<DocsPage
+    componentName={componentName}
+    componentDescription="This component is used to create a button which the user can click in order to initiate an action."
+    addStories={true}
+    storyNames={storyNames}
+    addImportantNote={false}
+    variant="stable"
+/>
+
 <Meta
-    title={LibPath.Form + 'Button'}
+    title={LibPath.Form + componentName}
     component={Button}
     args={{
         label: 'Button',
@@ -21,32 +33,9 @@ export const Template = (args) => <Button {...args} />;
     }}
 />
 
-# Button
-
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to create a button which the user can click in order to initiate an action.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
-
-Change some of the props and see how the `Base` component changes.
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
-
-### Secondary Button
+</Canvas>
 
 <Canvas withToolbar>
     <Story
@@ -59,8 +48,6 @@ use cases.
     </Story>
 </Canvas>
 
-### Delete Button
-
 <Canvas withToolbar>
     <Story
         name="Delete Button"
@@ -71,8 +58,6 @@ use cases.
         {Template.bind({})}
     </Story>
 </Canvas>
-
-### Icon Button
 
 <Canvas withToolbar>
     <Story
@@ -85,8 +70,6 @@ use cases.
     </Story>
 </Canvas>
 
-### Icon and Text Button
-
 <Canvas withToolbar>
     <Story
         name="Icon and Text Button"
@@ -97,8 +80,6 @@ use cases.
         {Template.bind({})}
     </Story>
 </Canvas>
-
-### Link Button
 
 <Canvas withToolbar>
     <Story

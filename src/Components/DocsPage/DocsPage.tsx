@@ -5,21 +5,21 @@ import { Props } from '@storybook/addon-docs/blocks';
 import { Alert } from 'Components';
 
 interface ImportantNoteProps {
-    noteMessage: string;
+    noteMessage?: string;
 }
 
 interface StoriesContentProps {
-    storyNames: string[];
+    storyNames?: string[];
 }
 
 interface DocsPageProps
     extends ComponentStabilityProps,
         StoriesContentProps,
         ImportantNoteProps {
-    componentName?: string;
-    componentDescription?: string;
-    addStories?: boolean;
-    addImportantNote?: boolean;
+    componentName: string;
+    componentDescription: string;
+    addStories: boolean;
+    addImportantNote: boolean;
 }
 
 const StoriesContent = (props: StoriesContentProps) => {
@@ -33,7 +33,7 @@ const StoriesContent = (props: StoriesContentProps) => {
                 regards to varying use cases.
             </p>
             <br />
-            {storyNames.map((value, index) => {
+            {(storyNames || []).map((value, index) => {
                 return (
                     <h3
                         key={index}
@@ -44,6 +44,7 @@ const StoriesContent = (props: StoriesContentProps) => {
                     </h3>
                 );
             })}
+            {/*<DocsPageScript variant="createStoryHeadings" />*/}
         </div>
     );
 };
@@ -65,13 +66,15 @@ const DocsPage = (props: DocsPageProps) => {
                 <div>
                     {/* Alert component doesn't get its styling */}
                     <Alert
-                        description={noteMessage}
+                        description={noteMessage || ''}
                         status="warning"
                         hasNoCloseButton={true}
                     />
                     <br />
                 </div>
             )}
+            {/* The default MDX styling (i.e. class css-1d8ls76) isn't rendered into the DOM, 
+            unless a standard mdx-page has been loaded prior (i.e. Introduction.stories.mdx) */}
             <h1 className="css-1d8ls76">{componentName}</h1>
             <ComponentStability variant={variant} />
             <hr />
@@ -82,7 +85,7 @@ const DocsPage = (props: DocsPageProps) => {
             </p>
             <Props story="Base" />
             {addStories && <StoriesContent storyNames={storyNames} />}
-            <DocsPageScript />
+            <DocsPageScript variant="moveStories" />
         </div>
     );
 };
