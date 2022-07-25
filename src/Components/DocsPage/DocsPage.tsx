@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStability, ComponentStabilityProps } from 'Icons';
 import { DocsPageScript } from 'Components';
-import { Props } from '@storybook/addon-docs/blocks';
+import { Props } from '@storybook/addon-docs';
 import { Alert } from 'Components';
 
 interface ImportantNoteProps {
