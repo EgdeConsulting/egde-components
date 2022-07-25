@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props } from '@storybook/addon-docs/blocks';
+import { Props } from '@storybook/addon-docs';
 
 interface DocsPageBodyProps {
     addStories: boolean;
