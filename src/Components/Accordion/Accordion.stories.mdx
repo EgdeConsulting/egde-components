@@ -1,27 +1,11 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { Accordion } from './Accordion';
-import { DocsPage } from 'Components';
+import { DocsPageHeader, DocsPageBody } from 'Components';
 import { LibPath } from 'Types';
+import { Accordion } from 'Components';
 
 export const Template = (args) => <Accordion {...args} />;
 
 export const componentName = 'Accordion';
-export const storyNames = [
-    'Accordion OK',
-    'Accordion InProgress',
-    'More Accordion',
-    'Only one Accordion open',
-];
-
-<DocsPage
-    componentName={componentName}
-    componentDescription="This component is used to display content in a vertical dropdown-like manner."
-    addStories={true}
-    storyNames={storyNames}
-    addImportantNote={true}
-    noteMessage="There is a bug with the 'Show Code' where nested components inside of props are being enclosed by a MDXCreateElement-tag."
-    variant="stable"
-/>
 
 <Meta
     title={LibPath.Disclosure + componentName}
@@ -43,9 +27,21 @@ export const storyNames = [
     }}
 />
 
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to display content in a vertical dropdown-like manner."
+    addImportantNote={true}
+    noteMessage="There is a bug with the 'Show Code' where nested components inside of props are being enclosed by a MDXCreateElement-tag."
+    variant="stable"
+/>
+
 <Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
+
+<DocsPageBody addStories={true} />
+
+### Accordion Ok
 
 <Canvas withToolbar>
     <Story
@@ -69,6 +65,8 @@ export const storyNames = [
     </Story>
 </Canvas>
 
+### Accordion InProgress
+
 <Canvas withToolbar>
     <Story
         name="Accordion InProgress"
@@ -90,6 +88,8 @@ export const storyNames = [
         {Template.bind({})}
     </Story>
 </Canvas>
+
+### More Accordion
 
 <Canvas withToolbar>
     <Story
@@ -133,6 +133,8 @@ export const storyNames = [
     </Story>
 </Canvas>
 
+### Only one Accordion open
+
 <Canvas withToolbar>
     <Story
         name="Only one Accordion open"
@@ -143,25 +145,3 @@ export const storyNames = [
         {Template.bind({})}
     </Story>
 </Canvas>
-
-<!--
-<>
-    {storiesOf('Components/Accordion'}, module).add('storiesOfTest', () => (
-        <Accordion
-            items={[
-                {
-                    title: 'Accordion 69',
-                    content: <div>Content 69</div>,
-                    badge: AccordionBadgeEnum.OK,
-                },
-                {
-                    title: 'Accordion 420',
-                    content: <div>Content 420</div>,
-                    badge: AccordionBadgeEnum.OK,
-                },
-            ]}
-            allowMultiple={true}
-        />
-    ))}
-</>
--->

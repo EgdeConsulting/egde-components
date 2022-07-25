@@ -1,33 +1,23 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { PageContainer } from './PageContainer';
-import { DocsPage } from 'Components';
+import { DocsPageHeader, DocsPageBody } from 'Components';
 import { LibPath } from 'Types';
+import { PageContainer } from 'Components';
 
 export const Template = (args) => <PageContainer {...args} />;
 
 export const componentName = 'PageContainer';
-export const storyNames = ['Story 1', 'Story 2', 'Story 3', 'Story 4'];
-
-<DocsPage
-    componentName={componentName}
-    componentDescription="This component is used to create a container which is supposed to stretch over a bigger area of the page. It can hold information like a title and text."
-    addStories={true}
-    storyNames={storyNames}
-    addImportantNote={false}
-    variant="stable"
-/>
 
 <Meta
-    title={LibPath.Containers + 'PageContainer'}
+    title={LibPath.Containers + componentName}
     component={PageContainer}
     args={{
         title: 'Title',
-        titleAlignment: 'center',
+        titleAlignment: 'left',
         titleTextColor: '#01233D',
         subtitle: 'Subtitle',
-        subtitleAlignment: 'center',
+        subtitleAlignment: 'left',
         subtitleTextColor: '#01233D',
-        children: <div>Content</div>,
+        children: <div>Content goes here!</div>,
         containerPadding: '0px',
         containerMargin: '0px',
         contentPadding: '0px',
@@ -35,18 +25,8 @@ export const storyNames = ['Story 1', 'Story 2', 'Story 3', 'Story 4'];
         subtitlePadding: '0px',
         titlePadding: '0px',
         titleMargin: '0px',
-        borderColor: '#FAFAFD',
         borderWidth: '1px',
-        contentBorderColor: '#FAFAFD',
         contentBorderWidth: '1px',
-        titleBadge: {
-            badgeColor: '#ffffff',
-            textColor: '#ffffff',
-            label: '#ffffff',
-        },
-        backgroundColor: '#FAFAFD',
-        contentColor: '#FAFAFD',
-        titlesColor: '#FAFAFD',
         height: '100%',
         width: '100%',
         containerMinWidth: '0px',
@@ -57,60 +37,103 @@ export const storyNames = ['Story 1', 'Story 2', 'Story 3', 'Story 4'];
     }}
 />
 
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to create a container which is supposed to stretch over a bigger area of the page. It can hold information like a title and text."
+    addImportantNote={false}
+    variant="stable"
+/>
+
 <Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<Canvas withToolbar>
-    <Story
-        name="Story 1"
-        args={{
-            title: 'Title 1',
-            titleAlignment: 'left',
-            titleTextColor: 'red',
-            subtitleAlignment: 'left',
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
+<DocsPageBody addStories={true} />
+
+### Centered Content
 
 <Canvas withToolbar>
     <Story
-        name="Story 2"
+        name="Centered Content"
         args={{
-            title: 'Title 1',
-            titleAlignment: 'left',
-            titleTextColor: 'red',
+            title: 'Lorem Ipsum',
+            titleAlignment: 'center',
+            titleTextColor: '#FFFFFF',
+            subtitle: 'What is Lorem Ipsum?',
             subtitleAlignment: 'center',
+            subtitleTextColor: '#FFFFFF',
+            subtitlePadding: '5px',
+            contentColor: '#FFFFFF',
+            backgroundColor: '#000000',
+            titlesColor: '#000000',
+            borderWidth: '0px',
+            contentBorderColor: '#999999',
+            contentBorderWidth: '3px',
+            contentPadding: '10px',
+            containerPadding: '10px',
+            children: (
+                <div>
+                    <p>
+                        <b>Lorem Ipsum</b> is simply dummy text of the printing
+                        and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            ),
         }}
     >
         {Template.bind({})}
     </Story>
 </Canvas>
 
-<Canvas withToolbar>
-    <Story
-        name="Story 3"
-        args={{
-            title: 'Title 1',
-            titleAlignment: 'left',
-            titleTextColor: 'red',
-            subtitleAlignment: 'right',
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
+### Right-handed Content
 
 <Canvas withToolbar>
     <Story
-        name="Story 4"
+        name="Right-handed Content"
         args={{
-            title: 'Title 2',
+            title: 'Lorem Ipsum',
             titleAlignment: 'right',
-            titleTextColor: 'blue',
-            subtitleAlignment: 'left',
+            titleTextColor: '#2a3406',
+            titlePadding: '10px',
+            subtitle: 'What is Lorem Ipsum?',
+            subtitleAlignment: 'right',
+            subtitleTextColor: '#5c581a',
+            subtitlePadding: '5px',
+            contentColor: '#FFFFFF',
+            titlesColor: '#817248',
+            borderColor: 'red',
+            borderWidth: '2px',
+            contentBorderColor: 'blue',
+            contentBorderWidth: '2px',
+            contentPadding: '10px',
+            contentMargin: '10px',
+            containerPadding: '20px',
+            children: (
+                <div>
+                    <p>
+                        <b>Lorem Ipsum</b> is simply dummy text of the printing
+                        and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of
+                        Letraset sheets containing Lorem Ipsum passages, and
+                        more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            ),
         }}
     >
         {Template.bind({})}

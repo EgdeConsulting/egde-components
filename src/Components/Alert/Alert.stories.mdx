@@ -1,18 +1,14 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs';
-import { Alert } from './Alert';
-import { ComponentStability } from 'Icons';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Components';
 import { LibPath } from 'Types';
+import { Alert } from 'Components';
 
 export const Template = (args) => <Alert {...args} />;
 
+export const componentName = 'Alert';
+
 <Meta
-    title={LibPath.Feedback + 'Alert'}
+    title={LibPath.Feedback + componentName}
     component={Alert}
     args={{
         description: 'This is an info alert',
@@ -25,31 +21,18 @@ export const Template = (args) => <Alert {...args} />;
     }}
 />
 
-# Alert
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to display a info-box which displays important information whom the user must see."
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to display a info-box which displays important information
-whom the user must see.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-Change some of the props and see how the `Base` component changes.
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
+<DocsPageBody addStories={true} />
 
 ### Warning Alert
 

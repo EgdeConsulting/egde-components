@@ -1,0 +1,31 @@
+.docsPage {
+    color: #333333;
+    font-family: 'Nunito Sans', -apple-system, '.SFNSText-Regular',
+        'San Francisco', BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
+        Helvetica, Arial, sans-serif;
+    cursor: text;
+    padding: 0;
+}
+
+.docsPage h1 {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 0 8px;
+}
+
+.docsPage p {
+    font-size: 16px;
+    margin: 16px 0;
+}
+
+.docsPage .chakra-alert {
+    width: 100% !important;
+}
+
+.sbdocs-p {
+    font-size: 16px !important;
+}
+
+.sbdocs-h3 {
+    margin: 20px 0 !important;
+}
