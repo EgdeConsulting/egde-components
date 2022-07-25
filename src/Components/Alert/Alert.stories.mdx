@@ -1,26 +1,11 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { Alert } from './Alert';
-import { DocsPage } from 'Components';
+import { DocsPageHeader, DocsPageBody } from 'Components';
 import { LibPath } from 'Types';
+import { Alert } from 'Components';
 
 export const Template = (args) => <Alert {...args} />;
 
 export const componentName = 'Alert';
-export const storyNames = [
-    'Warning Alert',
-    'Error Alert',
-    'Success Alert',
-    'Alert with link',
-];
-
-<DocsPage
-    componentName={componentName}
-    componentDescription="This component is used to display a info-box which displays important information whom the user must see."
-    addStories={true}
-    storyNames={storyNames}
-    addImportantNote={false}
-    variant="stable"
-/>
 
 <Meta
     title={LibPath.Feedback + componentName}
@@ -36,9 +21,20 @@ export const storyNames = [
     }}
 />
 
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to display a info-box which displays important information whom the user must see."
+    addImportantNote={false}
+    variant="stable"
+/>
+
 <Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
+
+<DocsPageBody addStories={true} />
+
+### Warning Alert
 
 <Canvas withToolbar>
     <Story
@@ -52,6 +48,8 @@ export const storyNames = [
     </Story>
 </Canvas>
 
+### Error Alert
+
 <Canvas withToolbar>
     <Story
         name="Error Alert"
@@ -64,6 +62,8 @@ export const storyNames = [
     </Story>
 </Canvas>
 
+### Success Alert
+
 <Canvas withToolbar>
     <Story
         name="Success Alert"
@@ -75,6 +75,8 @@ export const storyNames = [
         {Template.bind({})}
     </Story>
 </Canvas>
+
+### Alert with link
 
 <Canvas withToolbar>
     <Story

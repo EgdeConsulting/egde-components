@@ -1,2 +1,2 @@
-export * from './DocsPage';
-export * from './DocsPageScript';
+export * from './DocsPageHeader';
+export * from './DocsPageBody';

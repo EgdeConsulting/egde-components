@@ -1,27 +1,11 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { Button } from './Button';
-import { DocsPage } from 'Components';
+import { DocsPageHeader, DocsPageBody } from 'Components';
 import { LibPath } from 'Types';
+import { Button } from 'Components';
 
 export const Template = (args) => <Button {...args} />;
 
 export const componentName = 'Button';
-export const storyNames = [
-    'Secondary Button',
-    'Delete Button',
-    'Icon Button',
-    'Icon and Text Button',
-    'Link Button',
-];
-
-<DocsPage
-    componentName={componentName}
-    componentDescription="This component is used to create a button which the user can click in order to initiate an action."
-    addStories={true}
-    storyNames={storyNames}
-    addImportantNote={false}
-    variant="stable"
-/>
 
 <Meta
     title={LibPath.Form + componentName}
@@ -33,9 +17,20 @@ export const storyNames = [
     }}
 />
 
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to create a button which the user can click in order to initiate an action."
+    addImportantNote={false}
+    variant="stable"
+/>
+
 <Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
+
+<DocsPageBody addStories={true} />
+
+### Secondary Button
 
 <Canvas withToolbar>
     <Story
@@ -48,6 +43,8 @@ export const storyNames = [
     </Story>
 </Canvas>
 
+### Delete Button
+
 <Canvas withToolbar>
     <Story
         name="Delete Button"
@@ -58,6 +55,8 @@ export const storyNames = [
         {Template.bind({})}
     </Story>
 </Canvas>
+
+### Icon Button
 
 <Canvas withToolbar>
     <Story
@@ -70,6 +69,8 @@ export const storyNames = [
     </Story>
 </Canvas>
 
+### Icon and Text Button
+
 <Canvas withToolbar>
     <Story
         name="Icon and Text Button"
@@ -80,6 +81,8 @@ export const storyNames = [
         {Template.bind({})}
     </Story>
 </Canvas>
+
+### Link Button
 
 <Canvas withToolbar>
     <Story
