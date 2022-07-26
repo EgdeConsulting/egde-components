@@ -1,15 +1,11 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs';
-import { Tabs } from './Tabs';
-import { ComponentStability } from 'Icons';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
+import { Tabs } from './Tabs';
 
 export const Template = (args) => <Tabs {...args} />;
+
+export const componentName = 'Tabs';
 
 <Meta
     title={LibPath.Disclosure + 'Tabs'}
@@ -29,34 +25,22 @@ export const Template = (args) => <Tabs {...args} />;
     }}
 />
 
-# Tabs
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to display and hide content in distinctive tabs."
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to display and hide content in distinctive tabs.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-Change some of the props and see how the `Base` component changes.
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
+<DocsPageBody addStories={true} />
 
 ### More tabs
 
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="More tabs"
         args={{
@@ -94,7 +78,7 @@ use cases.
 
 ### Center tabs
 
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Center tabs"
         args={{
