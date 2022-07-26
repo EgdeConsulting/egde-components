@@ -64,6 +64,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-storybook": "^0.5.13",
     "framer-motion": "^6",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
     "prettier": "2.7.1",
@@ -102,7 +103,14 @@
     "transformIgnorePatterns": [
       "node_modules/util-deprecate"
     ],
-    "moduleDirectories": ["node_modules", "src"]
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+      "@fontsource/lato": "identity-obj-proxy"
+    }
   },
   "types": "dist/index.d.ts",
   "dependencies": {
