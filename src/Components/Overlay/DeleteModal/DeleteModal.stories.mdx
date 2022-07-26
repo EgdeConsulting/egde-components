@@ -1,10 +1,5 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs';
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { DeleteModal } from './DeleteModal';
 import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
@@ -16,17 +11,15 @@ export const Template = (args) => {
     return (
         <div>
             <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
-            <DeleteModal
-                {...args}
-                isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
-            />
+            <DeleteModal {...args} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
         </div>
     );
 };
+export const componentName = 'DeleteModal';
+
 
 <Meta
-    title={LibPath.Overlay + 'DeleteModal'}
+    title={LibPath.Overlay + componentName}
     component={DeleteModal}
     args={{
         isModalOpen: false,
@@ -40,30 +33,18 @@ export const Template = (args) => {
     }}
 />
 
-# Delete Modal
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to create a popup-box which includes a delete button and can contain additional interactive content."
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to create a popup-box which includes a delete button and can contain additional interactive content.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-Change some of the props and see how the `Base` component changes.
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
+<DocsPageBody addStories={true} />
 
 ### Centered Delete Modal
 
