@@ -23,6 +23,17 @@
     font-size: 15px !important;
 }
 
+.docsPage code {
+    line-height: 1;
+    margin: 0 2px;
+    padding: 3px 5px;
+    white-space: nowrap;
+    border-radius: 3px;
+    border: 1px solid #eeeeee;
+    color: rgba(51, 51, 51, 0.9);
+    background-color: #f8f8f8;
+}
+
 .sbdocs-h1,
 .sbdocs-h2,
 .sbdocs-h3,
