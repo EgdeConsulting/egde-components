@@ -1,5 +1,5 @@
 import { styles } from '../src/Styles';
-import '../src/Components/DocsPage/docsPage.css';
+import '../src/Docs/DocsPage/docsPage.css';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },

@@ -56,7 +56,7 @@ Base.args = {
 
 // WORKS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 import React from 'react';
-import { Checkbox } from '../Checkbox';
+import { Checkbox } from 'Components';
 import { Story } from '@storybook/react';
 
 const Template: Story = (args) => {
