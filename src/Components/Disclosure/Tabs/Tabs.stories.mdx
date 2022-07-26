@@ -28,7 +28,8 @@ export const componentName = 'Tabs';
 <DocsPageHeader
     componentName={componentName}
     componentDescription="This component is used to display and hide content in distinctive tabs."
-    addImportantNote={false}
+    addImportantNote={true}
+    noteMessage="There is a bug with 'Show Code' where nested components inside of props are being enclosed by a MDXCreateElement-tag."
     variant="stable"
 />
 
@@ -38,11 +39,11 @@ export const componentName = 'Tabs';
 
 <DocsPageBody addStories={true} />
 
-### More tabs
+### Many Tabs
 
 <Canvas withToolbar>
     <Story
-        name="More tabs"
+        name="Many Tabs"
         args={{
             tabs: [
                 {
@@ -76,11 +77,11 @@ export const componentName = 'Tabs';
     </Story>
 </Canvas>
 
-### Center tabs
+### Centered Tabs
 
 <Canvas withToolbar>
     <Story
-        name="Center tabs"
+        name="Centered Tabs"
         args={{
             centerTabs: true,
         }}

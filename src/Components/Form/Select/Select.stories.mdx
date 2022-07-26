@@ -1,13 +1,7 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs';
-import { Select } from './Select';
-import { ComponentStability } from 'Icons';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
+import { Select } from './Select';
 import { useState } from 'react';
 
 export const Template = (args) => {
@@ -22,11 +16,13 @@ export const Template = (args) => {
     );
 };
 
+export const componentName = 'Select';
+
 <Meta
     title={LibPath.Form + 'Select'}
     component={Select}
     args={{
-        label: 'Select',
+        label: 'Title',
         options: [
             { label: 'Option 1', value: 0 },
             { label: 'Option 2', value: 1 },
@@ -39,13 +35,11 @@ export const Template = (args) => {
         placeholder: 'Select an option',
         filterText: '',
         isDisabled: false,
-        backgroundColor: '#fff',
-        autoFocus: false,
         labelTextMargin: '0',
         invalidText: '',
         captionText: '',
         captionTextMargin: '0',
-        margin: '0',
+        margin: '30px',
         padding: '0',
         width: '100%',
         minWidth: '0',
@@ -54,40 +48,30 @@ export const Template = (args) => {
     }}
 />
 
-# Select
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to create a container which is supposed to stretch over a bigger area of the page. It can hold information like a title and text."
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to create a container which is supposed to stretch over a bigger area of the page. It can hold information like a title and text.
-
-<Preview withToolbar>
+<Canvas withToolbar isColumn>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
+    <br />
+    <br />
+    <br />
+</Canvas>
 
-Change some of the props and see how the `Base` component changes.
-
-<br />
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
+<DocsPageBody addStories={true} />
 
 ### Disabled Select
 
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Disabled Select"
         args={{
             isDisabled: true,
+            margin: '20px',
         }}
     >
         {Template.bind({})}
