@@ -1,10 +1,5 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs';
+import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { Checkbox } from './Checkbox';
 import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
@@ -22,16 +17,14 @@ export const Template = (args) => {
     );
 };
 
+export const componentName = 'Checkbox';
+
 <Meta
-    title={LibPath.Form + 'Checkbox'}
+    title={LibPath.Form + componentName}
     component={Checkbox}
     args={{
         direction: 'column',
-        options: [
-            'Checkbox Option One',
-            'Checkbox Option Two',
-            'Checkbox Option Three',
-        ],
+        options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
         value: [0],
         onChange: () => {},
         invalidText: '',
@@ -50,30 +43,18 @@ export const Template = (args) => {
     }}
 />
 
-# Checkbox
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to create a checklist where multiple answers can be checked off."
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to create a checklist where multiple answers can be checked off.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-Change some of the props and see how the `Base` component changes.
-
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
+<DocsPageBody addStories={true} />
 
 ### Checkbox Row
 
@@ -94,7 +75,7 @@ use cases.
     <Story
         name="Invalid Checkbox"
         args={{
-            invalidText: 'Invalide',
+            invalidText: 'Invalid',
         }}
     >
         {Template.bind({})}
