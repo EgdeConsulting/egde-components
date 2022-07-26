@@ -1,8 +1,8 @@
+@import '../../Styles/Fonts/fonts.css';
+
 .docsPage {
     color: #333333;
-    font-family: 'Nunito Sans', -apple-system, '.SFNSText-Regular',
-        'San Francisco', BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue',
-        Helvetica, Arial, sans-serif;
+    font-family: 'Standard';
     cursor: text;
     padding: 0;
 }
@@ -20,6 +20,14 @@
 
 .docsPage .chakra-alert {
     width: 100% !important;
+    font-size: 15px !important;
+}
+
+.sbdocs-h1,
+.sbdocs-h2,
+.sbdocs-h3,
+.sbdocs-p {
+    font-family: 'Standard' !important;
 }
 
 .sbdocs-p {
