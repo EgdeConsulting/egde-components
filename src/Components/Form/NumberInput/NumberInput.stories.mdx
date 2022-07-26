@@ -3,15 +3,17 @@ import {
     Story,
     Props,
     Canvas,
-    Preview,
 } from '@storybook/addon-docs';
 import { NumberInput } from './NumberInput';
 import { LibPath } from 'Types';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 
 export const Template = (args) => <NumberInput {...args} />;
 
+export const componentName = 'NumberInput'
+
 <Meta
-    title={LibPath.Form + 'NumberInput'}
+    title={LibPath.Form + componentName}
     component={NumberInput}
     parameters={{
         toolbar: {
@@ -50,19 +52,23 @@ export const Template = (args) => <NumberInput {...args} />;
     }}
 />
 
-# NumberInput
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This Component is used when you are supposed to only use numberinput"
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<hr />
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
 
-<Preview withToolbar>
-    <Story name="NumberInput">{Template.bind({})}</Story>
-</Preview>
 
-<Props story="NumberInput" />
+<DocsPageBody addStories={true} />
 
-# Stories
+### Disable number input
 
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Disable number input"
         args={{
@@ -75,7 +81,7 @@ export const Template = (args) => <NumberInput {...args} />;
 
 ### Invalide numberInput
 
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Invalid numberInput"
         args={{
@@ -86,11 +92,9 @@ export const Template = (args) => <NumberInput {...args} />;
     </Story>
 </Canvas>
 
-## Input formate
+### Input value with Space
 
-### Space
-
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Input value with Space"
         args={{
@@ -102,9 +106,9 @@ export const Template = (args) => <NumberInput {...args} />;
     </Story>
 </Canvas>
 
-### without Space
+### Input value without Space
 
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Spaceless input value"
         args={{
@@ -115,11 +119,9 @@ export const Template = (args) => <NumberInput {...args} />;
     </Story>
 </Canvas>
 
-## Text Alignment
+### Text Alignment Right
 
-### Right
-
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Alignment Right"
         args={{
@@ -131,9 +133,9 @@ export const Template = (args) => <NumberInput {...args} />;
     </Story>
 </Canvas>
 
-### Center
+### Text Alignment Center
 
-<Canvas>
+<Canvas withToolbar>
     <Story
         name="Alignment Center"
         args={{
