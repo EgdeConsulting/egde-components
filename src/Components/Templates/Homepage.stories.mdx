@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { HorizontalStepper } from '../HorizontalStepper';
+import { PageContainer } from '../PageContainer';
+import { NumberInput } from '../Input/NumberInput';
+import * as stories from './Homepage.stories.tsx';
+import { Root } from 'Types';
+
+<Meta title={Root.Templates + 'Homepage'} component={PageContainer} />
+
+# Homepage
+
+This template uses the following components: ...
+
+<Canvas withToolbar>
+    <Story name="Homepage" story={stories.Base} />
+</Canvas>
+
+
