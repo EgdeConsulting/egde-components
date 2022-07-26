@@ -10,6 +10,8 @@ import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
+import { DocsPageBody, DocsPageHeader } from 'Docs';
+export const componentName = 'AlertDialog'
 
 export const Template = (args) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -50,31 +52,22 @@ export const Template = (args) => {
     }}
 />
 
-# Alert Dialog
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription=" This component is used to create an overlay that displays an alert. Push the button to open the AlertDialog"
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<ComponentStability variant="stable" />
 
-<hr />
 
-This component is used to display a popup-box which displays important information
-whom the user must see.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-Change some of the props and see how the `Base` component changes.
+<DocsPageBody addStories={true} />
 
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
+### Warning Alert
 
 <Canvas withToolbar>
     <Story
