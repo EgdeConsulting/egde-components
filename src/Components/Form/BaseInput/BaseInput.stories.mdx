@@ -1,21 +1,17 @@
 import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { BaseInput } from './BaseInput';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <BaseInput {...args} />;
+export const componentName = 'BaseInput';
 
 <Meta
-  title={LibPath.Form + 'BaseInput'}
+  title={LibPath.Form + componentName}
   component={BaseInput}
   parameters={{
     toolbar: {
       title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
     },
   }}
   args={{
@@ -33,66 +29,12 @@ export const Template = (args) => <BaseInput {...args} />;
   }}
 />
 
-# BaseInput
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
-
-<hr />
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used as a base for other input component such as numberInput, TextInput and FileInput."
+    addImportantNote={false}
+    variant="stable"
+/>
 
 <Preview withToolbar>
   <Story name="BaseInput">{Template.bind({})}</Story>
@@ -100,5 +42,4 @@ export const Template = (args) => <BaseInput {...args} />;
 
 <Props story="BaseInput" />
 
-# Stories
-
+<DocsPageBody addStories={false} />
