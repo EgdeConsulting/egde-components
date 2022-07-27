@@ -1,14 +1,14 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
-import { Card } from './Card';
-import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
+import { Card } from 'Components';
 
 export const Template = (args) => <Card {...args} />;
+
 export const componentName = 'Card';
 
 <Meta
-    title={LibPath.Cards + 'Card'}
+    title={LibPath.Cards + componentName}
     component={Card}
     args={{
         title: 'Title',
@@ -38,6 +38,8 @@ export const componentName = 'Card';
 </Canvas>
 
 <DocsPageBody addStories={true} />
+
+### Customer information
 
 <Canvas withToolbar>
     <Story

@@ -1,8 +1,7 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
-import { DeleteModal } from './DeleteModal';
-import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
+import { DeleteModal } from 'Components';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 
@@ -11,12 +10,16 @@ export const Template = (args) => {
     return (
         <div>
             <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
-            <DeleteModal {...args} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <DeleteModal
+                {...args}
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+            />
         </div>
     );
 };
-export const componentName = 'DeleteModal';
 
+export const componentName = 'DeleteModal';
 
 <Meta
     title={LibPath.Overlay + componentName}
@@ -27,8 +30,8 @@ export const componentName = 'DeleteModal';
         setIsModalOpen: () => {},
         onSubmit: () => {},
         deleteButtonLabel: 'Delete',
-        deleteText: 'Are you sure you want to delete this?',
-        title: 'Delete Modal',
+        deleteText: 'Content',
+        title: 'Title',
         cancelButtonLabel: 'Cancel',
     }}
 />
@@ -46,13 +49,16 @@ export const componentName = 'DeleteModal';
 
 <DocsPageBody addStories={true} />
 
-### Centered Delete Modal
+### Modal Alignment: Center
 
 <Canvas withToolbar>
     <Story
-        name="Centered DeleteModal"
+        name="Modal Alignment: Center"
         args={{
             isCentered: true,
+            deleteText:
+                'Are you sure you want to delete the account? There is no going back!',
+            title: 'Delete Account',
         }}
     >
         {Template.bind({})}

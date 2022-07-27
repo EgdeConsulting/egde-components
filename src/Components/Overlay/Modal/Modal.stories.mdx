@@ -1,15 +1,9 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs';
-import { Modal } from './Modal';
-import { ComponentStability } from 'Icons';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
-import { Button } from '@chakra-ui/react';
+import { Modal } from 'Components';
 import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
 
 export const Template = (args) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,16 +16,18 @@ export const Template = (args) => {
     );
 };
 
+export const componentName = 'Modal';
+
 <Meta
-    title={LibPath.Overlay + 'Modal'}
+    title={LibPath.Overlay + componentName}
     component={Modal}
     args={{
         isModalOpen: false,
         isCentered: false,
         iconVariant: 'check',
-        title: 'Modal Title',
-        subtitle: 'Modal Subtitle',
-        children: <div>Modal Content</div>,
+        title: 'Title',
+        subtitle: 'Subtitle',
+        children: <div>Content</div>,
         buttons: {
             primary: {
                 label: 'Primary Button',
@@ -52,36 +48,24 @@ export const Template = (args) => {
     }}
 />
 
-# Modal
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to create a popup-box which can contain interactive content."
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<ComponentStability variant="stable" />
-
-<hr />
-
-This component is used to create a popup-box which can contain interactive content.
-
-<Preview withToolbar>
+<Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
-</Preview>
+</Canvas>
 
-Change some of the props and see how the `Base` component changes.
+<DocsPageBody addStories={true} />
 
-<Props story="Base" />
-
-# Stories
-
-<hr />
-
-Below are shown different implementations of the component in regards to varying
-use cases.
-
-<br />
-
-### Buttons right
+### Button Alignment: Right
 
 <Canvas>
     <Story
-        name="Buttons right"
+        name="Button Alignment: Right"
         args={{
             buttons: {
                 primary: {
@@ -95,6 +79,9 @@ use cases.
                     onClick: () => {},
                 },
                 alignment: 'right',
+                title: 'Newsletter Subscription',
+                subtitle: '',
+                children: <div>You are now subscribed!</div>,
             },
         }}
     >
@@ -115,26 +102,13 @@ use cases.
     </Story>
 </Canvas>
 
-### Centered Modal
+### Modal Alignment: Center
 
 <Canvas>
     <Story
-        name="Centered Modal"
+        name="Modal Alignment: Center"
         args={{
             isCentered: true,
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### Icon variant: Check
-
-<Canvas>
-    <Story
-        name="Icon variant: Check"
-        args={{
-            iconVariant: 'check',
         }}
     >
         {Template.bind({})}

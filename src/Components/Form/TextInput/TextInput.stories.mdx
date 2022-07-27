@@ -1,44 +1,40 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
-import { TextInput } from './TextInput';
 import { LibPath } from 'Types';
+import { TextInput } from 'Components';
 
 export const Template = (args) => <TextInput {...args} />;
+
 export const componentName = 'TextInput';
 
 <Meta
     title={LibPath.Form + componentName}
     component={TextInput}
-    parameters={{
-        toolbar: {
-            title: { hidden: true },
-        },
-    }}
     args={{
-        label: 'Number Input',
-        labelTextMargin: '0',
+        label: 'Title',
+        labelTextMargin: '10px',
         placeholder: 'Placeholder',
         onChange: () => {},
         value: '',
         invalidText: '',
-        captionText: '',
+        captionText: 'Caption text',
         isDisabled: false,
-        margin: '0',
+        margin: '5px',
         padding: '0',
         width: '100%',
         minWidth: '0',
-        backgroundColor: '#ffffff',
+        backgroundColor: 'transparent',
         autoFocus: false,
-        textAlign: 'right',
-        characterLimit: 0,
-        captionTextMargin: '0',
+        textAlign: 'left',
+        characterLimit: 100,
+        captionTextMargin: '10px',
         maxWidth: '100%',
     }}
 />
 
 <DocsPageHeader
     componentName={componentName}
-    componentDescription="This component is used for text input."
+    componentDescription="This component is used to create an input which accepts text (numbers, letters and special characters) in a short and static textarea."
     addImportantNote={false}
     variant="stable"
 />
@@ -49,52 +45,44 @@ export const componentName = 'TextInput';
 
 <DocsPageBody addStories={true} />
 
+### Disabled TextInput
 
 <Canvas withToolbar>
     <Story
-        name="Disable text input"
+        name="Disabled TextInput"
         args={{
             isDisabled: true,
+            label: 'Enter your name:',
+            placeholder: 'This input is not available yet!',
+            backgroundColor: '#F9E5E5',
+            captionText: '',
         }}
     >
         {Template.bind({})}
     </Story>
 </Canvas>
 
-### Invalide TextInput
+### Invalid TextInput
 
 <Canvas withToolbar>
     <Story
-        name="Invalid Text Input"
+        name="Invalid TextInput"
         args={{
-            invalidText: 'Invalid text',
+            label: 'Enter your address:',
+            invalidText: 'This address is outside Norway!',
+            value: '43 Curlew St, London SE1 2ND, Storbritannia',
+            captionText: '',
         }}
     >
         {Template.bind({})}
     </Story>
 </Canvas>
 
-## Text Alignment
-
-### Right
+### Text Alignment: Center
 
 <Canvas withToolbar>
     <Story
-        name="Alignment Right"
-        args={{
-            textAlign: 'right',
-            value: 'Hello World!',
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### Center
-
-<Canvas withToolbar>
-    <Story
-        name="Alignment Center"
+        name="Text Alignment: Center"
         args={{
             textAlign: 'center',
             value: 'Hello World!',
