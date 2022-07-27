@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Card should render correctly 1`] = `
+exports[`Card component test should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -42,25 +42,29 @@ Object {
           <div
             class="css-1orwh6x"
           >
-            <div>
-              Test
+            <div
+              data-testid="TitleIconTestId"
+            >
+              Placeholder
             </div>
             <h2
-              class="chakra-heading css-1b7ud06"
+              class="chakra-heading css-8nlewt"
             >
-              This is a title
+              CardTitle
             </h2>
           </div>
           <div
             class="css-fdihta"
           >
             <p
-              class="chakra-text css-1ivmzsc"
+              class="chakra-text css-85tyrg"
             >
-              This is a body
+              CardBody
             </p>
-            <div>
-              Test
+            <div
+              data-testid="ActionIconTestId"
+            >
+              Placeholder
             </div>
           </div>
         </div>
@@ -77,25 +81,29 @@ Object {
         <div
           class="css-1orwh6x"
         >
-          <div>
-            Test
+          <div
+            data-testid="TitleIconTestId"
+          >
+            Placeholder
           </div>
           <h2
-            class="chakra-heading css-1b7ud06"
+            class="chakra-heading css-8nlewt"
           >
-            This is a title
+            CardTitle
           </h2>
         </div>
         <div
           class="css-fdihta"
         >
           <p
-            class="chakra-text css-1ivmzsc"
+            class="chakra-text css-85tyrg"
           >
-            This is a body
+            CardBody
           </p>
-          <div>
-            Test
+          <div
+            data-testid="ActionIconTestId"
+          >
+            Placeholder
           </div>
         </div>
       </div>

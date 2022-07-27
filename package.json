@@ -49,6 +49,7 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.9",
+    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@types/babel__core": "^7.1.19",
     "@types/babel__traverse": "^7.17.1",
