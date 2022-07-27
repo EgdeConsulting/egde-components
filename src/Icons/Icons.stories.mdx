@@ -12,9 +12,7 @@ import { Root} from 'Types';
   <IconItem name="Parking">
     <icons.ParkingIcon name="Parking" />
   </IconItem>
-  <IconItem name="Arrow">
-    <icons.ArrowRightIcon name="Arrow" />
-  </IconItem>
+ 
   <IconItem name="Mail">
     <icons.MailIcon name="Mail" />
   </IconItem>
@@ -48,6 +46,9 @@ import { Root} from 'Types';
   <IconItem name="Actor">
     <icons.ActorIcon name="Actor" />
   </IconItem>
+  <IconItem name="Arrow">
+    <icons.ArrowRightIcon name="Arrow" />
+  </IconItem>
   {/* This Icons are not in CardIcons */}
   <IconItem name="Warning">
     <icons.Warning name="Warning" />
@@ -67,15 +68,7 @@ import { Root} from 'Types';
     <IconItem name="Check">
     <icons.CheckRounded name="Check" />
   </IconItem>
-    <IconItem name="Delete">
-    <icons.DeleteIcon name="Delete" />
-  </IconItem>
-    <IconItem name="Edit">
-    <icons.EditIcon name="Edit" />
-  </IconItem>
-  <IconItem name="Link">
-    <icons.LinkIcon name="Link" />
-  </IconItem>
+   
   <IconItem name="Priority">
     <icons.PriorityHighRounded name="Priority" />
   </IconItem>
@@ -85,13 +78,21 @@ import { Root} from 'Types';
     <IconItem name="Upload delete">
     <icons.UploadDeleteIcon name="Upload delete" />
   </IconItem>
-    <IconItem name="Upload disabled">
-    <icons.UploadIconDisabled name="Upload disabled" />
-  </IconItem>
     <IconItem name="Upload hover">
     <icons.UploadIconHover name="Upload hover" />
+  </IconItem> 
+  <IconItem name="Upload disabled">
+    <icons.UploadIconDisabled name="Upload disabled" />
   </IconItem>
-  
+  <IconItem name="Link">
+    <icons.LinkIcon name="Link" />
+  </IconItem>
+   {/* Problem that EditIcon has white ass fill option, and IconItem is not customizeable, feature is requested https://github.com/storybookjs/storybook/issues/18793 */}
+  <IconItem name="Edit">
+    <icons.EditIcon name='Edit' />
+  </IconItem>
+  <IconItem name="Delete">
+    <icons.DeleteIcon name="Delete" />
+  </IconItem>
+  </IconGallery>
 
-
-</IconGallery>
