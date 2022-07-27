@@ -20,6 +20,15 @@ enum IconTestID {
     Modal = 'modalIcon',
 }
 
+type IconType = {
+    width?: number | string;
+    height?: number | string;
+    viewBox?: string;
+    fill?: string;
+    xmlns?: string;
+    backgroundColor?: string;
+};
+
 enum ModalIconType {
     Check = 'check',
     Exclamation = 'exclamation',
@@ -311,6 +320,7 @@ export type {
     DatePickerProps,
     RichTextAreaProps,
     FileUploadProps,
+    IconType,
 };
 
 export { IconTestID, AlertDialogIconType, ModalIconType, AccordionBadgeEnum };

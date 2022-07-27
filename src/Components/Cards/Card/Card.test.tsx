@@ -1,25 +1,60 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { ReactElement } from 'react';
+import { render,  screen  } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { Card } from './Card';
 
 
-// Snapshot Test
-describe('Snapshot Card', () => {
-  it('should render correctly', () => {
-    const tree = render(<Card 
-        title='This is a title' 
-        body='This is a body'
-        textColors='#000000'
-        titleTextColor='#000'
-        bodyTextColor='#000'
-        titleTextSize='1.5rem'
-        bodyTextSize='1rem'
-        onClick={() => {}}
-        titleIcon={<div>Test</div>}
-        actionIcon={<div>Test</div>}
-        cardHeight='100px'
-        cardWidth='100px'
-        />);
-    expect(tree).toMatchSnapshot();
-  });
+const CARD_TESTER_TITLE = 'CardTitle';
+const CARD_TESTER_BODY = 'CardBody';
+const ACTION_ICON_TESTID = 'ActionIconTestId';
+const TITLE_ICON_TESTID = 'TitleIconTestId';
+const TEXT_COLOR_TEST = '#000000';
+const TITLE_TEXT_COLOR_TEST = '#000000';
+const BODY_TEXT_COLOR_TEST = '#000000';
+const TITLE_TEXT_SIZE_TEST = '1.5rem';
+const BODY_TEXT_SIZE_TEST = '1rem';
+const CARD_HEIGHT_TEST = '100px';
+const CARD_WIDTH_TEST = '100px';
+
+function CardTester(props: { mockOnClick: () => void }): ReactElement {
+    const { mockOnClick } = props;
+    return (
+        <Card
+            title={CARD_TESTER_TITLE}
+            body={CARD_TESTER_BODY}
+            onClick={mockOnClick}
+            actionIcon={<div data-testid={ACTION_ICON_TESTID}>Placeholder</div>}
+            titleIcon={<div data-testid={TITLE_ICON_TESTID}>Placeholder</div>}
+            textColors={TEXT_COLOR_TEST}
+            titleTextColor={TITLE_TEXT_COLOR_TEST}
+            bodyTextColor={BODY_TEXT_COLOR_TEST}
+            titleTextSize={TITLE_TEXT_SIZE_TEST}
+            bodyTextSize={BODY_TEXT_SIZE_TEST}
+            cardHeight={CARD_HEIGHT_TEST}
+            cardWidth={CARD_WIDTH_TEST}
+            
+        />
+    );
+}
+
+
+// TEST
+describe('Card component test', () => {
+    const mockOnClick = jest.fn();
+    it('should render correctly', () => {
+        const tree = render(
+        <CardTester mockOnClick={mockOnClick} />);
+        expect(tree).toMatchSnapshot();
+    });
+
+
+    it('should render with title, icon and body', () => {
+        render(<CardTester mockOnClick={mockOnClick} />);        
+        expect(screen.getByText(CARD_TESTER_TITLE)).toBeVisible();
+        expect(screen.getByText(CARD_TESTER_BODY)).toBeVisible();
+        expect(screen.getByTestId(ACTION_ICON_TESTID)).toBeVisible();
+        expect(screen.getByTestId(TITLE_ICON_TESTID)).toBeVisible();
+    });
+
 });
+
