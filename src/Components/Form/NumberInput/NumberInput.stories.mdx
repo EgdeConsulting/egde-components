@@ -1,52 +1,36 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-} from '@storybook/addon-docs';
-import { NumberInput } from './NumberInput';
-import { LibPath } from 'Types';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { LibPath } from 'Types';
+import { NumberInput } from 'Components';
 
 export const Template = (args) => <NumberInput {...args} />;
 
-export const componentName = 'NumberInput'
+export const componentName = 'NumberInput';
 
 <Meta
     title={LibPath.Form + componentName}
     component={NumberInput}
-    parameters={{
-        toolbar: {
-            title: { hidden: true },
-            // zoom: { hidden: true },
-            // eject: { hidden: true },
-            // copy: { hidden: true },
-            // fullscreen: { hidden: true },
-            // 'storybook/background': { hidden: true },
-            // 'storybook/viewport': { hidden: true },
-        },
-    }}
     args={{
-        label: 'Number Input',
-        labelTextMargin: '0',
+        label: 'Title',
+        labelTextMargin: '10px',
         value: '',
         maxValueLength: 15,
         onChange: () => {},
         invalidText: '',
         isDisabled: false,
         placeholder: 'Placeholder',
-        captionText: '',
+        captionText: 'Caption text',
+        captionTextMargin: '10px',
         isCurrency: false,
         currencySpacer: ' ',
-        margin: '0',
+        margin: '10px',
         padding: '0',
         width: '100%',
         minWidth: '0',
         backgroundColor: '#ffffff',
         autoFocus: false,
-        textAlign: 'right',
+        textAlign: 'left',
         allowNegative: false,
-        captionTextMargin: '0',
         maxWidth: '100%',
         maxValue: '10',
     }}
@@ -54,7 +38,7 @@ export const componentName = 'NumberInput'
 
 <DocsPageHeader
     componentName={componentName}
-    componentDescription="This Component is used when you are supposed to only use numberinput"
+    componentDescription="This component is used to create an input which accepts numbers only."
     addImportantNote={false}
     variant="stable"
 />
@@ -63,84 +47,67 @@ export const componentName = 'NumberInput'
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-
 <DocsPageBody addStories={true} />
 
-### Disable number input
+### Disabled NumberInput
 
 <Canvas withToolbar>
     <Story
-        name="Disable number input"
+        name="Disabled NumberInput"
         args={{
             isDisabled: true,
+            label: 'Enter your age:',
+            placeholder: 'This input is not available yet!',
+            backgroundColor: '#F9E5E5',
+            captionText: '',
         }}
     >
         {Template.bind({})}
     </Story>
 </Canvas>
 
-### Invalide numberInput
+### Invalid NumberInput
 
 <Canvas withToolbar>
     <Story
-        name="Invalid numberInput"
+        name="Invalid NumberInput"
         args={{
-            invalidText: 'Invalid text',
+            label: 'Enter your phone number:',
+            invalidText: 'This phone number is aleady in use!',
+            value: '36042069',
+            captionText: '',
         }}
     >
         {Template.bind({})}
     </Story>
 </Canvas>
 
-### Input value with Space
+### Currency NumberInput
 
 <Canvas withToolbar>
     <Story
-        name="Input value with Space"
+        name="Currency NumberInput"
         args={{
+            label: 'Enter the amount to transfer:',
             isCurrency: true,
-            value: '123456789',
+            value: '999999999999',
+            captionText: "Woah! That's a lot of money, are you sure?",
         }}
     >
         {Template.bind({})}
     </Story>
 </Canvas>
 
-### Input value without Space
+### Text Alignment: Right
 
 <Canvas withToolbar>
     <Story
-        name="Spaceless input value"
+        name="Text Alignment: Right"
         args={{
-            value: '123456789',
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### Text Alignment Right
-
-<Canvas withToolbar>
-    <Story
-        name="Alignment Right"
-        args={{
+            label: 'Enter your age:',
             textAlign: 'right',
             value: '123456789',
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### Text Alignment Center
-
-<Canvas withToolbar>
-    <Story
-        name="Alignment Center"
-        args={{
-            textAlign: 'center',
-            value: '123456789',
+            captionText: '',
         }}
     >
         {Template.bind({})}

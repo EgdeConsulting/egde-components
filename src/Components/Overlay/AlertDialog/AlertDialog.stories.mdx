@@ -1,17 +1,9 @@
-import {
-    Meta,
-    Story,
-    Props,
-    Canvas,
-    Preview,
-} from '@storybook/addon-docs';
-import { AlertDialog } from './AlertDialog';
-import { ComponentStability } from 'Icons';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
+import { AlertDialog } from 'Components';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
-import { DocsPageBody, DocsPageHeader } from 'Docs';
-export const componentName = 'AlertDialog'
 
 export const Template = (args) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -38,13 +30,15 @@ export const Template = (args) => {
     );
 };
 
+export const componentName = 'AlertDialog';
+
 <Meta
-    title={LibPath.Overlay + 'AlertDialog'}
+    title={LibPath.Overlay + componentName}
     component={AlertDialog}
     args={{
         iconVariant: 'information',
-        heading: 'Heading',
-        text: 'Alert Dialog Text',
+        heading: 'Title',
+        text: 'Content',
         isOpen: true,
         cancelRef: React.createRef(),
         onClose: () => {},
@@ -54,12 +48,10 @@ export const Template = (args) => {
 
 <DocsPageHeader
     componentName={componentName}
-    componentDescription=" This component is used to create an overlay that displays an alert. Push the button to open the AlertDialog"
+    componentDescription=" This component is used to create an overlay that displays an alert. Pressing the button opens the AlertDialo.g"
     addImportantNote={false}
     variant="stable"
 />
-
-
 
 <Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>

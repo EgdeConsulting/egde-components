@@ -1,8 +1,7 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
-import { Checkbox } from './Checkbox';
-import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
+import { Checkbox } from 'Components';
 import { useState } from 'react';
 
 export const Template = (args) => {
@@ -24,7 +23,7 @@ export const componentName = 'Checkbox';
     component={Checkbox}
     args={{
         direction: 'column',
-        options: ['Checkbox Option One', 'Checkbox Option Two', 'Checkbox Option Three'],
+        options: ['Option One', 'Option Two', 'Option Three'],
         value: [0],
         onChange: () => {},
         invalidText: '',
@@ -32,7 +31,7 @@ export const componentName = 'Checkbox';
         backgroundColor: '#ffffff',
         autoFocus: false,
         label: 'Checkbox',
-        labelTextMargin: '0px',
+        labelTextMargin: '10px',
         captionText: '',
         captionTextMargin: '0px',
         margin: '0px',

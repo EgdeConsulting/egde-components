@@ -1,45 +1,39 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
-import { BaseInput } from './BaseInput';
 import { LibPath } from 'Types';
+import { BaseInput } from 'Components';
 
 export const Template = (args) => <BaseInput {...args} />;
+
 export const componentName = 'BaseInput';
 
 <Meta
-  title={LibPath.Form + componentName}
-  component={BaseInput}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-    },
-  }}
-  args={{
-    label: 'It works',
-    labelTextMargin: '0',
-    children: [<div>It works</div>],
-    invalidText: '',
-    captionText: '',
-    captionTextMargin: '0',
-    margin: '0',
-    padding: '0',
-    width: '100%',
-    minWidth: '0',
-    maxWidth: '100%',
-  }}
+    title={LibPath.Form + componentName}
+    component={BaseInput}
+    args={{
+        label: 'Title',
+        labelTextMargin: '0',
+        children: [<div>Content</div>],
+        invalidText: '',
+        captionText: '',
+        captionTextMargin: '0',
+        margin: '0',
+        padding: '0',
+        width: '100%',
+        minWidth: '0',
+        maxWidth: '100%',
+    }}
 />
 
 <DocsPageHeader
     componentName={componentName}
-    componentDescription="This component is used as a base for other input component such as numberInput, TextInput and FileInput."
+    componentDescription="This component is used as a baseline for other input-components such as NumberInput, TextInput and FileInput."
     addImportantNote={false}
     variant="stable"
 />
 
 <Canvas withToolbar>
-  <Story name="BaseInput">{Template.bind({})}</Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
-
-<Props story="BaseInput" />
 
 <DocsPageBody addStories={false} />

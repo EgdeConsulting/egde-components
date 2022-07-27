@@ -1,47 +1,42 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
-import { FileInput } from './FileInput';
 import { LibPath } from 'Types';
+import { FileInput } from 'Components';
 
 export const Template = (args) => <FileInput {...args} />;
 
 export const componentName = 'FileInput';
 
 <Meta
-  title={LibPath.Form + componentName}
-  component={FileInput}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-    },
-}}
-args={{
-    label: 'FileInput',
-    labelTextMargin: '0px',
-    invalidText: '',
-    captionText: '',
-    margin: '0px',
-    padding: '0px',
-    width: '100%',
-    minWidth: '0px',
-    size: 'md',
-    variant: 'default',
-    uploadLabel: 'Drag and drop or click to upload',
-    dropLabel: 'Drop',
-    maxFileSizeLabel: 'Max file size is....',
-    maxUploadSizeLabel: 'Max upload size is...',
-    maxFileSize: 1000,
-    maxUploadSize: 1000,
-    disabled: false,
-    showIcon: true,
-    captionTextMargin: '0px',
-    maxWidth: '100%',
-  }}
+    title={LibPath.Form + componentName}
+    component={FileInput}
+    args={{
+        label: 'Title',
+        labelTextMargin: '0px',
+        invalidText: '',
+        captionText: '',
+        margin: '0px',
+        padding: '0px',
+        width: '100%',
+        minWidth: '0px',
+        size: 'md',
+        variant: 'default',
+        uploadLabel: 'Drag and drop or click to upload',
+        dropLabel: 'Drop',
+        maxFileSizeLabel: 'Max file size is....',
+        maxUploadSizeLabel: 'Max upload size is...',
+        maxFileSize: 1000,
+        maxUploadSize: 1000,
+        disabled: false,
+        showIcon: true,
+        captionTextMargin: '0px',
+        maxWidth: '100%',
+    }}
 />
 
 <DocsPageHeader
     componentName={componentName}
-    componentDescription="This component is used for file upload and input"
+    componentDescription="This component is used to create an input which accepts files."
     addImportantNote={false}
     variant="stable"
 />
@@ -52,7 +47,9 @@ args={{
 
 <DocsPageBody addStories={true} />
 
-<Canvas>
+### Invalid upload
+
+<Canvas withToolbar>
     <Story
         name="Invalid upload"
         args={{
@@ -63,11 +60,11 @@ args={{
     </Story>
 </Canvas>
 
-### Upload without icon
+### Without Icon
 
-<Canvas>
+<Canvas withToolbar>
     <Story
-        name="Caption"
+        name="Without Icon"
         args={{
             showIcon: false,
         }}
@@ -76,11 +73,11 @@ args={{
     </Story>
 </Canvas>
 
-### Disabled file upload
+### Disabled FileUpload
 
-<Canvas>
+<Canvas withToolbar>
     <Story
-        name="Disabled"
+        name="Disabled FileUpload"
         args={{
             variant: 'disabled',
         }}
@@ -89,13 +86,11 @@ args={{
     </Story>
 </Canvas>
 
-## Size variations
+### Small Size FileUpload
 
-### Small
-
-<Canvas>
+<Canvas withToolbar>
     <Story
-        name="Small"
+        name="Small Size FileUpload"
         args={{
             size: 'sm',
         }}
@@ -104,11 +99,11 @@ args={{
     </Story>
 </Canvas>
 
-### Medium
+### Medium Size FileUpload
 
-<Canvas>
+<Canvas withToolbar>
     <Story
-        name="medium"
+        name="Medium Size FileUpload"
         args={{
             size: 'md',
         }}
