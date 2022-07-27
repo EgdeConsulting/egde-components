@@ -57,13 +57,5 @@ describe('Card component test', () => {
         expect(screen.getByTestId(TITLE_ICON_TESTID)).toBeVisible();
     });
 
-
-    it('should call passed function when card is clicked', async () => {
-        render(<CardTester mockOnClick={mockOnClick} />);
-        const card = screen.getByRole('button');
-        expect(card).toBeVisible();
-        userEvent.click(card);
-        await waitFor(() => expect(mockOnClick).toHaveBeenCalledTimes(1));
-    });
 });
 
