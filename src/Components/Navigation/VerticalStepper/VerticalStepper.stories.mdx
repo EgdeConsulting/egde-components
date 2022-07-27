@@ -1,5 +1,6 @@
 import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
 import { VerticalStepper } from './VerticalStepper';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
@@ -13,18 +14,14 @@ export const Template = (args) => {
   );
 };
 
+export const componentName = 'VerticalStepper';
+
 <Meta
-  title={LibPath.Navigation + 'VerticalStepper'}
+  title={LibPath.Navigation + componentName}
   component={VerticalStepper}
   parameters={{
     toolbar: {
       title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
     },
   }}
   args={{
@@ -74,68 +71,14 @@ export const Template = (args) => {
   }}
 />
 
-# Vertical Stepper
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used as navigation between steps."
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
-
-<hr />
-
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story
     name="Vertical Stepper"
     args={{
@@ -144,11 +87,10 @@ export const Template = (args) => {
   >
     {Template.bind({})}
   </Story>
-</Preview>
+</Canvas>
 
-<Props story="Vertical Stepper" />
+<DocsPageBody addStories={true} />
 
-# Stories
 
 ### Completed steps
 
