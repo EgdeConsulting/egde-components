@@ -1,24 +1,21 @@
 import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { FileInput } from './FileInput';
 import { LibPath } from 'Types';
 
 export const Template = (args) => <FileInput {...args} />;
 
+export const componentName = 'FileInput';
+
 <Meta
-  title={LibPath.Form + 'FileInput'}
+  title={LibPath.Form + componentName}
   component={FileInput}
   parameters={{
     toolbar: {
       title: { hidden: true },
-      // zoom: { hidden: true },
-      // eject: { hidden: true },
-      // copy: { hidden: true },
-      // fullscreen: { hidden: true },
-      // 'storybook/background': { hidden: true },
-      // 'storybook/viewport': { hidden: true },
     },
-  }}
-  args={{
+}}
+args={{
     label: 'FileInput',
     labelTextMargin: '0px',
     invalidText: '',
@@ -42,118 +39,80 @@ export const Template = (args) => <FileInput {...args} />;
   }}
 />
 
-# FileInput
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used for file upload and input"
+    addImportantNote={false}
+    variant="stable"
+/>
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#138849',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Stable
-</div>
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
 
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D2CB3F',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Unstable
-</div>
-
-<div
-  style={{
-    borderRadius: '999999px',
-    display: 'inline-block',
-    padding: '2px 8px',
-    fontSize: '14px',
-    lineHeight: '20px',
-    fontWeight: '700',
-    textAlign: 'center',
-    letterSpacing: '0.25px',
-    backgroundColor: '#D23F47',
-    color: '#ffffff',
-    marginBottom: '16px',
-    marginRight: '3px',
-  }}
->
-  Deprecated
-</div>
-
-<hr />
-
-<Preview withToolbar>
-  <Story name="FileInput">{Template.bind({})}</Story>
-</Preview>
-
-<Props story="FileInput" />
-
-# Stories
+<DocsPageBody addStories={true} />
 
 <Canvas>
-    <Story name="Invalid upload"
-    args={{
-      invalidText: 'Invalid upload',
-    }}
-    >{Template.bind({})}</Story>
+    <Story
+        name="Invalid upload"
+        args={{
+            invalidText: 'Invalid upload',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Upload without icon
+
 <Canvas>
-    <Story name="Caption"
-    args={{
-      showIcon: false,
-    }}
-    >{Template.bind({})}</Story>
+    <Story
+        name="Caption"
+        args={{
+            showIcon: false,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Disabled file upload
+
 <Canvas>
-    <Story name="Disabled"
-    args={{
-      variant: 'disabled',
-    }}
-    >{Template.bind({})}</Story>
+    <Story
+        name="Disabled"
+        args={{
+            variant: 'disabled',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ## Size variations
 
 ### Small
+
 <Canvas>
-    <Story name="Small"
-    args={{
-      size: 'sm',
-    }}
-    >{Template.bind({})}</Story>
+    <Story
+        name="Small"
+        args={{
+            size: 'sm',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Medium
-<Canvas>
-    <Story name="medium"
-    args={{
-      size: 'md',
-    }}
-    >{Template.bind({})}</Story>
-</Canvas>
 
+<Canvas>
+    <Story
+        name="medium"
+        args={{
+            size: 'md',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
