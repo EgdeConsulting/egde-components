@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
-import { render,  screen, waitFor  } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render,  screen  } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Card } from './Card';
 
@@ -39,7 +38,7 @@ function CardTester(props: { mockOnClick: () => void }): ReactElement {
 }
 
 
-// Snapshot Test
+// TEST
 describe('Card component test', () => {
     const mockOnClick = jest.fn();
     it('should render correctly', () => {
