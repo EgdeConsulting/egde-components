@@ -37,6 +37,7 @@ const ComponentStability = (props: ComponentStabilityProps): ReactElement => {
                 marginBottom: '16px',
                 marginRight: '3px',
                 backgroundColor: backgroundcolor,
+                boxShadow: 'rgb(0 0 0 / 30%) 0 3px 9px 0',
             }}
         >
             {(variant || '').charAt(0).toUpperCase() + (variant || '').slice(1)}
