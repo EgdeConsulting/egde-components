@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot PageContainer should render correctly 1`] = `
+exports[`PageContainer component test should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -34,21 +34,21 @@ Object {
     </div>
     <div>
       <div
-        class="css-6nwrzo"
+        class="css-it8w9p"
         id="background"
       >
         <div
-          class="chakra-container css-qsh0bz"
+          class="chakra-container css-qtex4s"
           id="container"
         >
           <div
             class="css-6e21gv"
           >
             <div
-              class="css-igwbr9"
+              class="css-rhugjq"
             >
               <div
-                class="css-1jq859n"
+                class="css-1r1exiu"
                 id="titles"
               >
                 <div
@@ -56,9 +56,9 @@ Object {
                 >
                   <div>
                     <h2
-                      class="chakra-heading css-1x0491o"
+                      class="chakra-heading css-5cm1aq"
                     >
-                      Title
+                      PageContainerTitle
                     </h2>
                     <span
                       class="chakra-badge css-103zh6w"
@@ -68,17 +68,17 @@ Object {
                   </div>
                 </div>
                 <p
-                  class="chakra-text css-7n83z3"
+                  class="chakra-text css-11rz5od"
                 >
-                  Subtitle
+                  PageContainerSubtitle
                 </p>
               </div>
               <div
-                class="css-10m4nm4"
+                class="css-vtdvdq"
                 id="content"
               >
                 <div>
-                  Content
+                  PageContainerContent
                 </div>
               </div>
             </div>
@@ -89,21 +89,21 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-6nwrzo"
+      class="css-it8w9p"
       id="background"
     >
       <div
-        class="chakra-container css-qsh0bz"
+        class="chakra-container css-qtex4s"
         id="container"
       >
         <div
           class="css-6e21gv"
         >
           <div
-            class="css-igwbr9"
+            class="css-rhugjq"
           >
             <div
-              class="css-1jq859n"
+              class="css-1r1exiu"
               id="titles"
             >
               <div
@@ -111,9 +111,9 @@ Object {
               >
                 <div>
                   <h2
-                    class="chakra-heading css-1x0491o"
+                    class="chakra-heading css-5cm1aq"
                   >
-                    Title
+                    PageContainerTitle
                   </h2>
                   <span
                     class="chakra-badge css-103zh6w"
@@ -123,17 +123,17 @@ Object {
                 </div>
               </div>
               <p
-                class="chakra-text css-7n83z3"
+                class="chakra-text css-11rz5od"
               >
-                Subtitle
+                PageContainerSubtitle
               </p>
             </div>
             <div
-              class="css-10m4nm4"
+              class="css-vtdvdq"
               id="content"
             >
               <div>
-                Content
+                PageContainerContent
               </div>
             </div>
           </div>
