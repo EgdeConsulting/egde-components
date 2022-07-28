@@ -2,7 +2,7 @@ import { Meta, ArgsTable } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { Root } from 'Types';
 
-<Meta title={Root.Introduction + 'Adding Components'} />
+<Meta title={Root.GettingStarted + 'Adding Components'} />
 
 # How to add a new component to Storybook 📝
 
@@ -19,8 +19,8 @@ correctly in Storybook.
 
 ## Step 1:
 
-Create a new sub-folder inside of `src/Components/.../<componentName>` where `...` corresponds to
-the category under which the new component should be listed, and `<componentName>` is replace with
+Create a new sub-folder inside of `src/Components/.../_componentName_` where `...` corresponds to
+the category under which the new component should be listed, and `_componentName_` is replace with
 the actual component name.
 
 <br />
@@ -30,8 +30,8 @@ the actual component name.
 Inside of the component-folder create and export a new React component in a `.tsx` file. Afterwards export
 the React component by adding a `index.ts` file to the component-folder where you:
 
-```
-export * from './<componentName>';
+```jsx
+export * from './_componentName_';
 ```
 
 **Notes ❗**
@@ -42,20 +42,20 @@ export * from './<componentName>';
 
 ## Step 3:
 
-Next create the docs-page for the new component by adding a file called `<componentName>.stories.mdx` to
+Next create the docs-page for the new component by adding a file called `_componentName_.stories.mdx` to
 the component-folder, and start editing the file by including the following four import-statements:
 
-```
+```jsx
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
-import { <componentName> } from 'Components';
+import { _componentName_ } from 'Components';
 ```
 
 **Notes ❗**
 
 > `Meta` is one of the three "Storybook docs-blocks" we are going to use, and its sole purpose is
-> to define the display name and location for the content inside `<componentName>.stories.mdx` within
+> to define the display name and location for the content inside `_componentName_.stories.mdx` within
 > Storybook. In addition to that we'll also use `Meta` to declare a set of default component props.
 
 > Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
@@ -69,28 +69,34 @@ import { <componentName> } from 'Components';
 
 Now create to local export-statements as follows:
 
-```
-export const Template = (args) => <<componentName> {...args} />;
+```jsx
+export const Template = (args) => <_componentName_ {...args} />;
 
-export const componentName = '<componentName>';
+export const componentName = '_componentName_';
 ```
 
 For a component named "TextAreaInput" the export-statements should look like this:
 
-![Example of how the export-statements should look like](https://i.imgur.com/BQyv9N0.png)
+```jsx
+export const Template = (args) => <TextAreaInput {...args} />;
+
+export const componentName = 'TextAreaInput';
+```
+
+<!--![Example of how the export-statements should look like](https://i.imgur.com/BQyv9N0.png)-->
 
 <br />
 
 ## Step 5:
 
-Beneath the export-statements add a Meta-tag like shown where `<category>` corresponds
+Beneath the export-statements add a Meta-tag like shown where `_category_` corresponds
 to the category under which the new component should be listed, and `...` needs to be
 replaced with all of the component props and a default value.
 
-```
+```jsx
 <Meta
-    title={LibPath.<category> + componentName}
-    component={<componentName>}
+    title={LibPath._category_ + componentName}
+    component={_componentName_}
     args={{
         ...
     }}
@@ -99,16 +105,40 @@ replaced with all of the component props and a default value.
 
 For a component named "TextAreaInput" the Meta-tag should look like this:
 
-![Example of how the Meta-tag should look like](https://i.imgur.com/vbOjgO6.png)
+```jsx
+<Meta
+    title={LibPath.Form + componentName}
+    component={TextAreaInput}
+    args={{
+        label: 'Title',
+        labelTextMargin: '10px',
+        placeholder: 'Placeholder',
+        onChange: () => {},
+        value: '',
+        invalidText: '',
+        captionText: 'Caption text',
+        isDisabled: false,
+        margin: '5px',
+        padding: '0',
+        width: '100%',
+        minWidth: '0',
+        backgroundColor: 'transparent',
+        autoFocus: false,
+        maxWidth: '100%',
+        characterLimit: 1000,
+        captionTextMargin: '10px',
+    }}
+/>
+```
 
-<br />
+<!--![Example of how the Meta-tag should look like](https://i.imgur.com/vbOjgO6.png)-->
 
 **Notes ❗**
 
 > In case the category you want to store the component under doesn't exist, open `LibPath.ts`
 > which is located under `src/Types` and add a new enum for it under `LibPath`.
 
-> Note! `<componentName>` is not to be confused with the variable `componentName` that we
+> Note! `_componentName_` is not to be confused with the variable `componentName` that we
 > declared in step 4.
 
 <br />
@@ -118,7 +148,7 @@ For a component named "TextAreaInput" the Meta-tag should look like this:
 Next up use the earlier imported `DocsPageHeader` component. This is a special made React
 component which adds a default header layout to the docs-page.
 
-```
+```jsx
 <DocsPageHeader
     componentName={componentName}
     componentDescription="..."
@@ -129,9 +159,17 @@ component which adds a default header layout to the docs-page.
 
 For a component named "TextAreaInput" the DocsPageHeader-tag should look like this:
 
-![Example of how the DocsPageHeader-tag should look like](https://i.imgur.com/TJyNTWu.png)
+```jsx
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="This component is used to create an input which accepts text (numbers, 
+    letters and special characters) in a large and extendable textarea."
+    addImportantNote={false}
+    variant="stable"
+/>
+```
 
-<br />
+<!--![Example of how the DocsPageHeader-tag should look like](https://i.imgur.com/TJyNTWu.png)-->
 
 **Notes ❗**
 
@@ -153,7 +191,7 @@ It's time to add the first Story to the docs-page, and the most important one at
 story has the main task of showing a baseline implementation of the React component. Therefore, the
 `name` property should be given a default value equal to `Base`.
 
-```
+```jsx
 <Canvas withToolbar>
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
@@ -172,7 +210,7 @@ story has the main task of showing a baseline implementation of the React compon
 Now append the remaining standardized docs-page content by using the `DocsPageBody` component. Just like with
 `DocsPageHeader` this will automatically add a couple of elements to the docs-page.
 
-```
+```jsx
 <DocsPageBody addStories={true} />
 ```
 
@@ -192,14 +230,14 @@ Now append the remaining standardized docs-page content by using the `DocsPageBo
 The last thing left now is to add customized stories. These stories will help showcase how the component
 will look and “feel” when its props are being configured in certain way. In order to define a certain set
 off props we have to override the default props which are defined in the Meta-tag, this is done by using
-the `args` prop of the Story-tag. Make sure to replace `<storyName>` with a unique and meaningful name.
+the `args` prop of the Story-tag. Make sure to replace `_storyName_` with a unique and meaningful name.
 
-```
-### <storyName>
+```jsx
+### _storyName_
 
 <Canvas withToolbar>
     <Story
-        name="<storyName>"
+        name="_storyName_"
         args={{
             label: 'What is the reason for your application?',
             placeholder: 'This input is not available yet!',
@@ -216,9 +254,43 @@ the `args` prop of the Story-tag. Make sure to replace `<storyName>` with a uniq
 Repeat this step for as many stories as needed! For a component named "TextAreaInput" two of its stories
 could look like this:
 
-![Example of how two stories should look like](https://i.imgur.com/7qXtRZx.png)
+```jsx
+### Disabled TextAreaInput
 
-<br />
+<Canvas withToolbar>
+    <Story
+        name="Disabled TextAreaInput"
+        args={{
+            label: 'What is the reason for your application?',
+            placeholder: 'This input is not available yet!',
+            backgroundColor: '#F9E5E5',
+            isDisabled: true,
+            captionText: '',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Limited TextAreaInput
+
+<Canvas withToolbar>
+    <Story
+        name="Limited TextAreaInput"
+        args={{
+            label: 'What is your current occupation?',
+            placeholder: 'Enter a short description. (max 50 characters)',
+            width: '50%',
+            textAlign: 'center',
+            captionText: 'Hint! Honesty is the best policy.',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+```
+
+<!--![Example of how two stories should look like](https://i.imgur.com/7qXtRZx.png)-->
 
 **Notes ❗**
 

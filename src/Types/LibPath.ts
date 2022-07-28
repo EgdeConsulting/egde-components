@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 export enum Root {
-    Introduction = 'Getting Started/',
+    GettingStarted = 'Getting Started/',
     Components = 'Components/',
     Templates = 'Templates/',
     Iconography = 'Iconography/',
