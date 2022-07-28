@@ -18,7 +18,7 @@ import { BaseInput } from 'Components';
     }
 */
 
-export const TextAreaInput = (props: TextInputProps): ReactElement => {
+const TextAreaInput = (props: TextInputProps): ReactElement => {
     const {
         label,
         labelTextMargin,
@@ -58,3 +58,5 @@ export const TextAreaInput = (props: TextInputProps): ReactElement => {
         </BaseInput>
     );
 };
+
+export { TextAreaInput };

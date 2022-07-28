@@ -41,16 +41,16 @@ const AccordionBadge = (props: {
     badgeType: AccordionBadgeEnum;
 }): ReactElement => {
     const { badgeType } = props;
-    const color
-        = badgeType === AccordionBadgeEnum.OK ? 'badge.ok' : 'badge.wip';
+    const color =
+        badgeType === AccordionBadgeEnum.OK ? 'badge.ok' : 'badge.wip';
     return (
         <span>
             <Badge
                 background={color}
-                color='black'
-                variant='solid'
-                fontWeight='thin'
-                textTransform='none'
+                color="black"
+                variant="solid"
+                fontWeight="thin"
+                textTransform="none"
             >
                 {badgeType}
             </Badge>
@@ -58,7 +58,7 @@ const AccordionBadge = (props: {
     );
 };
 
-export const Accordion = (props: AccordionProps): ReactElement => {
+const Accordion = (props: AccordionProps): ReactElement => {
     const { items, allowMultiple } = props;
 
     return (
@@ -71,9 +71,9 @@ export const Accordion = (props: AccordionProps): ReactElement => {
                                 _expanded={{ background: 'lightblue' }}
                             >
                                 <>
-                                    <Box flex='1' textAlign='left'>
-                                        <Stack spacing='0px' direction='column'>
-                                            <Text color='blue'>
+                                    <Box flex="1" textAlign="left">
+                                        <Stack spacing="0px" direction="column">
+                                            <Text color="blue">
                                                 {accordionItem.title}
                                             </Text>
                                             {accordionItem.badge && (
@@ -99,3 +99,5 @@ export const Accordion = (props: AccordionProps): ReactElement => {
         </ChakraAccordion>
     );
 };
+
+export { Accordion };

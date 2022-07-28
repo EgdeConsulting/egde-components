@@ -1,0 +1,228 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { Root } from 'Types';
+
+<Meta title={Root.Introduction + 'Adding Components'} />
+
+# How to add a new component to Storybook 📝
+
+<hr />
+
+Storybook is a sleek and interactive solution for creating documentation libraries of all kinds.
+In this case it's to showcase different React components, and how they can be utilised in different
+contexts. To ensure that this component library is clear and easy to use, there is a standard
+template for how new components should be added to the library using docs-pages. By following the
+steps below, you can add new components in no time while making sure that they are being displayed
+correctly in Storybook.
+
+<br />
+
+## Step 1:
+
+Create a new sub-folder inside of `src/Components/.../<componentName>` where `...` corresponds to
+the category under which the new component should be listed, and `<componentName>` is replace with
+the actual component name.
+
+<br />
+
+## Step 2:
+
+Inside of the component-folder create and export a new React component in a `.tsx` file. Afterwards export
+the React component by adding a `index.ts` file to the component-folder where you:
+
+```
+export * from './<componentName>';
+```
+
+**Notes ❗**
+
+> Make also sure to include the export-statement in the sub-folder above!
+
+<br />
+
+## Step 3:
+
+Next create the docs-page for the new component by adding a file called `<componentName>.stories.mdx` to
+the component-folder, and start editing the file by including the following four import-statements:
+
+```
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { LibPath } from 'Types';
+import { <componentName> } from 'Components';
+```
+
+**Notes ❗**
+
+> `Meta` is one of the three "Storybook docs-blocks" we are going to use, and its sole purpose is
+> to define the display name and location for the content inside `<componentName>.stories.mdx` within
+> Storybook. In addition to that we'll also use `Meta` to declare a set of default component props.
+
+> Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
+> and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) "Storybook docs-blocks".
+
+> We are able to use `from 'Components'` thanks to the export-statements we set up in step 2.
+
+<br />
+
+## Step 4:
+
+Now create to local export-statements as follows:
+
+```
+export const Template = (args) => <<componentName> {...args} />;
+
+export const componentName = '<componentName>';
+```
+
+For a component named "TextAreaInput" the export-statements should look like this:
+
+![Example of how the export-statements should look like](https://i.imgur.com/BQyv9N0.png)
+
+<br />
+
+## Step 5:
+
+Beneath the export-statements add a Meta-tag like shown where `<category>` corresponds
+to the category under which the new component should be listed, and `...` needs to be
+replaced with all of the component props and a default value.
+
+```
+<Meta
+    title={LibPath.<category> + componentName}
+    component={<componentName>}
+    args={{
+        ...
+    }}
+/>
+```
+
+For a component named "TextAreaInput" the Meta-tag should look like this:
+
+![Example of how the Meta-tag should look like](https://i.imgur.com/vbOjgO6.png)
+
+<br />
+
+**Notes ❗**
+
+> In case the category you want to store the component under doesn't exist, open `LibPath.ts`
+> which is located under `src/Types` and add a new enum for it under `LibPath`.
+
+> Note! `<componentName>` is not to be confused with the variable `componentName` that we
+> declared in step 4.
+
+<br />
+
+## Step 6:
+
+Next up use the earlier imported `DocsPageHeader` component. This is a special made React
+component which adds a default header layout to the docs-page.
+
+```
+<DocsPageHeader
+    componentName={componentName}
+    componentDescription="..."
+    addImportantNote={...}
+    variant="..."
+/>
+```
+
+For a component named "TextAreaInput" the DocsPageHeader-tag should look like this:
+
+![Example of how the DocsPageHeader-tag should look like](https://i.imgur.com/TJyNTWu.png)
+
+<br />
+
+**Notes ❗**
+
+> The table below shows all of the props for the DocsPageHeader component.
+
+<ArgsTable of={DocsPageHeader} />
+
+> The props `componentName` and `componentDescription` are used to declare a heading and description,
+> while `variant` is responsible for adding a stability-badge. This badge is supposed to give a quick
+> and easy way of knowing if a component is stable or not. The prop `addImportantNote` adds an alert
+> message to the top of the docs-page which will display the text defined in `noteMessage`. Note that
+> `noteMessage` isn't mandatory and will only be required when `addImportantNote` is set to `true`.
+
+<br />
+
+## Step 7:
+
+It's time to add the first Story to the docs-page, and the most important one at that! The following
+story has the main task of showing a baseline implementation of the React component. Therefore, the
+`name` property should be given a default value equal to `Base`.
+
+```
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+```
+
+**Notes ❗**
+
+> The `withToolbar` prop enables a toolbar at the top of the code-canvas which includes buttons for zooming.
+
+> `Template.bind({})` takes the earlier defined arrow-function (step 4) and provides a reference to the Story.
+
+<br />
+
+## Step 8:
+
+Now append the remaining standardized docs-page content by using the `DocsPageBody` component. Just like with
+`DocsPageHeader` this will automatically add a couple of elements to the docs-page.
+
+```
+<DocsPageBody addStories={true} />
+```
+
+**Notes ❗**
+
+> The table below shows all of the props for the DocsPageBody component.
+
+<ArgsTable of={DocsPageBody} />
+
+> In most cases it is desired to add customized stories to showcase what the component could look like
+> with different setting, but if that isn't the case change `addStories` to `false` and ignore step 9.
+
+<br />
+
+## Step 9:
+
+The last thing left now is to add customized stories. These stories will help showcase how the component
+will look and “feel” when its props are being configured in certain way. In order to define a certain set
+off props we have to override the default props which are defined in the Meta-tag, this is done by using
+the `args` prop of the Story-tag. Make sure to replace `<storyName>` with a unique and meaningful name.
+
+```
+### <storyName>
+
+<Canvas withToolbar>
+    <Story
+        name="<storyName>"
+        args={{
+            label: 'What is the reason for your application?',
+            placeholder: 'This input is not available yet!',
+            backgroundColor: '#F9E5E5',
+            isDisabled: true,
+            captionText: '',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+```
+
+Repeat this step for as many stories as needed! For a component named "TextAreaInput" two of its stories
+could look like this:
+
+![Example of how two stories should look like](https://i.imgur.com/7qXtRZx.png)
+
+<br />
+
+**Notes ❗**
+
+> `###` is a special MDX syntax for creating a `<h3>` element.
+
+> Note! Story names can include whitespaces, uppercase letters, numbers and special characters, but try to
+> follow existing naming patterns and conventions by looking at the story names of existing components.
