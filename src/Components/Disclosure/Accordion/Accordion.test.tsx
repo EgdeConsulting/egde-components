@@ -24,10 +24,11 @@ const AccordionTester = (): ReactElement =>{
 
 
 describe('Accordion component test', () => {
-  it('should render correctly', () => {
-    const tree = render(<AccordionTester />);
-    expect(tree).toMatchSnapshot();
-  });
+    window.scrollTo = jest.fn();
+    it('should render correctly', () => {
+        const tree = render(<AccordionTester />);
+        expect(tree).toMatchSnapshot();
+    });
 
     it('should render accordions unexpanded, and show no content', () => {
         render(<AccordionTester />);
