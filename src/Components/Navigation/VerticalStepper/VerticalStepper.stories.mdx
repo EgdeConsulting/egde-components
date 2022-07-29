@@ -6,205 +6,201 @@ import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 
 export const Template = (args) => {
-  const [activeStep, setActiveStep] = useState(0);
-  return (
-    <div>
-      <VerticalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />
-    </div>
-  );
+    const [activeStep, setActiveStep] = useState(0);
+    return (
+        <div>
+            <VerticalStepper
+                {...args}
+                setActiveStep={setActiveStep}
+                activeStep={activeStep}
+            />
+        </div>
+    );
 };
 
 export const componentName = 'VerticalStepper';
 
 <Meta
-  title={LibPath.Navigation + componentName}
-  component={VerticalStepper}
-  parameters={{
-    toolbar: {
-      title: { hidden: true },
-    },
-  }}
-  args={{
-    activeStep: 0,
-    setActiveStep: () => {},
-    stepsContent: [
-        {
-          label: 'Step 1',
-          children: <div> Content of Step 1</div>,
+    title={LibPath.Navigation + componentName}
+    component={VerticalStepper}
+    args={{
+        activeStep: 0,
+        setActiveStep: () => {},
+        stepsContent: [
+            {
+                label: 'Step 1',
+                children: <div> Content of Step 1</div>,
+            },
+            {
+                label: 'Step 2',
+                children: <div>Content of Step 2</div>,
+            },
+            {
+                label: 'Step 3',
+                children: <div>Content of Step 3</div>,
+            },
+            {
+                label: 'Step 4',
+                children: <div>Content of Step 4</div>,
+            },
+            {
+                label: 'Step 5',
+                children: <div>Content of Step 5</div>,
+            },
+        ],
+        buttonTexts: {
+            previous: 'Previous',
+            next: 'Next',
+            complete: 'Complete',
         },
-        {
-          label: 'Step 2',
-          children: <div>Content of Step 2</div>,
+        finalStep: {
+            finalText: 'Final Step',
+            finalButtonText: 'Finish',
         },
-        {
-          label: 'Step 3',
-          children: <div>Content of Step 3</div>,
+        completedSteps: [],
+        onFinalize: () => {},
+        onFinalStep: () => {},
+        isCompleteButtonDisabled: false,
+        buttonCaption: {
+            text: 'Caption:',
+            color: '#000000',
         },
-        {
-          label: 'Step 4',
-          children: <div>Content of Step 4</div>,
-        },
-        {
-          label: 'Step 5',
-          children: <div>Content of Step 5</div>,
-        },
-      ],
-    buttonTexts:{
-          previous: 'Previous',
-          next: 'Next',
-          complete: 'Complete',
-        },
-    
-    finalStep:{
-        finalText: 'Final Step',
-        finalButtonText: 'Finish',
-      },
-  
-    completedSteps: [],
-    onFinalize: () => {},
-    onFinalStep: () => {},
-    isCompleteButtonDisabled: false,
-    buttonCaption: {
-        text: 'Caption:',
-        color: '#000000',
-    },
-  }}
+    }}
 />
 
 <DocsPageHeader
-    componentName={componentName}
-    componentDescription="This component is used as navigation between steps."
+    title={componentName}
+    description="This component is used as navigation between steps."
     addImportantNote={false}
     variant="stable"
 />
 
 <Canvas withToolbar>
-  <Story
-    name="Base"
-    args={{
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Base"
+        args={{
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 <DocsPageBody addStories={true} />
 
-
 ### Completed steps
 
 <Canvas withToolbar>
-  <Story
-    name="Completed steps"
-    args={{
-      activeStep: 4,
-      completedSteps: [0, 1, 2, 3, 4],
-      isCompleteButtonDisabled: false,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Completed steps"
+        args={{
+            activeStep: 4,
+            completedSteps: [0, 1, 2, 3, 4],
+            isCompleteButtonDisabled: false,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### Fewer steps
 
 <Canvas withToolbar>
-  <Story
-    name="Fewer steps"
-    args={{
-      stepsContent: [
-        {
-          label: 'Step 1',
-          children: <div> Content of Step 1</div>,
-        },
-        {
-          label: 'Step 2',
-          children: <div>Content of Step 2</div>,
-        },
-        {
-          label: 'Step 3',
-          children: <div>Content of Step 3</div>,
-        },
-      ],
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="Fewer steps"
+        args={{
+            stepsContent: [
+                {
+                    label: 'Step 1',
+                    children: <div> Content of Step 1</div>,
+                },
+                {
+                    label: 'Step 2',
+                    children: <div>Content of Step 2</div>,
+                },
+                {
+                    label: 'Step 3',
+                    children: <div>Content of Step 3</div>,
+                },
+            ],
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 ### More steps
 
 <Canvas withToolbar>
-  <Story
-    name="More steps"
-    args={{
-      stepsContent: [
-        {
-          label: 'Step 1',
-          children: <div> Content of Step 1</div>,
-        },
-        {
-          label: 'Step 2',
-          children: <div>Content of Step 2</div>,
-        },
-        {
-          label: 'Step 3',
-          children: <div>Content of Step 3</div>,
-        },
-        {
-          label: 'Step 4',
-          children: <div>Content of Step 4</div>,
-        },
-        {
-          label: 'Step 5',
-          children: <div>Content of Step 5</div>,
-        },
-        {
-          label: 'Step 6',
-          children: <div>Content of Step 6</div>,
-        },
-        {
-          label: 'Step 7',
-          children: <div>Content of Step 7</div>,
-        },
-        {
-          label: 'Step 8',
-          children: <div>Content of Step 8</div>,
-        },
-        {
-          label: 'Step 9',
-          children: <div>Content of Step 9</div>,
-        },
-        {
-          label: 'Step 10',
-          children: <div>Content of Step 10</div>,
-        },
-        {
-          label: 'Step 11',
-          children: <div>Content of Step 11</div>,
-        },
-        {
-          label: 'Step 12',
-          children: <div>Content of Step 12</div>,
-        },
-        {
-          label: 'Step 13',
-          children: <div>Content of Step 13</div>,
-        },
-        {
-          label: 'Step 14',
-          children: <div>Content of Step 14</div>,
-        },
-        {
-          label: 'Step 15',
-          children: <div>Content of Step 15</div>,
-        },
-      ],
-      isCompleteButtonDisabled: true,
-    }}
-  >
-    {Template.bind({})}
-  </Story>
+    <Story
+        name="More steps"
+        args={{
+            stepsContent: [
+                {
+                    label: 'Step 1',
+                    children: <div> Content of Step 1</div>,
+                },
+                {
+                    label: 'Step 2',
+                    children: <div>Content of Step 2</div>,
+                },
+                {
+                    label: 'Step 3',
+                    children: <div>Content of Step 3</div>,
+                },
+                {
+                    label: 'Step 4',
+                    children: <div>Content of Step 4</div>,
+                },
+                {
+                    label: 'Step 5',
+                    children: <div>Content of Step 5</div>,
+                },
+                {
+                    label: 'Step 6',
+                    children: <div>Content of Step 6</div>,
+                },
+                {
+                    label: 'Step 7',
+                    children: <div>Content of Step 7</div>,
+                },
+                {
+                    label: 'Step 8',
+                    children: <div>Content of Step 8</div>,
+                },
+                {
+                    label: 'Step 9',
+                    children: <div>Content of Step 9</div>,
+                },
+                {
+                    label: 'Step 10',
+                    children: <div>Content of Step 10</div>,
+                },
+                {
+                    label: 'Step 11',
+                    children: <div>Content of Step 11</div>,
+                },
+                {
+                    label: 'Step 12',
+                    children: <div>Content of Step 12</div>,
+                },
+                {
+                    label: 'Step 13',
+                    children: <div>Content of Step 13</div>,
+                },
+                {
+                    label: 'Step 14',
+                    children: <div>Content of Step 14</div>,
+                },
+                {
+                    label: 'Step 15',
+                    children: <div>Content of Step 15</div>,
+                },
+            ],
+            isCompleteButtonDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
 </Canvas>

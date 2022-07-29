@@ -13,4 +13,3 @@ export * from './LinkIcon';
 export * from './EditIcon';
 export * from './DeleteIcon';
 export * from './CardIcons';
-export * from './ComponentStability';
