@@ -41,8 +41,10 @@ const AccordionBadge = (props: {
     badgeType: AccordionBadgeEnum;
 }): ReactElement => {
     const { badgeType } = props;
+    /* eslint-disable */
     const color =
         badgeType === AccordionBadgeEnum.OK ? 'badge.ok' : 'badge.wip';
+    /* eslint-enable */
     return (
         <span>
             <Badge
