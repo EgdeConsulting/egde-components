@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Select should render correctly 1`] = `
+exports[`Tabs component test should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -33,38 +33,149 @@ Object {
       />
     </div>
     <div>
+      <div>
+        <div
+          class="chakra-tabs css-0"
+        >
+          <div
+            class="css-gmuwbf"
+          >
+            <div
+              aria-orientation="horizontal"
+              class="chakra-tabs__tablist css-k008qs"
+              role="tablist"
+            >
+              <button
+                aria-controls="tabs-1--tabpanel-0"
+                aria-selected="true"
+                class="chakra-tabs__tab css-5wl5ud"
+                data-index="0"
+                id="tabs-1--tab-0"
+                role="tab"
+                tabindex="0"
+                type="button"
+              >
+                First
+              </button>
+              <button
+                aria-controls="tabs-1--tabpanel-1"
+                aria-selected="false"
+                class="chakra-tabs__tab css-5wl5ud"
+                data-index="1"
+                id="tabs-1--tab-1"
+                role="tab"
+                tabindex="-1"
+                type="button"
+              >
+                Second
+              </button>
+              <button
+                aria-controls="tabs-1--tabpanel-2"
+                aria-selected="false"
+                class="chakra-tabs__tab css-5wl5ud"
+                data-index="2"
+                id="tabs-1--tab-2"
+                role="tab"
+                tabindex="-1"
+                type="button"
+              >
+                Third
+              </button>
+            </div>
+          </div>
+          <div
+            class="chakra-tabs__tab-panels css-8atqhb"
+          >
+            <div
+              aria-labelledby="tabs-1--tab-0"
+              class="chakra-tabs__tab-panel css-sjt5nk"
+              id="tabs-1--tabpanel-0"
+              role="tabpanel"
+              tabindex="0"
+            >
+              <div>
+                FirstContent
+              </div>
+            </div>
+            <div
+              aria-labelledby="tabs-1--tab-1"
+              class="chakra-tabs__tab-panel css-sjt5nk"
+              hidden=""
+              id="tabs-1--tabpanel-1"
+              role="tabpanel"
+              tabindex="0"
+            >
+              <div>
+                SecondContent
+              </div>
+            </div>
+            <div
+              aria-labelledby="tabs-1--tab-2"
+              class="chakra-tabs__tab-panel css-sjt5nk"
+              hidden=""
+              id="tabs-1--tabpanel-2"
+              role="tabpanel"
+              tabindex="0"
+            >
+              <div>
+                ThirdContent
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
       <div
         class="chakra-tabs css-0"
       >
         <div
-          aria-orientation="horizontal"
-          class="chakra-tabs__tablist css-k008qs"
-          role="tablist"
+          class="css-gmuwbf"
         >
-          <button
-            aria-controls="tabs-1--tabpanel-0"
-            aria-selected="true"
-            class="chakra-tabs__tab css-5wl5ud"
-            data-index="0"
-            id="tabs-1--tab-0"
-            role="tab"
-            tabindex="0"
-            type="button"
+          <div
+            aria-orientation="horizontal"
+            class="chakra-tabs__tablist css-k008qs"
+            role="tablist"
           >
-            The first tab
-          </button>
-          <button
-            aria-controls="tabs-1--tabpanel-1"
-            aria-selected="false"
-            class="chakra-tabs__tab css-5wl5ud"
-            data-index="1"
-            id="tabs-1--tab-1"
-            role="tab"
-            tabindex="-1"
-            type="button"
-          >
-            The second tab
-          </button>
+            <button
+              aria-controls="tabs-1--tabpanel-0"
+              aria-selected="true"
+              class="chakra-tabs__tab css-5wl5ud"
+              data-index="0"
+              id="tabs-1--tab-0"
+              role="tab"
+              tabindex="0"
+              type="button"
+            >
+              First
+            </button>
+            <button
+              aria-controls="tabs-1--tabpanel-1"
+              aria-selected="false"
+              class="chakra-tabs__tab css-5wl5ud"
+              data-index="1"
+              id="tabs-1--tab-1"
+              role="tab"
+              tabindex="-1"
+              type="button"
+            >
+              Second
+            </button>
+            <button
+              aria-controls="tabs-1--tabpanel-2"
+              aria-selected="false"
+              class="chakra-tabs__tab css-5wl5ud"
+              data-index="2"
+              id="tabs-1--tab-2"
+              role="tab"
+              tabindex="-1"
+              type="button"
+            >
+              Third
+            </button>
+          </div>
         </div>
         <div
           class="chakra-tabs__tab-panels css-8atqhb"
@@ -77,7 +188,7 @@ Object {
             tabindex="0"
           >
             <div>
-              Content of tab 1
+              FirstContent
             </div>
           </div>
           <div
@@ -89,71 +200,20 @@ Object {
             tabindex="0"
           >
             <div>
-              Content of tab 2
+              SecondContent
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="chakra-tabs css-0"
-    >
-      <div
-        aria-orientation="horizontal"
-        class="chakra-tabs__tablist css-k008qs"
-        role="tablist"
-      >
-        <button
-          aria-controls="tabs-1--tabpanel-0"
-          aria-selected="true"
-          class="chakra-tabs__tab css-5wl5ud"
-          data-index="0"
-          id="tabs-1--tab-0"
-          role="tab"
-          tabindex="0"
-          type="button"
-        >
-          The first tab
-        </button>
-        <button
-          aria-controls="tabs-1--tabpanel-1"
-          aria-selected="false"
-          class="chakra-tabs__tab css-5wl5ud"
-          data-index="1"
-          id="tabs-1--tab-1"
-          role="tab"
-          tabindex="-1"
-          type="button"
-        >
-          The second tab
-        </button>
-      </div>
-      <div
-        class="chakra-tabs__tab-panels css-8atqhb"
-      >
-        <div
-          aria-labelledby="tabs-1--tab-0"
-          class="chakra-tabs__tab-panel css-sjt5nk"
-          id="tabs-1--tabpanel-0"
-          role="tabpanel"
-          tabindex="0"
-        >
-          <div>
-            Content of tab 1
-          </div>
-        </div>
-        <div
-          aria-labelledby="tabs-1--tab-1"
-          class="chakra-tabs__tab-panel css-sjt5nk"
-          hidden=""
-          id="tabs-1--tabpanel-1"
-          role="tabpanel"
-          tabindex="0"
-        >
-          <div>
-            Content of tab 2
+          <div
+            aria-labelledby="tabs-1--tab-2"
+            class="chakra-tabs__tab-panel css-sjt5nk"
+            hidden=""
+            id="tabs-1--tabpanel-2"
+            role="tabpanel"
+            tabindex="0"
+          >
+            <div>
+              ThirdContent
+            </div>
           </div>
         </div>
       </div>

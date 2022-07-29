@@ -39,7 +39,7 @@ Object {
         <p
           class="chakra-text css-154u26z"
         >
-          It works
+          label
         </p>
         <div
           class="css-1o2srd0"
@@ -48,8 +48,16 @@ Object {
             It works
           </div>
         </div>
-        
-        
+        <p
+          class="chakra-text css-1vrfh4l"
+        >
+          caption
+        </p>
+        <p
+          class="chakra-text css-dyeksd"
+        >
+          invalidText
+        </p>
       </div>
     </div>
   </body>,
@@ -60,7 +68,7 @@ Object {
       <p
         class="chakra-text css-154u26z"
       >
-        It works
+        label
       </p>
       <div
         class="css-1o2srd0"
@@ -69,8 +77,16 @@ Object {
           It works
         </div>
       </div>
-      
-      
+      <p
+        class="chakra-text css-1vrfh4l"
+      >
+        caption
+      </p>
+      <p
+        class="chakra-text css-dyeksd"
+      >
+        invalidText
+      </p>
     </div>
   </div>,
   "debug": [Function],

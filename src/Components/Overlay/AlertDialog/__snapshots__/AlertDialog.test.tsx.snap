@@ -1,12 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Alert should render correctly 1`] = `
+exports[`Alert component test should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div
-      aria-hidden="true"
-      data-aria-hidden="true"
       id="chakra-toast-portal"
     >
       <ul
@@ -34,114 +32,21 @@ Object {
         style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
       />
     </div>
-    <div
-      aria-hidden="true"
-      data-aria-hidden="true"
-    />
-    <div
-      class="chakra-portal"
-    >
-      <div
-        class="chakra-modal__overlay css-13d1tkw"
-        style="opacity: 0;"
+    <div>
+      <button
+        type="button"
       >
-        <div
-          aria-hidden="true"
-          data-aria-hidden="true"
-          data-focus-guard="true"
-          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-          tabindex="0"
-        />
-        <div
-          aria-hidden="true"
-          data-aria-hidden="true"
-          data-focus-guard="true"
-          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-          tabindex="1"
-        />
-        <div
-          data-focus-lock-disabled="false"
-        >
-          <div
-            class="chakra-modal__content-container css-k2m3mz"
-            tabindex="-1"
-          >
-            <section
-              aria-describedby="chakra-modal--body-1"
-              aria-labelledby="chakra-modal--header-1"
-              aria-modal="true"
-              class="chakra-modal__content css-6yiygt"
-              id="chakra-modal-1"
-              role="alertdialog"
-              style="opacity: 0; transform: scale(0.95) translateZ(0);"
-              tabindex="-1"
-            >
-              <header
-                class="chakra-modal__header css-72fd9l"
-                id="chakra-modal--header-1"
-              >
-                <div
-                  class="css-1ik4laa"
-                >
-                  <svg
-                    fill="#CC0000"
-                    height="24px"
-                    viewBox="0 0 24 24"
-                    width="24px"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 0h24v24H0z"
-                      fill="none"
-                    />
-                    <path
-                      d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-                    />
-                  </svg>
-                  <h2
-                    class="chakra-heading css-0"
-                  >
-                    Heading
-                  </h2>
-                </div>
-              </header>
-              <div
-                class="chakra-modal__body css-0"
-                id="chakra-modal--body-1"
-              >
-                <p
-                  class="chakra-text css-0"
-                >
-                  Alert Dialog Text
-                </p>
-              </div>
-              <footer
-                class="chakra-modal__footer css-192qrng"
-              >
-                <button
-                  class="chakra-button css-5c2176"
-                  type="button"
-                >
-                  Cancel
-                </button>
-              </footer>
-            </section>
-          </div>
-        </div>
-        <div
-          aria-hidden="true"
-          data-aria-hidden="true"
-          data-focus-guard="true"
-          style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-          tabindex="0"
-        />
-      </div>
+        Open
+      </button>
     </div>
   </body>,
-  "container": <div
-    aria-hidden="true"
-    data-aria-hidden="true"
-  />,
+  "container": <div>
+    <button
+      type="button"
+    >
+      Open
+    </button>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

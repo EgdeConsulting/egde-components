@@ -48,8 +48,8 @@ const DeleteModal = (props: {
             onClose={() => setIsModalOpen(false)}
         >
             <Text>
-                {deleteText ||
-                    'Er du sikker på at du vil slette? Du kan ikke angre denne handlingen'}
+                {deleteText
+                || 'Er du sikker på at du vil slette? Du kan ikke angre denne handlingen'}
             </Text>
         </Modal>
     );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot TextAreaInput should render correctly 1`] = `
+exports[`TextAreaInput component test should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -39,19 +39,33 @@ Object {
         <p
           class="chakra-text css-154u26z"
         >
-          TextareaInput
+          Text area label
         </p>
         <div
           class="css-1o2srd0"
         >
           <textarea
             class="chakra-textarea css-1rm7u2e"
-            placeholder="Placeholder"
+            placeholder="Text area placeholder"
           />
         </div>
-        
+        <p
+          class="chakra-text css-2ppov4"
+        >
+          Caption text area
+        </p>
         
       </div>
+      <button
+        type="button"
+      >
+        Toggle disabled
+      </button>
+      <button
+        type="button"
+      >
+        Invalidate
+      </button>
     </div>
   </body>,
   "container": <div>
@@ -61,19 +75,33 @@ Object {
       <p
         class="chakra-text css-154u26z"
       >
-        TextareaInput
+        Text area label
       </p>
       <div
         class="css-1o2srd0"
       >
         <textarea
           class="chakra-textarea css-1rm7u2e"
-          placeholder="Placeholder"
+          placeholder="Text area placeholder"
         />
       </div>
-      
+      <p
+        class="chakra-text css-2ppov4"
+      >
+        Caption text area
+      </p>
       
     </div>
+    <button
+      type="button"
+    >
+      Toggle disabled
+    </button>
+    <button
+      type="button"
+    >
+      Invalidate
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Modal should render correctly 1`] = `
+exports[`Modal component test should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -32,9 +32,25 @@ Object {
         style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
       />
     </div>
-    <div />
+    <div>
+      <div>
+        <button
+          type="button"
+        >
+          Open
+        </button>
+      </div>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div>
+      <button
+        type="button"
+      >
+        Open
+      </button>
+    </div>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
