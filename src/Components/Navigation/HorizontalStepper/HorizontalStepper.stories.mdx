@@ -1,8 +1,7 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
-import { HorizontalStepper } from './HorizontalStepper';
-import { ComponentStability } from 'Icons';
 import { LibPath } from 'Types';
+import { HorizontalStepper } from 'Components';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 
@@ -10,7 +9,11 @@ export const Template = (args) => {
     const [activeStep, setActiveStep] = useState(0);
     return (
         <div>
-            <HorizontalStepper {...args} setActiveStep={setActiveStep} activeStep={activeStep} />
+            <HorizontalStepper
+                {...args}
+                setActiveStep={setActiveStep}
+                activeStep={activeStep}
+            />
         </div>
     );
 };
@@ -71,8 +74,8 @@ export const componentName = 'HorizontalStepper';
 />
 
 <DocsPageHeader
-    componentName={componentName}
-    componentDescription="This component is used to create a horizontal step-overview which shows the user the step he's on."
+    title={componentName}
+    description="This component is used to create a horizontal step-overview which shows the user the step he's on."
     addImportantNote={false}
     variant="stable"
 />

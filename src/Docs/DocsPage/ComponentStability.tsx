@@ -2,12 +2,13 @@
 import React, { ReactElement } from 'react';
 
 export interface ComponentStabilityProps {
-    variant: 'stable' | 'unstable' | 'deprecated';
+    variant: 'stable' | 'unstable' | 'deprecated' | 'none';
 }
 
 const ComponentStability = (props: ComponentStabilityProps): ReactElement => {
     const { variant } = props;
     let backgroundcolor;
+    let displayState = 'inline-block';
 
     switch (variant) {
         case 'stable':
@@ -19,13 +20,16 @@ const ComponentStability = (props: ComponentStabilityProps): ReactElement => {
         case 'deprecated':
             backgroundcolor = '#D23F47';
             break;
+        case 'none':
+            displayState = 'none';
+            break;
     }
 
     return (
         <div
             style={{
                 borderRadius: '999999px',
-                display: 'inline-block',
+                display: displayState,
                 padding: '2px 8px',
                 fontSize: '14px',
                 lineHeight: '20px',

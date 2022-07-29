@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStability, ComponentStabilityProps } from 'Icons';
+import { ComponentStability, ComponentStabilityProps } from 'Docs';
 import { Alert } from 'Components';
 import { styles } from 'Styles';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -11,15 +11,15 @@ interface ImportantNoteProps {
 interface DocsPageHeaderProps
     extends ComponentStabilityProps,
         ImportantNoteProps {
-    componentName: string;
-    componentDescription: string;
+    title: string;
+    description: string;
     addImportantNote: boolean;
 }
 
 const DocsPageHeader = (props: DocsPageHeaderProps) => {
     const {
-        componentName,
-        componentDescription,
+        title: title,
+        description: description,
         addImportantNote,
         noteMessage,
         variant,
@@ -39,10 +39,10 @@ const DocsPageHeader = (props: DocsPageHeaderProps) => {
                     <br />
                 </div>
             )}
-            <h1>{componentName}</h1>
+            <h1>{title}</h1>
             <ComponentStability variant={variant} />
             <hr />
-            <p>{componentDescription}</p>
+            <p>{description}</p>
         </div>
     );
 };
