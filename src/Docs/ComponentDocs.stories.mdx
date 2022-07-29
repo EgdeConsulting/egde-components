@@ -136,7 +136,7 @@ For a component named "TextAreaInput" the Meta-tag should look like this:
 **Notes ❗**
 
 > In case the category you want to store the component under doesn't exist, open `LibPath.ts`
-> which is located under `src/Types` and add a new enum for it under `LibPath`.
+> which is located under `src/Types` and add a new enum for your category under `LibPath`.
 
 > Note! `_componentName_` is not to be confused with the variable `componentName` that we
 > declared in step 4.
@@ -299,3 +299,17 @@ could look like this:
 
 > Note! Story names can include whitespaces, uppercase letters, numbers and special characters, but try to
 > follow existing naming patterns and conventions by looking at the story names of existing components.
+
+<br />
+
+## Step 10 (quality control):
+
+It was said that the previous step was the last, but theoretically this is the last step. 😅 Since after
+creating and adding a new React component to Storybook, it is necessary to quality check all the new
+source code. This can be easily done by using Lint which is set up for this project. All that needs to be
+done is executing the following command in the project folder and adjust the source code if any
+errors/warnings are thrown.
+
+```
+ yarn run lint
+```

@@ -1,50 +1,13 @@
-# egde-components
+# Welcome to Egde-UI! 👋
 
-## Installation & setup
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/EgdeConsulting/egde-components/blob/main/LICENSE)
+[![Github tag](https://img.shields.io/github/v/tag/EgdeConsulting/egde-components?color=green&label=latest%20tag)](https://github.com/EgdeConsulting/egde-components/tags)
 
-After having cloned the egde-components repository run:
+<hr />
 
-```sh
-yarn
-```
+This frontend-library contains a variety of sleek looking, easy to use and rich React components which
+build upon [Charka UI](https://storybook.chakra-ui.com/?path=/story/components-data-display-badge--basic).
+The primary goal of this library is to provide frontend elements, templates and more that are all free
+to use as this is an open-source project.
 
-This will automatically install all of the needed project dependencies.
-To enable yarn (on windows 10) with Node.js >= 16.10, open cmd or powershell `WITH` admin rights and run:
-
-```sh
-corepack enable
-```
-
-On Windows it's possible that Visual Studio Code will run into an error when trying to execute yarn commands from the internal terminal (see the error below). Deleting the specified file in the error message will in this case solve the issue.  
-![Error message for running yarn command in VSC terminal](https://i.imgur.com/HbfIOui.png)
-
-Another error which can be encountered during installation of the project is:
-`There appears to be trouble with your network connection. Retrying...`
-In this case us the following flag to solve the issue:
-
-```sh
-yarn --network-timeout 1000000
-```
-
-## Testing
-
-To see how the components will appear in the component library run:
-
-```sh
-yarn
-yarn storybook
-```
-
-This will open the storybook locally on the PC with local changes. For a online preview with the latest available library on GitHub visit:
-
-[Egde Component Library Online](https://egdeconsulting.github.io/egde-components)
-
-## Project Structure
-
-When creating a new stories-file ensure to use the path-enums defined in **LibPath.ts** when setting the **title-property**.
-
-## Lint
-
-```sh
- yarn run lint
-```
+If you want to learn how to install or use this library, or just browse all of the components, head over to: [Egde Component Library Online](https://egdeconsulting.github.io/egde-components).
