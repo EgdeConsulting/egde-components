@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs';
+import { Root } from 'Types';
+
+<Meta title={Root.GettingStarted + 'Adding Templates'} />
+
+# How to add a new template to Storybook 📝
+
+<hr />
+
+...
+
+<br />
+
+## Step 1:
+
+Create a new file called `_templateName_.tsx` inside of the sub-folder `src/Components/Templates`.
+This file is going to be the place where different React components are being put together in order
+to form the new template.
+
+<br />
+
+## Step 2:
+
+Start of editing `_templateName_.tsx` by adding the following two import-statements:
+
+```jsx
+import React from 'react';
+import { Story } from '@storybook/react';
+```

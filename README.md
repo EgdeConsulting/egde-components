@@ -3,8 +3,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/EgdeConsulting/egde-components/blob/main/LICENSE)
 [![Github tag](https://img.shields.io/github/v/tag/EgdeConsulting/egde-components?color=green&label=latest%20tag)](https://github.com/EgdeConsulting/egde-components/tags)
 
-<hr />
-
 This frontend-library contains a variety of sleek looking, easy to use and rich React components which
 build upon [Charka UI](https://storybook.chakra-ui.com/?path=/story/components-data-display-badge--basic).
 The primary goal of this library is to provide frontend elements, templates and more that are all free

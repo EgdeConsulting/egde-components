@@ -1,11 +1,24 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader } from 'Docs';
 import { Root } from 'Types';
-import { PageContainer } from 'Components';
-import { Card } from 'Components';
-import { Grid, SimpleGrid } from '@chakra-ui/react';
-import { MailIcon, ArrowRightIcon, ParkingIcon } from 'Icons';
+import * as stories from './Homepage';
 
+export const templateName = 'Homepage';
+
+<Meta title={Root.Templates + templateName} />
+
+<DocsPageHeader
+    title={templateName}
+    description="This component shows how you can use the component ... "
+    addImportantNote={false}
+    variant="none"
+/>
+
+<Canvas withToolbar>
+    <Story name="Homepage" story={stories.Base} />
+</Canvas>
+
+<!--
 export const Template = (args) => {
     return <PageContainer {...args} title={'Hello World!'} />;
 };
@@ -19,7 +32,7 @@ export const templateName = 'Homepage';
         backgroundColor: 'grey',
         borderColor: 'border',
         borderWidth: '1px',
-        containerMargin: '199px 336px 350px 336px',
+        containerMargin: '50px 336px 50px 336px',
         containerMinWidth: '800px',
         containerPadding: '40px 56px 40px 56px',
         contentPadding: '0 56px 40px 56px ',
@@ -72,10 +85,9 @@ export const templateName = 'Homepage';
 />
 
 <Canvas withToolbar>
-    <Story name="Base">{Template.bind({})}</Story>
+    <Story name="Homepage">{Template.bind({})}</Story>
 </Canvas>
 
-<!--
 ### Homepage with six Cards
 
 <Canvas withToolbar>
