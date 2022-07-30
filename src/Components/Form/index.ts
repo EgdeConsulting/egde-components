@@ -7,3 +7,4 @@ export * from './Checkbox';
 export * from './Radio';
 export * from './Button';
 export * from './Select';
+export * from './DatePicker';

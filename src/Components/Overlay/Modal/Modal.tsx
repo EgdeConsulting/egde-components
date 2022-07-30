@@ -96,7 +96,7 @@ const Modal = (props: ModalProps): ReactElement => {
             <ModalOverlay />
             <ModalContent maxW={width}>
                 <ModalHeader>
-                    <Flex width="100%" direction="row">
+                    <Flex width="100%" direction="row" >
                         {iconVariant && (
                             <Icon
                                 as={iconStyle.icon}

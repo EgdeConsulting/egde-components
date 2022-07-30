@@ -17,7 +17,7 @@ const MODAL_TESTER_SECONDARY_BUTTON_VARIANT = 'secondary';
 
 
 
-function ModalTester(props: { submitFunc: () => void }): ReactElement {
+const  ModalTester = (props: { submitFunc: () => void }): ReactElement =>{
     const [modalOpen, setmodalOpen] = useState<boolean>(false);
     const { submitFunc } = props;
 
@@ -52,7 +52,10 @@ function ModalTester(props: { submitFunc: () => void }): ReactElement {
                 buttons={buttons as ModalButtons}
                 onClose={() => setmodalOpen(false)}
                 isCentered={true}
-                hasCloseButton
+                hasCloseButton={true}
+                errorMessage={''}
+                width={'sm'}
+
             >
                 <div>{MODAL_TESTER_CONTENT_TEXT}</div>
             </Modal>
