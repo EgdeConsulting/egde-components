@@ -1,0 +1,49 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { LibPath } from 'Types';
+import { DatePicker } from 'Components';
+
+export const Template = (args) => <DatePicker {...args} />;
+
+export const componentName = 'DatePicker';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={DatePicker}
+    args={{
+        onChange: () => {},
+        value: '',
+        placeholder: 'Pick a date',
+        invalidText: '',
+        isDisabled: false,
+        label: 'DatePicker',
+        labelTextMargin: '0px',
+        captionText: '',
+        captionTextMargin: '0px',
+        margin: '0px',
+        padding: '0px',
+        width: '100%',
+        minWidth: '0px',
+        maxDate: '',
+        minDate: '',
+        backgroundColor: '',
+        autoFocus: false,
+        shouldCloseOnSelect: true,
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to Select a date"
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBody addStories={false} />
+
+
+
