@@ -43,7 +43,8 @@ export * from './_componentName_';
 ## Step 3:
 
 Next create the docs-page for the new component by adding a file called `_componentName_.stories.mdx` to
-the component-folder, and start editing the file by including the following four import-statements:
+the component-folder, and start editing the file by including the following four import-statements were
+`_componentName_` needs to be replaced:
 
 ```jsx
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
@@ -67,7 +68,7 @@ import { _componentName_ } from 'Components';
 
 ## Step 4:
 
-Now create to local export-statements as follows:
+Now create two local export-statements as follows:
 
 ```jsx
 export const Template = (args) => <_componentName_ {...args} />;
@@ -84,6 +85,10 @@ export const componentName = 'TextAreaInput';
 ```
 
 <!--![Example of how the export-statements should look like](https://i.imgur.com/BQyv9N0.png)-->
+
+**Notes ❗**
+
+> We need to use `export` before `const` as MDX-syntax requires it.
 
 <br />
 
@@ -203,6 +208,18 @@ story has the main task of showing a baseline implementation of the React compon
 > The `withToolbar` prop enables a toolbar at the top of the code-canvas which includes buttons for zooming.
 
 > `Template.bind({})` takes the earlier defined arrow-function (step 4) and provides a reference to the Story.
+
+> Sometimes the default height of the Canvas isn't enough to display the whole component, in this case a scrollbar
+> is automatically added to the Canvas. This is not a desirable solution since it makes viewing the whole component
+> tedious. To solve this issue, use the `height` property of the Story-tag like shown below:
+>
+> ```jsx
+> <Canvas withToolbar>
+>     <Story name="Base" height="300px">
+>         {Template.bind({})}
+>     </Story>
+> </Canvas>
+> ```
 
 <br />
 

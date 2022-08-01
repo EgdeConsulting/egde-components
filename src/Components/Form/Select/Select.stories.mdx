@@ -39,7 +39,7 @@ export const componentName = 'Select';
         invalidText: '',
         captionText: '',
         captionTextMargin: '0',
-        margin: '30px',
+        margin: '10px',
         padding: '0',
         width: '100%',
         minWidth: '0',
@@ -55,11 +55,10 @@ export const componentName = 'Select';
     variant="stable"
 />
 
-<Canvas withToolbar isColumn>
-    <Story name="Base">{Template.bind({})}</Story>
-    <br />
-    <br />
-    <br />
+<Canvas withToolbar>
+    <Story name="Base" height="250px">
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 <DocsPageBody addStories={true} />

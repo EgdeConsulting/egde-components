@@ -3,22 +3,20 @@ import { Story } from '@storybook/react';
 import { PageContainer } from 'Components';
 import { Card } from 'Components';
 import { Grid, SimpleGrid } from '@chakra-ui/react';
-import { MailIcon, ArrowRightIcon, ParkingIcon } from 'Icons';
+import { MailIcon, ProfileIcon, ParkingIcon } from 'Icons';
 
 const Template: Story = (args) => {
     return (
-        <PageContainer {...args} title={'Hello World!'}>
+        <PageContainer {...args} title={'Homepage!'}>
             <SimpleGrid columns={2}>
                 <Grid gap={25} templateColumns="repeat(2, 1fr)">
                     <Card
-                        title={'Check properties'}
-                        body={
-                            'Here you can check the properties of the components'
-                        }
+                        title={'Personal Profile'}
+                        body={'See and change your personal profile'}
                         cardWidth={'320px'}
                         cardHeight={'112px'}
                         titleTextSize={'sm'}
-                        actionIcon={<ArrowRightIcon />}
+                        actionIcon={<ProfileIcon />}
                     />
                     <Card
                         title={'Mail'}
@@ -54,7 +52,7 @@ Base.args = {
     containerPadding: '40px 56px 40px 56px',
     contentPadding: '0 56px 40px 56px ',
     subtitle:
-        'Som ansatt i Kristiansand kommune har du her tilgang til ulike tjenester. Din tilgang avgjør hvilke tjenester du ser.',
+        'As an employee, you have access to various services based on your rights. See your services below.',
     subtitlePadding: '16px 154px 32px 154px',
     titlePadding: '40px 0 0 0',
 };
