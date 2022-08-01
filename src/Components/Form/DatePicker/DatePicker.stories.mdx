@@ -1,9 +1,21 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
+import { useState } from 'react';
 import { DatePicker } from 'Components';
 
-export const Template = (args) => <DatePicker {...args} />;
+
+
+export const Template = (args) => {
+    const [value, setValue]= useState('');
+    const handleChange = (date) => setValue(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+return(
+    <div>
+        <DatePicker {...args} onChange={handleChange} value={value} />
+    </div>
+)
+}   
+const now = new Date();
 
 export const componentName = 'DatePicker';
 
@@ -13,7 +25,7 @@ export const componentName = 'DatePicker';
     args={{
         onChange: () => {},
         value: '',
-        placeholder: 'Pick a date',
+        placeholder: 'Click to select a date',
         invalidText: '',
         isDisabled: false,
         label: 'DatePicker',
@@ -28,8 +40,9 @@ export const componentName = 'DatePicker';
         minDate: '',
         backgroundColor: '',
         autoFocus: false,
-        shouldCloseOnSelect: true,
+        shouldCloseOnSelect: false,
     }}
+   
 />
 
 <DocsPageHeader
@@ -40,10 +53,22 @@ export const componentName = 'DatePicker';
 />
 
 <Canvas withToolbar>
-    <Story name="Base">{Template.bind({})}</Story>
+    <Story name="Base" height='300px'>{Template.bind({})}</Story>
 </Canvas>
 
 <DocsPageBody addStories={false} />
 
 
+### Pick a date between today and  10 days from now
+<Canvas withToolbar>
+    <Story 
+    name="Pick date in range"
+    height='300px'
+    args={{
+        minDate: new Date(now.getFullYear(), now.getMonth(), now.getDate()),
+        maxDate: new Date(now.getFullYear(), now.getMonth(), now.getDate() + 10),
+    }}
+    >
+        {Template.bind({})}</Story>
+</Canvas>
 
