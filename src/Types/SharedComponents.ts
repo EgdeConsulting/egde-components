@@ -282,8 +282,53 @@ interface RichTextAreaProps extends TextInputProps {
         italic?: boolean;
         underline?: boolean;
         unorderedList?: boolean;
+        strikeThrough?: boolean;
+        subscript?: boolean;
+        superscript?: boolean;
+        fontFamily?: boolean;
+        fontSize?: boolean;
+        textColor?: boolean;
+        backgroundColor?: boolean;
+        inlineClass?: boolean;
+        inlineStyle?: boolean;
+        clearFormatting?: boolean;
+        alignLeft?: boolean;
+        alignCenter?: boolean;
+        formatOLSimple?: boolean;
+        alignRight?: boolean;
+        alignJustify?: boolean;
+        formatOL?: boolean;
+        formatUL?: boolean;
+        paragraphFormat?: boolean;
+        paragraphStyle?: boolean;
+        lineHeight?: boolean;
+        outdent?: boolean;
+        indent?: boolean;
+        quote?: boolean;
+        insertLink?: boolean;
+        insertImage?: boolean;
+        insertVideo?: boolean;
+        insertTable?: boolean;
+        emoticons?: boolean;
+        fontAwesome?: boolean;
+        specialCharacters?: boolean;
+        embedly?: boolean;
+        insertFile?: boolean;
+        insertHR?: boolean;
+        undo?: boolean;
+        redo?: boolean;
+        fullscreen?: boolean;
+        print?: boolean;    
+        getPDF?: boolean;
+        spellChecker?: boolean;
+        selectAll?: boolean;
+        html?: boolean;
+        help?: boolean;
+        
     };
 }
+
+
 interface FileUploadProps extends InputProps {
     uploadLabel?: string;
     dropLabel?: string;
@@ -294,7 +339,7 @@ interface FileUploadProps extends InputProps {
     disabled?: boolean;
     showIcon?: boolean;
     size?: string;
-    variant?: string;
+    variant?: string; 
 }
 
 export type {

@@ -9,3 +9,5 @@ export * from './Button';
 export * from './Select';
 export * from './DatePicker';
 export * from './MultiSelect';
+export * from './RichTextAreaInput';
+
