@@ -1,22 +1,19 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { HorizontalStepper } from 'Components';
-import { Checkbox } from 'Components';
-import { NumberInput } from 'Components';
-import * as stories from './Registration.stories.tsx';
+import { DocsPageHeader } from 'Docs';
 import { Root } from 'Types';
+import * as stories from './Registration';
 
-<Meta title={Root.Templates + 'Registration'} component={Checkbox} />
+export const templateName = 'Registration';
 
-# HEY HEY
+<Meta title={Root.Templates + templateName} />
 
-# Registration
-
-This template uses the following components: ...
+<DocsPageHeader
+    title={templateName}
+    description="This component shows how you can use the component ... "
+    addImportantNote={false}
+    variant="none"
+/>
 
 <Canvas withToolbar>
     <Story name="Registration" story={stories.Base} />
-</Canvas>
-
-<Canvas withToolbar>
-    <Story name="Another story" story={stories.SecondStory} />
 </Canvas>

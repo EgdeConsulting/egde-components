@@ -1,165 +1,19 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader } from 'Docs';
 import { Root } from 'Types';
-import { PageContainer } from 'Components';
-import { Card } from 'Components';
-import { Grid, SimpleGrid } from '@chakra-ui/react';
-import { MailIcon, ArrowRightIcon, ParkingIcon } from 'Icons';
-
-export const Template = (args) => {
-    return <PageContainer {...args} title={'Hello World!'} />;
-};
+import * as stories from './Homepage';
 
 export const templateName = 'Homepage';
 
-<Meta
-    title={Root.Templates + templateName}
-    component={PageContainer}
-    args={{
-        backgroundColor: 'grey',
-        borderColor: 'border',
-        borderWidth: '1px',
-        containerMargin: '199px 336px 350px 336px',
-        containerMinWidth: '800px',
-        containerPadding: '40px 56px 40px 56px',
-        contentPadding: '0 56px 40px 56px ',
-        subtitle:
-            'Som ansatt i Kristiansand kommune har du her tilgang til ulike tjenester. Din tilgang avgjør hvilke tjenester du ser.',
-        subtitlePadding: '16px 154px 32px 154px',
-        titlePadding: '40px 0 0 0',
-        children: (
-            <SimpleGrid columns={2}>
-                <Grid gap={25} templateColumns="repeat(2, 1fr)">
-                    <Card
-                        title={'Check properties'}
-                        body={
-                            'Here you can check the properties of the components'
-                        }
-                        cardWidth={'320px'}
-                        cardHeight={'112px'}
-                        titleTextSize={'sm'}
-                        actionIcon={<ArrowRightIcon />}
-                    />
-                    <Card
-                        title={'Mail'}
-                        body={'Press here if you want to read your E-Mails'}
-                        cardWidth={'320px'}
-                        cardHeight={'112px'}
-                        titleTextSize={'sm'}
-                        actionIcon={<MailIcon />}
-                    />
-                    <Card
-                        title={'Parking'}
-                        body={
-                            'Here you can register your parking. Avoid the fines'
-                        }
-                        cardWidth={'320px'}
-                        cardHeight={'112px'}
-                        titleTextSize={'sm'}
-                        actionIcon={<ParkingIcon />}
-                    />
-                </Grid>
-            </SimpleGrid>
-        ),
-    }}
-/>
+<Meta title={Root.Templates + templateName} />
 
 <DocsPageHeader
     title={templateName}
-    description="This component shows how you can use the component pagecontainer and card component to make a homepage"
+    description="This template shows how you can use the PageContainer and Card component to create a Homepage."
     addImportantNote={false}
     variant="none"
 />
 
 <Canvas withToolbar>
-    <Story name="Base">{Template.bind({})}</Story>
+    <Story name="Homepage" story={stories.Base} />
 </Canvas>
-
-<!--
-### Homepage with six Cards
-
-<Canvas withToolbar>
-    <Story
-        name="More Cards"
-        args={{
-            backgroundColor: 'grey',
-            borderColor: 'border',
-            borderWidth: '1px',
-            containerMargin: '199px 336px 350px 336px',
-            containerMinWidth: '800px',
-            containerPadding: '40px 56px 40px 56px',
-            contentPadding: '0 56px 40px 56px ',
-            subtitle:
-                'Som ansatt i Kristiansand kommune har du her tilgang til ulike tjenester. Din tilgang avgjør hvilke tjenester du ser.',
-            subtitlePadding: '16px 154px 32px 154px',
-            titlePadding: '40px 0 0 0',
-            children: (
-                <SimpleGrid columns={2}>
-                    <Grid gap={25} templateColumns="repeat(2, 1fr)">
-                        <Card
-                            title={'Check properties'}
-                            body={
-                                'Here you can check the properties of the components'
-                            }
-                            cardWidth={'320px'}
-                            cardHeight={'112px'}
-                            titleTextSize={'sm'}
-                            actionIcon={<ArrowRightIcon />}
-                        />
-                        <Card
-                            title={'Mail'}
-                            body={'Press here if you want to read your E-Mails'}
-                            cardWidth={'320px'}
-                            cardHeight={'112px'}
-                            titleTextSize={'sm'}
-                            actionIcon={<MailIcon />}
-                        />
-                        <Card
-                            title={'Parking'}
-                            body={
-                                'Here you can register your parking. Avoid the fines'
-                            }
-                            cardWidth={'320px'}
-                            cardHeight={'112px'}
-                            titleTextSize={'sm'}
-                            actionIcon={<ParkingIcon />}
-                        />
-                        <Card
-                            title={'Parking'}
-                            body={
-                                'Here you can register your parking. Avoid the fines'
-                            }
-                            cardWidth={'320px'}
-                            cardHeight={'112px'}
-                            titleTextSize={'sm'}
-                            actionIcon={<ParkingIcon />}
-                        />
-                        <Card
-                            title={'Parking'}
-                            body={
-                                'Here you can register your parking. Avoid the fines'
-                            }
-                            cardWidth={'320px'}
-                            cardHeight={'112px'}
-                            titleTextSize={'sm'}
-                            actionIcon={<ParkingIcon />}
-                        />
-                        <Card
-                            title={'Parking'}
-                            body={
-                                'Here you can register your parking. Avoid the fines'
-                            }
-                            cardWidth={'320px'}
-                            cardHeight={'112px'}
-                            titleTextSize={'sm'}
-                            actionIcon={<ParkingIcon />}
-                        />
-                    </Grid>
-                </SimpleGrid>
-            ),
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
--->

@@ -54,6 +54,21 @@
 
 .css-kxg3mc {
     border-left: 4px solid #ff7300 !important;
+    background-color: #fff1e5 !important;
+    border-radius: 3px !important;
+}
+
+blockquote .css-9paetf {
+    padding-bottom: 10px !important;
+}
+
+blockquote .css-bdtlhc {
+    margin-bottom: 0px !important;
+}
+
+.css-15erloe {
+    width: 60px !important;
+    height: 60px !important;
 }
 
 .sbdocs-img {
