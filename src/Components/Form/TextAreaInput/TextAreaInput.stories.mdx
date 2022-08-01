@@ -1,9 +1,20 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
+import { useState } from 'react';
 import { TextAreaInput } from 'Components';
 
-export const Template = (args) => <TextAreaInput {...args} />;
+export const Template = (args) => {
+    const [value, setValue] = useState('');
+    const handleChange = (e) => {
+        setValue(e);
+    };
+    return (
+        <div>
+            <TextAreaInput {...args} value={value} onChange={handleChange} />
+        </div>
+    );
+};
 
 export const componentName = 'TextAreaInput';
 
