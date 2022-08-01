@@ -89,7 +89,7 @@ const MultiOption = (props: {
     label: string;
     innerRef: React.LegacyRef<HTMLDivElement>;
     // unknown to eliminate major headache of finding correct type from react-select types
-    innerProps: unknown;
+    innerProps: any;
     isSelected: boolean;
 }): JSX.Element => {
     const { label, innerRef, innerProps, isSelected } = props;
