@@ -21,14 +21,18 @@ function DatePickerTester(): JSX.Element {
 }
 
 describe('DatePicker component test', () => {
-    test('Check that the placeholder is visible!', () => {
+    it('should render correctly', () => {
+        const tree = render(<DatePickerTester/>);
+        expect(tree).toMatchSnapshot();
+    });
+    it('Check that the placeholder is visible!', () => {
         render(<DatePickerTester />);
         const datepickerContainer = screen.getByPlaceholderText(
             DATEPICKER_PLACEHOLDER
         );
         expect(datepickerContainer).toBeVisible();
     });
-    test('Check that clicking datepicker input shows current month', async () => {
+    it('Check that clicking datepicker input shows current month', async () => {
         render(<DatePickerTester />);
         const today = new Date();
         const monthNameNo = today.toLocaleString('no', { month: 'long' });
