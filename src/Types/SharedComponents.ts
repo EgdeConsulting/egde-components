@@ -282,7 +282,7 @@ interface RichTextAreaProps extends TextInputProps {
         italic?: boolean;
         underline?: boolean;
         unorderedList?: boolean;
-       /*  strikeThrough?: boolean;
+        strikeThrough?: boolean;
         subscript?: boolean;
         superscript?: boolean;
         fontFamily?: boolean;
@@ -324,7 +324,7 @@ interface RichTextAreaProps extends TextInputProps {
         selectAll?: boolean;
         html?: boolean;
         help?: boolean;
-        */
+        
     };
 }
 

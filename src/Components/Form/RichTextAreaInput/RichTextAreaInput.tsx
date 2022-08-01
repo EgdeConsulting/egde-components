@@ -76,6 +76,14 @@ export const RichTextAreaInput = (props: RichTextAreaProps): ReactElement => {
 
     const customToolbarButtons: string[] = [];
     if (toolbarOptions) {
+        Object.entries(toolbarOptions).forEach(
+            ([toolbarOption, value]) => {
+                if (value) {
+                    customToolbarButtons.push(toolbarOption);
+                }
+            }
+        );
+        /*
         if (toolbarOptions.bold) {
             customToolbarButtons.push('bold');
         }
@@ -88,129 +96,7 @@ export const RichTextAreaInput = (props: RichTextAreaProps): ReactElement => {
         if (toolbarOptions.unorderedList) {
             customToolbarButtons.push('formatUL');
         }
-        /* if (toolbarOptions.strikeThrough) {
-            customToolbarButtons.push('strikeThrough');
-        }
-        if (toolbarOptions.subscript) {
-            customToolbarButtons.push('subscript');
-        }
-        if (toolbarOptions.fontFamily) {
-            customToolbarButtons.push('fontFamily');
-        }
-        if (toolbarOptions.fontSize) {
-            customToolbarButtons.push('fontSize');
-        }
-        if (toolbarOptions.textColor) {
-            customToolbarButtons.push('textColor');
-        }
-        if (toolbarOptions.backgroundColor) {
-            customToolbarButtons.push('backgroundColor');
-        }
-        if (toolbarOptions.inlineClass) {
-            customToolbarButtons.push('inlineClass');
-        }
-        if (toolbarOptions.inlineStyle) {
-            customToolbarButtons.push('inlineStyle');
-        }
-        if (toolbarOptions.clearFormatting) {
-            customToolbarButtons.push('clearFormatting');
-        }
-        if (toolbarOptions.alignLeft) {
-            customToolbarButtons.push('alignLeft');
-        }
-        if (toolbarOptions.alignCenter) {
-            customToolbarButtons.push('alignCenter');
-        }
-        if (toolbarOptions.alignRight) {
-            customToolbarButtons.push('alignRight');
-        }
-        if (toolbarOptions.alignJustify) {
-            customToolbarButtons.push('alignJustify');
-        }
-        if (toolbarOptions.formatOLSimple) {
-            customToolbarButtons.push('formatOLSimple');
-        }
-        if (toolbarOptions.formatOL) {
-            customToolbarButtons.push('formatOL');
-        }
-        if (toolbarOptions.formatUL) {
-            customToolbarButtons.push('formatUL');
-        }
-        if (toolbarOptions.paragraphFormat) {
-            customToolbarButtons.push('paragraphFormat');
-        }
-        if (toolbarOptions.paragraphStyle) {
-            customToolbarButtons.push('paragraphStyle');
-        }
-        if (toolbarOptions.lineHeight) {
-            customToolbarButtons.push('lineHeight');
-        }
-        if (toolbarOptions.outdent) {
-            customToolbarButtons.push('outdent');
-        }
-        if (toolbarOptions.indent) {
-            customToolbarButtons.push('indent');
-        }
-        if (toolbarOptions.quote) {
-            customToolbarButtons.push('quote');
-        }
-        if (toolbarOptions.insertLink) {
-            customToolbarButtons.push('insertLink');
-        }
-        if (toolbarOptions.insertImage) {
-            customToolbarButtons.push('insertImage');
-        }
-        if (toolbarOptions.insertVideo) {
-            customToolbarButtons.push('insertVideo');
-        }
-        if (toolbarOptions.insertTable) {
-            customToolbarButtons.push('insertTable');
-        }
-        if (toolbarOptions.emoticons) {
-            customToolbarButtons.push('emoticons');
-        }
-        if (toolbarOptions.fontAwesome) {
-            customToolbarButtons.push('fontAwesome');
-        }
-        if (toolbarOptions.specialCharacters) {
-            customToolbarButtons.push('specialCharacters');
-        }
-        if (toolbarOptions.embedly) {
-            customToolbarButtons.push('embedly');
-        }
-        if (toolbarOptions.insertFile) {
-            customToolbarButtons.push('insertFile');
-        }
-        if (toolbarOptions.insertHR) {
-            customToolbarButtons.push('insertHR');
-        }
-        if (toolbarOptions.undo) {
-            customToolbarButtons.push('undo');
-        }
-        if (toolbarOptions.redo) {
-            customToolbarButtons.push('redo');
-        }
-        if (toolbarOptions.fullscreen) {
-            customToolbarButtons.push('fullscreen');
-        }
-        if (toolbarOptions.print) {
-            customToolbarButtons.push('print');
-        }
-        if (toolbarOptions.getPDF) {
-            customToolbarButtons.push('getPDF');
-        }
-        if (toolbarOptions.spellChecker) {
-            customToolbarButtons.push('spellChecker');
-        }
-        if (toolbarOptions.selectAll) {
-            customToolbarButtons.push('selectAll');
-        }
-        if (toolbarOptions.html) {
-            customToolbarButtons.push('html');
-        }
-        if (toolbarOptions.help) {
-            customToolbarButtons.push('help');
-        } */
+        */
     }
     const config = {
         placeholderText: placeholder,
