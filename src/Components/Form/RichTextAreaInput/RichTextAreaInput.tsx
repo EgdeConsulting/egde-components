@@ -76,13 +76,6 @@ export const RichTextAreaInput = (props: RichTextAreaProps): ReactElement => {
 
     const customToolbarButtons: string[] = [];
     if (toolbarOptions) {
-        toolbarOptions.forEach((toolbarOption: string) => {
-            if (toolbarOption) {
-                customToolbarButtons.push(toolbarOption);
-            }
-        });
-
-
         if (toolbarOptions.bold) {
             customToolbarButtons.push('bold');
         }
