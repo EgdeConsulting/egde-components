@@ -5,6 +5,7 @@ import dts from "rollup-plugin-dts";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { terser } from "rollup-plugin-terser";
 
+// eslint-disable-next-line no-undef
 const packageJson = require("./package.json");
 
 export default [
@@ -27,7 +28,7 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      terser()
+      terser(),
     ],
   },
   {
