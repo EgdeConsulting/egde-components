@@ -1,0 +1,75 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { LibPath } from 'Types';
+import { useState } from 'react';
+import { RichTextAreaInput } from 'Components';
+
+export const Template = (args) => {
+    const [value, setValue] = useState('');
+    const handleChange = (e) => {
+        setValue(e);
+    };
+    return (
+        <div>
+            <RichTextAreaInput {...args} value={value} onChange={handleChange} />
+        </div>
+    );
+};
+
+export const componentName = 'RichTextAreaInput';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={RichTextAreaInput}
+    args={{
+        label: 'RichTextAreaInput',
+        labelTextMargin: '0 0 0 0',
+        placeholder: 'Write some text',
+        onChange: () => {},
+        value: '',
+        invalidText: '',
+        captionText: '',
+        margin: '0 0 0 0',
+        padding: '0 0 0 0',
+        width: '100%',
+        minWidth: '0',
+        maxWidth: '90%',
+        toolbarOptions: undefined,
+        characterLimit: 600,
+        autoFocus: false,
+        textAlign: 'right',
+        isDisabled: false,
+        captionTextMargin: '0 0 0 0',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to "
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base" width="100%">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBody addStories={true} />
+
+### Rich TextAreaInput with only a few options
+<Canvas withToolbar>
+    <Story
+        name="Rich Text Area Input"
+        args={{
+            toolbarOptions: 
+                {
+                    bold: true,
+                    italic: true,
+                    underline: true,
+                    strikethrough: true,
+                },
+            }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
