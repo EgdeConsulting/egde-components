@@ -14,18 +14,20 @@ setTimeout(() => {
         document.querySelector('[title="Set color mode to dark"]'),
     ];
 
+    let sidebar = document.getElementsByClassName('sto-1q7pov5')[0];
+
     for (let i = 0; i < toolbarButtons.length; i++) {
         if (toolbarButtons[i]) {
-            toolbarButtons[i].setAttribute('style', 'display: none;');
+            toolbarButtons[i].style.display = 'none';
         }
+    }
+
+    if (sidebar) {
+        sidebar.style.width = '330px';
     }
 }, 2500);
 
 addons.setConfig({
-    // previewTabs: {
-    //     'storybook/docs/panel': { index: -1 },
-    // },
-    // showToolbar: false,
     toolbar: {
         title: { hidden: true },
         zoom: { hidden: true },

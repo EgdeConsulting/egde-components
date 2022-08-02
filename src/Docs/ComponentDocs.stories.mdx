@@ -55,12 +55,12 @@ import { _componentName_ } from 'Components';
 
 **Notes ❗**
 
-> `Meta` is one of the three "Storybook docs-blocks" we are going to use, and its sole purpose is
+> `Meta` is one of the three Storybook docs-blocks we are going to use, and its sole purpose is
 > to define the display name and location for the content inside `_componentName_.stories.mdx` within
 > Storybook. In addition to that we'll also use `Meta` to declare a set of default component props.
 
 > Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
-> and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) "Storybook docs-blocks".
+> and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) Storybook docs-blocks.
 
 > We are able to use `from 'Components'` thanks to the export-statements we set up in step 2.
 
@@ -76,7 +76,7 @@ export const Template = (args) => <_componentName_ {...args} />;
 export const componentName = '_componentName_';
 ```
 
-For a component named "TextAreaInput" the export-statements should look like this:
+For a component named TextAreaInput the export-statements should look like this:
 
 ```jsx
 export const Template = (args) => <TextAreaInput {...args} />;
@@ -108,7 +108,7 @@ replaced with all of the component props and a default value.
 />
 ```
 
-For a component named "TextAreaInput" the Meta-tag should look like this:
+For a component named TextAreaInput the Meta-tag should look like this:
 
 ```jsx
 <Meta
@@ -148,6 +148,152 @@ For a component named "TextAreaInput" the Meta-tag should look like this:
 
 <br />
 
+## Step 5.1 (Potentially skippable):
+
+If the new component has a property which takes an array, struct, etc. containing child elements
+like shown below for a component named Accordion, some additional steps must be taken,
+**otherwise proceed with step 6**. The reason behind this is to prevent a MDX related bug
+to occur inside of the "Show Code" fields in Storybook.
+
+```jsx
+<Meta
+    title={LibPath.Disclosure + componentName}
+    component={Accordion}
+    args={{
+        items: [
+            {
+                title: 'Accordion 1',
+                content: <div>Content 1</div>,
+                badge: '',
+            },
+            {
+                title: 'Accordion 2',
+                content: <div>Content 2</div>,
+                badge: '',
+            },
+        ],
+        allowMultiple: true,
+    }}
+/>
+```
+
+**Notes ❗**
+
+> Follow the link to learn more about the [MDXCreateElement-bug](https://github.com/storybookjs/storybook/issues/11542).
+
+<br />
+
+## Step 5.2:
+
+Start off by creating a file call `PropItems.tsx` inside of the same folder as
+`_componentName_.tsx` and `_componentName_.stories.mdx`. After that add the following import-statement:
+
+```jsx
+import React from 'react';
+```
+
+**Notes ❗**
+
+> Make sure to include all the other necessary import-statements at the top of the file if you
+> add/use components which aren't included in `React`.
+
+<br />
+
+## Step 5.3:
+
+Now its time to add a new export which holds the property value (array, struct, etc.) we want to
+use inside of `_componentName_.stories.mdx `. The value of `_exportName_` should always be `Default`
+if the specific property value is being used inside `args` of the Meta-tag.
+
+```jsx
+export const _exportName_ = [
+    ...
+];
+```
+
+For a component named Accordion the implementation should look like this:
+
+```jsx
+export const Default = [
+    {
+        title: 'Accordion 1',
+        content: <div>Content 1</div>,
+        badge: '',
+    },
+    {
+        title: 'Accordion 2',
+        content: <div>Content 2</div>,
+        badge: '',
+    },
+];
+```
+
+**Notes ❗**
+
+> More exports will be added to `PropItems.tsx` in regards to stories later on (step 9.1).
+
+> `_exportName_` should always be the same as the story name without any whitespaces, when adding a
+> new export for a story. Example given below:
+>
+> ```jsx
+> export const AccordionInProgress = [
+>     {
+>         title: 'Accordion 1',
+>         content: <div>Content 1</div>,
+>         badge: 'InProgress',
+>     },
+>     {
+>         title: 'Accordion 2',
+>         content: <div>Content 2</div>,
+>         badge: 'InProgress',
+>     },
+> ];
+> ```
+
+<br />
+
+## Step 5.4:
+
+After having created and edited `PropItems.tsx` go back to `_componentName_.stories.mdx` and add the import-
+statement shown below to the top of the file. This makes all exports inside `PropItems.tsx` available under
+the name `PropItems`.
+
+```jsx
+import * as PropItems from './PropItems';
+```
+
+<br />
+
+## Step 5.5:
+
+The last step now is to use our imported property values inside of `args`. To do this use the following syntax:
+
+```jsx
+<Meta
+    title={LibPath._category_ + componentName}
+    component={_componentName_}
+    args={{
+        items: PropItems.Default,
+        ...
+    }}
+/>
+```
+
+For a component named Accordion the implementation should look like this:
+
+```jsx
+<Meta
+    title={LibPath.Disclosure + componentName}
+    component={Accordion}
+    args={{
+        items: PropItems.Default,
+        allowMultiple: true,
+    }}
+/>
+```
+
+<br />
+
 ## Step 6:
 
 Next up use the earlier imported `DocsPageHeader` component. This is a special made React
@@ -162,7 +308,7 @@ component which adds a default header layout to the docs-page.
 />
 ```
 
-For a component named "TextAreaInput" the DocsPageHeader-tag should look like this:
+For a component named TextAreaInput the DocsPageHeader-tag should look like this:
 
 ```jsx
 <DocsPageHeader
@@ -246,7 +392,7 @@ Now append the remaining standardized docs-page content by using the `DocsPageBo
 ## Step 9:
 
 The last thing left now is to add customized stories. These stories will help showcase how the component
-will look and “feel” when its props are being configured in certain way. In order to define a certain set
+will look and "feel" when its props are being configured in a certain way. In order to define a certain set
 off props we have to override the default props which are defined in the Meta-tag, this is done by using
 the `args` prop of the Story-tag. Make sure to replace `_storyName_` with a unique and meaningful name.
 
@@ -269,7 +415,7 @@ the `args` prop of the Story-tag. Make sure to replace `_storyName_` with a uniq
 </Canvas>
 ```
 
-Repeat this step for as many stories as needed! For a component named "TextAreaInput" two of its stories
+Repeat this step for as many stories as needed! For a component named TextAreaInput two of its stories
 could look like this:
 
 ```jsx
@@ -319,7 +465,40 @@ could look like this:
 
 <br />
 
-## Step 10 (quality control):
+## Step 9.1 (Potentially skippable):
+
+If you previously have followed the steps 5.1 - 5.5, you'll need to redo steps 5.3 and 5.5 for all the stories
+which override the default value of the property that holds an array, struct, etc. containing child elements,
+**otherwise proceed with step 10**. An example of a story which overrides the default property implementation
+is given beneath:
+
+```jsx
+<Canvas withToolbar>
+    <Story
+        name="Accordion InProgress"
+        args={{
+            items: [
+                {
+                    title: 'Accordion 1',
+                    content: <div>Content 1</div>,
+                    badge: 'InProgress',
+                },
+                {
+                    title: 'Accordion 2',
+                    content: <div>Content 2</div>,
+                    badge: 'InProgress',
+                },
+            ],
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+```
+
+<br />
+
+## Step 10 (Quality control):
 
 It was said that the previous step was the last, but theoretically this is the last step. 😅 Since after
 creating and adding a new React component to Storybook, it is necessary to quality check all the new

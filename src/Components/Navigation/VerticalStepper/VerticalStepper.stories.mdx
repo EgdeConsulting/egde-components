@@ -1,7 +1,8 @@
-import { Meta, Story, Props, Canvas, Preview } from '@storybook/addon-docs';
-import { VerticalStepper } from './VerticalStepper';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
+import { VerticalStepper } from 'Components';
+import * as PropItems from './PropItems';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 
@@ -26,28 +27,7 @@ export const componentName = 'VerticalStepper';
     args={{
         activeStep: 0,
         setActiveStep: () => {},
-        stepsContent: [
-            {
-                label: 'Step 1',
-                children: <div> Content of Step 1</div>,
-            },
-            {
-                label: 'Step 2',
-                children: <div>Content of Step 2</div>,
-            },
-            {
-                label: 'Step 3',
-                children: <div>Content of Step 3</div>,
-            },
-            {
-                label: 'Step 4',
-                children: <div>Content of Step 4</div>,
-            },
-            {
-                label: 'Step 5',
-                children: <div>Content of Step 5</div>,
-            },
-        ],
+        stepsContent: PropItems.Default,
         buttonTexts: {
             previous: 'Previous',
             next: 'Next',
@@ -78,7 +58,7 @@ export const componentName = 'VerticalStepper';
 <Canvas withToolbar>
     <Story
         name="Base"
-        height='300px'
+        height="300px"
         args={{
             isCompleteButtonDisabled: true,
         }}
@@ -89,12 +69,12 @@ export const componentName = 'VerticalStepper';
 
 <DocsPageBody addStories={true} />
 
-### Completed steps
+### Completed Steps
 
 <Canvas withToolbar>
     <Story
-        name="Completed steps"
-        height='300px'
+        name="Completed Steps"
+        height="300px"
         args={{
             activeStep: 4,
             completedSteps: [0, 1, 2, 3, 4],
@@ -105,103 +85,14 @@ export const componentName = 'VerticalStepper';
     </Story>
 </Canvas>
 
-### Fewer steps
+### Many Steps
 
 <Canvas withToolbar>
     <Story
-        name="Fewer steps"
-        height='300px'
+        name="Many Steps"
+        height="430px"
         args={{
-            stepsContent: [
-                {
-                    label: 'Step 1',
-                    children: <div> Content of Step 1</div>,
-                },
-                {
-                    label: 'Step 2',
-                    children: <div>Content of Step 2</div>,
-                },
-                {
-                    label: 'Step 3',
-                    children: <div>Content of Step 3</div>,
-                },
-            ],
-            isCompleteButtonDisabled: true,
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### More steps
-
-<Canvas withToolbar>
-    <Story
-        name="More steps"
-        height='300px'
-        args={{
-            stepsContent: [
-                {
-                    label: 'Step 1',
-                    children: <div> Content of Step 1</div>,
-                },
-                {
-                    label: 'Step 2',
-                    children: <div>Content of Step 2</div>,
-                },
-                {
-                    label: 'Step 3',
-                    children: <div>Content of Step 3</div>,
-                },
-                {
-                    label: 'Step 4',
-                    children: <div>Content of Step 4</div>,
-                },
-                {
-                    label: 'Step 5',
-                    children: <div>Content of Step 5</div>,
-                },
-                {
-                    label: 'Step 6',
-                    children: <div>Content of Step 6</div>,
-                },
-                {
-                    label: 'Step 7',
-                    children: <div>Content of Step 7</div>,
-                },
-                {
-                    label: 'Step 8',
-                    children: <div>Content of Step 8</div>,
-                },
-                {
-                    label: 'Step 9',
-                    children: <div>Content of Step 9</div>,
-                },
-                {
-                    label: 'Step 10',
-                    children: <div>Content of Step 10</div>,
-                },
-                {
-                    label: 'Step 11',
-                    children: <div>Content of Step 11</div>,
-                },
-                {
-                    label: 'Step 12',
-                    children: <div>Content of Step 12</div>,
-                },
-                {
-                    label: 'Step 13',
-                    children: <div>Content of Step 13</div>,
-                },
-                {
-                    label: 'Step 14',
-                    children: <div>Content of Step 14</div>,
-                },
-                {
-                    label: 'Step 15',
-                    children: <div>Content of Step 15</div>,
-                },
-            ],
+            stepsContent: PropItems.ManySteps,
             isCompleteButtonDisabled: true,
         }}
     >
