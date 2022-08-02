@@ -55,8 +55,8 @@ const Content = (props: PageContainerProps) => {
                             titleAlignment === 'right'
                                 ? 'end'
                                 : titleAlignment === 'left'
-                                ? 'start'
-                                : 'center'
+                                    ? 'start'
+                                    : 'center'
                         }
                         flexDirection='column'
                     >

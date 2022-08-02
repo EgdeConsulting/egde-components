@@ -1,7 +1,6 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { PageContainer } from 'Components';
-import { Card } from 'Components';
+import { PageContainer, Card } from 'Components';
 import { Grid, SimpleGrid } from '@chakra-ui/react';
 import { MailIcon, ProfileIcon, ParkingIcon } from 'Icons';
 
