@@ -11,7 +11,11 @@ export const Template = (args) => {
     };
     return (
         <div>
-            <RichTextAreaInput {...args} value={value} onChange={handleChange} />
+            <RichTextAreaInput
+                {...args}
+                value={value}
+                onChange={handleChange}
+            />
         </div>
     );
 };
@@ -45,30 +49,33 @@ export const componentName = 'RichTextAreaInput';
 
 <DocsPageHeader
     title={componentName}
-    description="This component is used to "
-    addImportantNote={false}
+    description="This component is used to create a text-input which accepts all kinds of multimedia (images, video, tables, etc.)."
+    addImportantNote={true}
+    noteMessage={
+        "There is a problem with the FroalaEditor component, where it can't be used as a JSX component."
+    }
     variant="unstable"
 />
 
 <Canvas withToolbar>
-    <Story name="Base" width="100%">{Template.bind({})}</Story>
+    <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
 <DocsPageBody addStories={true} />
 
-### Rich TextAreaInput with only a few options
+### Limited Toolbar
+
 <Canvas withToolbar>
     <Story
-        name="Rich Text Area Input"
+        name="Limited Toolbar"
         args={{
-            toolbarOptions: 
-                {
-                    bold: true,
-                    italic: true,
-                    underline: true,
-                    strikethrough: true,
-                },
-            }}
+            toolbarOptions: {
+                bold: true,
+                italic: true,
+                underline: true,
+                strikethrough: true,
+            },
+        }}
     >
         {Template.bind({})}
     </Story>
