@@ -11,7 +11,9 @@ const FileInputExample = () => {
     );
 };
 
-const CheckBoxExample = () => {
+
+const CheckBoxExample = () =>  {   
+    const [value, setValue] = useState<number[]>([]);
     return(
         <PageContainer
             title='Interests'
@@ -24,8 +26,9 @@ const CheckBoxExample = () => {
                         'Wine',
                         'Hiking',
                     ]}
-                    value={[0]}
-                    onChange={() => {}}
+                    value={value}
+                    onChange={setValue}
+                    label={'Interests'}
                 />
                 <Select options={[
                     {
@@ -33,12 +36,12 @@ const CheckBoxExample = () => {
                         value: 0,
                     },
                     {
-                        label: 'interested',
+                        label: 'Interested',
                         value: 1,
                     },
                 ]}
-                onChange={() => {}}
-                placeholder={'Newsletter'}
+                onChange={()=>{}}
+                label={'Receive newsletter? '}
                 />
             </SimpleGrid>
         </PageContainer>
@@ -47,38 +50,42 @@ const CheckBoxExample = () => {
 };
 
 const RegistrateContactInfo = () => {
+    const [firstname, setFirstName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [lastname, setLastName] = useState<string>('');
+    const [text, setText] = useState<string>('')
+    const [num, setNum] = useState<string>('');
     return(
-        <Box
-            w={['full', 'lg']}
-            // eslint-disable-next-line no-magic-numbers
-            p={[8, 10]}
-            // eslint-disable-next-line no-magic-numbers
-            mt={[20, '10ch']}
-            mx='auto'
-            border={['none', '1px']}
-            borderColor={['', 'gray.300']}
-            borderRadius={10}
-        >
-            <VStack spacing={0} align='flex-start'>
-                <VStack spacing={1} align={['flex-start', 'center']} w='full' mb={3} >
-                    <Heading>Register</Heading>
-                    <Text>Please insert the form to register a new Account</Text>
-                </VStack>
-                <HStack spacing={4}>
-                    <TextInput value='' onChange={() => {}} label={'First name'}/>
-                    <TextInput value='' onChange={() => {}} label={'Last name'}/>
-                </HStack>
-                <HStack spacing={4}>
-                    <TextInput value='' onChange={() => {}} label={'E-mail'}/>
-                    <NumberInput value='' onChange={() => {}} label={'Phonenumber'}/>
-                </HStack>
-                <Box w={'full'}> <TextAreaInput value='' onChange={() => {}} label={'Bio'} /></Box>
-            </VStack>
-        </Box>
-    );
-};
+            <Box 
+                w={['full', 'lg']} 
+                p={[8,10]} 
+                mt={[20, '10ch']} 
+                mx='auto' 
+                border={['none', '1px']} 
+                borderColor={['', 'gray.300']}
+                borderRadius={10}
+                >
+                <VStack spacing={0} align='flex-start'>
+                    <VStack spacing={1} align={['flex-start', 'center']} w='full' mb={3} >
+                        <Heading>Register</Heading>
+                        <Text>Please insert the form to register a new Account</Text>
+                    </VStack>
+                    <HStack spacing={4}>
+                        <TextInput value={firstname} onChange={setFirstName} label={'First name'}/>
+                        <TextInput value={lastname} onChange={setLastName} label={'Last name'}/>
+                    </HStack>
+                    <HStack spacing={4}>
+                        <TextInput value={email} onChange={setEmail} label={'E-mail'}/>
+                        <NumberInput value={num} onChange={setNum} label={'Phonenumber'}/>
+                    </HStack>
+                    <Box w={'full'}> <TextAreaInput value={text} onChange={setText} label={'Bio'} /></Box>
+                </VStack>   
+             </Box>  
+    )
+}
 
 const RadioExample = () => {
+    const [value, setValue] = useState<number>(-1);
     return(
         <PageContainer title='Gender' subtitle='Choose your gender'>
             <Radio
@@ -88,8 +95,8 @@ const RadioExample = () => {
                     'Not specified',
                     'Alien',
                 ]}
-                value ={0}
-                onChange={() => {}}
+                value ={value}
+                onChange={setValue}
             />
         </PageContainer>
     );
