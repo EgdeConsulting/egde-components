@@ -1,29 +1,30 @@
-import { HorizontalStepper, FileInput, Radio, TextInput, PageContainer, NumberInput, Checkbox, Select, TextAreaInput } from 'Components'
-import React, { ReactElement, useState } from 'react';
+import { HorizontalStepper, FileInput, Radio, TextInput, PageContainer, NumberInput, Checkbox, Select, TextAreaInput } from 'Components';
+import React, { useState } from 'react';
 import { Story } from '@storybook/react';
 import { Box, Heading, VStack, Text, HStack, SimpleGrid } from '@chakra-ui/react';
-import { valueContainerCSS } from 'react-select/dist/declarations/src/components/containers';
 
-const FileInputExample = () =>  {
+const FileInputExample = () => {
     return(
         <PageContainer title='Profile Picture' subtitle='Drop file to add profile picture'>
             <FileInput maxFileSize={1000} maxUploadSize={1000} />
         </PageContainer>
-        
-    )
-}
+    );
+};
+
 
 const CheckBoxExample = () =>  {   
     const [value, setValue] = useState<number[]>([]);
     return(
-        <PageContainer title='Interests' subtitle='Choose youre interests and if you are interested in receiving newsletter' >
+        <PageContainer
+            title='Interests'
+            subtitle='Choose youre interests and if you are interested in receiving newsletter' >
             <SimpleGrid columns={2}>
                 <Checkbox
                     options={[
                         'Sport',
                         'Music',
                         'Wine',
-                        'Hiking'
+                        'Hiking',
                     ]}
                     value={value}
                     onChange={setValue}
@@ -37,16 +38,16 @@ const CheckBoxExample = () =>  {
                     {
                         label: 'Interested',
                         value: 1,
-                    }
+                    },
                 ]}
                 onChange={()=>{}}
                 label={'Receive newsletter? '}
                 />
-            </SimpleGrid>   
-         </PageContainer>   
-     
-    )
-}
+            </SimpleGrid>
+        </PageContainer>
+
+    );
+};
 
 const RegistrateContactInfo = () => {
     const [firstname, setFirstName] = useState<string>('');
@@ -87,38 +88,37 @@ const RadioExample = () => {
     const [value, setValue] = useState<number>(-1);
     return(
         <PageContainer title='Gender' subtitle='Choose your gender'>
-             <Radio 
+            <Radio
                 options={[
-                'Male',
-                'Female',
-                'Not specified',
-                'Alien',
+                    'Male',
+                    'Female',
+                    'Not specified',
+                    'Alien',
                 ]}
                 value ={value}
                 onChange={setValue}
             />
         </PageContainer>
-    )
-}
+    );
+};
 
 const stepsContent = [
     {
         label: 'Step 1',
-        children: <RegistrateContactInfo />
+        children: <RegistrateContactInfo />,
     },
     {
         label: 'Step 2',
-        children: <FileInputExample />
+        children: <FileInputExample />,
     },
     {
         label: 'Step 3',
-        children: <RadioExample />
+        children: <RadioExample />,
     },
     {
         label: 'Step 4',
-        children: <CheckBoxExample />
+        children: <CheckBoxExample />,
     },
-    
 ];
 
 const initialStep = 0;
@@ -139,7 +139,7 @@ const Template: Story = (args) => {
     const [activeStep, setActiveStep] = useState<number>(initialStep);
     return (
         <PageContainer title='Register new user' contentMargin={'24px'} >
-             <HorizontalStepper
+            <HorizontalStepper
                 {...args}
                 setActiveStep={setActiveStep}
                 activeStep={activeStep}
@@ -149,10 +149,9 @@ const Template: Story = (args) => {
                 onFinalize={() => {}}
                 onFinalStep={() => {}}
                 buttonMargin={'12px'}
-             />
+            />
         </PageContainer>
-           
-        
+
     );
 };
 
