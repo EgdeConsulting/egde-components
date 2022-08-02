@@ -29,12 +29,12 @@ setTimeout(() => {
 
 addons.setConfig({
     toolbar: {
-        title: { hidden: true },
+        title: { hidden: false },
         zoom: { hidden: true },
         eject: { hidden: true },
         copy: { hidden: true },
         // fullscreen: { hidden: true },
-        'storybook/background': { hidden: true },
-        'storybook/viewport': { hidden: true },
+        'storybook/background': { hidden: false },
+        'storybook/viewport': { hidden: false },
     },
 });
