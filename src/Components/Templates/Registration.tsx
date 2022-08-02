@@ -1,115 +1,113 @@
-import { HorizontalStepper, FileInput, Radio, TextInput, PageContainer, NumberInput, Checkbox, Select, TextAreaInput } from 'Components'
+import {
+    HorizontalStepper,
+    FileInput,
+    Radio,
+    TextInput,
+    PageContainer,
+    NumberInput,
+    Checkbox,
+    Select,
+    TextAreaInput,
+} from 'Components';
 import React, { ReactElement, useState } from 'react';
 import { Story } from '@storybook/react';
 import { Box, Heading, VStack, Text, HStack, SimpleGrid } from '@chakra-ui/react';
 
-function FileInputExample(): ReactElement {
-    return(
-        <PageContainer title='Profile Picture' subtitle='Drop file to add profile picture'>
+const FileInputExample = (): ReactElement => {
+    return (
+        <PageContainer title="Profile Picture" subtitle="Drop file to add profile picture">
             <FileInput maxFileSize={1000} maxUploadSize={1000} />
         </PageContainer>
-        
-    )
-}
+    );
+};
 
-function CheckBoxExample(): ReactElement {
-    return(
-        <PageContainer title='Interests' subtitle='Choose youre interests and if you are interested in receiving newsletter' >
+const CheckBoxExample = (): ReactElement => {
+    return (
+        <PageContainer
+            title="Interests"
+            subtitle="Choose youre interests and if you are interested in receiving newsletter"
+        >
             <SimpleGrid columns={2}>
-                <Checkbox
+                <Checkbox options={['Sport', 'Music', 'Wine', 'Hiking']} value={[0]} onChange={() => {}} />
+                <Select
                     options={[
-                        'Sport',
-                        'Music',
-                        'Wine',
-                        'Hiking'
+                        {
+                            label: 'Not interested',
+                            value: 0,
+                        },
+                        {
+                            label: 'interested',
+                            value: 1,
+                        },
                     ]}
-                    value={[0]}
-                    onChange={()=>{}}
+                    onChange={() => {}}
+                    placeholder={'Newsletter'}
                 />
-                <Select options={[
-                    {
-                        label: 'Not interested',
-                        value: 0,
-                    },
-                    {
-                        label: 'interested',
-                        value: 1,
-                    }
-                ]}
-                onChange={()=>{}}
-                placeholder={'Newsletter'}
-                />
-            </SimpleGrid>   
-         </PageContainer>   
-     
-    )
-}
-
-function RegistrateContactInfo(): ReactElement {
-    return(
-            <Box 
-                w={['full', 'lg']} 
-                p={[8,10]} 
-                mt={[20, '10ch']} 
-                mx='auto' 
-                border={['none', '1px']} 
-                borderColor={['', 'gray.300']}
-                borderRadius={10}
-                >
-                <VStack spacing={0} align='flex-start'>
-                    <VStack spacing={1} align={['flex-start', 'center']} w='full' mb={3} >
-                        <Heading>Register</Heading>
-                        <Text>Please insert the form to register a new Account</Text>
-                    </VStack>
-                    <HStack spacing={4}>
-                        <TextInput value='' onChange={()=>{}} label={'First name'}/>
-                        <TextInput value='' onChange={()=>{}} label={'Last name'}/>
-                    </HStack>
-                    <HStack spacing={4}>
-                        <TextInput value='' onChange={()=>{}} label={'E-mail'}/>
-                        <NumberInput value='' onChange={()=>{}} label={'Phonenumber'}/>
-                    </HStack>
-                    <Box w={'full'}> <TextAreaInput value='' onChange={()=>{}} label={'Bio'} /></Box>
-                </VStack>   
-             </Box>  
-    )
-}
-
-function RadioExample(): ReactElement {
-    return(
-        <PageContainer title='Gender' subtitle='Choose your gender'>
-             <Radio 
-                options={[
-                'Male',
-                'Female',
-                'Not specified',
-                'Alien',
-                ]}
-                value ={0}
-                onChange={()=>{}}
-            />
+            </SimpleGrid>
         </PageContainer>
-    )
-}
+    );
+};
+
+const RegistrateContactInfo = (): ReactElement => {
+    return (
+        <Box
+            w={['full', 'lg']}
+            // eslint-disable-next-line no-magic-numbers
+            p={[8, 10]}
+            // eslint-disable-next-line no-magic-numbers
+            mt={[20, '10ch']}
+            mx="auto"
+            border={['none', '1px']}
+            borderColor={['', 'gray.300']}
+            borderRadius={10}
+        >
+            <VStack spacing={0} align="flex-start">
+                <VStack spacing={1} align={['flex-start', 'center']} w="full" mb={3}>
+                    <Heading>Register</Heading>
+                    <Text>Please insert the form to register a new Account</Text>
+                </VStack>
+                <HStack spacing={4}>
+                    <TextInput value="" onChange={() => {}} label={'First name'} />
+                    <TextInput value="" onChange={() => {}} label={'Last name'} />
+                </HStack>
+                <HStack spacing={4}>
+                    <TextInput value="" onChange={() => {}} label={'E-mail'} />
+                    <NumberInput value="" onChange={() => {}} label={'Phonenumber'} />
+                </HStack>
+                <Box w={'full'}>
+                    {' '}
+                    <TextAreaInput value="" onChange={() => {}} label={'Bio'} />
+                </Box>
+            </VStack>
+        </Box>
+    );
+};
+
+const RadioExample = (): ReactElement => {
+    return (
+        <PageContainer title="Gender" subtitle="Choose your gender">
+            <Radio options={['Male', 'Female', 'Not specified', 'Alien']} value={0} onChange={() => {}} />
+        </PageContainer>
+    );
+};
 
 const stepsContent = [
     {
         label: 'Step 1',
-        children: <RegistrateContactInfo />
+        children: <RegistrateContactInfo />,
     },
     {
         label: 'Step 2',
-        children: <FileInputExample />
+        children: <FileInputExample />,
     },
     {
         label: 'Step 3',
-        children: <RadioExample />
+        children: <RadioExample />,
     },
     {
         label: 'Step 4',
-        children: <CheckBoxExample />
+        children: <CheckBoxExample />,
     },
-    
 ];
 
 const initialStep = 0;
@@ -125,12 +123,11 @@ const finalStep = {
     finalButtonText: 'Go back',
 };
 
-
 const Template: Story = (args) => {
     const [activeStep, setActiveStep] = useState<number>(initialStep);
     return (
-        <PageContainer title='Register new user' contentMargin={'24px'} >
-             <HorizontalStepper
+        <PageContainer title="Register new user" contentMargin={'24px'}>
+            <HorizontalStepper
                 {...args}
                 setActiveStep={setActiveStep}
                 activeStep={activeStep}
@@ -140,13 +137,10 @@ const Template: Story = (args) => {
                 onFinalize={() => {}}
                 onFinalStep={() => {}}
                 buttonMargin={'12px'}
-             />
+            />
         </PageContainer>
-           
-        
     );
 };
 
 export const Base = Template.bind({});
-Base.args = {
-};
+Base.args = {};
