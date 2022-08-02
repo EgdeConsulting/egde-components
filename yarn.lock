@@ -2772,7 +2772,7 @@
     core-js "^3.8.2"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-viewport@6.5.9":
+"@storybook/addon-viewport@6.5.9", "@storybook/addon-viewport@^6.5.9":
   version "6.5.9"
   resolved "https://registry.npmjs.org/@storybook/addon-viewport/-/addon-viewport-6.5.9.tgz"
   integrity sha512-thKS+iw6M7ueDQQ7M66STZ5rgtJKliAcIX6UCopo0Ffh4RaRYmX6MCjqtvBKk8joyXUvm9SpWQemJD9uBQrjgw==
@@ -3582,7 +3582,7 @@
 
 "@types/babel__core@^7.1.14", "@types/babel__core@^7.1.19":
   version "7.1.19"
-  resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.19.tgz#7b497495b7d1b4812bdb9d02804d0576f43ee460"
+  resolved "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.19.tgz"
   integrity sha512-WEOTgRsbYkvA/KCsDwVEGkd7WAr1e3g31VHQ8zy5gul/V1qKullU/BU5I68X5v7V3GnB9eotmom4v5a5gjxorw==
   dependencies:
     "@babel/parser" "^7.1.0"
@@ -3600,7 +3600,7 @@
 
 "@types/babel__template@*", "@types/babel__template@^7.4.1":
   version "7.4.1"
-  resolved "https://registry.yarnpkg.com/@types/babel__template/-/babel__template-7.4.1.tgz#3d1a48fd9d6c0edfd56f2ff578daed48f36c8969"
+  resolved "https://registry.npmjs.org/@types/babel__template/-/babel__template-7.4.1.tgz"
   integrity sha512-azBFKemX6kMg5Io+/rdGT0dkGreboUVR0Cdm3fz9QJWpaQGJRQXl7C+6hOTCZcMll7KFyEQpgbYI2lHdsS4U7g==
   dependencies:
     "@babel/parser" "^7.1.0"
@@ -3811,7 +3811,7 @@
 
 "@types/react-datepicker@^4.3.4":
   version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@types/react-datepicker/-/react-datepicker-4.4.2.tgz#13ab25a5fff7f3da4c5380c471efd8b38f53010e"
+  resolved "https://registry.npmjs.org/@types/react-datepicker/-/react-datepicker-4.4.2.tgz"
   integrity sha512-g8DhWvYmaIMLzVrIEVLXncylyImyBaoPsEUr3yR13JDaaHoebhDorqnVv4tLkNGa8SjBB8SAOQvxD5jaPNBX8A==
   dependencies:
     "@popperjs/core" "^2.9.2"
@@ -5964,7 +5964,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
 
 create-react-class@^15.5.2:
   version "15.7.0"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.7.0.tgz#7499d7ca2e69bb51d13faf59bd04f0c65a1d6c1e"
+  resolved "https://registry.npmjs.org/create-react-class/-/create-react-class-15.7.0.tgz"
   integrity sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng==
   dependencies:
     loose-envify "^1.3.1"
@@ -7411,7 +7411,7 @@ fresh@0.5.2:
 
 froala-editor@4.0.13, froala-editor@^4.0.13:
   version "4.0.13"
-  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-4.0.13.tgz#cfdbdf4e56727d6429f4c513b9873d99c01e070a"
+  resolved "https://registry.npmjs.org/froala-editor/-/froala-editor-4.0.13.tgz"
   integrity sha512-1yWrnONJ080aBwifhwEGBd6K1V0HLg0aoZmxbTwKyf5G4JOssTdmNL+37qjxp7ZJd+ZH9ceFeeZ9gP+MGvFwJA==
 
 from2@^2.1.0:
@@ -11313,7 +11313,7 @@ react-focus-lock@2.5.2:
 
 react-froala-wysiwyg@^4.0.10:
   version "4.0.13"
-  resolved "https://registry.yarnpkg.com/react-froala-wysiwyg/-/react-froala-wysiwyg-4.0.13.tgz#45a19987eea72214d09761e4a68555b4b35ecfee"
+  resolved "https://registry.npmjs.org/react-froala-wysiwyg/-/react-froala-wysiwyg-4.0.13.tgz"
   integrity sha512-BcuAOr6kC12uHClwgtoL75bOKIdRKCpvrnqqSJWC5vdhOtJlaTbNAJkt8SCTxDg6UCCtyvsANtqNIqvY+S8bEQ==
   dependencies:
     create-react-class "^15.5.2"
@@ -11788,7 +11788,7 @@ require-directory@^2.1.1:
 
 require-from-string@^2.0.2:
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
+  resolved "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
 
 require-main-filename@^2.0.0:
@@ -12443,7 +12443,7 @@ store2@^2.12.0:
 
 storybook-dark-mode@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/storybook-dark-mode/-/storybook-dark-mode-1.1.0.tgz#4aca307a9c09f1b95743da2db6b07c8eea99ed24"
+  resolved "https://registry.npmjs.org/storybook-dark-mode/-/storybook-dark-mode-1.1.0.tgz"
   integrity sha512-F+hG02zYGBzxGTUonA1XDV/CtMYm3OjF38Tu1CIUN+w+8hwUrwLcOtgtLLw6VjSrZdJ/ECK+tjXdKTV4oZqAXw==
   dependencies:
     fast-deep-equal "^3.0.0"
