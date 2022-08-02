@@ -2,6 +2,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
 import { HorizontalStepper } from 'Components';
+import * as PropItems from './PropItems';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 
@@ -26,28 +27,7 @@ export const componentName = 'HorizontalStepper';
     args={{
         activeStep: 0,
         setActiveStep: () => {},
-        stepsContent: [
-            {
-                label: 'Step 1',
-                children: <div>Content of Step 1</div>,
-            },
-            {
-                label: 'Step 2',
-                children: <div>Content of Step 2</div>,
-            },
-            {
-                label: 'Step 3',
-                children: <div>Content of Step 3</div>,
-            },
-            {
-                label: 'Step 4',
-                children: <div>Content of Step 4</div>,
-            },
-            {
-                label: 'Step 5',
-                children: <div>Content of Step 5</div>,
-            },
-        ],
+        stepsContent: PropItems.Default,
         buttonTexts: {
             previous: 'previous',
             next: 'next',
@@ -58,7 +38,7 @@ export const componentName = 'HorizontalStepper';
             finalButtonText: 'fintalButtonText',
         },
         buttonAlignment: 'left',
-        buttonMargin: '0px',
+        buttonMargin: '5px',
         clickableSteps: false,
         completedSteps: [],
         onFinalize: () => {},
@@ -86,11 +66,11 @@ export const componentName = 'HorizontalStepper';
 
 <DocsPageBody addStories={true} />
 
-### Completed steps
+### Completed Steps
 
 <Canvas withToolbar>
     <Story
-        name="Completed steps"
+        name="Completed Steps"
         args={{
             activeStep: 4,
             completedSteps: [0, 1, 2, 3, 4],
@@ -101,11 +81,11 @@ export const componentName = 'HorizontalStepper';
     </Story>
 </Canvas>
 
-### Clickable steps
+### Clickable Steps
 
 <Canvas withToolbar>
     <Story
-        name="Clickable steps"
+        name="Clickable Steps"
         args={{
             clickableSteps: true,
             isCompleteButtonDisabled: true,
@@ -115,129 +95,13 @@ export const componentName = 'HorizontalStepper';
     </Story>
 </Canvas>
 
-### Fewer steps
+### Many Steps
 
 <Canvas withToolbar>
     <Story
-        name="Fewer steps"
+        name="Many Steps"
         args={{
-            stepsContent: [
-                {
-                    label: 'Step 1',
-                    children: <div> Content of Step 1</div>,
-                },
-                {
-                    label: 'Step 2',
-                    children: <div>Content of Step 2</div>,
-                },
-                {
-                    label: 'Step 3',
-                    children: <div>Content of Step 3</div>,
-                },
-            ],
-            isCompleteButtonDisabled: true,
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### More steps
-
-<Canvas withToolbar>
-    <Story
-        name="More steps"
-        args={{
-            stepsContent: [
-                {
-                    label: 'Step 1',
-                    children: <div> Content of Step 1</div>,
-                },
-                {
-                    label: 'Step 2',
-                    children: <div>Content of Step 2</div>,
-                },
-                {
-                    label: 'Step 3',
-                    children: <div>Content of Step 3</div>,
-                },
-                {
-                    label: 'Step 4',
-                    children: <div>Content of Step 4</div>,
-                },
-                {
-                    label: 'Step 5',
-                    children: <div>Content of Step 5</div>,
-                },
-                {
-                    label: 'Step 6',
-                    children: <div>Content of Step 6</div>,
-                },
-                {
-                    label: 'Step 7',
-                    children: <div>Content of Step 7</div>,
-                },
-                {
-                    label: 'Step 8',
-                    children: <div>Content of Step 8</div>,
-                },
-                {
-                    label: 'Step 9',
-                    children: <div>Content of Step 9</div>,
-                },
-                {
-                    label: 'Step 10',
-                    children: <div>Content of Step 10</div>,
-                },
-                {
-                    label: 'Step 11',
-                    children: <div>Content of Step 11</div>,
-                },
-                {
-                    label: 'Step 12',
-                    children: <div>Content of Step 12</div>,
-                },
-                {
-                    label: 'Step 13',
-                    children: <div>Content of Step 13</div>,
-                },
-                {
-                    label: 'Step 14',
-                    children: <div>Content of Step 14</div>,
-                },
-                {
-                    label: 'Step 15',
-                    children: <div>Content of Step 15</div>,
-                },
-            ],
-            isCompleteButtonDisabled: true,
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### Button Alignment: Left
-
-<Canvas withToolbar>
-    <Story
-        name="Button Alignment: Left"
-        args={{
-            buttonAlignment: 'left',
-            isCompleteButtonDisabled: true,
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
-
-### Button Alignment: Center
-
-<Canvas withToolbar>
-    <Story
-        name="Button Alignment: Center"
-        args={{
-            buttonAlignment: 'center',
+            stepsContent: PropItems.ManySteps,
             isCompleteButtonDisabled: true,
         }}
     >

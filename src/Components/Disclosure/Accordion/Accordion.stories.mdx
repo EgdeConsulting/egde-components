@@ -2,6 +2,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
 import { Accordion } from 'Components';
+import * as PropItems from './PropItems';
 
 export const Template = (args) => <Accordion {...args} />;
 
@@ -11,18 +12,7 @@ export const componentName = 'Accordion';
     title={LibPath.Disclosure + componentName}
     component={Accordion}
     args={{
-        items: [
-            {
-                title: 'Accordion 1',
-                content: <div>Content 1</div>,
-                badge: '',
-            },
-            {
-                title: 'Accordion 2',
-                content: <div>Content 2</div>,
-                badge: '',
-            },
-        ],
+        items: PropItems.Default,
         allowMultiple: true,
     }}
 />
@@ -30,8 +20,7 @@ export const componentName = 'Accordion';
 <DocsPageHeader
     title={componentName}
     description="This component is used to display content in a vertical dropdown-like manner."
-    addImportantNote={true}
-    noteMessage="There is a bug with 'Show Code' where nested components inside of props are being enclosed by a MDXCreateElement-tag."
+    addImportantNote={false}
     variant="stable"
 />
 
@@ -47,18 +36,7 @@ export const componentName = 'Accordion';
     <Story
         name="Accordion Ok"
         args={{
-            items: [
-                {
-                    title: 'Accordion 1',
-                    content: <div>Content 1</div>,
-                    badge: 'OK',
-                },
-                {
-                    title: 'Accordion 2',
-                    content: <div>Content 2</div>,
-                    badge: 'OK',
-                },
-            ],
+            items: PropItems.AccordionOk,
         }}
     >
         {Template.bind({})}
@@ -71,18 +49,7 @@ export const componentName = 'Accordion';
     <Story
         name="Accordion InProgress"
         args={{
-            items: [
-                {
-                    title: 'Accordion 1',
-                    content: <div>Content 1</div>,
-                    badge: 'InProgress',
-                },
-                {
-                    title: 'Accordion 2',
-                    content: <div>Content 2</div>,
-                    badge: 'InProgress',
-                },
-            ],
+            items: PropItems.AccordionInProgress,
         }}
     >
         {Template.bind({})}
@@ -95,38 +62,7 @@ export const componentName = 'Accordion';
     <Story
         name="More Accordion"
         args={{
-            items: [
-                {
-                    title: 'Accordion 1',
-                    content: <div>Content 1</div>,
-                    badge: '',
-                },
-                {
-                    title: 'Accordion 2',
-                    content: <div>Content 2</div>,
-                    badge: '',
-                },
-                {
-                    title: 'Accordion 3',
-                    content: <div>Content 3</div>,
-                    badge: '',
-                },
-                {
-                    title: 'Accordion 4',
-                    content: <div>Content 4</div>,
-                    badge: '',
-                },
-                {
-                    title: 'Accordion 5',
-                    content: <div>Content 5</div>,
-                    badge: '',
-                },
-                {
-                    title: 'Accordion 6',
-                    content: <div>Content 6</div>,
-                    badge: '',
-                },
-            ],
+            items: PropItems.MoreAccordion,
         }}
     >
         {Template.bind({})}

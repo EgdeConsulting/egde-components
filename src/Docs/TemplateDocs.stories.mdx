@@ -45,7 +45,7 @@ const Template: Story = (args) => {
 };
 ```
 
-For a template named "Homepage" the implementation could look like this:
+For a template named Homepage the implementation could look like this:
 
 ```jsx
 const Template: Story = (args) => {
@@ -107,7 +107,7 @@ Base.args = {
 };
 ```
 
-For a template named "Homepage" the implementation should look like this:
+For a template named Homepage the implementation should look like this:
 
 ```jsx
 export const Base = Template.bind({});
@@ -149,12 +149,12 @@ import * as stories from './_templateName_';
 
 **Notes ❗**
 
-> `Meta` is one of the three "Storybook docs-blocks" we are going to use, and its sole purpose is
+> `Meta` is one of the three Storybook docs-blocks we are going to use, and its sole purpose is
 > to define the display name and location for the content inside `_templateName_.stories.mdx` within
 > Storybook.
 
 > Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
-> and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) "Storybook docs-blocks".
+> and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) Storybook docs-blocks.
 
 > `import * as stories from './_templateName_';` searches through the specified file and makes all found
 > stories available.
@@ -171,7 +171,7 @@ export const templateName = '_templateName_';
 <Meta title={Root.Templates + templateName} />;
 ```
 
-For a template named "Homepage" the export-statement and Meta-tag should look like this:
+For a template named Homepage the export-statement and Meta-tag should look like this:
 
 ```jsx
 export const templateName = 'Homepage';
@@ -200,7 +200,7 @@ will have a unique value which needs to be set manually.
 />
 ```
 
-For a template named "Homepage" the DocsPageHeader-tag should look like this:
+For a template named Homepage the DocsPageHeader-tag should look like this:
 
 ```jsx
 <DocsPageHeader

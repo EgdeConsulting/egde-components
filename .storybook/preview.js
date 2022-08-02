@@ -16,7 +16,7 @@ export const parameters = {
         theme: styles,
     },
     darkMode: {
-        dark: { ...egdeThemeLight },
-        light: { ...egdeThemeDark },
+        dark: { ...egdeThemeDark },
+        light: { ...egdeThemeLight },
     },
 };

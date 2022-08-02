@@ -2,6 +2,7 @@ import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
 import { Tabs } from 'Components';
+import * as PropItems from './PropItems';
 
 export const Template = (args) => <Tabs {...args} />;
 
@@ -11,16 +12,7 @@ export const componentName = 'Tabs';
     title={LibPath.Disclosure + 'Tabs'}
     component={Tabs}
     args={{
-        tabs: [
-            {
-                title: 'The first tab',
-                children: [<div key={'1.1'}>Content of tab 1</div>],
-            },
-            {
-                title: 'The second tab',
-                children: [<div key={'2.1'}>Content of tab 2</div>],
-            },
-        ],
+        tabs: PropItems.Default,
         centerTabs: false,
     }}
 />
@@ -28,8 +20,7 @@ export const componentName = 'Tabs';
 <DocsPageHeader
     title={componentName}
     description="This component is used to display and hide content in distinctive tabs."
-    addImportantNote={true}
-    noteMessage="There is a bug with 'Show Code' where nested components inside of props are being enclosed by a MDXCreateElement-tag."
+    addImportantNote={false}
     variant="stable"
 />
 
@@ -45,32 +36,7 @@ export const componentName = 'Tabs';
     <Story
         name="Many Tabs"
         args={{
-            tabs: [
-                {
-                    title: 'The first tab',
-                    children: [<div key={'1.1'}>Content of tab 1</div>],
-                },
-                {
-                    title: 'The second tab',
-                    children: [<div key={'2.1'}>Content of tab 2</div>],
-                },
-                {
-                    title: 'The third tab',
-                    children: [<div key={'3.1'}>Content of tab 3</div>],
-                },
-                {
-                    title: 'The fourth tab',
-                    children: [<div key={'4.1'}>Content of tab 4</div>],
-                },
-                {
-                    title: 'The fifth tab',
-                    children: [<div key={'5.1'}>Content of tab 5</div>],
-                },
-                {
-                    title: 'The sixth tab',
-                    children: [<div key={'6.1'}>Content of tab 6</div>],
-                },
-            ],
+            tabs: PropItems.ManyTabs,
         }}
     >
         {Template.bind({})}
