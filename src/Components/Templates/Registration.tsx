@@ -14,6 +14,7 @@ const FileInputExample = () =>  {
 }
 
 const CheckBoxExample = () =>  {   
+    const [value, setValue] = useState<number[]>([]);
     return(
         <PageContainer title='Interests' subtitle='Choose youre interests and if you are interested in receiving newsletter' >
             <SimpleGrid columns={2}>
@@ -24,9 +25,9 @@ const CheckBoxExample = () =>  {
                         'Wine',
                         'Hiking'
                     ]}
-                    value={[0]}
-                    onChange={(onClick) =>{[]}}
-
+                    value={value}
+                    onChange={setValue}
+                    label={'Interests'}
                 />
                 <Select options={[
                     {
@@ -34,12 +35,12 @@ const CheckBoxExample = () =>  {
                         value: 0,
                     },
                     {
-                        label: 'interested',
+                        label: 'Interested',
                         value: 1,
                     }
                 ]}
                 onChange={()=>{}}
-                placeholder={'Newsletter'}
+                label={'Receive newsletter? '}
                 />
             </SimpleGrid>   
          </PageContainer>   
@@ -48,6 +49,11 @@ const CheckBoxExample = () =>  {
 }
 
 const RegistrateContactInfo = () => {
+    const [firstname, setFirstName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [lastname, setLastName] = useState<string>('');
+    const [text, setText] = useState<string>('')
+    const [num, setNum] = useState<string>('');
     return(
             <Box 
                 w={['full', 'lg']} 
@@ -64,20 +70,21 @@ const RegistrateContactInfo = () => {
                         <Text>Please insert the form to register a new Account</Text>
                     </VStack>
                     <HStack spacing={4}>
-                        <TextInput value='' onChange={()=>{}} label={'First name'}/>
-                        <TextInput value='' onChange={()=>{}} label={'Last name'}/>
+                        <TextInput value={firstname} onChange={setFirstName} label={'First name'}/>
+                        <TextInput value={lastname} onChange={setLastName} label={'Last name'}/>
                     </HStack>
                     <HStack spacing={4}>
-                        <TextInput value='' onChange={()=>{}} label={'E-mail'}/>
-                        <NumberInput value='' onChange={()=>{}} label={'Phonenumber'}/>
+                        <TextInput value={email} onChange={setEmail} label={'E-mail'}/>
+                        <NumberInput value={num} onChange={setNum} label={'Phonenumber'}/>
                     </HStack>
-                    <Box w={'full'}> <TextAreaInput value='' onChange={()=>{}} label={'Bio'} /></Box>
+                    <Box w={'full'}> <TextAreaInput value={text} onChange={setText} label={'Bio'} /></Box>
                 </VStack>   
              </Box>  
     )
 }
 
 const RadioExample = () => {
+    const [value, setValue] = useState<number>(-1);
     return(
         <PageContainer title='Gender' subtitle='Choose your gender'>
              <Radio 
@@ -87,8 +94,8 @@ const RadioExample = () => {
                 'Not specified',
                 'Alien',
                 ]}
-                value ={0}
-                onChange={()=>{}}
+                value ={value}
+                onChange={setValue}
             />
         </PageContainer>
     )
