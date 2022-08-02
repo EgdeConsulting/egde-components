@@ -68,7 +68,12 @@ import { _componentName_ } from 'Components';
 
 ## Step 4:
 
-Now create two local export-statements as follows:
+If the new component works on its own (standalone) without having to wait for an event-handler to trigger
+in order to be displayed correctly use alternative 1, otherwise follow alternative 2.
+
+### Alternative 1:
+
+Create two local export-statements as follows:
 
 ```jsx
 export const Template = (args) => <_componentName_ {...args} />;
@@ -89,6 +94,67 @@ export const componentName = 'TextAreaInput';
 **Notes ❗**
 
 > We need to use `export` before `const` as MDX-syntax requires it.
+
+<br />
+
+### Alternative 2:
+
+Create two local export-statements like shown. `Template` needs to implement both the
+new component and all the logic required to trigger the desired event which ensures
+that the component is displayed correctly.
+
+```jsx
+export const Template = (args) => {
+    ...
+    return (
+        <div>
+            ...
+            <_componentName_
+                {...args}
+                {...}
+            />
+        </div>
+    );
+};
+
+export const componentName = '_componentName_';
+```
+
+For a component named AlertDialog the export-statements should look like this:
+
+```jsx
+export const Template = (args) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const handleClose = () => setIsOpen(false);
+    const buttons = [
+        {
+            label: 'OK',
+            onClick: () => {
+                setIsOpen(false);
+            },
+            variant: 'primary',
+        },
+    ];
+    return (
+        <div>
+            <Button onClick={() => setIsOpen(true)}> Open Alert Dialog </Button>
+            <AlertDialog
+                {...args}
+                onClose={handleClose}
+                isOpen={isOpen}
+                buttons={buttons}
+            />
+        </div>
+    );
+};
+
+export const componentName = 'AlertDialog';
+```
+
+**Notes ❗**
+
+> Make sure to include all the necessary import-statements at the top of the file if
+> other components and elements are being used inside of `Template`.
 
 <br />
 
@@ -458,9 +524,9 @@ could look like this:
 
 **Notes ❗**
 
-> `###` is a special MDX syntax for creating a `<h3>` element.
+> `###` is a special MDX-syntax for creating a `<h3>` element.
 
-> Note! Story names can include whitespaces, uppercase letters, numbers and special characters, but try to
+> Story names can include whitespaces, uppercase letters, numbers and special characters, but try to
 > follow existing naming patterns and conventions by looking at the story names of existing components.
 
 <br />
