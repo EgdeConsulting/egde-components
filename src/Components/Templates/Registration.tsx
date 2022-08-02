@@ -6,7 +6,7 @@ import { Box, Heading, VStack, Text, HStack, SimpleGrid } from '@chakra-ui/react
 const FileInputExample = () => {
     return(
         <PageContainer title='Profile Picture' subtitle='Drop file to add profile picture'>
-            <FileInput maxFileSize={1001} maxUploadSize={1000} />
+            <FileInput maxFileSize={1000} maxUploadSize={1000} />
         </PageContainer>
     );
 };
