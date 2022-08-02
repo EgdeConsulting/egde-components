@@ -6,7 +6,6 @@ module.exports = {
         '../src/**/Installation.stories.mdx',
         '../src/Docs/*.stories.mdx',
         '../src/**/*.stories.mdx',
-        //'../src/**/*.stories.@(js|jsx|ts|tsx|md|mdx)',
     ],
     addons: [
         '@storybook/addon-links',
@@ -15,6 +14,7 @@ module.exports = {
         // '@storybook/addon-interactions',
         '@chakra-ui/storybook-addon',
         '@storybook/addon-docs',
+        'storybook-dark-mode',
     ],
     framework: '@storybook/react',
     core: {
