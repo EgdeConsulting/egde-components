@@ -8,7 +8,9 @@ export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
     viewMode: 'docs',
     viewport: {
-        viewports: INITIAL_VIEWPORTS,
+        viewports: INITIAL_VIEWPORTS
+       
+        
       },
     controls: {
         matchers: {
