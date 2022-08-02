@@ -2,8 +2,9 @@ import { HorizontalStepper, FileInput, Radio, TextInput, PageContainer, NumberIn
 import React, { ReactElement, useState } from 'react';
 import { Story } from '@storybook/react';
 import { Box, Heading, VStack, Text, HStack, SimpleGrid } from '@chakra-ui/react';
+import { valueContainerCSS } from 'react-select/dist/declarations/src/components/containers';
 
-function FileInputExample(): ReactElement {
+const FileInputExample = () =>  {
     return(
         <PageContainer title='Profile Picture' subtitle='Drop file to add profile picture'>
             <FileInput maxFileSize={1000} maxUploadSize={1000} />
@@ -12,7 +13,7 @@ function FileInputExample(): ReactElement {
     )
 }
 
-function CheckBoxExample(): ReactElement {
+const CheckBoxExample = () =>  {   
     return(
         <PageContainer title='Interests' subtitle='Choose youre interests and if you are interested in receiving newsletter' >
             <SimpleGrid columns={2}>
@@ -24,7 +25,8 @@ function CheckBoxExample(): ReactElement {
                         'Hiking'
                     ]}
                     value={[0]}
-                    onChange={()=>{}}
+                    onChange={(onClick) =>{[]}}
+
                 />
                 <Select options={[
                     {
@@ -45,7 +47,7 @@ function CheckBoxExample(): ReactElement {
     )
 }
 
-function RegistrateContactInfo(): ReactElement {
+const RegistrateContactInfo = () => {
     return(
             <Box 
                 w={['full', 'lg']} 
@@ -75,7 +77,7 @@ function RegistrateContactInfo(): ReactElement {
     )
 }
 
-function RadioExample(): ReactElement {
+const RadioExample = () => {
     return(
         <PageContainer title='Gender' subtitle='Choose your gender'>
              <Radio 
