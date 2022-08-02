@@ -164,8 +164,8 @@ const Modal = (props: ModalProps): ReactElement => {
                                 alignment === 'right'
                                     ? 'end'
                                     : alignment === 'left'
-                                    ? 'start'
-                                    : 'center'
+                                        ? 'start'
+                                        : 'center'
                             }
                         >
                             {errorMessage}
