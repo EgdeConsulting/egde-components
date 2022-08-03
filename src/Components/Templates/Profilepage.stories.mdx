@@ -1,12 +1,11 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import * as stories from './Profilepage.tsx';
+import { DocsPageHeader } from 'Docs';
 import { Root } from 'Types';
-
+import * as stories from './Profilepage';
 
 export const templateName = 'Profilepage';
 
 <Meta title={Root.Templates + templateName} />
-
 
 <DocsPageHeader
     title={templateName}
@@ -18,5 +17,3 @@ export const templateName = 'Profilepage';
 <Canvas withToolbar>
     <Story name="Profilepage" story={stories.Base} />
 </Canvas>
-
-
