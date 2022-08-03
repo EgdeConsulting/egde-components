@@ -29,6 +29,7 @@ setTimeout(() => {
 
 addons.setConfig({
     toolbar: {
+        //Set true to hide canvas and docks from navbar
         title: { hidden: false },
         zoom: { hidden: true },
         eject: { hidden: true },
