@@ -67,8 +67,36 @@ blockquote .css-bdtlhc {
 }
 
 .css-15erloe {
-    width: 60px !important;
-    height: 60px !important;
+    width: 90px !important;
+    height: 100px !important;
+}
+
+.css-15erloe p {
+    margin: 7px 0 0 0;
+    text-align: center;
+    color: #333333 !important;
+    line-height: 1.2 !important;
+    font-size: 12px !important;
+    width: 48px;
+}
+
+.iconGallery svg {
+    width: 48px !important;
+    height: 48px !important;
+}
+
+.iconPosition svg {
+    position: relative !important;
+    top: 18px;
+    left: 13px;
+}
+
+.iconBlueFill path {
+    fill: #01459e !important;
+}
+
+.iconGrayFill path {
+    fill: #999999 !important;
 }
 
 .sbdocs-img {

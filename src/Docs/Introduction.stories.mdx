@@ -40,17 +40,15 @@ component in question is working properly, has issues, or is on the way out.
 
 <br />
 
-Another thing to note is that the "Show code"-option, which displays the source code of a component, suffers
-from a bug where nested elements inside of component props are being displayed wrongly. Instead of showing
-the nested elements as they are defined e.g. `<p>Text</p>`, a MDXCreateElement-tag is being displayed
-`<MDXCreateElement mdxType="p" originalType="p">Text</MDXCreateElement>`. Currently there are no official
-solutions to this issue so all components which are affected include a warning about this as shown below.
+Another thing to note is that some component might include a warning at the top of the page (as shown
+below). These warnings contain important information in regard to the component so make sure to read
+them!
 
 <div className={'docsPage'}>
     <ChakraProvider theme={styles}>
         <Alert
             description={
-                "There is a bug with 'Show Code' where nested components inside of props are being enclosed by a MDXCreateElement-tag."
+                'There is a bug with this component which is yet to be fixed!'
             }
             status="warning"
             hasNoCloseButton={true}

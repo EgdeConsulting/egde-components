@@ -1,98 +1,207 @@
-import { Meta, Title, IconGallery, IconItem } from '@storybook/addon-docs/';
-
+import { Meta, IconGallery, IconItem } from '@storybook/addon-docs/';
+import { Root } from 'Types';
 import * as icons from 'Icons';
-import { Root} from 'Types';
 
 <Meta title={Root.Iconography + 'Icons'} />
 
-# Iconography
+# Icons
 
-<!-- This icons are all from CardIcons -->
-<IconGallery>
-  <IconItem name="Parking">
-    <icons.ParkingIcon name="Parking" />
-  </IconItem>
- 
-  <IconItem name="Mail">
-    <icons.MailIcon name="Mail" />
-  </IconItem>
-   <IconItem name="Profile">
-    <icons.ProfileIcon name="Profile" />
-  </IconItem>
-   <IconItem name="Invoice">
-    <icons.InvoiceIcon name="Invoice" />
-  </IconItem>
-   <IconItem name="Report">
-    <icons.ReportIcon name="Report" />
-  </IconItem>
-   <IconItem name="Cases">
-    <icons.CasesIcon name="Cases" />
-  </IconItem>
-   <IconItem name="Tax">
-    <icons.TaxIcon name="Tax" />
-  </IconItem>
-   <IconItem name="Property">
-    <icons.PropertyIcon name="Property" />
-  </IconItem>
-   <IconItem name="Form">
-    <icons.FormIcon name="Form" />
-  </IconItem>
-   <IconItem name="Family">
-    <icons.FamilyIcon name="Family" />
-  </IconItem>
-  <IconItem name="Grant">
-    <icons.GrantIcon name="Grant" />
-  </IconItem>
-  <IconItem name="Actor">
-    <icons.ActorIcon name="Actor" />
-  </IconItem>
-  <IconItem name="Arrow">
-    <icons.ArrowRightIcon name="Arrow" />
-  </IconItem>
-  {/* This Icons are not in CardIcons */}
-  <IconItem name="Warning">
-    <icons.Warning name="Warning" />
-  </IconItem>
-  <IconItem name="Info">
-    <icons.InfoRounded name="Info" />
-  </IconItem>
-  <IconItem name="Error">
-    <icons.ErrorRounded name="Error" />
-  </IconItem>
-  <IconItem name="Error Warning">
-    <icons.ErrorRoundedWarning name="ErrorRoundedWarning" />
-  </IconItem>
-  <IconItem name="Check Circle">
-    <icons.CheckCircleRounded name="Check Circle" />
-  </IconItem>
-    <IconItem name="Check">
-    <icons.CheckRounded name="Check" />
-  </IconItem>
-   
-  <IconItem name="Priority">
-    <icons.PriorityHighRounded name="Priority" />
-  </IconItem>
-  <IconItem name="Upload">
-    <icons.UploadIcon name="Upload" />
-  </IconItem>
-    <IconItem name="Upload delete">
-    <icons.UploadDeleteIcon name="Upload delete" />
-  </IconItem>
-    <IconItem name="Upload hover">
-    <icons.UploadIconHover name="Upload hover" />
-  </IconItem> 
-  <IconItem name="Upload disabled">
-    <icons.UploadIconDisabled name="Upload disabled" />
-  </IconItem>
-  <IconItem name="Link">
-    <icons.LinkIcon name="Link" />
-  </IconItem>
-   {/* Problem that EditIcon has white ass fill option, and IconItem is not customizeable, feature is requested https://github.com/storybookjs/storybook/issues/18793 */}
-  <IconItem name="Edit">
-    <icons.EditIcon name='Edit' />
-  </IconItem>
-  <IconItem name="Delete">
-    <icons.DeleteIcon name="Delete" />
-  </IconItem>
-  </IconGallery>
+<hr />
 
+All the icons listed below are included in the Egde-UI package. The small number
+beneath each icon specify its default dimensions (width and height), as some icons
+are displayed in a different size.
+
+<br />
+
+## Card Icons
+
+<br />
+
+<div className="iconGallery">
+    <IconGallery>
+        <IconItem name="Parking">
+            <div>
+                <icons.ParkingIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Mail">
+            <div>
+                <icons.MailIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Profile">
+            <div>
+                <icons.ProfileIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Invoice">
+            <div>
+                <icons.InvoiceIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Report">
+            <div>
+                <icons.ReportIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Cases">
+            <div>
+                <icons.CasesIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Tax">
+            <div>
+                <icons.TaxIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Property">
+            <div>
+                <icons.PropertyIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Form">
+            <div>
+                <icons.FormIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Family">
+            <div>
+                <icons.FamilyIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Grant">
+            <div>
+                <icons.GrantIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Actor">
+            <div>
+                <icons.ActorIcon />
+                <p>48x48</p>
+            </div>
+        </IconItem>
+        <IconItem name="Arrow">
+            <div className="iconPosition">
+                <icons.ArrowRightIcon />
+                <p>21x21</p>
+            </div>
+        </IconItem>
+    </IconGallery>
+</div>
+
+## Alert and Button Icons
+
+<br />
+
+<div className="iconGallery">
+    <IconGallery>
+        <IconItem name="Warning">
+            <div>
+                <icons.Warning />
+                <p>24x24</p>
+            </div>
+        </IconItem>
+        <IconItem name="Info">
+            <div>
+                <icons.InfoRounded />
+                <p>24x24</p>
+            </div>
+        </IconItem>
+        <IconItem name="Error">
+            <div>
+                <icons.ErrorRounded />
+                <p>24x24</p>
+            </div>
+        </IconItem>
+        <IconItem name="Error Warning">
+            <div>
+                <icons.ErrorRoundedWarning />
+                <p>24x24</p>
+            </div>
+        </IconItem>
+        <IconItem name="Check Circle">
+            <div>
+                <icons.CheckCircleRounded />
+                <p>24x24</p>
+            </div>
+        </IconItem>
+        <IconItem name="Check">
+            <div>
+                <icons.CheckRounded />
+                <p>24x24</p>
+            </div>
+        </IconItem>
+        <IconItem name="Priority">
+            <div>
+                <icons.PriorityHigh />
+                <p>2x16</p>
+            </div>
+        </IconItem>
+        <IconItem name="Priority Rounded">
+            <div>
+                <icons.PriorityHighRounded />
+                <p>24x24</p>
+            </div>
+        </IconItem>
+        <IconItem name="Upload">
+            <div>
+                <icons.UploadIcon />
+                <p>32x23</p>
+            </div>
+        </IconItem>
+        <IconItem name="Upload delete">
+            <div>
+                <icons.UploadDeleteIcon />
+                <p>10x12</p>
+            </div>
+        </IconItem>
+        <IconItem name="Upload hover">
+            <div>
+                <icons.UploadIconHover />
+                <p>32x22</p>
+            </div>
+        </IconItem>
+        <IconItem name="Upload disabled">
+            <div className="iconGrayFill">
+                <icons.UploadIconDisabled />
+                <p>32x22</p>
+            </div>
+        </IconItem>
+        <IconItem name="Link">
+            <div className="iconPosition">
+                <icons.LinkIcon />
+                <p>20x20</p>
+            </div>
+        </IconItem>
+        <IconItem name="Edit">
+            <div className="iconBlueFill iconPosition">
+                <icons.EditIcon />
+                <p>20x20</p>
+            </div>
+        </IconItem>
+        <IconItem name="Delete">
+            <div className="iconPosition">
+                <icons.DeleteIcon />
+                <p>18x22</p>
+            </div>
+        </IconItem>
+        <IconItem name="Delete Button">
+            <div>
+                <icons.DeleteButtonIcon />
+                <p>32x32</p>
+            </div>
+        </IconItem>
+    </IconGallery>
+</div>
