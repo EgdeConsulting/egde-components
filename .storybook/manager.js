@@ -12,6 +12,7 @@ setTimeout(() => {
     let toolbarButtons = [
         document.querySelector('[title="Remount component"]'),
         document.querySelector('[title="Set color mode to dark"]'),
+        document.querySelector('[title="Apply a grid to the preview"]'),
     ];
 
     let sidebar = document.getElementsByClassName('sto-1q7pov5')[0];
@@ -29,12 +30,11 @@ setTimeout(() => {
 
 addons.setConfig({
     toolbar: {
-        //Set true to hide canvas and docks from navbar
-        title: { hidden: false },
-        zoom: { hidden: true },
-        eject: { hidden: true },
-        copy: { hidden: true },
-        // fullscreen: { hidden: true },
+        title: { hidden: false }, //Set true to hide "Canvas" and "Docs" from toolbar
+        zoom: { hidden: false },
+        eject: { hidden: false },
+        copy: { hidden: false },
+        fullscreen: { hidden: false },
         'storybook/background': { hidden: false },
         'storybook/viewport': { hidden: false },
     },
