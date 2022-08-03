@@ -9,13 +9,16 @@ module.exports = {
     ],
     addons: [
         '@storybook/addon-links',
-        '@storybook/addon-viewport',
         //'@storybook/addon-essentials',
-        // '@storybook/addon-actions',
-        // '@storybook/addon-interactions',
+        //'@storybook/addon-actions',
+        //'@storybook/addon-interactions',
         '@chakra-ui/storybook-addon',
         '@storybook/addon-docs',
         'storybook-dark-mode',
+        '@storybook/addon-viewport',
+        '@storybook/addon-a11y',
+        '@storybook/addon-backgrounds',
+        '@storybook/addon-controls'
         
     ],
     framework: '@storybook/react',
