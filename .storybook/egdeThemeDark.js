@@ -28,7 +28,7 @@ export default create({
     // Form colors
     // inputBg: '',
     inputBorder: '#6D6D6D',
-    inputTextColor: '#01233D',
+    inputTextColor: '#ffffff',
     inputBorderRadius: 3,
 
     brandTitle: 'Egde storybook',
