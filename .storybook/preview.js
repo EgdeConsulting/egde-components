@@ -2,10 +2,8 @@ import { styles } from '../src/Styles';
 import '../src/Docs/DocsPage/docsPage.css';
 import egdeThemeLight from './egdeThemeLight';
 import egdeThemeDark from './egdeThemeDark';
+import { backgroundColors } from './backgrounds';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-
-
-
 
 
 
@@ -30,6 +28,10 @@ export const parameters = {
     darkMode: {
         dark: { ...egdeThemeDark },
         light: { ...egdeThemeLight },
+    },
+    backgrounds: {
+        default: 'white',
+        values: backgroundColors,
     },
     
 };
