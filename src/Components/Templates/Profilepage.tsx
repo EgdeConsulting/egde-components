@@ -1,8 +1,19 @@
 import React, { ReactElement, useState } from 'react';
 import { Story } from '@storybook/react';
 import { Modal, PageContainer, Button as CompButton, Alert } from 'Components';
-import { Box, Button, Flex, Table, TableContainer, Tbody, Td, Tr, Text, Image, VStack } from '@chakra-ui/react';
-
+import {
+    Box,
+    Button,
+    Flex,
+    Table,
+    TableContainer,
+    Tbody,
+    Td,
+    Tr,
+    Text,
+    Image,
+    VStack,
+} from '@chakra-ui/react';
 
 // export const CarouselItems = [
 //     <CarouselPage
@@ -13,9 +24,9 @@ import { Box, Button, Flex, Table, TableContainer, Tbody, Td, Tr, Text, Image, V
 //         _indexOnCarousel={0}
 //     />,
 const TabExample = (): ReactElement => {
-    return(
-        <TableContainer >
-            <Table variant='unstyled' >
+    return (
+        <TableContainer>
+            <Table variant="unstyled">
                 <Tbody>
                     <Tr>
                         <Td>Email</Td>
@@ -31,8 +42,7 @@ const TabExample = (): ReactElement => {
     );
 };
 
-const Template: Story = () => {
-
+const Template: Story = (args) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleClose = () => setIsModalOpen(false);
 
@@ -42,14 +52,14 @@ const Template: Story = () => {
             backgroundColor={'grey'}
             borderColor={'border'}
             borderWidth={'1px'}
-            containerMargin={'199px 336px 350px 336px'}
+            containerMargin={'75px 336px 75px 336px'}
             containerMinWidth={'800px'}
-            containerPadding={ '40px 56px 40px 56px'}
+            containerPadding={'40px 56px 40px 56px'}
             contentPadding={'0 56px 40px 56px '}
             subtitle={'This is (insert name) profile'}
             subtitlePadding={'16px 154px 32px 154px'}
             titlePadding={'40px 0 0 0'}
-            containerSize= {'200sch'}
+            containerSize={'200sch'}
         >
             <VStack>
                 {/* <Circle
@@ -58,24 +68,36 @@ const Template: Story = () => {
                 bg={'blue'}
                 minWidth='150px'
                 minHeight={'150px'}
-                alignSelf='flex-end' /> */
-                }
-                <Flex alignSelf={'flex-start'} direction={'row'} p='32px'>
-                    <Box mt={'0'} alignSelf='flex-start'>
+                alignSelf='flex-end' /> */}
+                <Flex alignSelf={'flex-start'} direction={'row'} p="32px">
+                    <Box mt={'0'} alignSelf="flex-start">
                         <TabExample />
-                        <Text align={'center'} fontWeight={'bold'} >Bio</Text>
+                        <Text align={'center'} fontWeight={'bold'}>
+                            Bio
+                        </Text>
                         <Text mb={'24px'}>
-                            Harry Will Ramsbottom is a 20-year-old local activist who enjoys reading,
-                            planking and praying. He is smart and inspiring,
-                            but can also be very lazy and a bit dull.</Text>
-                        <CompButton label='Edit profile' variant='secondary'></CompButton>
-                        <Button onClick={() => setIsModalOpen(true)} variant={'delete'}>Delete Consent
+                            Harry Will Ramsbottom is a 20-year-old local
+                            activist who enjoys reading, planking and praying.
+                            He is smart and inspiring, but can also be very lazy
+                            and a bit dull.
+                        </Text>
+                        <CompButton
+                            label="Edit profile"
+                            variant="secondary"
+                        ></CompButton>
+                        <Button
+                            onClick={() => setIsModalOpen(true)}
+                            variant={'delete'}
+                        >
+                            Delete Consent
                             <Modal
-                                isModalOpen = {isModalOpen}
-                                isCentered= {false}
-                                title= {'Removing consent'}
-                                subtitle= {'If you want to remove the consent. Press the confirm Bytton'}
-                                buttons= {{
+                                isModalOpen={isModalOpen}
+                                isCentered={false}
+                                title={'Removing consent'}
+                                subtitle={
+                                    'If you want to remove the consent. Press the confirm Bytton'
+                                }
+                                buttons={{
                                     primary: {
                                         label: 'Confirm',
                                         variant: 'primary',
@@ -89,20 +111,23 @@ const Template: Story = () => {
                                     alignment: 'left',
                                 }}
                                 onClose={handleClose}
-                                hasCloseButton= {true}
+                                hasCloseButton={true}
                             >
-                                <Alert description='You will be logged out after confirming' status='warning'></Alert>
+                                <Alert
+                                    description="You will be logged out after confirming"
+                                    status="warning"
+                                ></Alert>
                             </Modal>
                         </Button>
                     </Box>
                     <Image
-                        alignSelf='right'
-                        mt='0'
-                        mb='0'
-                        boxSize='150px'
+                        alignSelf="right"
+                        mt="0"
+                        mb="0"
+                        boxSize="150px"
                         borderRadius={'full'}
                         backgroundColor={'transparent'}
-                        boxShadow='lg'
+                        boxShadow="lg"
                         // eslint-disable-next-line max-len
                         src="https://www.clipartmax.com/png/small/9-97683_free-images-pear-clipart-black-and-white-random-object-battle-royal.png"
                     />

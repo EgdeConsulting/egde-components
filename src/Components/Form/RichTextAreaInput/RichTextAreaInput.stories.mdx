@@ -26,24 +26,24 @@ export const componentName = 'RichTextAreaInput';
     title={LibPath.Form + componentName}
     component={RichTextAreaInput}
     args={{
-        label: 'RichTextAreaInput',
-        labelTextMargin: '0 0 0 0',
+        label: 'Title',
+        labelTextMargin: '0 0 10px 5px',
         placeholder: 'Write some text',
         onChange: () => {},
         value: '',
         invalidText: '',
-        captionText: '',
+        captionText: 'Caption text.',
         margin: '0 0 0 0',
         padding: '0 0 0 0',
         width: '100%',
         minWidth: '0',
         maxWidth: '90%',
         toolbarOptions: undefined,
-        characterLimit: 600,
+        characterLimit: 1000,
         autoFocus: false,
         textAlign: 'right',
         isDisabled: false,
-        captionTextMargin: '0 0 0 0',
+        captionTextMargin: '10px',
     }}
 />
 
@@ -69,12 +69,31 @@ export const componentName = 'RichTextAreaInput';
     <Story
         name="Limited Toolbar"
         args={{
+            label: 'Only text with simple styling allowed:',
             toolbarOptions: {
                 bold: true,
                 italic: true,
                 underline: true,
-                strikethrough: true,
+                strikeThrough: true,
             },
+            characterLimit: 69,
+            captionText: 'Note the character limitation!',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Invalid Input
+
+<Canvas withToolbar>
+    <Story
+        name="Invalid Input"
+        args={{
+            label: 'Write a short description:',
+            invalidText: 'A description is missing!',
+            characterLimit: 666,
+            captionText: '',
         }}
     >
         {Template.bind({})}

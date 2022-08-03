@@ -4,18 +4,18 @@ import { LibPath } from 'Types';
 import { useState } from 'react';
 import { DatePicker } from 'Components';
 
-
-
 export const Template = (args) => {
-    const [value, setValue]= useState('');
-    const handleChange = (date) => setValue(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
-return(
-    <div>
-        <DatePicker {...args} onChange={handleChange} value={value} />
-    </div>
-)
-}   
-const now = new Date();
+    const [value, setValue] = useState('');
+    const handleChange = (date) =>
+        setValue(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+    return (
+        <div>
+            <DatePicker {...args} onChange={handleChange} value={value} />
+        </div>
+    );
+};
+
+export const now = new Date();
 
 export const componentName = 'DatePicker';
 
@@ -28,10 +28,10 @@ export const componentName = 'DatePicker';
         placeholder: 'Click to select a date',
         invalidText: '',
         isDisabled: false,
-        label: 'DatePicker',
-        labelTextMargin: '0px',
-        captionText: '',
-        captionTextMargin: '0px',
+        label: 'Title',
+        labelTextMargin: '0 0 10px 0',
+        captionText: 'Caption text.',
+        captionTextMargin: '10px 0 0 0',
         margin: '0px',
         padding: '0px',
         width: '100%',
@@ -40,35 +40,61 @@ export const componentName = 'DatePicker';
         minDate: '',
         backgroundColor: '',
         autoFocus: false,
-        shouldCloseOnSelect: false,
+        shouldCloseOnSelect: true,
     }}
-   
 />
 
 <DocsPageHeader
     title={componentName}
-    description="This component is used to Select a date"
+    description="This component is used to create a date-input where the user chooses the date by clicking a calender."
     addImportantNote={false}
     variant="stable"
 />
 
 <Canvas withToolbar>
-    <Story name="Base" height='300px'>{Template.bind({})}</Story>
+    <Story name="Base" height="300px">
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
 <DocsPageBody addStories={true} />
 
+### Limited Date Range
 
-### Pick a date between today and  10 days from now
 <Canvas withToolbar>
-    <Story 
-    name="Pick date in range"
-    height='300px'
-    args={{
-        minDate: new Date(now.getFullYear(), now.getMonth(), now.getDate()),
-        maxDate: new Date(now.getFullYear(), now.getMonth(), now.getDate() + 10),
-    }}
+    <Story
+        name="Limited Date Range"
+        height="300px"
+        args={{
+            label: 'Choose a date within the next 10 days:',
+            captionText: '',
+            minDate: new Date(now.getFullYear(), now.getMonth(), now.getDate()),
+            maxDate: new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate() + 10,
+            ),
+        }}
     >
-        {Template.bind({})}</Story>
+        {Template.bind({})}
+    </Story>
 </Canvas>
 
+### Invalid Date
+
+<Canvas withToolbar>
+    <Story
+        name="Invalid Date"
+        args={{
+            label: 'Select the meeting date:',
+            placeholder: '01/01/2001',
+            invalidText: 'Invalid date selected!',
+            captionText:
+                'Hint! Make sure to select a date which fits all attendees.',
+            backgroundColor: '#F9E5E5',
+            isDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
