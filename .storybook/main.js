@@ -9,9 +9,6 @@ module.exports = {
     ],
     addons: [
         '@storybook/addon-links',
-        //'@storybook/addon-essentials',
-        //'@storybook/addon-actions',
-        //'@storybook/addon-interactions',
         '@chakra-ui/storybook-addon',
         '@storybook/addon-docs',
         'storybook-dark-mode',
