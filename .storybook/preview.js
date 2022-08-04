@@ -28,7 +28,6 @@ export const parameters = {
         light: { ...egdeThemeLight },
     },
     backgrounds: {
-        default: 'white',
         values: backgroundColors,
     },
 };

@@ -46,7 +46,6 @@
     "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/react": "^1.7.3",
     "@chakra-ui/storybook-addon": "^4.0.1",
-    "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
