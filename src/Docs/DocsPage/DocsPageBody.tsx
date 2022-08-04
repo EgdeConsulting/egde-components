@@ -1,5 +1,5 @@
 import React from 'react';
-import { Props } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
 
 interface DocsPageBodyProps {
     addStories: boolean;
@@ -14,7 +14,7 @@ const DocsPageBody = (props: DocsPageBodyProps) => {
                 Change some of the props and see how the <code>Base</code>{' '}
                 component changes.
             </p>
-            <Props story="Base" />
+            <ArgsTable story="Base" />
             {addStories && (
                 <div>
                     <h1>Stories</h1>
