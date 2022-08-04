@@ -76,13 +76,11 @@ export const RichTextAreaInput = (props: RichTextAreaProps): ReactElement => {
 
     const customToolbarButtons: string[] = [];
     if (toolbarOptions) {
-        Object.entries(toolbarOptions).forEach(
-            ([toolbarOption, value]) => {
-                if (value) {
-                    customToolbarButtons.push(toolbarOption);
-                }
+        Object.entries(toolbarOptions).forEach(([toolbarOption, value]) => {
+            if (value) {
+                customToolbarButtons.push(toolbarOption);
             }
-        );
+        });
         /*
         if (toolbarOptions.bold) {
             customToolbarButtons.push('bold');
@@ -128,4 +126,3 @@ export const RichTextAreaInput = (props: RichTextAreaProps): ReactElement => {
         </BaseInput>
     );
 };
-
