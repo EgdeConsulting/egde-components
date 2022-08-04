@@ -59,7 +59,7 @@ const Template: Story = () => {
                             Harry Will Ramsbottom is a 20-year-old local activist who enjoys reading,
                             planking and praying. He is smart and inspiring,
                             but can also be very lazy and a bit dull.</Text>
-                        <CompButton label='Edit profile' variant='secondary'></CompButton>
+                        <CompButton label='Edit profile' variant='secondary' onClick={() => {}}></CompButton>
                         <Button onClick={() => setIsModalOpen(true)} variant={'delete'}>Delete Consent
                             <Modal
                                 isModalOpen = {isModalOpen}

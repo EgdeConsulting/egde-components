@@ -59,7 +59,7 @@ const CheckboxTester = (): ReactElement => {
     );
 }
 describe('Checkbox component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<CheckboxTester/>);
         expect(tree).toMatchSnapshot();
   });
