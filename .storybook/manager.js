@@ -72,7 +72,6 @@ setTimeout(() => {
             '[title*="Change theme to"]',
         );
 
-        console.log(parent, child, darkModeButton);
         if (child && darkModeButton) {
             parent.insertBefore(darkModeButton, child);
         }
