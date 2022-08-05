@@ -1,19 +1,19 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader } from 'Docs';
 import { Root } from 'Types';
-import * as stories from './Profilepage';
+import * as stories from './NotAuthorized';
 
-export const templateName = 'Profilepage';
+export const templateName = 'Not Authorized';
 
 <Meta title={Root.Templates + templateName} />
 
 <DocsPageHeader
     title={templateName}
-    description="This template shows how the Modal, PageContainer, Button and Alert component can be used to create a Profilepage."
+    description='This template shows how the AlertDialog, PageContainer and TextAreaInput component can be used to create a "Not Authorized"-page.'
     addImportantNote={false}
     variant="none"
 />
 
 <Canvas withToolbar>
-    <Story name="Profilepage" story={stories.Base} />
+    <Story name="Not Authorized" story={stories.Base} />
 </Canvas>
