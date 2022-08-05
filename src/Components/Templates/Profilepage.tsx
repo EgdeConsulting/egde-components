@@ -1,9 +1,8 @@
 import React, { ReactElement, useState } from 'react';
 import { Story } from '@storybook/react';
-import { Modal, PageContainer, Button as CompButton, Alert } from 'Components';
+import { Modal, PageContainer, Button, Alert } from 'Components';
 import {
     Box,
-    Button,
     Flex,
     Table,
     TableContainer,
@@ -73,16 +72,16 @@ const Template: Story = (args) => {
                             He is smart and inspiring, but can also be very lazy
                             and a bit dull.
                         </Text>
-                        <CompButton
+                        <Button
                             label="Edit profile"
                             variant="secondary"
                             onClick={() => {}}
-                        ></CompButton>
+                        ></Button>
                         <Button
                             onClick={() => setIsModalOpen(true)}
                             variant={'delete'}
+                            label={'Delete Consent'}
                         >
-                            Delete Consent
                             <Modal
                                 isModalOpen={isModalOpen}
                                 isCentered={false}
