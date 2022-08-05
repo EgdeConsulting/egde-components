@@ -68,11 +68,21 @@ const Template: Story = (args) => {
                             Bio
                         </Text>
                         <Text mb={'24px'}>
-                            Harry Will Ramsbottom is a 20-year-old local activist who enjoys reading,
-                            planking and praying. He is smart and inspiring,
-                            but can also be very lazy and a bit dull.</Text>
-                        <CompButton label='Edit profile' variant='secondary' onClick={() => {}}></CompButton>
-                        <Button onClick={() => setIsModalOpen(true)} variant={'delete'}>Delete Consent
+                            Harry Will Ramsbottom is a 20-year-old local
+                            activist who enjoys reading, cycling and traveling.
+                            He is smart and inspiring, but can also be very lazy
+                            and a bit dull.
+                        </Text>
+                        <CompButton
+                            label="Edit profile"
+                            variant="secondary"
+                            onClick={() => {}}
+                        ></CompButton>
+                        <Button
+                            onClick={() => setIsModalOpen(true)}
+                            variant={'delete'}
+                        >
+                            Delete Consent
                             <Modal
                                 isModalOpen={isModalOpen}
                                 isCentered={false}

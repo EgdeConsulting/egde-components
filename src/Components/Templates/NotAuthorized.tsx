@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Story } from '@storybook/react';
-import { AlertDialog, PageContainer, TextAreaInput } from 'Components';
-import { Button } from '@chakra-ui/react';
+import { AlertDialog, Button, PageContainer, TextAreaInput } from 'Components';
 import { Warning } from 'Icons';
 
 const Template: Story = (args) => {
@@ -40,7 +39,7 @@ const Template: Story = (args) => {
                     </p>
                 </PageContainer>
                 <TextAreaInput
-                    label={'Why should you have access to this application?'}
+                    label={'Why should you have access to this page?'}
                     placeholder={'Write here'}
                     isDisabled={false}
                     width={'700px'}
@@ -48,8 +47,11 @@ const Template: Story = (args) => {
                     value={input}
                     onChange={setInput}
                 />
-                <Button variant="secondary" onClick={() => setIsOpen(true)}>
-                    Submit
+                <Button
+                    label="Submit"
+                    variant="secondary"
+                    onClick={() => setIsOpen(true)}
+                >
                     <AlertDialog
                         buttons={[
                             {
