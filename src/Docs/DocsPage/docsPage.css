@@ -35,6 +35,52 @@
     background-color: #f8f8f8;
 }
 
+.notAuthorized h1,
+.notAuthorized p {
+    text-align: center;
+    font-family: 'Standard';
+}
+
+.notAuthorized h1 {
+    font-weight: bold;
+    font-size: 300%;
+    margin: 10px 0 10px 0;
+}
+
+.notAuthorized p {
+    font-size: 125%;
+}
+
+.notAuthorized svg {
+    width: 300px !important;
+    height: 300px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notAuthorized textarea {
+    position: relative;
+    left: 75px;
+}
+
+.notAuthorized button {
+    position: relative;
+    left: 693px;
+    margin: 10px 0 0 0;
+    color: #000000;
+    border-color: #000000;
+}
+
+.notAuthorized button:hover {
+    color: #138849;
+    border-color: #138849;
+    background-color: #e7f3ec;
+}
+
+.notAuthorized button:focus {
+    box-shadow: 0px 1px 5px #888888;
+}
+
 .sbdocs-h1,
 .sbdocs-h2,
 .sbdocs-h3,
