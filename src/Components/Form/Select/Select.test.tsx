@@ -1,40 +1,47 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Select } from './Select';
+import ReactDOM from 'react-dom';
 
 
-// Snapshot Test
+const SELECT_PLACEHOLDER = 'Select placeholder';
+const SELECT_LABEL = 'Select label';
+const SELECT_OPTIONS = [
+    { label: 'Option 1', value: 1 },
+    { label: 'Option 2', value: 2},
+    { label: 'Option 3', value: 3 },
+];
+const SELECT_VALUE = {
+    label: '',
+    value: 0,
+}
+const SelectTester = (): JSX.Element => {
+    const [value, setValue] = React.useState<any>(SELECT_VALUE);
+
+    return (
+        <>
+            <Select
+                value={value}
+                onChange={setValue}
+                placeholder={SELECT_PLACEHOLDER}
+                label={SELECT_LABEL}
+                options={SELECT_OPTIONS}
+              />
+        </>
+    );
+}
+
+    
+
 describe('Snapshot Select', () => {
-  it('should render correctly', () => {
-    const tree = render(<Select
-        label= 'Select'
-        options= {[
-        { label: 'Option 1', value: 0 },
-        { label: 'Option 2', value: 1 },
-        { label: 'Option 3', value: 2 },
-        ]}
-        value= {{ 
-            label: '', 
-            value: 0 
-        }}
-        placeholder= 'Select an option'
-        filterText= ''
-        isDisabled= {false}
-        backgroundColor= '#fff'
-        autoFocus= {false}
-        labelTextMargin= '0'
-        invalidText= ''
-        captionText= ''
-        captionTextMargin= '0'
-        margin= '0'
-        padding= '0'
-        width= '100%'
-        minWidth= '0'
-        maxWidth= '100%'
-        onChange= {() => {}}
-        />
-        );
+  it('matches snapshot', () => {
+    const tree = render(<SelectTester />
+    );
     expect(tree).toMatchSnapshot();
   });
+  it('renders without chrashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<SelectTester/>, div);
+})
 });
 

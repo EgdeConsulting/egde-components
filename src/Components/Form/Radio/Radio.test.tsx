@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor  } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Radio } from './Radio';
+import ReactDOM from 'react-dom';
 
 const RADIO_TESTER_LABEL = 'Radio label';
 const RADIO_TESTER_INVALID_TEXT = 'Invalid text';
@@ -58,10 +59,14 @@ const RadioTester = (): ReactElement => {
     );
 }
 describe('Radio component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<RadioTester/>);
         expect(tree).toMatchSnapshot();
     });
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<RadioTester/>, div);
+    })
     it('should render title, caption, and all radio buttons should be unchecked initially', () => {
         render(<RadioTester />);
         expect(screen.getByText(RADIO_TESTER_LABEL)).toBeVisible();

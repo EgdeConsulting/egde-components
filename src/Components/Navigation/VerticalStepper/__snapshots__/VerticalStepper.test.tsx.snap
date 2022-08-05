@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot VerticalStepper should render correctly 1`] = `
+exports[`ClickableVerticalStepper component test matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": <body>
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
     <div
       id="chakra-toast-portal"
     >
@@ -37,11 +39,11 @@ Object {
         class="css-1ofqig9"
       >
         <button
-          aria-controls="menu-list-7"
+          aria-controls="menu-list-5"
           aria-expanded="false"
           aria-haspopup="menu"
-          class="chakra-menu__menu-button css-10usvch"
-          id="menu-button-7"
+          class="chakra-menu__menu-button css-b2lpn5"
+          id="menu-button-5"
         >
           <span
             class="css-xl71ch"
@@ -72,24 +74,24 @@ Object {
                   class="css-y0fxms"
                 >
                   <h2
-                    class="chakra-heading css-13brihr"
+                    class="chakra-heading css-1qeza09"
                   >
                     1
                      av 
-                    5
+                    3
                      
-                    Step 1
+                    first step
                   </h2>
                   <p
-                    class="chakra-text css-1s3yo0l"
+                    class="chakra-text css-1g2fpq9"
                   >
                     Neste:
                      
-                    Step 2
+                    second step
                   </p>
                 </div>
                 <svg
-                  class="chakra-icon css-11a1xvh"
+                  class="chakra-icon css-1puyyru"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -103,126 +105,83 @@ Object {
           </span>
         </button>
         <div
-          class="css-0"
+          class="css-r6z5ec"
           style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
         >
           <div
             aria-orientation="vertical"
-            class="chakra-menu__menu-list css-sjt5nk"
-            id="menu-list-7"
+            class="chakra-menu__menu-list css-1ozmk1d"
+            id="menu-list-5"
             role="menu"
             style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
             tabindex="-1"
           >
             <button
-              class="chakra-menu__menuitem css-1k756t9"
+              class="chakra-menu__menuitem css-13c7rae"
               data-index="0"
-              id="menu-list-7-menuitem-1"
+              id="menu-list-5-menuitem-1"
               role="menuitem"
               tabindex="-1"
               type="button"
             >
               <p
-                class="chakra-text css-12595yo"
+                class="chakra-text css-7bug7u"
               >
                 1
                  av 
-                5
+                3
                  
-                Step 1
+                first step
               </p>
             </button>
             <button
-              class="chakra-menu__menuitem css-1k756t9"
+              class="chakra-menu__menuitem css-13c7rae"
               data-index="1"
-              id="menu-list-7-menuitem-2"
+              id="menu-list-5-menuitem-2"
               role="menuitem"
               tabindex="-1"
               type="button"
             >
               <a
-                class="chakra-link css-14jl90d"
+                class="chakra-link css-1kynmnd"
               >
                 2
                  av 
-                5
+                3
                  
-                Step 2
+                second step
               </a>
             </button>
             <button
-              class="chakra-menu__menuitem css-1k756t9"
+              class="chakra-menu__menuitem css-13c7rae"
               data-index="2"
-              id="menu-list-7-menuitem-3"
+              id="menu-list-5-menuitem-3"
               role="menuitem"
               tabindex="-1"
               type="button"
             >
               <a
-                class="chakra-link css-14jl90d"
+                class="chakra-link css-1kynmnd"
               >
                 3
                  av 
-                5
+                3
                  
-                Step 3
-              </a>
-            </button>
-            <button
-              class="chakra-menu__menuitem css-1k756t9"
-              data-index="3"
-              id="menu-list-7-menuitem-4"
-              role="menuitem"
-              tabindex="-1"
-              type="button"
-            >
-              <a
-                class="chakra-link css-14jl90d"
-              >
-                4
-                 av 
-                5
-                 
-                Step 4
-              </a>
-            </button>
-            <button
-              class="chakra-menu__menuitem css-1k756t9"
-              data-index="4"
-              id="menu-list-7-menuitem-5"
-              role="menuitem"
-              tabindex="-1"
-              type="button"
-            >
-              <a
-                class="chakra-link css-14jl90d"
-              >
-                5
-                 av 
-                5
-                 
-                Step 5
+                third step
               </a>
             </button>
           </div>
         </div>
-        <div>
-           Content of Step 1
-        </div>
+        text of first step
         <div
           class="css-1ofqig9"
         >
           <button
-            class="chakra-button css-1nepmlm"
+            class="chakra-button css-1kg50ao"
             type="button"
           >
-            Next
+            next
           </button>
-          <p
-            class="chakra-text css-5cm1aq"
-          >
-            Caption:
-          </p>
         </div>
       </div>
     </div>
@@ -232,11 +191,11 @@ Object {
       class="css-1ofqig9"
     >
       <button
-        aria-controls="menu-list-7"
+        aria-controls="menu-list-5"
         aria-expanded="false"
         aria-haspopup="menu"
-        class="chakra-menu__menu-button css-10usvch"
-        id="menu-button-7"
+        class="chakra-menu__menu-button css-b2lpn5"
+        id="menu-button-5"
       >
         <span
           class="css-xl71ch"
@@ -267,24 +226,24 @@ Object {
                 class="css-y0fxms"
               >
                 <h2
-                  class="chakra-heading css-13brihr"
+                  class="chakra-heading css-1qeza09"
                 >
                   1
                    av 
-                  5
+                  3
                    
-                  Step 1
+                  first step
                 </h2>
                 <p
-                  class="chakra-text css-1s3yo0l"
+                  class="chakra-text css-1g2fpq9"
                 >
                   Neste:
                    
-                  Step 2
+                  second step
                 </p>
               </div>
               <svg
-                class="chakra-icon css-11a1xvh"
+                class="chakra-icon css-1puyyru"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -298,125 +257,483 @@ Object {
         </span>
       </button>
       <div
-        class="css-0"
+        class="css-r6z5ec"
         style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
       >
         <div
           aria-orientation="vertical"
-          class="chakra-menu__menu-list css-sjt5nk"
-          id="menu-list-7"
+          class="chakra-menu__menu-list css-1ozmk1d"
+          id="menu-list-5"
           role="menu"
           style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
           tabindex="-1"
         >
           <button
-            class="chakra-menu__menuitem css-1k756t9"
+            class="chakra-menu__menuitem css-13c7rae"
             data-index="0"
-            id="menu-list-7-menuitem-1"
+            id="menu-list-5-menuitem-1"
             role="menuitem"
             tabindex="-1"
             type="button"
           >
             <p
-              class="chakra-text css-12595yo"
+              class="chakra-text css-7bug7u"
             >
               1
                av 
-              5
+              3
                
-              Step 1
+              first step
             </p>
           </button>
           <button
-            class="chakra-menu__menuitem css-1k756t9"
+            class="chakra-menu__menuitem css-13c7rae"
             data-index="1"
-            id="menu-list-7-menuitem-2"
+            id="menu-list-5-menuitem-2"
             role="menuitem"
             tabindex="-1"
             type="button"
           >
             <a
-              class="chakra-link css-14jl90d"
+              class="chakra-link css-1kynmnd"
             >
               2
                av 
-              5
+              3
                
-              Step 2
+              second step
             </a>
           </button>
           <button
-            class="chakra-menu__menuitem css-1k756t9"
+            class="chakra-menu__menuitem css-13c7rae"
             data-index="2"
-            id="menu-list-7-menuitem-3"
+            id="menu-list-5-menuitem-3"
             role="menuitem"
             tabindex="-1"
             type="button"
           >
             <a
-              class="chakra-link css-14jl90d"
+              class="chakra-link css-1kynmnd"
             >
               3
                av 
-              5
+              3
                
-              Step 3
-            </a>
-          </button>
-          <button
-            class="chakra-menu__menuitem css-1k756t9"
-            data-index="3"
-            id="menu-list-7-menuitem-4"
-            role="menuitem"
-            tabindex="-1"
-            type="button"
-          >
-            <a
-              class="chakra-link css-14jl90d"
-            >
-              4
-               av 
-              5
-               
-              Step 4
-            </a>
-          </button>
-          <button
-            class="chakra-menu__menuitem css-1k756t9"
-            data-index="4"
-            id="menu-list-7-menuitem-5"
-            role="menuitem"
-            tabindex="-1"
-            type="button"
-          >
-            <a
-              class="chakra-link css-14jl90d"
-            >
-              5
-               av 
-              5
-               
-              Step 5
+              third step
             </a>
           </button>
         </div>
       </div>
-      <div>
-         Content of Step 1
-      </div>
+      text of first step
       <div
         class="css-1ofqig9"
       >
         <button
-          class="chakra-button css-1nepmlm"
+          class="chakra-button css-1kg50ao"
           type="button"
         >
-          Next
+          next
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`UnclickableVerticalStepper component test matches snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    class="chakra-ui-light"
+  >
+    <div
+      id="chakra-toast-portal"
+    >
+      <ul
+        id="chakra-toast-manager-top"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        id="chakra-toast-manager-top-left"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-top-right"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom-left"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column; margin: 0px auto;"
+      />
+      <ul
+        id="chakra-toast-manager-bottom-right"
+        style="position: fixed; z-index: 5500; pointer-events: none; display: flex; flex-direction: column;"
+      />
+    </div>
+    <div>
+      <div
+        class="css-1ofqig9"
+      >
+        <button
+          aria-controls="menu-list-5"
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="chakra-menu__menu-button css-b2lpn5"
+          id="menu-button-5"
+        >
+          <span
+            class="css-xl71ch"
+          >
+            <div
+              class="css-hboir5"
+            >
+              <svg
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
+                  fill="#027A1F"
+                />
+                <path
+                  d="M22.06 17L23 17.94L13.92 27H13V26.08L22.06 17ZM25.66 11C25.41 11 25.15 11.1 24.96 11.29L23.13 13.12L26.88 16.87L28.71 15.04C29.1 14.65 29.1 14 28.71 13.63L26.37 11.29C26.17 11.09 25.92 11 25.66 11ZM22.06 14.19L11 25.25V29H14.75L25.81 17.94L22.06 14.19Z"
+                  fill="white"
+                />
+              </svg>
+              <div
+                class="css-z7mtfw"
+              >
+                <div
+                  class="css-y0fxms"
+                >
+                  <h2
+                    class="chakra-heading css-1qeza09"
+                  >
+                    1
+                     av 
+                    3
+                     
+                    first step
+                  </h2>
+                  <p
+                    class="chakra-text css-1g2fpq9"
+                  >
+                    Neste:
+                     
+                    second step
+                  </p>
+                </div>
+                <svg
+                  class="chakra-icon css-1puyyru"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </span>
+        </button>
+        <div
+          class="css-r6z5ec"
+          style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+        >
+          <div
+            aria-orientation="vertical"
+            class="chakra-menu__menu-list css-1ozmk1d"
+            id="menu-list-5"
+            role="menu"
+            style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+            tabindex="-1"
+          >
+            <button
+              class="chakra-menu__menuitem css-13c7rae"
+              data-index="0"
+              id="menu-list-5-menuitem-1"
+              role="menuitem"
+              tabindex="-1"
+              type="button"
+            >
+              <p
+                class="chakra-text css-7bug7u"
+              >
+                1
+                 av 
+                3
+                 
+                first step
+              </p>
+            </button>
+            <button
+              class="chakra-menu__menuitem css-13c7rae"
+              data-index="1"
+              id="menu-list-5-menuitem-2"
+              role="menuitem"
+              tabindex="-1"
+              type="button"
+            >
+              <a
+                class="chakra-link css-1kynmnd"
+              >
+                2
+                 av 
+                3
+                 
+                second step
+              </a>
+            </button>
+            <button
+              class="chakra-menu__menuitem css-13c7rae"
+              data-index="2"
+              id="menu-list-5-menuitem-3"
+              role="menuitem"
+              tabindex="-1"
+              type="button"
+            >
+              <a
+                class="chakra-link css-1kynmnd"
+              >
+                3
+                 av 
+                3
+                 
+                third step
+              </a>
+            </button>
+          </div>
+        </div>
+        text of first step
+        <div
+          class="css-1ofqig9"
+        >
+          <button
+            class="chakra-button css-1kg50ao"
+            type="button"
+          >
+            next
+          </button>
+          <p
+            class="chakra-text css-o8mki"
+          >
+            ButtonCaption
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="css-1ofqig9"
+    >
+      <button
+        aria-controls="menu-list-5"
+        aria-expanded="false"
+        aria-haspopup="menu"
+        class="chakra-menu__menu-button css-b2lpn5"
+        id="menu-button-5"
+      >
+        <span
+          class="css-xl71ch"
+        >
+          <div
+            class="css-hboir5"
+          >
+            <svg
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 20C0 8.95431 8.95431 0 20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20Z"
+                fill="#027A1F"
+              />
+              <path
+                d="M22.06 17L23 17.94L13.92 27H13V26.08L22.06 17ZM25.66 11C25.41 11 25.15 11.1 24.96 11.29L23.13 13.12L26.88 16.87L28.71 15.04C29.1 14.65 29.1 14 28.71 13.63L26.37 11.29C26.17 11.09 25.92 11 25.66 11ZM22.06 14.19L11 25.25V29H14.75L25.81 17.94L22.06 14.19Z"
+                fill="white"
+              />
+            </svg>
+            <div
+              class="css-z7mtfw"
+            >
+              <div
+                class="css-y0fxms"
+              >
+                <h2
+                  class="chakra-heading css-1qeza09"
+                >
+                  1
+                   av 
+                  3
+                   
+                  first step
+                </h2>
+                <p
+                  class="chakra-text css-1g2fpq9"
+                >
+                  Neste:
+                   
+                  second step
+                </p>
+              </div>
+              <svg
+                class="chakra-icon css-1puyyru"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </div>
+        </span>
+      </button>
+      <div
+        class="css-r6z5ec"
+        style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+      >
+        <div
+          aria-orientation="vertical"
+          class="chakra-menu__menu-list css-1ozmk1d"
+          id="menu-list-5"
+          role="menu"
+          style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+          tabindex="-1"
+        >
+          <button
+            class="chakra-menu__menuitem css-13c7rae"
+            data-index="0"
+            id="menu-list-5-menuitem-1"
+            role="menuitem"
+            tabindex="-1"
+            type="button"
+          >
+            <p
+              class="chakra-text css-7bug7u"
+            >
+              1
+               av 
+              3
+               
+              first step
+            </p>
+          </button>
+          <button
+            class="chakra-menu__menuitem css-13c7rae"
+            data-index="1"
+            id="menu-list-5-menuitem-2"
+            role="menuitem"
+            tabindex="-1"
+            type="button"
+          >
+            <a
+              class="chakra-link css-1kynmnd"
+            >
+              2
+               av 
+              3
+               
+              second step
+            </a>
+          </button>
+          <button
+            class="chakra-menu__menuitem css-13c7rae"
+            data-index="2"
+            id="menu-list-5-menuitem-3"
+            role="menuitem"
+            tabindex="-1"
+            type="button"
+          >
+            <a
+              class="chakra-link css-1kynmnd"
+            >
+              3
+               av 
+              3
+               
+              third step
+            </a>
+          </button>
+        </div>
+      </div>
+      text of first step
+      <div
+        class="css-1ofqig9"
+      >
+        <button
+          class="chakra-button css-1kg50ao"
+          type="button"
+        >
+          next
         </button>
         <p
-          class="chakra-text css-5cm1aq"
+          class="chakra-text css-o8mki"
         >
-          Caption:
+          ButtonCaption
         </p>
       </div>
     </div>

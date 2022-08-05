@@ -2,6 +2,7 @@ import React, { ReactElement }  from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { PageContainer } from './PageContainer';
+import ReactDOM from 'react-dom';
 
 const PAGE_CONTAINER_TESTER_TITLE = 'PageContainerTitle';
 const PAGE_CONTAINER_TESTER_SUBTITLE = 'PageContainerSubtitle';
@@ -72,10 +73,14 @@ const PageContainerTester = (): ReactElement =>{
 }
 
 describe('PageContainer component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<PageContainerTester />);
         expect(tree).toMatchSnapshot();
       });
+      it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<PageContainerTester/>, div);
+    })
 
     it('should render with title, subtitle and contnet', () => {
         render(<PageContainerTester />);

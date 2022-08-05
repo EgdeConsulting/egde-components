@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput component test should render correctly 1`] = `
+exports[`TextInput component test matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

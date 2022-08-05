@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor  } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TextInput } from './TextInput';
+import ReactDOM from 'react-dom';
 
 
 
@@ -65,10 +66,14 @@ const TextInputTester = (): JSX.Element => {
     );
 }
 describe('TextInput component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<TextInputTester/>);
         expect(tree).toMatchSnapshot();
     });
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<TextInputTester/>, div);
+    })
 
     it('should render TextInput with title, placeholder and caption', () => {
         render(<TextInputTester />);

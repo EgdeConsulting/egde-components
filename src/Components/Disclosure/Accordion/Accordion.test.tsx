@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Accordion } from './Accordion';
+import ReactDOM from 'react-dom';
 
 
 const ACCORDION_TITLES: string[] = ['First', 'Second', 'Third'];
@@ -25,10 +26,14 @@ const AccordionTester = (): ReactElement =>{
 
 describe('Accordion component test', () => {
     window.scrollTo = jest.fn();
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<AccordionTester />);
         expect(tree).toMatchSnapshot();
     });
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<AccordionTester/>, div);
+    })
 
     it('should render accordions unexpanded, and show no content', () => {
         render(<AccordionTester />);

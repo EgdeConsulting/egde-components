@@ -4,6 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IconTestID, ModalButtons, ModalIconType } from 'Types';
 import { Modal } from './Modal';
+import ReactDOM from 'react-dom';
 
 const MODAL_TESTER_ICON_VARIANT = ModalIconType.Check;
 const MODAL_TESTER_TITLE = 'ModalTitle';
@@ -66,11 +67,14 @@ const  ModalTester = (props: { submitFunc: () => void }): ReactElement =>{
 describe('Modal component test', () => {
     const submitFunc = jest.fn();
 
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
       const tree = render(<ModalTester submitFunc={submitFunc}/>);
       expect(tree).toMatchSnapshot();
     });
-
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<ModalTester submitFunc={submitFunc}/>, div);
+    })
     it.skip('assert content is null, modal opens when button clicked, and modal content is visible', async () => {
         render(<ModalTester submitFunc={submitFunc} />);
         expect(screen.queryByText(MODAL_TESTER_CONTENT_TEXT)).toBeNull();

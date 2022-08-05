@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Tabs } from './Tabs';
+import ReactDOM from 'react-dom';
 
 const TAB_TITLES: string[] = ['First', 'Second', 'Third'];
 const TAB_CONTENT: string[] = ['FirstContent', 'SecondContent', 'ThirdContent'];
@@ -33,10 +34,14 @@ const TabsTester = (): JSX.Element => {
 
 describe('Tabs component test', () => {
     
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<TabsTester />);
         expect(tree).toMatchSnapshot();
       });
+      it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<TabsTester/>, div);
+    })
 
     it('default tab selected, only first content visible', () => {
         render(<TabsTester />);
