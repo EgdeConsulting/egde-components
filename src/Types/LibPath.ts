@@ -5,8 +5,7 @@ export enum Root {
     Components = 'Components/',
     Templates = 'Templates/',
     Iconography = 'Iconography/',
-    // Example of new root:
-    // Layout = "Layout/",
+    Utilities = 'Utilities/',
 }
 
 export enum LibPath {
@@ -17,6 +16,4 @@ export enum LibPath {
     Overlay = Root.Components + 'Overlay/',
     Disclosure = Root.Components + 'Disclosure/',
     Feedback = Root.Components + 'Feedback/',
-    // Example of new sub-directory
-    // Headers = Root.Layout + "Headers/",
 }
