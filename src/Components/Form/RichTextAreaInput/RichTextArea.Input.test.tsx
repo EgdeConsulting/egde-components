@@ -2,6 +2,7 @@ import '@testing-library/jest-dom';
 import { render} from '@testing-library/react';
 import React, { useState } from 'react';
 import { RichTextAreaInput } from 'Components';
+import ReactDOM from 'react-dom';
 
 const RICHTEXTAREAINPUT_PLACEHOLDER = 'DatePicker placeholder';
 const RICHTEXTAREAINPUT_LABEL = 'RichTextAreaInput label';
@@ -23,8 +24,12 @@ const RichTextAreaInputTester = (): JSX.Element => {
 
 
 describe('RichTextAreaInput component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<RichTextAreaInputTester/>);
         expect(tree).toMatchSnapshot();
     });
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<RichTextAreaInputTester/>, div);
+    })
 });

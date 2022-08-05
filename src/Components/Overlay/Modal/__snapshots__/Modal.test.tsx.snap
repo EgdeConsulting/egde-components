@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal component test should render correctly 1`] = `
+exports[`Modal component test matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

@@ -3,6 +3,7 @@ import { render} from '@testing-library/react';
 import React, { useState } from 'react';
 import { MultiSelect } from 'Components';
 import { SelectOption } from 'Types';
+import ReactDOM from 'react-dom';
 
 const MULTISELECT_PLACEHOLDER = 'DatePicker placeholder';
 const MULTISELECT_LABEL = 'RichTextAreaInput label';
@@ -29,7 +30,11 @@ const MultiSelectTester = (): JSX.Element => {
 
 
 describe('MultiSelect component test', () => {
-    it('should render correctly', () => {
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<MultiSelectTester/>, div);
+    })
+    it('matches snapshot', () => {
         const tree = render(<MultiSelectTester/>);
         expect(tree).toMatchSnapshot();
     });

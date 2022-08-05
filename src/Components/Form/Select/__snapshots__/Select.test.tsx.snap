@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Select should render correctly 1`] = `
+exports[`Snapshot Select matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -34,15 +34,15 @@ Object {
     </div>
     <div>
       <div
-        class="css-k456he"
+        class="css-oo2x8u"
       >
         <p
-          class="chakra-text css-154u26z"
+          class="chakra-text css-1dinzzv"
         >
-          Select
+          Select label
         </p>
         <div
-          class="css-1o2srd0"
+          class="css-0"
         >
           <div
             class=" css-ib5euz"
@@ -101,22 +101,20 @@ Object {
             </div>
           </div>
         </div>
-        
-        
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="css-k456he"
+      class="css-oo2x8u"
     >
       <p
-        class="chakra-text css-154u26z"
+        class="chakra-text css-1dinzzv"
       >
-        Select
+        Select label
       </p>
       <div
-        class="css-1o2srd0"
+        class="css-0"
       >
         <div
           class=" css-ib5euz"
@@ -175,8 +173,6 @@ Object {
           </div>
         </div>
       </div>
-      
-      
     </div>
   </div>,
   "debug": [Function],

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card component test should render correctly 1`] = `
+exports[`Card component test matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { render,  screen  } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Card } from './Card';
+import ReactDOM from 'react-dom';
 
 
 const CARD_TESTER_TITLE = 'CardTitle';
@@ -41,12 +42,15 @@ function CardTester(props: { mockOnClick: () => void }): ReactElement {
 // TEST
 describe('Card component test', () => {
     const mockOnClick = jest.fn();
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(
         <CardTester mockOnClick={mockOnClick} />);
         expect(tree).toMatchSnapshot();
     });
-
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<CardTester mockOnClick={mockOnClick} />, div);
+    })
 
     it('should render with title, icon and body', () => {
         render(<CardTester mockOnClick={mockOnClick} />);        

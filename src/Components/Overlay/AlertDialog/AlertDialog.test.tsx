@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { ReactElement, useRef, useState } from 'react';
 import { AlertDialogButton, AlertDialogIconType, IconTestID } from 'Types';
 import { AlertDialog } from './AlertDialog';
+import ReactDOM from 'react-dom';
 
 const ALERT_DIALOG_TESTER_ICON_ID = IconTestID.AlertDialog;
 const ALERT_DIALOG_TESTER_HEADING = 'This is the heading';
@@ -40,10 +41,14 @@ const AlertDialogTester = (): ReactElement =>{
     );
 }
 describe('Alert component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<AlertDialogTester />);
         expect(tree).toMatchSnapshot();
     });
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<AlertDialogTester/>, div);
+    })
     it.skip('assert content is null, alert dialog opens when button clicked, and alert dialog content is visible', async () => {
         render(<AlertDialogTester />);
         expect(screen.queryByText(ALERT_DIALOG_TESTER_TEXT)).toBeNull();

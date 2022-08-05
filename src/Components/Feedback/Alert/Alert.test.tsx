@@ -4,6 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IconTestID } from 'Types';
 import { Alert } from './Alert';
+import ReactDOM from 'react-dom';
 
 
 const ALERT_TESTER_ICON = IconTestID.AlertWarning;
@@ -31,10 +32,15 @@ const AlertTester = (): ReactElement => {
 
 
 describe('Alert component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<AlertTester/>);
         expect(tree).toMatchSnapshot();
       });
+      it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<AlertTester/>, div);
+    })
+
     it('should render with icon, description, link and close button', async () => {
         render(<AlertTester />);
 

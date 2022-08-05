@@ -2,10 +2,11 @@ import React, { ReactElement } from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { BaseInput } from './BaseInput';
+import ReactDOM from 'react-dom';
 
 // Snapshot Test
 describe('Snapshot BaseInput', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<BaseInputTester/>);
         expect(tree).toMatchSnapshot();
     });
@@ -43,7 +44,16 @@ function BaseInputTester(): ReactElement {
 }
 
 describe('BaseInput test', () => {
-    test('should render with title, caption text and invalid text', () => {
+    it('matches snapshot', () => {
+        const tree = render(<BaseInputTester/>);
+        expect(tree).toMatchSnapshot();
+    });
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<BaseInputTester/>, div);
+    })
+
+    it('should render with title, caption text and invalid text', () => {
         render(<BaseInputTester />);
         expect(screen.getByText(BASEINPUT_TESTER_LABEL)).toBeVisible();
         expect(screen.getByText(BASEINPUT_TESTER_CAPTION)).toBeVisible();
