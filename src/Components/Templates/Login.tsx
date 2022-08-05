@@ -33,9 +33,9 @@ const Template: Story = (args) => {
             </VStack>
 
             <HStack>
-                <Button label='Log in' variant="primary"/> 
+                <Button label='Log in' variant="primary" onClick={()=>{}}/> 
                 <Spacer />
-                <Button label="Forgot password" variant="link"/>
+                <Button label="Forgot password" variant="link" onClick={()=>{}}/>
             </HStack>   
             
           
