@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { NumberInput } from './NumberInput';
+import ReactDOM from 'react-dom';
 
 const NUMBER_TESTER_LABEL = 'Number label';
 const NUMBER_TESTER_PLACEHOLDER = 'Number placeholder';
@@ -72,12 +73,15 @@ const NumberInputTester = (props: {
     );
 }
 describe('NumberInput component test', () => {
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(<NumberInputTester isCurrency currencySpacer=' '/>
             );
         expect(tree).toMatchSnapshot();
       });
-
+      it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<NumberInputTester/>, div);
+    })
     it('should render NumberInput with title, placeholder and caption', () => {
         render(<NumberInputTester />);
         expect(screen.getByText(NUMBER_TESTER_LABEL)).toBeVisible();

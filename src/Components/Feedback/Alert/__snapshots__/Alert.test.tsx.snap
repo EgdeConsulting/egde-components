@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert component test should render correctly 1`] = `
+exports[`Alert component test matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

@@ -2,35 +2,45 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import { FileInput } from './FileInput';
+import ReactDOM from 'react-dom';
+
+const FILEINPUT_LABEL = 'FileInput label';
+const FILEINPUT_VARIANT = 'default';
+const UPLOAD_LABEL = 'Upload label';
+const DROP_LABEL = 'Drop label';
+const MAX_FILE_SIZE_LABEL = 'Max file size label';
+const MAX_UPLOAD_SIZE_LABEL = 'Max upload size label';
+const MAX_UPLOAD_SIZE_VALUE = 1000;
+const MAX_FILE_SIZE_VALUE = 1000;
+
+const FileInputTester = (): JSX.Element => {
+    return (
+        <>
+            <FileInput
+                label={FILEINPUT_LABEL}
+                variant={FILEINPUT_VARIANT}
+                uploadLabel={UPLOAD_LABEL}
+                dropLabel={DROP_LABEL}
+                maxFileSizeLabel={MAX_FILE_SIZE_LABEL}
+                maxUploadSizeLabel={MAX_UPLOAD_SIZE_LABEL}
+                maxUploadSize={MAX_UPLOAD_SIZE_VALUE}
+                maxFileSize={MAX_FILE_SIZE_VALUE}
+            />
+        </>
+    );
+}
+
 
 // Snapshot Test
 describe('Snapshot FileInput', () => {
-  it('should render correctly', () => {
-    const tree = render(<FileInput
-      label= 'FileInput'
-      labelTextMargin= '0px'
-      invalidText= ''
-      captionText= ''
-      margin= '0px'
-      padding= '0px'
-      width= '100%'
-      minWidth= '0px'
-      size= 'md'
-      variant= 'default'
-      uploadLabel= 'Drag and drop or click to upload'
-      dropLabel= 'Drop'
-      maxFileSizeLabel= 'Max file size is....'
-      maxUploadSizeLabel= 'Max upload size is...'
-      maxFileSize= {1000}
-      maxUploadSize= {1000}
-      disabled= {false}
-      showIcon= {true}
-      captionTextMargin= '0px'
-      maxWidth= '100%'
-        />
-        );
+  it('matches snapshot', () => {
+    const tree = render(<FileInputTester />);
     expect(tree).toMatchSnapshot();
   });
+  it('renders without chrashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<FileInputTester/>, div);
+})
 });
 
 

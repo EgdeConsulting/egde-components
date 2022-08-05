@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader } from 'Docs';
+import { Root } from 'Types';
+import * as stories from './Login';
+
+export const templateName = 'Login'
+
+<Meta title={Root.Templates + templateName} />
+
+<DocsPageHeader 
+    title={templateName}
+    description='Template for login page using TextInput, Checkbox and Button components'
+    addImportantNote={false}
+    variant='none'
+/>
+
+<Canvas withToolbar>
+    <Story name="Login" story={stories.Base} />
+</Canvas>

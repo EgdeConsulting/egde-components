@@ -3,6 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { DeleteModal } from './DeleteModal';
+import ReactDOM from 'react-dom';
 
 
 const TITLE = 'title';
@@ -36,11 +37,15 @@ const DeleteModalTester = (props: { submitFunc: () => void }): ReactElement =>{
 
 describe('DeleteModal component test', () => {
     const submitFunc = jest.fn();
-    it('should render correctly', () => {
+    it('matches snapshot', () => {
         const tree = render(
             <DeleteModalTester submitFunc={submitFunc}/>,);
         expect(tree).toMatchSnapshot();
     });
+    it('renders without chrashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<DeleteModalTester submitFunc={submitFunc}/>, div);
+    })
     it.skip('should only render button, open modal when button clicked, and then modal content is visible', async () => {
         render(<DeleteModalTester submitFunc={submitFunc} />);
         expect(screen.queryByText(DELETE_TEXT)).toBeNull();
