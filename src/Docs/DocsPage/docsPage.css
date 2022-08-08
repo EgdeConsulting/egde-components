@@ -137,6 +137,46 @@ td {
     box-shadow: 0px 1px 5px #888888;
 }
 
+
+.pageNotFound h1,
+.pageNotFound h2,
+.pageNotFound p {
+    text-align: center;
+    font-family: 'Standard';
+}
+
+.pageNotFound h1 {
+    font-weight: bold;
+    font-size: 500%;
+    margin: 10px 0 10px 0;
+    color:rgba(0, 0, 0, 0.315)
+}
+
+.pageNotFound h2 {
+    font-size: 150%;
+    margin: 10px 0 10px 0;
+}
+
+.pageNotFound button {
+    left: 400px;
+    margin: 10px 0 0 0;
+    
+}
+
+.pageNotFound button:hover {
+    color: #131b88;
+    border-color: #1c1a91;
+    background-color: #e7e7f3;
+}
+
+.pageNotFound svg {
+    width: 300px !important;
+    height: 300px !important;
+    margin-left: auto;
+    margin-right: auto;
+    fill: rgba(0, 0, 0, 0.247);
+}
+
 .sbdocs-h1,
 .sbdocs-h2,
 .sbdocs-h3,

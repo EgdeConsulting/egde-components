@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import { Story } from '@storybook/react';
 import { AlertDialog, Button, PageContainer, TextAreaInput } from 'Components';
 import { Warning } from 'Icons';
 
-const Template: Story = (args) => {
+const Template: Story = () => {
     const [input, setInput] = useState<string>('');
     const [isOpen, setIsOpen] = useState(false);
     const handleClose = () => setIsOpen(false);
@@ -31,11 +32,9 @@ const Template: Story = (args) => {
                     <Warning />
                     <h1>Not Authorized!</h1>
                     <p>
-                        Your account doesn't have the necessary rights to be
-                        able to access this page. If this is an error or you've
-                        like to request access, please fill out the form below.
-                        You'll be contacted once your application has been
-                        processed.
+                        Your account doesn't have the necessary rights to be able to access this page. If this is an
+                        error or you've like to request access, please fill out the form below. You'll be contacted once
+                        your application has been processed.
                     </p>
                 </PageContainer>
                 <TextAreaInput
@@ -47,11 +46,7 @@ const Template: Story = (args) => {
                     value={input}
                     onChange={setInput}
                 />
-                <Button
-                    label="Submit"
-                    variant="secondary"
-                    onClick={() => setIsOpen(true)}
-                >
+                <Button label="Submit" variant="secondary" onClick={() => setIsOpen(true)}>
                     <AlertDialog
                         buttons={[
                             {
