@@ -27,26 +27,28 @@ const DocsPageBodyUtilities = (props: DocsPageBodyProps) => {
                 <strong>Returns: </strong>
                 <code>{returnDescription}</code>
             </p>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Default</th>
-                    <th>Description</th>
-                </tr>
-                {parameters.map(
-                    ({ name, type, defaultValue, description }, index) => (
-                        <tr key={`parameter${index}`}>
-                            <td>{name}</td>
-                            <td>
-                                <code>{type}</code>
-                            </td>
-                            <td>{defaultValue}</td>
-                            <td>{description}</td>
-                        </tr>
-                    ),
-                )}
-            </table>
+            {parameters.length > 0 && (
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+                    {parameters.map(
+                        ({ name, type, defaultValue, description }, index) => (
+                            <tr key={`parameter${index}`}>
+                                <td>{name}</td>
+                                <td>
+                                    <code>{type}</code>
+                                </td>
+                                <td>{defaultValue}</td>
+                                <td>{description}</td>
+                            </tr>
+                        ),
+                    )}
+                </table>
+            )}
             <br />
             <h4>Implementation:</h4>
         </div>
