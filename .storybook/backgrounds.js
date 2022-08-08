@@ -9,35 +9,35 @@ export const backgroundColors = [
         value: '#FAFAFD',
     },
     {
-        name: 'Orange',
+        name: 'Egde-Orange',
         value: '#FF7300',
     },
     {
-        name: 'Purple',
+        name: 'Egde-Purple',
         value: '#D06CFF',
     },
     {
-        name: 'Blue',
+        name: 'Egde-Blue',
         value: '#1080E5',
     },
     {
-        name: 'Yellow',
+        name: 'Egde-Yellow',
         value: '#FCB606',
     },
     {
-        name: 'Green',
+        name: 'Egde-Green',
         value: '#0C461E',
     },
     {
-        name: 'Lightblue',
+        name: 'Egde-Lightblue',
         value: '#94D9FF',
     },
     {
-        name: 'Lightgrey',
+        name: 'Egde-Lightgrey',
         value: '#E8EAF9',
     },
     {
-        name: 'Middlegrey',
+        name: 'Egde-Middlegrey',
         value: '#C7C8DB',
     },
 ]
