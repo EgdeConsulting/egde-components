@@ -21,24 +21,20 @@ const Template: Story = (args) => {
         
         >
     
-            <Box
-            
-            >        
-            <VStack spacing={4} align='flex-start' w={'full'}>
-                    <TextInput value={userValue} onChange={setUserValue} label={'First name'} width={'45ch'}/>
-                    <TextInput value={passValue} onChange={setPassValue} label={'Last name'} width={'420px'}/>
-            </VStack>
-            <VStack mb={3} align={'flex-start'}>
-                 <Checkbox options={['Remember me']} value={value} onChange={setValue}/> 
-            </VStack>
+            <Box>        
+                <VStack spacing={4} align='flex-start' w={'full'}>
+                        <TextInput value={userValue} onChange={setUserValue} label={'First name'} width={'45ch'}/>
+                        <TextInput value={passValue} onChange={setPassValue} label={'Last name'} width={'420px'}/>
+                </VStack>
+                <VStack mb={3} align={'flex-start'}>
+                    <Checkbox options={['Remember me']} value={value} onChange={setValue}/> 
+                </VStack>
 
-            <HStack>
-                <Button label='Log in' variant="primary"/> 
-                <Spacer />
-                <Button label="Forgot password" variant="link"/>
-            </HStack>   
-            
-          
+                <HStack>
+                    <Button label='Log in' variant="primary" onClick={()=>{}}/> 
+                    <Spacer />
+                    <Button label="Forgot password" variant="link" onClick={()=>{}}/>
+                </HStack>   
             </Box>
        </PageContainer>
            

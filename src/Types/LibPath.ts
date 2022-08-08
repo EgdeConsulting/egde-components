@@ -4,8 +4,8 @@ export enum Root {
     GettingStarted = 'Getting Started/',
     Components = 'Components/',
     Templates = 'Templates/',
-    Iconography = 'Iconography/',
     Utilities = 'Utilities/',
+    DesignTokens = 'Design Tokens/',
 }
 
 export enum LibPath {
