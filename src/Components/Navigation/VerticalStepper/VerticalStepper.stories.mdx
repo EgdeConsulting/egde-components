@@ -38,13 +38,15 @@ export const componentName = 'VerticalStepper';
             finalButtonText: 'Finish',
         },
         completedSteps: [],
-        onFinalize: () => {},
-        onFinalStep: () => {},
         isCompleteButtonDisabled: false,
         buttonCaption: {
             text: 'Caption:',
             color: '#000000',
         },
+    }}
+      argtypes={{
+        onFinalize: { action: 'Finalized' },
+        onFinalStep: { action: 'FinalStep' },
     }}
 />
 

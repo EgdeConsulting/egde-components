@@ -41,15 +41,17 @@ export const componentName = 'HorizontalStepper';
         buttonMargin: '5px',
         clickableSteps: false,
         completedSteps: [],
-        onFinalize: () => {},
         buttonCaption: {
             defaultValue: {
                 text: 'Placeholder',
                 color: '#ffffff',
             },
-            onFinalStep: () => {},
-            isCompleteButtonDisabled: true,
+        isCompleteButtonDisabled: true,
         },
+    }}
+    argtypes={{
+        onFinalize: { action: 'Finalized' },
+        onFinalStep: { action: 'FinalStep' },
     }}
 />
 

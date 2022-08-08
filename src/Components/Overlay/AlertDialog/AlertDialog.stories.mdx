@@ -41,8 +41,10 @@ export const componentName = 'AlertDialog';
         text: 'Content',
         isOpen: true,
         cancelRef: React.createRef(),
-        onClose: () => {},
         buttons: { label: 'OK', onClick: () => {}, variant: 'primary' },
+    }}
+      argtypes={{
+            onClose: { action: 'closed' },
     }}
 />
 

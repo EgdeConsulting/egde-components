@@ -3,6 +3,7 @@ import { DocsPageHeader, DocsPageBody } from 'Docs';
 import { LibPath } from 'Types';
 import { Checkbox } from 'Components';
 import { useState } from 'react';
+import action from '@storybook/addon-actions';
 
 export const Template = (args) => {
     const [values, setValues] = useState([...args.value]);
@@ -25,7 +26,6 @@ export const componentName = 'Checkbox';
         direction: 'column',
         options: ['Option One', 'Option Two', 'Option Three'],
         value: [0],
-        onChange: () => {},
         invalidText: '',
         isDisabled: false,
         backgroundColor: '#ffffff',
@@ -40,6 +40,10 @@ export const componentName = 'Checkbox';
         minWidth: '0px',
         maxWidth: '100%',
     }}
+    argtypes={{
+        onChange: { action: 'onChange' },
+    }}
+   
 />
 
 <DocsPageHeader

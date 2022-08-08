@@ -28,11 +28,13 @@ export const componentName = 'DeleteModal';
         isModalOpen: false,
         isCentered: false,
         setIsModalOpen: () => {},
-        onSubmit: () => {},
         deleteButtonLabel: 'Delete',
         deleteText: 'Content',
         title: 'Title',
         cancelButtonLabel: 'Cancel',
+    }}
+    argtypes={{
+        onSubmit: { action: 'Deleted' },
     }}
 />
 

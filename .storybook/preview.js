@@ -6,7 +6,7 @@ import { backgroundColors } from './backgrounds';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 export const parameters = {
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    actions: { argTypesRegex: '^on.*' },
     viewMode: 'docs',
     viewport: {
         viewports: INITIAL_VIEWPORTS,
