@@ -12,7 +12,7 @@ interface DocsPageHeaderProps
     extends ComponentStabilityProps,
         ImportantNoteProps {
     title: string;
-    description: string;
+    description: string | JSX.Element | JSX.Element[];
     addImportantNote: boolean;
 }
 

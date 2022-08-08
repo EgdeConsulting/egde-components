@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader } from 'Docs';
+import { Root } from 'Types';
+import * as stories from './Homepage';
+
+export const templateName = 'Homepage';
+
+<Meta title={Root.Templates + templateName} />
+
+<DocsPageHeader
+    title={templateName}
+    description="This template shows how the PageContainer and Card component can be used to create a Homepage."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<Canvas withToolbar>
+    <Story name="Homepage" story={stories.Base} />
+</Canvas>

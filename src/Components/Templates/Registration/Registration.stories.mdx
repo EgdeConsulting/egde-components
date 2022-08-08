@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader } from 'Docs';
+import { Root } from 'Types';
+import * as stories from './Registration';
+
+export const templateName = 'Registration';
+
+<Meta title={Root.Templates + templateName} />
+
+<DocsPageHeader
+    title={templateName}
+    description="This template shows how the HorizontalStepper component can be used to create a registration form for a new user. 
+    Step 1 shows a regular contact form using TextInput, NumberInput and TextAreaInput. Step 2 is using the FileInput component to
+    show how a user can add a profile picture. Step 3 uses a Radio component to choose the gender. Step 4 uses the Checkbox and Select
+    component to gather user interests and to let the user choose whether or not they want to receive newsletters."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<Canvas withToolbar>
+    <Story name="Registration" story={stories.Base} />
+</Canvas>
