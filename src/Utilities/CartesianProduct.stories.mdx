@@ -1,4 +1,79 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBodyUtilities } from 'Docs';
 import { Root } from 'Types';
 
-<Meta title={Root.Utilities + 'Cartesian Product'} />
+export const utensilName = 'Cartesian Product';
+
+<Meta title={Root.Utilities + utensilName} />
+
+<DocsPageHeader
+    title={utensilName}
+    description={
+        <p>
+            The Cartesian Product is a type of set-builder which takes two sets
+            and returns a single set containing all possible ordered pairs.
+            Ordered means in this context that both pair <code>(a, b)</code> and
+            <code>(b, a)</code> won't be part of the returned set, since due to ordering
+            <code>a</code> will always be first <code>(a, x)</code>.
+        </p>
+    }
+    addImportantNote={false}
+    variant="none"
+/>
+
+<DocsPageBodyUtilities
+    kindDescription="global function"
+    returnDescription="string[]"
+    parameters={[
+        {
+            name: 'arrayList',
+            type: 'string[]',
+            defaultValue: '',
+            description: '1D- og 2D-array',
+        },
+    ]}
+/>
+
+```ts
+export function createCartesianProduct(...arrayList): string[] {
+    if (arrayList.length > 1) {
+        return arrayList.reduce((a, b) =>
+            a.flatMap((d) => b.map((e) => [d, e].flat())),
+        );
+    } else {
+        let newArrayList = [];
+
+        arrayList[0].forEach((item) => {
+            newArrayList.push([item]);
+        });
+
+        return newArrayList;
+    }
+}
+```
+
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: createCartesianProduct([4, 5, 6], [9, 8, 7])
+
+> Output: [[4, 9], [4, 8], [4, 7], [5, 9], [5, 8], [5, 7], [6, 9], [6, 8], [6, 7]]
+```
+
+```ts
+> Input: createCartesianProduct([1, 2, 3, 4, 5], [6, 1])
+
+> Output: [[1, 6], [1, 1], [2, 6], [2, 1], [3, 6], [3, 1], [4, 6], [4, 1], [5, 6], [5, 1]]
+```
+
+```ts
+> Input: createCartesianProduct([3, 6, 0, 4, 2, 0])
+
+> Output: [[3], [6], [0], [4], [2], [0]]
+```
+
+</div>
