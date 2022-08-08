@@ -1,16 +1,18 @@
 import { Meta, IconGallery, IconItem } from '@storybook/addon-docs/';
+import { DocsPageHeader } from 'Docs';
 import { Root } from 'Types';
 import * as icons from 'Icons';
 
-<Meta title={Root.DesignTokens + 'Icons'} />
+export const pageName = 'Icons';
 
-# Icons
+<Meta title={Root.DesignTokens + pageName} />
 
-<hr />
-
-All the icons listed below are included in the Egde-UI package. The small number
-beneath each icon specify its default dimensions (width and height), as some icons
-are displayed in a different size.
+<DocsPageHeader
+    title={pageName}
+    description="All the icons listed below are included in the Egde-UI package. The small number beneath each icon specify its default dimensions (width and height), as some icons are displayed in a different size."
+    addImportantNote={false}
+    variant="none"
+/>
 
 <br />
 

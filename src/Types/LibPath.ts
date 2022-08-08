@@ -16,4 +16,5 @@ export enum LibPath {
     Overlay = Root.Components + 'Overlay/',
     Disclosure = Root.Components + 'Disclosure/',
     Feedback = Root.Components + 'Feedback/',
+    Validators = Root.Utilities + 'Validators/',
 }
