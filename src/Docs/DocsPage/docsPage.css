@@ -18,6 +18,23 @@
     margin: 16px 0;
 }
 
+.docsPage hr {
+    border: 0 none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    height: 4px;
+    padding: 0;
+}
+
+.docsPage a {
+    text-decoration: underline;
+    color: #1080e5;
+    padding: 0 5px 0 5px;
+}
+
+.docsPage a:hover {
+    text-decoration: none;
+}
+
 .docsPage .chakra-alert {
     width: 100% !important;
     font-size: 15px !important;
@@ -33,6 +50,39 @@
     border: 1px solid #eeeeee;
     color: rgba(51, 51, 51, 0.9);
     background-color: #f8f8f8;
+}
+
+.docsPage table {
+    border-collapse: collapse;
+    border-radius: 3px;
+    border-style: hidden !important;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.docsPage table,
+th,
+tr,
+td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 7px;
+}
+
+.docsPage th {
+    background-color: #e8eaf9;
+}
+
+.docsPage table tr:first-child th:first-child {
+    border-top-left-radius: 3px;
+}
+
+.docsPage table tr:first-child th:last-child {
+    border-top-right-radius: 3px;
+}
+
+.codeDisplayOnly button {
+    display: none;
 }
 
 .notAuthorized h1,
