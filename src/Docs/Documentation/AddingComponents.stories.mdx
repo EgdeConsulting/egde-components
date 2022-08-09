@@ -394,12 +394,12 @@ For a component named TextAreaInput the DocsPageHeader-tag should look like this
 
 <ArgsTable of={DocsPageHeader} />
 
-> The props `title` and `description` are used to declare a heading and description, while `variant`
-> is responsible for adding a stability-badge. This badge is supposed to give a quick and easy way
-> of knowing if a component is stable or not, use `none` if it is desired that no badge should be
-> displayed. The prop `addImportantNote` adds an alert message to the top of the docs-page which will
-> display the text defined in `noteMessage`. Note that `noteMessage` isn't mandatory and will only be
-> required when `addImportantNote` is set to `true`.
+> The props `title` and `description` are used to declare a heading and description. Please note that
+> `description` accepts either a string or JSX-elements as value. `variant` is responsible for adding a
+> stability-badge. This badge is supposed to give a quick and easy way of knowing if a component is
+> stable or not, use `none` if it is desired that no badge should be displayed. The prop `addImportantNote`
+> adds an alert message to the top of the docs-page which will display the text defined in `noteMessage`.
+> Note that `noteMessage` isn't mandatory and will only be required when `addImportantNote` is set to `true`.
 
 <br />
 

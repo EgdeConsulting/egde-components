@@ -4,7 +4,7 @@ import LinkTo from '@storybook/addon-links/react';
 import { Root } from 'Types';
 import * as stories from './HomePage';
 
-export const templateName = 'HomePage';
+export const templateName = 'Home Page';
 
 <Meta title={Root.Templates + templateName} />
 
@@ -20,7 +20,7 @@ export const templateName = 'HomePage';
             <LinkTo kind="components-cards-card" story="base">
                 Card
             </LinkTo>
-            component can be used to create a Homepage.
+            component can be used to create a Home Page.
         </p>
     }
     addImportantNote={false}
@@ -28,5 +28,5 @@ export const templateName = 'HomePage';
 />
 
 <Canvas withToolbar>
-    <Story name="HomePage" story={stories.Base} />
+    <Story name="Home Page" story={stories.Base} />
 </Canvas>
