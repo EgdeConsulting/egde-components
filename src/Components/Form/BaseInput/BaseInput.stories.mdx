@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { BaseInput } from 'Components';
 
@@ -36,4 +36,4 @@ export const componentName = 'BaseInput';
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<DocsPageBody addStories={false} />
+<DocsPageBodyComponents addStories={false} />

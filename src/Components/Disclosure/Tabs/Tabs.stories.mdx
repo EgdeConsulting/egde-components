@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { Tabs } from 'Components';
 import * as PropItems from './PropItems';
@@ -28,7 +28,7 @@ export const componentName = 'Tabs';
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<DocsPageBody addStories={true} />
+<DocsPageBodyComponents addStories={true} />
 
 ### Many Tabs
 

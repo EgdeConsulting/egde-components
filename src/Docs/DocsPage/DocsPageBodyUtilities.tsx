@@ -28,26 +28,35 @@ const DocsPageBodyUtilities = (props: DocsPageBodyProps) => {
                 <code>{returnDescription}</code>
             </p>
             {parameters.length > 0 && (
-                <table>
-                    <tr>
-                        <th>Parameter</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
-                    </tr>
-                    {parameters.map(
-                        ({ name, type, defaultValue, description }, index) => (
-                            <tr key={`parameter${index}`}>
-                                <td>{name}</td>
-                                <td>
-                                    <code>{type}</code>
-                                </td>
-                                <td>{defaultValue}</td>
-                                <td>{description}</td>
+                <div className="parametersTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
                             </tr>
-                        ),
-                    )}
-                </table>
+                        </thead>
+                        <tbody>
+                            {parameters.map(
+                                (
+                                    { name, type, defaultValue, description },
+                                    index,
+                                ) => (
+                                    <tr key={`parameter${index}`}>
+                                        <td>{name}</td>
+                                        <td>
+                                            <code>{type}</code>
+                                        </td>
+                                        <td>{defaultValue}</td>
+                                        <td>{description}</td>
+                                    </tr>
+                                ),
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             )}
             <br />
             <h4>Implementation:</h4>

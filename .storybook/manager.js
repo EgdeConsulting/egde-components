@@ -23,12 +23,12 @@ addons.setConfig({
 function setToolbarButtonVisibility(showButtons) {
     const toolbarButtons = [
         document.querySelector('[title="Remount component"]'),
-        document.querySelector('[title="Set color mode to dark"]'),
+        document.querySelector('[title*="Set color mode"]'),
         document.querySelector('[title="Apply a grid to the preview"]'),
         document.querySelector(
             '[title="Change the background of the preview"]',
         ),
-        document.querySelector('[title="Set layout direction to rtl"]'),
+        document.querySelector('[title*="Set layout direction"]'),
     ];
 
     for (let i = 0; i < toolbarButtons.length; i++) {

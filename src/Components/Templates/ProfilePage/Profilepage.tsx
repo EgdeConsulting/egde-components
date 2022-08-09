@@ -1,7 +1,18 @@
 import React, { ReactElement, useState } from 'react';
 import { Story } from '@storybook/react';
 import { Modal, PageContainer, Button, Alert } from 'Components';
-import { Box, Flex, Table, TableContainer, Tbody, Td, Tr, Text, Image, VStack } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    Table,
+    TableContainer,
+    Tbody,
+    Td,
+    Tr,
+    Text,
+    Image,
+    VStack,
+} from '@chakra-ui/react';
 
 const TabExample = (): ReactElement => {
     return (
@@ -22,7 +33,7 @@ const TabExample = (): ReactElement => {
     );
 };
 
-const Template: Story = () => {
+const Template: Story = (args) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleClose = () => setIsModalOpen(false);
 
@@ -56,16 +67,28 @@ const Template: Story = () => {
                             Bio
                         </Text>
                         <Text mb={'24px'}>
-                            Harry Will Ramsbottom is a 20-year-old local activist who enjoys reading, cycling and
-                            traveling. He is smart and inspiring, but can also be very lazy and a bit dull.
+                            Harry Will Ramsbottom is a 20-year-old local
+                            activist who enjoys reading, cycling and traveling.
+                            He is smart and inspiring, but can also be very lazy
+                            and a bit dull.
                         </Text>
-                        <Button label="Edit profile" variant="secondary" onClick={() => {}}></Button>
-                        <Button onClick={() => setIsModalOpen(true)} variant={'delete'} label={'Delete Consent'}>
+                        <Button
+                            label="Edit profile"
+                            variant="secondary"
+                            onClick={() => {}}
+                        ></Button>
+                        <Button
+                            onClick={() => setIsModalOpen(true)}
+                            variant={'delete'}
+                            label={'Delete Consent'}
+                        >
                             <Modal
                                 isModalOpen={isModalOpen}
                                 isCentered={false}
                                 title={'Removing consent'}
-                                subtitle={'If you want to remove the consent. Press the confirm Button'}
+                                subtitle={
+                                    'If you want to remove the consent. Press the confirm Button'
+                                }
                                 buttons={{
                                     primary: {
                                         label: 'Confirm',
@@ -82,7 +105,10 @@ const Template: Story = () => {
                                 onClose={handleClose}
                                 hasCloseButton={true}
                             >
-                                <Alert description="You will be logged out after confirming" status="warning"></Alert>
+                                <Alert
+                                    description="You will be logged out after confirming"
+                                    status="warning"
+                                ></Alert>
                             </Modal>
                         </Button>
                     </Box>

@@ -5,7 +5,7 @@ interface DocsPageBodyProps {
     addStories: boolean;
 }
 
-const DocsPageBody = (props: DocsPageBodyProps) => {
+const DocsPageBodyComponents = (props: DocsPageBodyProps) => {
     const { addStories } = props;
 
     return (
@@ -30,4 +30,4 @@ const DocsPageBody = (props: DocsPageBodyProps) => {
     );
 };
 
-export { DocsPageBody };
+export { DocsPageBodyComponents };

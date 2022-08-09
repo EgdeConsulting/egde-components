@@ -1,9 +1,8 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { useState } from 'react';
 import { NumberInput } from 'Components';
-
 
 export const Template = (args) => {
     const [value, setValue] = useState('');
@@ -59,7 +58,7 @@ export const componentName = 'NumberInput';
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<DocsPageBody addStories={true} />
+<DocsPageBodyComponents addStories={true} />
 
 ### Disabled NumberInput
 

@@ -1,5 +1,5 @@
 import { Meta, ArgsTable } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { Root } from 'Types';
 
 <Meta title={Root.GettingStarted + 'Adding Components'} />
@@ -48,7 +48,7 @@ the component-folder, and start editing the file by including the following four
 
 ```jsx
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { _componentName_ } from 'Components';
 ```
@@ -437,18 +437,18 @@ story has the main task of showing a baseline implementation of the React compon
 
 ## Step 8:
 
-Now append the remaining standardized docs-page content by using the `DocsPageBody` component. Just like with
+Now append the remaining standardized docs-page content by using the `DocsPageBodyComponents` component. Just like with
 `DocsPageHeader` this will automatically add a couple of elements to the docs-page.
 
 ```jsx
-<DocsPageBody addStories={true} />
+<DocsPageBodyComponents addStories={true} />
 ```
 
 **Notes ❗**
 
-> The table below shows all of the props for the DocsPageBody component.
+> The table below shows all of the props for the DocsPageBodyComponents component.
 
-<ArgsTable of={DocsPageBody} />
+<ArgsTable of={DocsPageBodyComponents} />
 
 > In most cases it is desired to add customized stories to showcase what the component could look like
 > with different setting, but if that isn't the case change `addStories` to `false` and ignore step 9.
