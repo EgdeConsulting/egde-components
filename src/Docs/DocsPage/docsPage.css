@@ -58,7 +58,7 @@
     background-color: #f8f8f8;
 }
 
-.docsPage table {
+.parametersTable table {
     border-collapse: collapse;
     border-radius: 3px;
     border-style: hidden !important;
@@ -66,24 +66,24 @@
     width: 100%;
 }
 
-.docsPage table,
-th,
-tr,
-td {
+.parametersTable table,
+.parametersTable th,
+.parametersTable tr,
+.parametersTable td {
     border: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 7px;
 }
 
-.docsPage th {
+.parametersTable th {
     background-color: #e8eaf9;
 }
 
-.docsPage table tr:first-child th:first-child {
+.parametersTable table tr:first-child th:first-child {
     border-top-left-radius: 3px;
 }
 
-.docsPage table tr:first-child th:last-child {
+.parametersTable table tr:first-child th:last-child {
     border-top-right-radius: 3px;
 }
 
@@ -137,7 +137,6 @@ td {
     box-shadow: 0px 1px 5px #888888;
 }
 
-
 .pageNotFound h1,
 .pageNotFound h2,
 .pageNotFound p {
@@ -149,7 +148,7 @@ td {
     font-weight: bold;
     font-size: 500%;
     margin: 10px 0 10px 0;
-    color:rgba(0, 0, 0, 0.315)
+    color: rgba(0, 0, 0, 0.315);
 }
 
 .pageNotFound h2 {
@@ -160,7 +159,6 @@ td {
 .pageNotFound button {
     left: 400px;
     margin: 10px 0 0 0;
-    
 }
 
 .pageNotFound button:hover {
@@ -245,4 +243,8 @@ blockquote .css-bdtlhc {
     border-radius: 3px !important;
     box-shadow: rgb(0 0 0 / 30%) 0 3px 9px 0 !important;
     display: inline !important;
+}
+
+.docblock-argstable-head {
+    font-size: 15px;
 }

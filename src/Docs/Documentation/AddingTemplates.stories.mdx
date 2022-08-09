@@ -1,4 +1,5 @@
-import { Meta, ArgsTable } from '@storybook/addon-docs';
+import { Meta } from '@storybook/addon-docs';
+import LinkTo from '@storybook/addon-links/react';
 import { DocsPageHeader } from 'Docs';
 import { Root } from 'Types';
 
@@ -9,7 +10,7 @@ import { Root } from 'Types';
 <hr />
 
 Besides showcasing individual components Storybook can also display how these individual components can
-be combined to form finished solutions. These templates can show how e.g., a homepage or login could look
+be combined to form finished solutions. These templates can show how e.g., a profile page or login could look
 like. By following the steps below, you'll be able to add new templates to Storybook in a standardized manner
 using docs-pages.
 
@@ -45,23 +46,21 @@ const Template: Story = (args) => {
 };
 ```
 
-For a template named Homepage the implementation could look like this:
+For a template named HomePage the implementation could look like this:
 
 ```jsx
 const Template: Story = (args) => {
     return (
-        <PageContainer {...args} title={'Homepage!'}>
+        <PageContainer {...args} title={'Home Page!'}>
             <SimpleGrid columns={2}>
                 <Grid gap={25} templateColumns="repeat(2, 1fr)">
                     <Card
-                        title={'Check properties'}
-                        body={
-                            'Here you can check the properties of the components'
-                        }
+                        title={'Personal Profile'}
+                        body={'See and change your personal profile'}
                         cardWidth={'320px'}
                         cardHeight={'112px'}
                         titleTextSize={'sm'}
-                        actionIcon={<ArrowRightIcon />}
+                        actionIcon={<ProfileIcon />}
                     />
                     <Card
                         title={'Mail'}
@@ -107,7 +106,7 @@ Base.args = {
 };
 ```
 
-For a template named Homepage the implementation should look like this:
+For a template named HomePage the implementation should look like this:
 
 ```jsx
 export const Base = Template.bind({});
@@ -149,9 +148,8 @@ import * as stories from './_templateName_';
 
 **Notes ❗**
 
-> `Meta` is one of the three Storybook docs-blocks we are going to use, and its sole purpose is
-> to define the display name and location for the content inside `_templateName_.stories.mdx` within
-> Storybook.
+> Read the documentation on <LinkTo kind="getting-started-adding-components" story="page">Adding Components</LinkTo>
+> to learn more about `Meta`.
 
 > Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
 > and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) Storybook docs-blocks.
@@ -171,10 +169,10 @@ export const templateName = '_templateName_';
 <Meta title={Root.Templates + templateName} />;
 ```
 
-For a template named Homepage the export-statement and Meta-tag should look like this:
+For a template named HomePage the export-statement and Meta-tag should look like this:
 
 ```jsx
-export const templateName = 'Homepage';
+export const templateName = 'Home Page';
 
 <Meta title={Root.Templates + templateName} />;
 ```
@@ -200,12 +198,12 @@ will have a unique value which needs to be set manually.
 />
 ```
 
-For a template named Homepage the DocsPageHeader-tag should look like this:
+For a template named HomePage the DocsPageHeader-tag should look like this:
 
 ```jsx
 <DocsPageHeader
     title={templateName}
-    description="This template shows how the PageContainer and Card component can be used to create a Homepage."
+    description="This template shows how the PageContainer and Card component can be used to create a Home Page."
     addImportantNote={false}
     variant="none"
 />
@@ -213,16 +211,8 @@ For a template named Homepage the DocsPageHeader-tag should look like this:
 
 **Notes ❗**
 
-> The table below shows all of the props for the DocsPageHeader component.
-
-<ArgsTable of={DocsPageHeader} />
-
-> The props `title` and `description` are used to declare a heading and description, while `variant`
-> is responsible for adding a stability-badge. This badge is supposed to give a quick and easy way
-> of knowing if a component is stable or not, use `none` if it is desired that no badge should be
-> displayed. The prop `addImportantNote` adds an alert message to the top of the docs-page which will
-> display the text defined in `noteMessage`. Note that `noteMessage` isn't mandatory and will only be
-> required when `addImportantNote` is set to `true`.
+> Read the documentation on <LinkTo kind="getting-started-adding-components" story="page">Adding Components</LinkTo>
+> to learn more about `DocsPageHeader`.
 
 <br />
 

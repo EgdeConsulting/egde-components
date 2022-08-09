@@ -6,7 +6,7 @@ import { MailIcon, ProfileIcon, ParkingIcon } from 'Icons';
 
 const Template: Story = (args) => {
     return (
-        <PageContainer {...args} title={'Homepage!'}>
+        <PageContainer {...args} title={'Home Page!'}>
             <SimpleGrid columns={2}>
                 <Grid gap={25} templateColumns="repeat(2, 1fr)">
                     <Card

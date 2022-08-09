@@ -4,14 +4,11 @@ import { Story } from '@storybook/react';
 import { Button, PageContainer } from 'Components';
 import { ErrorRounded } from 'Icons';
 
-const Template: Story = () => {
-    const handleOnClick = () => {
-    };
-
+const Template: Story = (args) => {
+    const handleOnClick = () => {};
 
     return (
         <div className="pageNotFound">
-
             <PageContainer
                 title={''}
                 borderColor={'grey'}
@@ -25,11 +22,15 @@ const Template: Story = () => {
                 <h2>Sorry: Page not found</h2>
                 <ErrorRounded />
                 <p>
-                    The page you are looking for doesn't exist, has moved, or is no longer available.
+                    The page you are looking for doesn't exist, has moved, or is
+                    no longer available.
                 </p>
-                <Button label="Go back to Homepage" variant="primary" onClick={() => handleOnClick}></Button>
+                <Button
+                    label="Go back to Homepage"
+                    variant="primary"
+                    onClick={() => handleOnClick}
+                ></Button>
             </PageContainer>
-
         </div>
     );
 };

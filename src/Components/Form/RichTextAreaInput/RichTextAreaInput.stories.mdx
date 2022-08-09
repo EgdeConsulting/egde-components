@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { useState } from 'react';
 import { RichTextAreaInput } from 'Components';
@@ -58,7 +58,7 @@ export const componentName = 'RichTextAreaInput';
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<DocsPageBody addStories={true} />
+<DocsPageBodyComponents addStories={true} />
 
 ### Limited Toolbar
 
