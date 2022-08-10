@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader } from 'Docs';
+import LinkTo from '@storybook/addon-links/react';
 import { Root } from 'Types';
 import * as stories from './NotAuthorized';
 
@@ -9,7 +10,24 @@ export const templateName = 'Not Authorized';
 
 <DocsPageHeader
     title={templateName}
-    description='This template shows how the AlertDialog, PageContainer and TextAreaInput component can be used to create a "Not Authorized"-page.'
+    description={
+        <p>
+            This template shows how the{' '}
+            <LinkTo kind="components-containers-pagecontainer" story="base">
+                PageContainer
+            </LinkTo>
+            , <LinkTo kind="components-overlay-alertdialog" story="base">
+                AlertDialog
+            </LinkTo>, <LinkTo
+                kind="components-form-textareainput"
+                story="base"
+            >
+                TextAreaInput
+            </LinkTo> and <LinkTo kind="components-form-button" story="base">
+                Button
+            </LinkTo> component can be used to create a "Not Authorized" overlay.
+        </p>
+    }
     addImportantNote={false}
     variant="none"
 />

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Story } from '@storybook/react';
-import { PageContainer } from 'Components/Containers';
 import { VStack, HStack, Box, Spacer } from '@chakra-ui/react';
-import { TextInput, Checkbox, Button } from 'Components/Form';
+import { PageContainer, TextInput, Checkbox, Button } from 'Components';
 import { useState } from '@storybook/addons';
 
 const Template: Story = (args) => {

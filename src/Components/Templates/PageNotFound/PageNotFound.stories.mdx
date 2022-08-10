@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader } from 'Docs';
+import LinkTo from '@storybook/addon-links/react';
 import { Root } from 'Types';
 import * as stories from './PageNotFound';
 
@@ -9,7 +10,19 @@ export const templateName = 'Page Not Found';
 
 <DocsPageHeader
     title={templateName}
-    description="Template for 404 page not found using PageContainer and Button components."
+    description={
+        <p>
+            This template shows how the{' '}
+            <LinkTo kind="components-containers-pagecontainer" story="base">
+                PageContainer
+            </LinkTo>{' '}
+            and{' '}
+            <LinkTo kind="components-form-button" story="base">
+                Button
+            </LinkTo>{' '}
+            component can be used to create a "Page Not Found" overlay.
+        </p>
+    }
     addImportantNote={false}
     variant="none"
 />
