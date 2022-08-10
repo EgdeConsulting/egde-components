@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { DeleteModal } from 'Components';
 import { useState } from 'react';
@@ -49,7 +49,7 @@ export const componentName = 'DeleteModal';
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<DocsPageBody addStories={true} />
+<DocsPageBodyComponents addStories={true} />
 
 ### Modal Alignment: Center
 

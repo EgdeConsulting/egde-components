@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { AlertDialog } from 'Components';
 import { useState } from 'react';
@@ -59,7 +59,7 @@ export const componentName = 'AlertDialog';
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<DocsPageBody addStories={true} />
+<DocsPageBodyComponents addStories={true} />
 
 ### Warning Alert
 

@@ -1,3 +1,4 @@
 export * from './DocsPageHeader';
-export * from './DocsPageBody';
+export * from './DocsPageBodyComponents';
+export * from './DocsPageBodyUtilities';
 export * from './ComponentStability';

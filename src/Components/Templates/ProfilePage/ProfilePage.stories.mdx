@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader } from 'Docs';
+import { Root } from 'Types';
+import * as stories from './ProfilePage';
+
+export const templateName = 'ProfilePage';
+
+<Meta title={Root.Templates + templateName} />
+
+<DocsPageHeader
+    title={templateName}
+    description="This template shows how the Modal, PageContainer, Button and Alert component can be used to create a Profilepage."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<Canvas withToolbar>
+    <Story name="ProfilePage" story={stories.Base} />
+</Canvas>

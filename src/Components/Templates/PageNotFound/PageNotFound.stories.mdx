@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader } from 'Docs';
+import { Root } from 'Types';
+import * as stories from './PageNotFound';
+
+export const templateName = 'Page Not Found';
+
+<Meta title={Root.Templates + templateName} />
+
+<DocsPageHeader
+    title={templateName}
+    description="Template for 404 page not found using PageContainer and Button components."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<Canvas withToolbar>
+    <Story name="Page Not Found" story={stories.Base} />
+</Canvas>

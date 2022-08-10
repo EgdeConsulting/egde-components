@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBody } from 'Docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
 import { LibPath } from 'Types';
 import { Button } from 'Components';
 
@@ -30,7 +30,7 @@ export const componentName = 'Button';
     <Story name="Base">{Template.bind({})}</Story>
 </Canvas>
 
-<DocsPageBody addStories={true} />
+<DocsPageBodyComponents addStories={true} />
 
 ### Secondary Button
 

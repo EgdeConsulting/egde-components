@@ -23,12 +23,12 @@ addons.setConfig({
 function setToolbarButtonVisibility(showButtons) {
     const toolbarButtons = [
         document.querySelector('[title="Remount component"]'),
-        document.querySelector('[title="Set color mode to dark"]'),
+        document.querySelector('[title*="Set color mode"]'),
         document.querySelector('[title="Apply a grid to the preview"]'),
         document.querySelector(
             '[title="Change the background of the preview"]',
         ),
-        document.querySelector('[title="Set layout direction to rtl"]'),
+        document.querySelector('[title*="Set layout direction"]'),
     ];
 
     for (let i = 0; i < toolbarButtons.length; i++) {
@@ -56,15 +56,9 @@ setInterval(() => {
     }
 }, 100);
 
-// Moves the dark-mode button next to the fullscreen button on the toolbar,
-// and sets default width of the sidebar.
+// Moves the dark-mode button next to the fullscreen button on the toolbar.
 setTimeout(() => {
     const parent = document.getElementsByClassName('sto-102is01')[0];
-    const sidebar = document.getElementsByClassName('sto-1q7pov5')[0];
-
-    if (sidebar) {
-        sidebar.style.width = '330px';
-    }
 
     if (parent) {
         const child = parent.childNodes[0];
@@ -77,3 +71,19 @@ setTimeout(() => {
         }
     }
 }, 3000);
+
+// Sets default width of the navbar by editing localStorage key.
+function setSidebarWidth(width) {
+    const storybookLayout = localStorage.getItem('storybook-layout');
+
+    if (!storybookLayout) {
+        localStorage.setItem(
+            'storybook-layout',
+            '{"resizerPanel":{"x":0,"y":0},"resizerNav":{"x":' +
+                width +
+                ',"y":0}}',
+        );
+    }
+}
+
+setSidebarWidth(330);

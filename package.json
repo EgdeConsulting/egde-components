@@ -28,14 +28,8 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
     "@fontsource/lato": "^4.5.8",
-    "@types/react-datepicker": "^4.3.4",
-    "chakra-react-select": "^3.3.8",
-    "chakra-ui-steps": "^1.7.3",
     "froala-editor": "^4.0.13",
     "npm-run-all": "^4.1.5",
-    "react-datepicker": "^4.6.0",
-    "react-dropzone": "^14.2.1",
-    "react-froala-wysiwyg": "^4.0.10",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
@@ -92,7 +86,13 @@
     "rollup-plugin-terser": "^7.0.2",
     "storybook-dark-mode": "^1.1.0",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "react-datepicker": "^4.6.0",
+    "react-dropzone": "^14.2.1",
+    "react-froala-wysiwyg": "^4.0.10",
+    "@types/react-datepicker": "^4.3.4",
+    "chakra-react-select": "^3.3.8",
+    "chakra-ui-steps": "^1.7.3"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
