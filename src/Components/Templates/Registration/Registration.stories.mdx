@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader } from 'Docs';
+import LinkTo from '@storybook/addon-links/react';
 import { Root } from 'Types';
 import * as stories from './Registration';
 
@@ -9,10 +10,58 @@ export const templateName = 'Registration';
 
 <DocsPageHeader
     title={templateName}
-    description="This template shows how the HorizontalStepper component can be used to create a registration form for a new user. 
-    Step 1 shows a regular contact form using TextInput, NumberInput and TextAreaInput. Step 2 is using the FileInput component to
-    show how a user can add a profile picture. Step 3 uses a Radio component to choose the gender. Step 4 uses the Checkbox and Select
-    component to gather user interests and to let the user choose whether or not they want to receive newsletters."
+    description={
+        <p>
+            This template shows how the{' '}
+            <LinkTo kind="components-navigation-horizontalstepper" story="base">
+                HorizontalStepper
+            </LinkTo>{' '}
+            component can be used as a foundation for creating a Registration
+            form for a new user.
+            <ul>
+                <li>
+                    Step 1 shows a regular contact form using{' '}
+                    <LinkTo kind="components-form-textareainput" story="base">
+                        TextInput
+                    </LinkTo>
+                    , <LinkTo kind="components-form-numberinput" story="base">
+                        NumberInput
+                    </LinkTo> and <LinkTo
+                        kind="components-form-numberinput"
+                        story="base"
+                    >
+                        TextAreaInput
+                    </LinkTo>.
+                </li>
+                <li>
+                    Step 2 is using the{' '}
+                    <LinkTo kind="components-form-fileinput" story="base">
+                        FileInput
+                    </LinkTo>{' '}
+                    component to allow users to add a profile picture.
+                </li>
+                <li>
+                    Step 3 uses a{' '}
+                    <LinkTo kind="components-form-radio" story="base">
+                        Radio
+                    </LinkTo>{' '}
+                    component to add gender selection.
+                </li>
+                <li>
+                    Step 4 makes use of the{' '}
+                    <LinkTo kind="components-form-checkbox" story="base">
+                        Checkbox
+                    </LinkTo>{' '}
+                    and{' '}
+                    <LinkTo kind="components-form-select" story="base">
+                        Select
+                    </LinkTo>{' '}
+                    component to gather user interests and to let the user sign
+                    up to a newsletters.
+                </li>
+            </ul>
+        </p>
+    }
     addImportantNote={false}
     variant="none"
 />
@@ -20,3 +69,36 @@ export const templateName = 'Registration';
 <Canvas withToolbar>
     <Story name="Registration" story={stories.Base} />
 </Canvas>
+
+<!--
+"This template shows how the HorizontalStepper component can be used to create a registration form for a new user.
+    Step 1 shows a regular contact form using TextInput, NumberInput and TextAreaInput. Step 2 is using the FileInput component to
+    show how a user can add a profile picture. Step 3 uses a Radio component to choose the gender. Step 4 uses the Checkbox and Select
+    component to gather user interests and to let the user choose whether or not they want to receive newsletters."
+
+{
+        <p>
+            This template shows how the{' '}
+            <LinkTo kind="components-navigation-horizontalstepper" story="base">
+                HorizontalStepper
+            </LinkTo> component can be used as a foundation for creating a Registration form for a new user.
+            <ul>
+                <li>
+                    Step 1 shows a regular contact form using{' '}
+                    <LinkTo kind="components-form-textareainput" story="base">
+                        TextInput
+                    </LinkTo>, <LinkTo kind="components-form-numberinput" story="base">
+                        NumberInput
+                    </LinkTo> and <LinkTo kind="components-form-numberinput" story="base">
+                        TextAreaInput
+                    </LinkTo>.
+                </li>
+                <li>
+
+                </li>
+            component can be used to create a Home Page.
+            </ul>
+        </p>
+    }
+
+-->

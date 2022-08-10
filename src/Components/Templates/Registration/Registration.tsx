@@ -11,11 +11,18 @@ import {
 } from 'Components';
 import React, { useState } from 'react';
 import { Story } from '@storybook/react';
-import { Box, Heading, VStack, Text, HStack, SimpleGrid } from '@chakra-ui/react';
+import {
+    Box,
+    Heading,
+    VStack,
+    Text,
+    HStack,
+    SimpleGrid,
+} from '@chakra-ui/react';
 
 const FileInputExample = () => {
     return (
-        <PageContainer title="Profile Picture" subtitle="Drop file to add profile picture">
+        <PageContainer title="Add a profile picture" titleMargin="50px 0 0 0">
             <FileInput maxFileSize={1000} maxUploadSize={1000} />
         </PageContainer>
     );
@@ -27,10 +34,15 @@ const CheckBoxExample = () => {
     return (
         <PageContainer
             title="Interests"
+            titleMargin="50px 0 0 0"
             subtitle="Choose youre interests and if you are interested in receiving newsletter"
         >
             <SimpleGrid columns={2}>
-                <Checkbox options={['Sport', 'Music', 'Wine', 'Hiking']} value={value} onChange={setValue} />
+                <Checkbox
+                    options={['Sport', 'Music', 'Wine', 'Hiking']}
+                    value={value}
+                    onChange={setValue}
+                />
                 <Select
                     options={[
                         {
@@ -63,28 +75,52 @@ const RegistrateContactInfo = () => {
             // eslint-disable-next-line no-magic-numbers
             p={[8, 10]}
             // eslint-disable-next-line no-magic-numbers
-            mt={[20, '10ch']}
+            mt={[20, '10px']}
             mx="auto"
-            border={['none', '1px']}
-            borderColor={['', 'gray.300']}
+            border={['none', '0px']}
             borderRadius={10}
         >
             <VStack spacing={0} align="flex-start">
-                <VStack spacing={1} align={['flex-start', 'center']} w="full" mb={3}>
-                    <Heading>Register</Heading>
-                    <Text>Please insert the form to register a new Account</Text>
+                <VStack
+                    spacing={1}
+                    align={['flex-start', 'center']}
+                    w="full"
+                    mb={3}
+                >
+                    <Heading>Personal Information</Heading>
+                    <Text>Please fill out all of the fields below!</Text>
                 </VStack>
                 <HStack spacing={4}>
-                    <TextInput value={fname} onChange={setFname} label={'First name'} />
-                    <TextInput value={lname} onChange={setLname} label={'Last name'} />
+                    <TextInput
+                        value={fname}
+                        onChange={setFname}
+                        label={'First name'}
+                    />
+                    <TextInput
+                        value={lname}
+                        onChange={setLname}
+                        label={'Last name'}
+                    />
                 </HStack>
                 <HStack spacing={4}>
-                    <TextInput value={email} onChange={setEmail} label={'E-mail'} />
-                    <NumberInput value={num} onChange={setNum} label={'Phonenumber'} />
+                    <TextInput
+                        value={email}
+                        onChange={setEmail}
+                        label={'E-mail'}
+                    />
+                    <NumberInput
+                        value={num}
+                        onChange={setNum}
+                        label={'Phonenumber'}
+                    />
                 </HStack>
                 <Box w={'full'}>
                     {' '}
-                    <TextAreaInput value={text} onChange={setText} label={'Bio'} />
+                    <TextAreaInput
+                        value={text}
+                        onChange={setText}
+                        label={'Bio'}
+                    />
                 </Box>
             </VStack>
         </Box>
@@ -94,8 +130,16 @@ const RegistrateContactInfo = () => {
 const RadioExample = () => {
     const [value, setValue] = useState<number>(-1);
     return (
-        <PageContainer title="Gender" subtitle="Choose your gender">
-            <Radio options={['Male', 'Female', 'Not specified', 'Alien']} value={value} onChange={setValue} />
+        <PageContainer
+            title="Gender"
+            titleMargin="50px 0 0 0"
+            subtitle="Choose your gender"
+        >
+            <Radio
+                options={['Male', 'Female', 'Other', 'Alien']}
+                value={value}
+                onChange={setValue}
+            />
         </PageContainer>
     );
 };
@@ -136,7 +180,7 @@ const Template: Story = (args) => {
     const [activeStep, setActiveStep] = useState<number>(initialStep);
     return (
         <PageContainer
-            title="Register new user"
+            title="Register New User"
             contentMargin={'24px'}
             backgroundColor={'grey'}
             borderColor={'border'}

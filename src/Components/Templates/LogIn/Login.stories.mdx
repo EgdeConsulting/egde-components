@@ -1,5 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { DocsPageHeader } from 'Docs';
+import LinkTo from '@storybook/addon-links/react';
 import { Root } from 'Types';
 import * as stories from './Login';
 
@@ -9,7 +10,27 @@ export const templateName = 'Login';
 
 <DocsPageHeader
     title={templateName}
-    description="Template for login page using TextInput, Checkbox and Button components."
+    description={
+        <p>
+            This template shows how the{' '}
+            <LinkTo kind="components-containers-pagecontainer" story="base">
+                PageContainer
+            </LinkTo>
+            ,{' '}
+            <LinkTo kind="components-form-textinput" story="base">
+                TextInput
+            </LinkTo>
+            ,{' '}
+            <LinkTo kind="components-form-checkbox" story="base">
+                Checkbox
+            </LinkTo>{' '}
+            and{' '}
+            <LinkTo kind="components-form-button" story="base">
+                Button
+            </LinkTo>{' '}
+            component can be used to create a Login page.
+        </p>
+    }
     addImportantNote={false}
     variant="none"
 />
