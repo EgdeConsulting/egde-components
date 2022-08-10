@@ -33,7 +33,7 @@ const TabExample = (): ReactElement => {
     );
 };
 
-const Template: Story = (args) => {
+const Template: Story = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const handleClose = () => setIsModalOpen(false);
 
