@@ -1,4 +1,4 @@
-# Welcome to Egde-UI! 👋
+# Welcome to Egdes Component Library! 👋
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/EgdeConsulting/egde-components/blob/main/LICENSE)
 [![Github tag](https://img.shields.io/github/v/tag/EgdeConsulting/egde-components?color=green&label=latest%20tag)](https://github.com/EgdeConsulting/egde-components/tags)

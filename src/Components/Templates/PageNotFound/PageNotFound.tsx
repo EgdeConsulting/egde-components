@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Story } from '@storybook/react';
 import { Button, PageContainer } from 'Components';
@@ -11,6 +10,7 @@ const Template: Story = (args) => {
         <div className="pageNotFound">
             <PageContainer
                 title={''}
+                titlesColor={'grey'}
                 borderColor={'grey'}
                 borderWidth={'5px'}
                 containerMinWidth={'700px'}
@@ -19,7 +19,7 @@ const Template: Story = (args) => {
                 contentColor={'grey'}
             >
                 <h1>404</h1>
-                <h2>Sorry: Page not found</h2>
+                <h2>Page Not Found!</h2>
                 <ErrorRounded />
                 <p>
                     The page you are looking for doesn't exist, has moved, or is
