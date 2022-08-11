@@ -32,19 +32,19 @@ export const componentName = 'Modal';
             primary: {
                 label: 'Primary Button',
                 variant: 'primary',
-                onClick: action('Primary Button Clicked'),
             },
             secondary: {
                 label: 'Close',
                 variant: 'secondary',
-                onClick: () => {},
             },
             alignment: 'left',
         },
-        onClose: () => {},
         hasCloseButton: true,
         errorMessage: '',
         width: '25%',
+    }}
+    argtypes={{
+        onClick: { action: 'clicked' },
     }}
 />
 
@@ -75,7 +75,6 @@ export const componentName = 'Modal';
                 secondary: {
                     label: 'Close',
                     variant: 'secondary',
-                    onClick: () => {},
                 },
                 alignment: 'right',
                 title: 'Newsletter Subscription',
