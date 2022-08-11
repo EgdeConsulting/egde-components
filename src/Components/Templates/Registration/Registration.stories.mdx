@@ -11,13 +11,18 @@ export const templateName = 'Registration';
 <DocsPageHeader
     title={templateName}
     description={
-        <p>
-            This template shows how the{' '}
-            <LinkTo kind="components-navigation-horizontalstepper" story="base">
-                HorizontalStepper
-            </LinkTo>{' '}
-            component can be used as a foundation for creating a Registration
-            form for a new user.
+        <div>
+            <p>
+                This template shows how the{' '}
+                <LinkTo
+                    kind="components-navigation-horizontalstepper"
+                    story="base"
+                >
+                    HorizontalStepper
+                </LinkTo>{' '}
+                component can be used as a foundation for creating a
+                Registration form for a new user.
+            </p>
             <ul>
                 <li>
                     Step 1 shows a regular contact form using{' '}
@@ -60,7 +65,7 @@ export const templateName = 'Registration';
                     up to a newsletters.
                 </li>
             </ul>
-        </p>
+        </div>
     }
     addImportantNote={false}
     variant="none"

@@ -16,8 +16,6 @@ module.exports = {
         '@storybook/addon-a11y',
         '@storybook/addon-backgrounds',
         '@storybook/addon-controls',
-        'addon-screen-reader',
-        
     ],
     framework: '@storybook/react',
     core: {

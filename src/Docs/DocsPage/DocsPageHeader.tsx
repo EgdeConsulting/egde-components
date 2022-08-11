@@ -42,7 +42,7 @@ const DocsPageHeader = (props: DocsPageHeaderProps) => {
             <h1>{title}</h1>
             <ComponentStability variant={variant} />
             <hr />
-            <p>{description}</p>
+            <div className="description">{description}</div>
         </div>
     );
 };
