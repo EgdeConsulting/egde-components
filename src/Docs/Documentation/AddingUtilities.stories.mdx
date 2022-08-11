@@ -112,6 +112,7 @@ Just like with `DocsPageHeader` this will automatically add a couple of elements
     parameters={[
         {
             name: '...',
+            required: ...,
             type: '...',
             defaultValue: '...',
             description: '...',
@@ -129,6 +130,7 @@ For a utensil named CartesianProduct the DocsPageBodyUtilities-tag should look l
     parameters={[
         {
             name: 'arrayList',
+            required: true,
             type: 'string[]',
             defaultValue: '',
             description: '1D- og 2D-array',
@@ -145,7 +147,7 @@ For a utensil named CartesianProduct the DocsPageBodyUtilities-tag should look l
 
 > `kindDescription` defines the scope at which the utility function should be defined, while `returnDescription`
 > should be used to show the datatype of the returned value. `parameters` is a list containing all of the
-> function parameters, where each parameter (array entry) holds information in regard to `name`, `type`,
+> function parameters, where each parameter (array entry) holds information in regard to `name`, `required`, `type`,
 > `defaultValue`, and `description`.
 
 <br />

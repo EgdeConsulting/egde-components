@@ -1,7 +1,10 @@
 import React from 'react';
+import { ArgsTable } from '@storybook/addon-docs';
+import { DocsPageHeader } from 'Docs';
 
 type Parameter = {
     name: string;
+    required: boolean;
     type: string;
     defaultValue: string;
     description: string;
@@ -28,28 +31,57 @@ const DocsPageBodyUtilities = (props: DocsPageBodyProps) => {
                 <code>{returnDescription}</code>
             </p>
             {parameters.length > 0 && (
-                <div className="parametersTable">
-                    <table>
-                        <thead>
+                <div>
+                    {/*To be able to use the default doc-blocks table styling 
+                    in a reliable way, they (CSS-classes) first have to be 
+                    loaded to the DOM. The only way I found to achieve this is 
+                    to load a hidden ArgsTable.*/}
+                    <div style={{ display: 'none' }}>
+                        <ArgsTable of={DocsPageHeader} />
+                    </div>
+                    <table className="docblock-argstable css-tm6i3o">
+                        <thead className="docblock-argstable-head">
                             <tr>
-                                <th>Parameter</th>
+                                <th>Parameter Name</th>
                                 <th>Type</th>
                                 <th>Default</th>
                                 <th>Description</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="docblock-argstable-body">
                             {parameters.map(
                                 (
-                                    { name, type, defaultValue, description },
+                                    {
+                                        name,
+                                        required,
+                                        type,
+                                        defaultValue,
+                                        description,
+                                    },
                                     index,
                                 ) => (
                                     <tr key={`parameter${index}`}>
-                                        <td>{name}</td>
+                                        <td>
+                                            <span className="css-in3yi3">
+                                                {name}
+                                            </span>
+                                            {required && (
+                                                <span
+                                                    title="Required"
+                                                    className="css-1ywjlcj"
+                                                >
+                                                    *
+                                                </span>
+                                            )}
+                                        </td>
                                         <td>
                                             <code>{type}</code>
                                         </td>
-                                        <td>{defaultValue}</td>
+                                        <td>
+                                            {defaultValue.length > 0
+                                                ? defaultValue
+                                                : '-'}
+                                        </td>
                                         <td>{description}</td>
                                     </tr>
                                 ),
