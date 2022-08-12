@@ -1,0 +1,89 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { useState } from 'react';
+import { TextAreaInput } from '@egde/components';
+
+export const Template = (args) => {
+    const [value, setValue] = useState('');
+    const handleChange = (e) => {
+        setValue(e);
+    };
+    return (
+        <div>
+            <TextAreaInput {...args} value={value} onChange={handleChange} />
+        </div>
+    );
+};
+
+export const componentName = 'TextAreaInput';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={TextAreaInput}
+    args={{
+        label: 'Title',
+        labelTextMargin: '10px',
+        placeholder: 'Placeholder',
+        onChange: () => {},
+        value: '',
+        invalidText: '',
+        captionText: 'Caption text',
+        isDisabled: false,
+        margin: '5px',
+        padding: '0',
+        width: '100%',
+        minWidth: '0',
+        backgroundColor: 'transparent',
+        autoFocus: false,
+        maxWidth: '100%',
+        characterLimit: 1000,
+        captionTextMargin: '10px',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create an input which accepts text (numbers, letters and special characters) in a large and extendable textarea."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Disabled TextAreaInput
+
+<Canvas withToolbar>
+    <Story
+        name="Disabled TextAreaInput"
+        args={{
+            label: 'What is the reason for your application?',
+            placeholder: 'This input is not available yet!',
+            backgroundColor: '#F9E5E5',
+            isDisabled: true,
+            captionText: '',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Limited TextAreaInput
+
+<Canvas withToolbar>
+    <Story
+        name="Limited TextAreaInput"
+        args={{
+            label: 'What is your current occupation?',
+            placeholder: 'Enter a short description. (max 50 characters)',
+            width: '50%',
+            textAlign: 'center',
+            captionText: 'Hint! Honesty is the best policy.',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

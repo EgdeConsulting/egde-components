@@ -1,0 +1,47 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import { Root } from '@egde/library';
+
+<Meta title={Root.GettingStarted + 'Testing'} />
+
+# Testing ✅
+
+<hr />
+
+For this project, testing is set up so that all components have one standard snapshot test,
+and several individual unit tests which all use the Jest framework. How many unit tests each
+component has varies depending on the complexity of the component, but all of them have at
+least one unit test that checks if the component is able to render.
+
+<br />
+
+## General testing:
+
+To run all the Jest-tests for all of the components inside the project, execute the following
+command e.g., inside the built-in terminal of your IDE:
+
+```
+yarn test
+```
+
+**Notes ❗**
+
+> If only a single component needs to be tested define its name (`_componentName_`) in the command
+> like this:
+>
+> ```
+> yarn test _componentName_
+> ```
+
+> All of the snapshot tests are tightly connected to the React components implementation, which means
+> that changes made to the component (`_componentName_`) also need to be reflected in the snapshot test.
+> This can easily be done by using the following command:
+>
+> ```
+> yarn test _componentName_ -u
+> ```
+
+<br />
+
+## Adding new tests:
+
+...

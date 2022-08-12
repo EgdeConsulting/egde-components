@@ -1,135 +1,54 @@
 {
-  "name": "@egde/egde-components",
-  "version": "0.0.2",
-  "description": "Egde React Component library",
-  "scripts": {
-    "rollup": "rollup -c",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build",
-    "lint": "npm-run-all -l lint:eslint",
-    "lint:ci": "eslint src/**/*.{js,jsx} -f checkstyle -o target/checkstyle-result.xml",
-    "lint:fix": "npm-run-all -l lint:prettier-fix lint:eslint-fix",
-    "lint:eslint": "eslint src/**/*{.ts,.tsx}",
-    "lint:prettier": "prettier --check src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
-    "lint:eslint-fix": "eslint --fix 'src/**/*{.ts,.tsx}'",
-    "lint:prettier-fix": "prettier --write src/**/*{.ts,.tsx,.js,.jsx,.css,.md}"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EgdeConsulting/egde-components.git"
-  },
-  "author": "Egde",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EgdeConsulting/egde-components/issues"
-  },
-  "homepage": "https://github.com/EgdeConsulting/egde-components#readme",
-  "dependencies": {
-    "@chakra-ui/icons": "^2.0.2",
-    "@fontsource/lato": "^4.5.8",
-    "froala-editor": "^4.0.13",
-    "npm-run-all": "^4.1.5",
-    "react-router-dom": "^6.3.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.18.5",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/preset-react": "^7.17.12",
-    "@babel/preset-typescript": "^7.18.6",
-    "@chakra-ui/icons": "^2.0.2",
-    "@chakra-ui/react": "^1.7.3",
-    "@chakra-ui/storybook-addon": "^4.0.4",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.3",
-    "@storybook/addon-a11y": "^6.5.10",
-    "@storybook/addon-backgrounds": "^6.5.10",
-    "@storybook/addon-controls": "^6.5.10",
-    "@storybook/addon-docs": "^6.5.10",
-    "@storybook/addon-links": "^6.5.10",
-    "@storybook/addon-viewport": "^6.5.10",
-    "@storybook/addons": "^6.5.10",
-    "@storybook/api": "^6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/components": "^6.5.10",
-    "@storybook/core-events": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
-    "@storybook/react": "^6.5.10",
-    "@storybook/testing-library": "^0.0.13",
-    "@storybook/theming": "^6.5.10",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^12.1.5",
-    "@types/react": "^18.0.15",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "^8.18.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-storybook": "^0.6.3",
-    "framer-motion": "^6",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^28.1.1",
-    "jest-environment-jsdom": "^28.1.1",
-    "prettier": "2.7.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "require-from-string": "^2.0.2",
-    "rollup": "^2.75.7",
-    "rollup-plugin-dts": "^4.2.2",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "storybook-dark-mode": "^1.1.0",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.4",
-    "react-datepicker": "^4.6.0",
-    "react-dropzone": "^14.2.1",
-    "react-froala-wysiwyg": "^4.0.10",
-    "@types/react-datepicker": "^4.3.4",
-    "chakra-react-select": "^3.3.8",
-    "chakra-ui-steps": "^1.7.3"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "webpack": "*"
-  },
-  "peerDependenciesMeta": {
-    "@storybook/builder-webpack5": {
-      "optional": true
+    "private": true,
+    "workspaces": ["src/@egde/components", "src/@egde/icons", "src/@egde/styles", "src/@egde/types", "src/@egde/library"],
+    "scripts": {
+        "rollup": "rollup -c",
+        "test": "jest",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook -o docs-build",
+        "lint": "npm-run-all -l lint:eslint",
+        "lint:ci": "eslint src/**/*.{js,jsx} -f checkstyle -o target/checkstyle-result.xml",
+        "lint:fix": "npm-run-all -l lint:prettier-fix lint:eslint-fix",
+        "lint:eslint": "eslint src/**/*{.ts,.tsx}",
+        "lint:prettier": "prettier --check src/**/*{.ts,.tsx,.js,.jsx,.css,.md}",
+        "lint:eslint-fix": "eslint --fix 'src/**/*{.ts,.tsx}'",
+        "lint:prettier-fix": "prettier --write src/**/*{.ts,.tsx,.js,.jsx,.css,.md}"
     },
-    "@storybook/manager-webpack5": {
-      "optional": true
+    "dependencies": {
+        "npm-run-all": "^4.1.5"
     },
-    "typescript": {
-      "optional": true
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.29.0",
+        "@typescript-eslint/parser": "^5.29.0",
+        "eslint": "^8.18.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.30.0",
+        "eslint-plugin-storybook": "^0.6.3",
+        "framer-motion": "^6",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^28.1.1",
+        "jest-environment-jsdom": "^28.1.1",
+        "prettier": "2.7.1",
+        "rollup": "^2.75.7",
+        "rollup-plugin-dts": "^4.2.2",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-terser": "^7.0.2",
+        "tslib": "^2.4.0",
+        "typescript": "^4.7.4"
+    },
+    "jest": {
+        "testEnvironment": "jsdom",
+        "transformIgnorePatterns": [
+        "node_modules/util-deprecate"
+        ],
+        "moduleDirectories": [
+        "node_modules",
+        "src"
+        ],
+        "moduleNameMapper": {
+        "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+        "@fontsource/lato": "identity-obj-proxy"
+        }
     }
-  },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "jest": {
-    "testEnvironment": "jsdom",
-    "transformIgnorePatterns": [
-      "node_modules/util-deprecate"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-      "@fontsource/lato": "identity-obj-proxy"
-    }
-  },
-  "types": "dist/index.d.ts",
-  "moduleDirectories": [
-    "node_modules",
-    "src"
-  ]
 }

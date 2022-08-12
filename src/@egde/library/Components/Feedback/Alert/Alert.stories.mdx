@@ -1,0 +1,92 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { Alert } from '@egde/components';
+
+export const Template = (args) => <Alert {...args} />;
+
+export const componentName = 'Alert';
+
+<Meta
+    title={LibPath.Feedback + componentName}
+    component={Alert}
+    args={{
+        description: 'This is an info alert',
+        status: 'info',
+        linkText: '',
+        linkHref: '',
+        onClose: () => {},
+        hasNoCloseButton: false,
+        route: '',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to display a info-box which displays important information whom the user must see."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Warning Alert
+
+<Canvas withToolbar>
+    <Story
+        name="Warning Alert"
+        args={{
+            description: 'This is a warning alert',
+            status: 'warning',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Error Alert
+
+<Canvas withToolbar>
+    <Story
+        name="Error Alert"
+        args={{
+            description: 'This is an error alert',
+            status: 'error',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Success Alert
+
+<Canvas withToolbar>
+    <Story
+        name="Success Alert"
+        args={{
+            description: 'This is a Success alert',
+            status: 'success',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Alert with link
+
+<Canvas withToolbar>
+    <Story
+        name="Alert with link"
+        args={{
+            description: 'This is an info alert',
+            status: 'info',
+            linkText: 'Learn more',
+            linkHref: 'https://www.google.com',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { BaseInput } from '@egde/components';
+
+export const Template = (args) => <BaseInput {...args} />;
+
+export const componentName = 'BaseInput';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={BaseInput}
+    args={{
+        label: 'Title',
+        labelTextMargin: '0',
+        children: [<div>Content</div>],
+        invalidText: '',
+        captionText: '',
+        captionTextMargin: '0',
+        margin: '0',
+        padding: '0',
+        width: '100%',
+        minWidth: '0',
+        maxWidth: '100%',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used as a baseline for other input-components such as NumberInput, TextInput and FileInput."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={false} />

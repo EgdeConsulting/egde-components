@@ -1,0 +1,82 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { Accordion } from '@egde/components';
+import * as PropItems from './PropItems';
+
+export const Template = (args) => <Accordion {...args} />;
+
+export const componentName = 'Accordion';
+
+<Meta
+    title={LibPath.Disclosure + componentName}
+    component={Accordion}
+    args={{
+        items: PropItems.Default,
+        allowMultiple: true,
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to display content in a vertical dropdown-like manner."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Accordion Ok
+
+<Canvas withToolbar>
+    <Story
+        name="Accordion Ok"
+        args={{
+            items: PropItems.AccordionOk,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Accordion InProgress
+
+<Canvas withToolbar>
+    <Story
+        name="Accordion InProgress"
+        args={{
+            items: PropItems.AccordionInProgress,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### More Accordion
+
+<Canvas withToolbar>
+    <Story
+        name="More Accordion"
+        args={{
+            items: PropItems.MoreAccordion,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Only one Accordion open
+
+<Canvas withToolbar>
+    <Story
+        name="Only one Accordion open"
+        args={{
+            allowMultiple: false,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

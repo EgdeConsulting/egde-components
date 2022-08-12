@@ -1,0 +1,99 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { useState } from 'react';
+import { DatePicker } from '@egde/components';
+
+export const Template = (args) => {
+    const [value, setValue] = useState('');
+    const handleChange = (date) =>
+        setValue(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+    return (
+        <div>
+            <DatePicker {...args} onChange={handleChange} value={value} />
+        </div>
+    );
+};
+
+export const now = new Date();
+
+export const componentName = 'DatePicker';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={DatePicker}
+    args={{
+        onChange: () => {},
+        value: '',
+        placeholder: 'Click to select a date',
+        invalidText: '',
+        isDisabled: false,
+        label: 'Title',
+        labelTextMargin: '0 0 10px 0',
+        captionText: 'Caption text.',
+        captionTextMargin: '10px 0 0 0',
+        margin: '0px',
+        padding: '0px',
+        width: '100%',
+        minWidth: '0px',
+        maxDate: '',
+        minDate: '',
+        backgroundColor: '',
+        autoFocus: false,
+        shouldCloseOnSelect: true,
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create a date-input where the user chooses the date by clicking a calender."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base" height="300px">
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Limited Date Range
+
+<Canvas withToolbar>
+    <Story
+        name="Limited Date Range"
+        height="300px"
+        args={{
+            label: 'Choose a date within the next 10 days:',
+            captionText: '',
+            minDate: new Date(now.getFullYear(), now.getMonth(), now.getDate()),
+            maxDate: new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate() + 10,
+            ),
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Invalid Date
+
+<Canvas withToolbar>
+    <Story
+        name="Invalid Date"
+        args={{
+            label: 'Select the meeting date:',
+            placeholder: '01/01/2001',
+            invalidText: 'Invalid date selected!',
+            captionText:
+                'Hint! Make sure to select a date which fits all attendees.',
+            backgroundColor: '#F9E5E5',
+            isDisabled: true,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

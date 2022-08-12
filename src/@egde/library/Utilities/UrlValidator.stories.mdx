@@ -1,0 +1,75 @@
+import { Meta } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyUtilities } from '@egde/library';
+
+export const utensilName = 'Url';
+
+<Meta title={LibPath.Validators + utensilName} />
+
+<DocsPageHeader
+    title={utensilName}
+    description="Validates if the provided url is a valid url or empty."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<DocsPageBodyUtilities
+    kindDescription="global function"
+    returnDescription="boolean"
+    parameters={[
+        {
+            name: 'url',
+            required: true,
+            type: 'string',
+            defaultValue: '',
+            description: 'Url which is to be validated',
+        },
+    ]}
+/>
+
+```ts
+export function validateUrl(url: string) {
+    if (url.trim() === '') return true;
+    var pattern = new RegExp(
+        '^(https?:\\/\\/)?' + // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+            '(\\#[-a-z\\d_]*)?$',
+        'i',
+    ); // fragment locator
+    return !!pattern.test(url);
+}
+```
+
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: validateUrl("https://egde.no/")
+
+> Output: true
+```
+
+```ts
+> Input: validateUrl("https:/github.com/")
+
+> Output: false
+```
+
+```ts
+> Input: validateUrl("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+> Output: true
+```
+
+```ts
+> Input: validateUrl("https://www.youtube.com/watchv=dQw4w9WgXcQ")
+
+> Output: false
+```
+
+</div>

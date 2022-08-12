@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { Card } from '@egde/components';
+
+export const Template = (args) => <Card {...args} />;
+
+export const componentName = 'Card';
+
+<Meta
+    title={LibPath.Cards + componentName}
+    component={Card}
+    args={{
+        title: 'Title',
+        textColors: '#D23F47',
+        titleTextColor: '#000000',
+        bodyTextColor: '#000000',
+        titleTextSize: '14px',
+        bodyTextSize: '14px',
+        onClick: () => {},
+        titleIcon: undefined,
+        actionIcon: undefined,
+        cardHeight: '',
+        cardWidth: '',
+        body: 'And a body ',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create a card-like container which can hold information like a title and text."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Customer information
+
+<Canvas withToolbar>
+    <Story
+        name="Customer information"
+        args={{
+            title: 'Ola Nordmann',
+            body: 'Age: 42',
+            cardHeight: '100px',
+            cardWidth: '200px',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

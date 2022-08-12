@@ -1,0 +1,60 @@
+import { Meta } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyUtilities } from '@egde/library';
+
+export const utensilName = 'Zip Code';
+
+<Meta title={LibPath.Validators + utensilName} />
+
+<DocsPageHeader
+    title={utensilName}
+    description="Validates if the provided zip code is 4 digits."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<DocsPageBodyUtilities
+    kindDescription="global function"
+    returnDescription="boolean"
+    parameters={[
+        {
+            name: 'zipCode',
+            required: true,
+            type: 'string',
+            defaultValue: '',
+            description: 'Zip code which is to be validated',
+        },
+    ]}
+/>
+
+```ts
+export function validateZipCode(zipCode: string) {
+    const re = /^[0-9]{4}$/;
+    return re.test(zipCode);
+}
+```
+
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: validateZipCode("3920")
+
+> Output: true
+```
+
+```ts
+> Input: validateZipCode("360420")
+
+> Output: false
+```
+
+```ts
+> Input: validateZipCode("37-50")
+
+> Output: false
+```
+
+</div>

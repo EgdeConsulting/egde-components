@@ -1,0 +1,84 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { Radio } from '@egde/components';
+import { useState } from 'react';
+
+export const Template = (args) => {
+    const [value, setValue] = useState();
+    const handleChange = (e) => {
+        setValue(+e);
+    };
+    return (
+        <div>
+            <Radio {...args} value={value} onChange={handleChange} />
+        </div>
+    );
+};
+
+export const componentName = 'Radio';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={Radio}
+    args={{
+        options: ['Option 1', 'Option 2', 'Option 3'],
+        value: 0,
+        onChange: () => {},
+        isDisabled: false,
+        backgroundColor: '#FFFFFF',
+        direction: 'column',
+        autoFocus: false,
+        label: 'Title',
+        labelTextMargin: '10px',
+        invalidText: '',
+        captionText: 'Caption text',
+        captionTextMargin: '10px',
+        margin: '0',
+        width: '100%',
+        minWidth: '0',
+        maxWidth: '100%',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create a checklist where only one answers can be selected."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Horizontal layout
+
+<Canvas withToolbar>
+    <Story
+        name="Horizontal layout"
+        args={{
+            direction: 'row',
+            captionText: '',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Invaild Input
+
+<Canvas withToolbar>
+    <Story
+        name="Invaild Input"
+        args={{
+            captionText: '',
+            backgroundColor: '#F9E5E5',
+            width: '30%',
+            invalidText: 'Please select an option!',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

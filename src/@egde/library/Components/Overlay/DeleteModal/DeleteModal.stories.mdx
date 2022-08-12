@@ -1,0 +1,65 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { DeleteModal } from '@egde/components';
+import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
+
+export const Template = (args) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    return (
+        <div>
+            <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
+            <DeleteModal
+                {...args}
+                isModalOpen={isModalOpen}
+                setIsModalOpen={setIsModalOpen}
+            />
+        </div>
+    );
+};
+
+export const componentName = 'DeleteModal';
+
+<Meta
+    title={LibPath.Overlay + componentName}
+    component={DeleteModal}
+    args={{
+        isModalOpen: false,
+        isCentered: false,
+        setIsModalOpen: () => {},
+        onSubmit: () => {},
+        deleteButtonLabel: 'Delete',
+        deleteText: 'Content',
+        title: 'Title',
+        cancelButtonLabel: 'Cancel',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create a popup-box which includes a delete button and can contain additional interactive content."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Modal Alignment: Center
+
+<Canvas withToolbar>
+    <Story
+        name="Modal Alignment: Center"
+        args={{
+            isCentered: true,
+            deleteText:
+                'Are you sure you want to delete the account? There is no going back!',
+            title: 'Delete Account',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

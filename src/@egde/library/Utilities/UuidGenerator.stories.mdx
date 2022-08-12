@@ -1,0 +1,52 @@
+import { Meta } from '@storybook/addon-docs';
+import { Root, DocsPageHeader, DocsPageBodyUtilities } from '@egde/library';
+
+export const utensilName = 'UUID Generator';
+
+<Meta title={Root.Utilities + utensilName} />
+
+<DocsPageHeader
+    title={utensilName}
+    description="Returns a universally unique identifier (UUID) based on version 4."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<DocsPageBodyUtilities
+    kindDescription="global function"
+    returnDescription="string"
+    parameters={[]}
+/>
+
+```ts
+export function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+        /[xy]/g,
+        function (c) {
+            var r = (Math.random() * 16) | 0,
+                v = c == 'x' ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+        },
+    );
+}
+```
+
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: uuidv4()
+
+> Output: "dcd1db72-9a53-4c80-ab4e-61f1d5c2c7ef"
+```
+
+```ts
+> Input: uuidv4()
+
+> Output: "4cb8b4ee-b699-492a-8c77-e28106a1a762"
+```
+
+</div>

@@ -1,0 +1,265 @@
+import { Meta } from '@storybook/addon-docs';
+import { Root, DocsPageHeader } from '@egde/library';
+import LinkTo from '@storybook/addon-links/react';
+
+<Meta title={Root.GettingStarted + 'Adding Templates'} />
+
+# How to add a new template to Storybook 📝
+
+<hr />
+
+Besides showcasing individual components Storybook can also display how these individual components can
+be combined to form finished solutions. These templates can show how e.g., a profile page or login could look
+like. By following the steps below, you'll be able to add new templates to Storybook in a standardized manner
+using docs-pages.
+
+<br />
+
+## Step 1:
+
+Create a new file called `_templateName_.tsx` inside of the sub-folder `src/Components/Templates`.
+This file is going to contain the source code of the new template. Start of editing the file by adding the
+following two import-statements:
+
+```jsx
+import React from 'react';
+import { Story } from '@storybook/react';
+```
+
+**Notes ❗**
+
+> `Story` is a datatype which is used to define React components as stories, which then again can be exported
+> and imported to docs-pages.
+
+<br />
+
+## Step 2:
+
+Next create a `Template` constant like shown below, and replace `...` with the implementation of your template.
+
+```jsx
+const Template: Story = (args) => {
+    return (
+        ...
+    );
+};
+```
+
+For a template named HomePage the implementation could look like this:
+
+```jsx
+const Template: Story = (args) => {
+    return (
+        <PageContainer {...args} title={'Home Page!'}>
+            <SimpleGrid columns={2}>
+                <Grid gap={25} templateColumns="repeat(2, 1fr)">
+                    <Card
+                        title={'Personal Profile'}
+                        body={'See and change your personal profile'}
+                        cardWidth={'320px'}
+                        cardHeight={'112px'}
+                        titleTextSize={'sm'}
+                        actionIcon={<ProfileIcon />}
+                    />
+                    <Card
+                        title={'Mail'}
+                        body={'Press here if you want to read your E-Mails'}
+                        cardWidth={'320px'}
+                        cardHeight={'112px'}
+                        titleTextSize={'sm'}
+                        actionIcon={<MailIcon />}
+                    />
+                    <Card
+                        title={'Parking'}
+                        body={
+                            'Here you can register your parking. Avoid the fines'
+                        }
+                        cardWidth={'320px'}
+                        cardHeight={'112px'}
+                        titleTextSize={'sm'}
+                        actionIcon={<ParkingIcon />}
+                    />
+                </Grid>
+            </SimpleGrid>
+        </PageContainer>
+    );
+};
+```
+
+**Notes ❗**
+
+> Add all the necessary imports at the top of the file after the previously added imports. Make also sure to
+> use `from 'Components'` or `from 'Icons'` when importing components and icons.
+
+<br />
+
+## Step 3:
+
+The last thing left to do inside of the tsx-file is to export the template story. While doing so we also have to
+provide some default prop-values as following:
+
+```jsx
+export const Base = Template.bind({});
+Base.args = {
+    ...
+};
+```
+
+For a template named HomePage the implementation should look like this:
+
+```jsx
+export const Base = Template.bind({});
+Base.args = {
+    backgroundColor: 'grey',
+    borderColor: 'border',
+    borderWidth: '1px',
+    containerMargin: '50px 336px 50px 336px',
+    containerMinWidth: '800px',
+    containerPadding: '40px 56px 40px 56px',
+    contentPadding: '0 56px 40px 56px ',
+    subtitle:
+        'As an employee, you have access to various services based on your rights. See your services below.',
+    subtitlePadding: '16px 154px 32px 154px',
+    titlePadding: '40px 0 0 0',
+};
+```
+
+**Notes ❗**
+
+> `Template.bind({})` takes the earlier defined arrow-function (step 3) and provides a reference to the Story.
+
+> The `args` property is here being used to pass default prop-values to the react components inside of `Template`.
+
+<br />
+
+## Step 4:
+
+Next create the docs-page for the new template by adding a file called `_templateName_.stories.mdx` to
+the component-folder, and start editing the file by including the following four import-statements were
+`_templateName_` needs to be replaced:
+
+```jsx
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader } from 'Docs';
+import LinkTo from '@storybook/addon-links/react';
+import { Root } from 'Types';
+import * as stories from './_templateName_';
+```
+
+**Notes ❗**
+
+> Read the documentation on <LinkTo kind="getting-started-adding-components" story="page">Adding Components</LinkTo>
+> to learn more about `Meta`.
+
+> Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
+> and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) Storybook docs-blocks.
+
+> `LinkTo` enables the use of special link tags which can link to different parts of the Storybook.
+
+> `import * as stories from './_templateName_';` searches through the specified file and makes all found
+> stories available.
+
+<br />
+
+## Step 5:
+
+Beneath the import-statements add a local export-statement and Meta-tag like shown:
+
+```jsx
+export const templateName = '_templateName_';
+
+<Meta title={Root.Templates + templateName} />;
+```
+
+For a template named HomePage the export-statement and Meta-tag should look like this:
+
+```jsx
+export const templateName = 'Home Page';
+
+<Meta title={Root.Templates + templateName} />;
+```
+
+**Notes ❗**
+
+> We need to use `export` before `const` as MDX-syntax requires it.
+
+<br />
+
+## Step 6:
+
+Next up use the earlier imported `DocsPageHeader` component. This is a special made React
+component which adds a default header layout to the docs-page. For templates only the `description`
+will have a unique value which needs to be set manually, here make sure to mention all of the
+components which are being used by the template.
+
+```jsx
+<DocsPageHeader
+    title={templateName}
+    description={...}
+    addImportantNote={false}
+    variant="none"
+/>
+```
+
+For a template named HomePage the DocsPageHeader-tag should look like this:
+
+```jsx
+<DocsPageHeader
+    title={templateName}
+    description={
+        <p>
+            This template shows how the{' '}
+            <LinkTo kind="components-containers-pagecontainer" story="base">
+                PageContainer
+            </LinkTo>{' '}
+            and{' '}
+            <LinkTo kind="components-cards-card" story="base">
+                Card
+            </LinkTo>{' '}
+            component can be used to create a Home Page.
+        </p>
+    }
+    addImportantNote={false}
+    variant="none"
+/>
+```
+
+**Notes ❗**
+
+> Read the documentation on <LinkTo kind="getting-started-adding-components" story="page">Adding Components</LinkTo>
+> to learn more about `DocsPageHeader`.
+
+> Make sure to encase all the mentioned components in a `LinkTo` tag with the correct value for the
+> `kind` prop. The value for the `story` prop should always be `base`. For more information about the
+> LinkTo tag follow this [link](https://storybook.js.org/addons/@storybook/addon-links).
+
+> `{' '}` is a syntax for adding a whitespace.
+
+<br />
+
+## Step 7:
+
+The last step is to add the imported `Base` story to the docs-page and give the story a fitting name.
+Both of these things can be done as follows:
+
+```jsx
+<Canvas withToolbar>
+    <Story name="_templateName_" story={stories.Base} />
+</Canvas>
+```
+
+**Notes ❗**
+
+> The `withToolbar` prop enables a toolbar at the top of the code-canvas which includes buttons for zooming.
+
+> `Template.bind({})` takes the earlier defined arrow-function (step 4) and provides a reference to the Story.
+
+> Sometimes the default height of the Canvas isn't enough to display the whole component, in this case a scrollbar
+> is automatically added to the Canvas. This is not a desirable solution since it makes viewing the whole component
+> tedious. To solve this issue, use the `height` property of the Story-tag like shown below:
+>
+> ```jsx
+> <Canvas withToolbar>
+>     <Story name="_templateName_" height="600px" story={stories.Base} />
+> </Canvas>
+> ```

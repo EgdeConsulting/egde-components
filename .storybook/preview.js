@@ -1,5 +1,5 @@
-import { styles } from '../src/Styles';
-import '../src/Docs/DocsPage/docsPage.css';
+import { styles } from '@egde/styles';
+import '../src/@egde/library/Docs/DocsPage/docsPage.css';
 import egdeThemeLight from './egdeThemeLight';
 import egdeThemeDark from './egdeThemeDark';
 import { backgroundColors } from './backgrounds';
