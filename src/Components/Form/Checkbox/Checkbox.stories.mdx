@@ -6,7 +6,7 @@ import { Checkbox } from 'Components';
 import { useState } from 'react';
 import action from '@storybook/addon-actions';
 
-export const Template = (args) => <Checkbox {...args}/>
+export const Template = (args) => <Checkbox {...args} />;
 
 export const componentName = 'Checkbox';
 
@@ -38,15 +38,17 @@ export const componentName = 'Checkbox';
             },
         },
     }}
-    decorators= {[
+    decorators={[
         (Story, { args }) => (
-            <FormComponentDemo initialValue={args.values} property="values" type="checkbox">
+            <FormComponentDemo
+                initialValue={args.values}
+                property="values"
+                type="checkbox"
+            >
                 {Story()}
             </FormComponentDemo>
         ),
-    ],
-    }
-   
+    ]}
 />
 
 <DocsPageHeader

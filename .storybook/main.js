@@ -18,8 +18,6 @@ module.exports = {
         '@storybook/addon-controls',
         'addon-screen-reader',
         '@storybook/addon-actions',
-
-        
     ],
     framework: '@storybook/react',
     core: {
