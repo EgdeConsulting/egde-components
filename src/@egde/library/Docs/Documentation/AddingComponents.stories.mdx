@@ -18,16 +18,16 @@ correctly in Storybook.
 
 ## Step 1:
 
-Create a new sub-folder inside of `src/Components/.../_componentName_` where `...` corresponds to
-the category under which the new component should be listed, and `_componentName_` is replace with
+Create two new sub-folders, one inside of `src/@egde/components/.../_componentName_` and the other in `src/@egde/library/Components/.../_componentName_`
+where `...` corresponds to the category under which the new component should be listed, and `_componentName_` is replace with
 the actual component name.
 
 <br />
 
 ## Step 2:
 
-Inside of the component-folder create and export a new React component in a `.tsx` file. Afterwards export
-the React component by adding a `index.ts` file to the component-folder where you:
+Inside of the component-folder located at `src/@egde/components/...` create and export a new React component in a `.tsx` file.
+Afterwards export the React component by adding a `index.ts` file to the component-folder where you:
 
 ```jsx
 export * from './_componentName_';
@@ -42,14 +42,13 @@ export * from './_componentName_';
 ## Step 3:
 
 Next create the docs-page for the new component by adding a file called `_componentName_.stories.mdx` to
-the component-folder, and start editing the file by including the following four import-statements were
-`_componentName_` needs to be replaced:
+the component-folder located at `src/@egde/library/Components/...`, and start editing the file by including the following
+three import-statements were `_componentName_` needs to be replaced:
 
 ```jsx
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
-import { LibPath } from 'Types';
-import { _componentName_ } from 'Components';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from '@egde/library';
+import { _componentName_ } from '@egde/components';
 ```
 
 **Notes ❗**
@@ -60,8 +59,6 @@ import { _componentName_ } from 'Components';
 
 > Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
 > and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) Storybook docs-blocks.
-
-> We are able to use `from 'Components'` thanks to the export-statements we set up in step 2.
 
 <br />
 
@@ -87,8 +84,6 @@ export const Template = (args) => <TextAreaInput {...args} />;
 
 export const componentName = 'TextAreaInput';
 ```
-
-<!--![Example of how the export-statements should look like](https://i.imgur.com/BQyv9N0.png)-->
 
 **Notes ❗**
 
@@ -201,12 +196,10 @@ For a component named TextAreaInput the Meta-tag should look like this:
 />
 ```
 
-<!--![Example of how the Meta-tag should look like](https://i.imgur.com/vbOjgO6.png)-->
-
 **Notes ❗**
 
 > In case the category you want to store the component under doesn't exist, open `LibPath.ts`
-> which is located under `src/Types` and add a new enum for your category under `LibPath`.
+> which is located under `src/@egde/library/Docs` and add a new enum for your category under `LibPath`.
 
 > Note! `_componentName_` is not to be confused with the variable `componentName` that we
 > declared in step 4.
@@ -251,7 +244,7 @@ to occur inside of the "Show Code" fields in Storybook.
 ## Step 5.2:
 
 Start off by creating a file call `PropItems.tsx` inside of the same folder as
-`_componentName_.tsx` and `_componentName_.stories.mdx`. After that add the following import-statement:
+`_componentName_.stories.mdx`. After that add the following import-statement:
 
 ```jsx
 import React from 'react';
@@ -268,7 +261,7 @@ import React from 'react';
 
 Now its time to add a new export which holds the property value (array, struct, etc.) we want to
 use inside of `_componentName_.stories.mdx `. The value of `_exportName_` should always be `Default`
-if the specific property value is being used inside `args` of the Meta-tag.
+if the specific property value is being used inside the `args` prop of the Meta-tag.
 
 ```jsx
 export const _exportName_ = [
@@ -384,8 +377,6 @@ For a component named TextAreaInput the DocsPageHeader-tag should look like this
     variant="stable"
 />
 ```
-
-<!--![Example of how the DocsPageHeader-tag should look like](https://i.imgur.com/TJyNTWu.png)-->
 
 **Notes ❗**
 
@@ -518,8 +509,6 @@ could look like this:
     </Story>
 </Canvas>
 ```
-
-<!--![Example of how two stories should look like](https://i.imgur.com/7qXtRZx.png)-->
 
 **Notes ❗**
 

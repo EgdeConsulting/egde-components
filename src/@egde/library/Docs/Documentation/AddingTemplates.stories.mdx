@@ -17,9 +17,9 @@ using docs-pages.
 
 ## Step 1:
 
-Create a new file called `_templateName_.tsx` inside of the sub-folder `src/Components/Templates`.
-This file is going to contain the source code of the new template. Start of editing the file by adding the
-following two import-statements:
+Create a new sub-folder under `src/@egde/library/Templates/_templateName_` and inside there create a file
+called `_templateName_.tsx`. This file is going to contain the source code of the new template. Start of
+editing the file by adding the following two import-statements:
 
 ```jsx
 import React from 'react';
@@ -89,7 +89,7 @@ const Template: Story = (args) => {
 **Notes ❗**
 
 > Add all the necessary imports at the top of the file after the previously added imports. Make also sure to
-> use `from 'Components'` or `from 'Icons'` when importing components and icons.
+> use `from '@egde/components'` or `from '@egde/icons'` when importing components and icons.
 
 <br />
 
@@ -140,19 +140,15 @@ the component-folder, and start editing the file by including the following four
 
 ```jsx
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { DocsPageHeader } from 'Docs';
+import { Root, DocsPageHeader } from '@egde/library';
 import LinkTo from '@storybook/addon-links/react';
-import { Root } from 'Types';
 import * as stories from './_templateName_';
 ```
 
 **Notes ❗**
 
 > Read the documentation on <LinkTo kind="getting-started-adding-components" story="page">Adding Components</LinkTo>
-> to learn more about `Meta`.
-
-> Follow the links to learn more about the [Story](https://storybook.js.org/docs/react/writing-docs/doc-block-story)
-> and [Canvas](https://storybook.js.org/docs/react/writing-docs/doc-block-canvas) Storybook docs-blocks.
+> to learn more about `Meta`, `Story` and `Canvas`.
 
 > `LinkTo` enables the use of special link tags which can link to different parts of the Storybook.
 

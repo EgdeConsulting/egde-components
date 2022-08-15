@@ -1,6 +1,6 @@
 {
     "private": true,
-    "workspaces": ["src/@egde/components", "src/@egde/icons", "src/@egde/styles", "src/@egde/types", "src/@egde/library"],
+    "workspaces": ["src/@egde/*"],
     "scripts": {
         "rollup": "rollup -c",
         "test": "jest",
