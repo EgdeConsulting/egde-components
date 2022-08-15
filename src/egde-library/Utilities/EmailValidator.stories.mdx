@@ -1,0 +1,61 @@
+import { Meta } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyUtilities } from 'egde-library';
+
+export const utensilName = 'Email';
+
+<Meta title={LibPath.Validators + utensilName} />
+
+<DocsPageHeader
+    title={utensilName}
+    description="Validates if the provided email is a valid email."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<DocsPageBodyUtilities
+    kindDescription="global function"
+    returnDescription="boolean"
+    parameters={[
+        {
+            name: 'email',
+            required: true,
+            type: 'string',
+            defaultValue: '',
+            description: 'Email which is to be validated',
+        },
+    ]}
+/>
+
+```ts
+export function validateEmail(email: string) {
+    const re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+```
+
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: validateEmail("example@outlook.com")
+
+> Output: true
+```
+
+```ts
+> Input: validateEmail("example@outlook")
+
+> Output: false
+```
+
+```ts
+> Input: validateEmail("example.example@outlook")
+
+> Output: false
+```
+
+</div>

@@ -1,0 +1,112 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from 'egde-library';
+import { FileInput } from 'egde-components';
+
+export const Template = (args) => <FileInput {...args} />;
+
+export const componentName = 'FileInput';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={FileInput}
+    args={{
+        label: 'Title',
+        labelTextMargin: '0px',
+        invalidText: '',
+        captionText: '',
+        margin: '0px',
+        padding: '0px',
+        width: '100%',
+        minWidth: '0px',
+        size: 'md',
+        variant: 'default',
+        uploadLabel: 'Drag and drop or click to upload',
+        dropLabel: 'Drop',
+        maxFileSizeLabel: 'Max file size is....',
+        maxUploadSizeLabel: 'Max upload size is...',
+        maxFileSize: 1000,
+        maxUploadSize: 1000,
+        disabled: false,
+        showIcon: true,
+        captionTextMargin: '0px',
+        maxWidth: '100%',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create an input which accepts files."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Invalid upload
+
+<Canvas withToolbar>
+    <Story
+        name="Invalid upload"
+        args={{
+            invalidText: 'Invalid upload',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Without Icon
+
+<Canvas withToolbar>
+    <Story
+        name="Without Icon"
+        args={{
+            showIcon: false,
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Disabled FileUpload
+
+<Canvas withToolbar>
+    <Story
+        name="Disabled FileUpload"
+        args={{
+            variant: 'disabled',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Small Size FileUpload
+
+<Canvas withToolbar>
+    <Story
+        name="Small Size FileUpload"
+        args={{
+            size: 'sm',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Medium Size FileUpload
+
+<Canvas withToolbar>
+    <Story
+        name="Medium Size FileUpload"
+        args={{
+            size: 'md',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

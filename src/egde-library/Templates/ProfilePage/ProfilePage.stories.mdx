@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Root, DocsPageHeader } from 'egde-library';
+import LinkTo from '@storybook/addon-links/react';
+import * as stories from './ProfilePage';
+
+export const templateName = 'Profile Page';
+
+<Meta title={Root.Templates + templateName} />
+
+<DocsPageHeader
+    title={templateName}
+    description={
+        <p>
+            This template shows how the{' '}
+            <LinkTo kind="components-containers-pagecontainer" story="base">
+                PageContainer
+            </LinkTo>
+            , <LinkTo kind="components-feedback-alert" story="base">
+                Alert
+            </LinkTo>, <LinkTo kind="components-overlay-modal" story="base">
+                Modal
+            </LinkTo> and <LinkTo kind="components-form-button" story="base">
+                Button
+            </LinkTo> component can be used to create a Profile Page.
+        </p>
+    }
+    addImportantNote={false}
+    variant="none"
+/>
+
+<Canvas withToolbar>
+    <Story name="Profile Page" story={stories.Base} />
+</Canvas>

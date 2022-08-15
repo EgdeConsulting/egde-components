@@ -1,0 +1,97 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from 'egde-library';
+import { useState } from 'react';
+import { RichTextAreaInput } from 'egde-components';
+
+export const Template = (args) => {
+    const [value, setValue] = useState('');
+    const handleChange = (e) => {
+        setValue(e);
+    };
+    return (
+        <div>
+            <RichTextAreaInput
+                {...args}
+                value={value}
+                onChange={handleChange}
+            />
+        </div>
+    );
+};
+
+export const componentName = 'RichTextAreaInput';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={RichTextAreaInput}
+    args={{
+        label: 'Title',
+        labelTextMargin: '0 0 10px 5px',
+        placeholder: 'Write some text',
+        onChange: () => {},
+        value: '',
+        invalidText: '',
+        captionText: 'Caption text.',
+        margin: '0 0 0 0',
+        padding: '0 0 0 0',
+        width: '100%',
+        minWidth: '0',
+        maxWidth: '90%',
+        toolbarOptions: undefined,
+        characterLimit: 1000,
+        autoFocus: false,
+        textAlign: 'right',
+        isDisabled: false,
+        captionTextMargin: '10px',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create a text-input which accepts all kinds of multimedia (images, video, tables, etc.)."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={true} />
+
+### Limited Toolbar
+
+<Canvas withToolbar>
+    <Story
+        name="Limited Toolbar"
+        args={{
+            label: 'Only text with simple styling allowed:',
+            toolbarOptions: {
+                bold: true,
+                italic: true,
+                underline: true,
+                strikeThrough: true,
+            },
+            characterLimit: 69,
+            captionText: 'Note the character limitation!',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+### Invalid Input
+
+<Canvas withToolbar>
+    <Story
+        name="Invalid Input"
+        args={{
+            label: 'Write a short description:',
+            invalidText: 'A description is missing!',
+            characterLimit: 666,
+            captionText: '',
+        }}
+    >
+        {Template.bind({})}
+    </Story>
+</Canvas>

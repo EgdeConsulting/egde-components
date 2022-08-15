@@ -1,0 +1,260 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs';
+import { Root, DocsPageBodyUtilities } from 'egde-library';
+import LinkTo from '@storybook/addon-links/react';
+
+<Meta title={Root.GettingStarted + 'Adding Utilities'} />
+
+# How to add a new utensil to Storybook 📝
+
+<hr />
+
+In addition to React components Storybook can also be used to showcase other components like utility
+functions. This makes it easy to keep standardized and solid source code in one place. By following
+the steps below, you can add new utensils to Storybook while making sure that their documentation is
+streamlined.
+
+<br />
+
+## Step 1:
+
+Create a new file called `_utensilName_.tsx` inside of the sub-folder `src/egde-library/Utilities`. This file is going
+to contain all of the documentation and source code of the new utensil. Start of editing the file by adding
+the following three import-statements:
+
+```jsx
+import { Meta } from '@storybook/addon-docs';
+import { Root, DocsPageHeader, DocsPageBodyUtilities } from 'egde-library';
+```
+
+**Notes ❗**
+
+> Read the documentation on <LinkTo kind="getting-started-adding-components" story="page">Adding Components</LinkTo>
+> to learn more about `Meta`.
+
+<br />
+
+## Step 2:
+
+Beneath the import-statements add a local export-statement and Meta-tag like shown:
+
+```jsx
+export const utensilName = '_utensilName_';
+
+<Meta title={Root.Utilities + utensilName} />;
+```
+
+For a utensil named CartesianProduct the export-statement and Meta-tag should look like this:
+
+```jsx
+export const utensilName = 'Cartesian Product';
+
+<Meta title={Root.Utilities + utensilName} />;
+```
+
+**Notes ❗**
+
+> We need to use `export` before `const` as MDX-syntax requires it.
+
+<br />
+
+## Step 3:
+
+Next up use the earlier imported `DocsPageHeader` component. This is a special made React
+component which adds a default header layout to the docs-page. For utilities only the `description`
+will have a unique value which needs to be set manually.
+
+```jsx
+<DocsPageHeader
+    title={utensilName}
+    description="..."
+    addImportantNote={false}
+    variant="none"
+/>
+```
+
+For a utensil named CartesianProduct the DocsPageHeader-tag should look like this:
+
+```jsx
+<DocsPageHeader
+    title={utensilName}
+    description={
+        <p>
+            The Cartesian Product is a type of set-builder which takes two sets
+            and returns a single set containing all possible ordered pairs.
+            Ordered means in this context that both pair <code>(a, b)</code> and
+            <code>(b, a)</code> won't be part of the returned set, since due to ordering
+            <code>a</code> will always be first <code>(a, x)</code>.
+        </p>
+    }
+    addImportantNote={false}
+    variant="none"
+/>
+```
+
+**Notes ❗**
+
+> Read the documentation on <LinkTo kind="getting-started-adding-components" story="page">Adding Components</LinkTo>
+> to learn more about `DocsPageHeader`.
+
+<br />
+
+## Step 4:
+
+Now append the remaining standardized docs-page content by using the `DocsPageBodyUtilities` component.
+Just like with `DocsPageHeader` this will automatically add a couple of elements to the docs-page.
+
+```jsx
+<DocsPageBodyUtilities
+    kindDescription="..."
+    returnDescription="..."
+    parameters={[
+        {
+            name: '...',
+            required: ...,
+            type: '...',
+            defaultValue: '...',
+            description: '...',
+        },
+    ]}
+/>
+```
+
+For a utensil named CartesianProduct the DocsPageBodyUtilities-tag should look like this:
+
+```jsx
+<DocsPageBodyUtilities
+    kindDescription="global function"
+    returnDescription="string[]"
+    parameters={[
+        {
+            name: 'arrayList',
+            required: true,
+            type: 'string[]',
+            defaultValue: '',
+            description: '1D- og 2D-array',
+        },
+    ]}
+/>
+```
+
+**Notes ❗**
+
+> The table below shows all of the props for the DocsPageBodyUtilities component.
+
+<ArgsTable of={DocsPageBodyUtilities} />
+
+> `kindDescription` defines the scope at which the utility function should be defined, while `returnDescription`
+> should be used to show the datatype of the returned value. `parameters` is a list containing all of the
+> function parameters, where each parameter (array entry) holds information in regard to `name`, `required`, `type`,
+> `defaultValue`, and `description`.
+
+<br />
+
+## Step 5:
+
+Next its time to add the source code of the new utensil inside what's call a fenced codeblock. The
+MDX-syntax for starting and ending one of these codeblocks is by using ` ``` `. These fenced codeblocks
+will ensure that all of the source code is being neatly displayed on the docs-page.
+
+````
+```ts
+export function _utensilFunctionName_(...): ... {
+    ...
+}
+```
+````
+
+For a utensil named CartesianProduct the implementation of its source code should look like this:
+
+````
+```ts
+export function createCartesianProduct(...arrayList): string[] {
+    if (arrayList.length > 1) {
+        return arrayList.reduce((a, b) =>
+            a.flatMap((d) => b.map((e) => [d, e].flat())),
+        );
+    } else {
+        let newArrayList = [];
+
+        arrayList[0].forEach((item) => {
+            newArrayList.push([item]);
+        });
+
+        return newArrayList;
+    }
+}
+```
+````
+
+**Notes ❗**
+
+> Simple syntax highlighting can also be achieved by adding a language-flag after the opening ticks like
+> `ts`, `jsx`, `python` etc.
+
+<br />
+
+## Step 6:
+
+The last thing left is to add a section where the utensils behavior is demonstrated. As shown below add a
+heading called `Examples` followed by a `<div>` tag which encases all of the examples (fenced codeblocks).
+
+````
+```jsx
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: _utensilFunctionName_(...)
+
+> Output: ...
+```
+
+...
+
+</div>
+```
+````
+
+For a utensil named CartesianProduct the implementation should look like this:
+
+````
+```jsx
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: createCartesianProduct([4, 5, 6], [9, 8, 7])
+
+> Output: [[4, 9], [4, 8], [4, 7], [5, 9], [5, 8], [5, 7], [6, 9], [6, 8], [6, 7]]
+```
+
+```ts
+> Input: createCartesianProduct([1, 2, 3, 4, 5], [6, 1])
+
+> Output: [[1, 6], [1, 1], [2, 6], [2, 1], [3, 6], [3, 1], [4, 6], [4, 1], [5, 6], [5, 1]]
+```
+
+```ts
+> Input: createCartesianProduct([3, 6, 0, 4, 2, 0])
+
+> Output: [[3], [6], [0], [4], [2], [0]]
+```
+
+</div>
+```
+````
+
+**Notes ❗**
+
+> Make sure to include the `<br />` tag before the heading, to ensure enough space above the heading.
+
+> `##` is a special MDX-syntax for creating a `<h2>` element.
+
+> The CSS-class `codeDisplayOnly` hides the Copy-button on all of the example codebocks as they don't
+> contain "real" code

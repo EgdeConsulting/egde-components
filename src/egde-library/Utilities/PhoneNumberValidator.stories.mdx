@@ -1,0 +1,60 @@
+import { Meta } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyUtilities } from 'egde-library';
+
+export const utensilName = 'Phone Number';
+
+<Meta title={LibPath.Validators + utensilName} />
+
+<DocsPageHeader
+    title={utensilName}
+    description="Validates if the provided phone number is 8 digits."
+    addImportantNote={false}
+    variant="none"
+/>
+
+<DocsPageBodyUtilities
+    kindDescription="global function"
+    returnDescription="boolean"
+    parameters={[
+        {
+            name: 'phoneNumber',
+            required: true,
+            type: 'string',
+            defaultValue: '',
+            description: 'Phone number which is to be validated',
+        },
+    ]}
+/>
+
+```ts
+export function validatePhoneNumber(phoneNumber: string) {
+    const re = /^[0-9]{8}$/;
+    return re.test(String(phoneNumber).toLowerCase());
+}
+```
+
+<br />
+
+## Examples
+
+<div className="codeDisplayOnly">
+
+```ts
+> Input: validatePhoneNumber("65748392")
+
+> Output: true
+```
+
+```ts
+> Input: validatePhoneNumber("+4787654321")
+
+> Output: false
+```
+
+```ts
+> Input: validatePhoneNumber("a0000000")
+
+> Output: false
+```
+
+</div>

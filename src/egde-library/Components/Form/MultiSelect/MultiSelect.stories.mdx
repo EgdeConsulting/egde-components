@@ -1,0 +1,65 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { LibPath, DocsPageHeader, DocsPageBodyComponents } from 'egde-library';
+import { MultiSelect } from 'egde-components';
+import { useState } from 'react';
+
+export const Template = (args) => {
+    const [value, setValue] = useState([]);
+    const handleChange = (e) => {
+        setValue(e);
+    };
+    return (
+        <div>
+            <MultiSelect {...args} value={value} onChange={handleChange} />
+        </div>
+    );
+};
+
+export const componentName = 'MultiSelect';
+
+<Meta
+    title={LibPath.Form + componentName}
+    component={MultiSelect}
+    args={{
+        options: [
+            { label: 'Option 1', value: 1 },
+            { label: 'Option 2', value: 2 },
+            { label: 'Option 3', value: 3 },
+            { label: 'Option 4', value: 4 },
+            { label: 'Option 5', value: 5 },
+        ],
+        label: 'Select one or more options:',
+        labelTextMargin: '0 0 10px 0',
+        invalidText: '',
+        captionText: 'Caption text.',
+        filterText: '',
+        submitText: 'Submit',
+        cancelText: 'Cancel',
+        onChange: () => {},
+        isDisabled: false,
+        placeholder: 'Select some options',
+        value: [],
+        margin: '0px',
+        padding: '0px',
+        width: '100%',
+        minWidth: '0px',
+        maxWidth: '100%',
+        autoFocus: false,
+        captionTextMargin: '10px',
+    }}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component is used to create a vertical dropdown-menu where multiple options can be selected be clicking them."
+    addImportantNote={false}
+    variant="stable"
+/>
+
+<Canvas withToolbar>
+    <Story name="Base" height="300px">
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<DocsPageBodyComponents addStories={false} />

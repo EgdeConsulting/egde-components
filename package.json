@@ -1,6 +1,6 @@
 {
     "private": true,
-    "workspaces": ["src/@egde/*"],
+    "workspaces": ["src/*"],
     "scripts": {
         "rollup": "rollup -c",
         "test": "jest",

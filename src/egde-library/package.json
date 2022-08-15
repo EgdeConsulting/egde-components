@@ -1,0 +1,82 @@
+{
+    "name": "egde-library",
+    "version": "0.2.0",
+    "description": "Egde React Component library",
+    "author": "Egde",
+    "license": "MIT",
+    "homepage": "https://github.com/EgdeConsulting/egde-components#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EgdeConsulting/egde-components.git"
+    },
+    "bugs": {
+        "url": "https://github.com/EgdeConsulting/egde-components/issues"
+    },
+    "types": "dist/index.d.ts",
+    "moduleDirectories": [
+        "node_modules",
+        "src"
+    ],
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "egde-components": "0.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.18.5",
+        "@babel/preset-env": "^7.18.2",
+        "@babel/preset-react": "^7.17.12",
+        "@babel/preset-typescript": "^7.18.6",
+        "@chakra-ui/storybook-addon": "^4.0.4",
+        "@chakra-ui/react": "^1.7.3",
+        "@emotion/react": "^11",
+        "@emotion/styled": "^11",
+        "@rollup/plugin-commonjs": "^22.0.0",
+        "@rollup/plugin-node-resolve": "^13.3.0",
+        "@rollup/plugin-typescript": "^8.3.3",
+        "@storybook/addon-a11y": "^6.5.10",
+        "@storybook/addon-backgrounds": "^6.5.10",
+        "@storybook/addon-controls": "^6.5.10",
+        "@storybook/addon-docs": "^6.5.10",
+        "@storybook/addon-links": "^6.5.10",
+        "@storybook/addon-viewport": "^6.5.10",
+        "@storybook/addons": "^6.5.10",
+        "@storybook/api": "^6.5.10",
+        "@storybook/builder-webpack5": "^6.5.10",
+        "@storybook/components": "^6.5.10",
+        "@storybook/core-events": "^6.5.10",
+        "@storybook/manager-webpack5": "^6.5.10",
+        "@storybook/react": "^6.5.10",
+        "@storybook/testing-library": "^0.0.13",
+        "@storybook/theming": "^6.5.10",
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^12.1.5",
+        "@types/react": "^18.0.15",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "require-from-string": "^2.0.2",
+        "storybook-dark-mode": "^1.1.0",
+        "tslib": "^2.4.0",
+        "typescript": "^4.7.4"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+        "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+        "webpack": "*"
+    },
+    "peerDependenciesMeta": {
+        "@storybook/builder-webpack5": {
+        "optional": true
+        },
+        "@storybook/manager-webpack5": {
+        "optional": true
+        },
+        "typescript": {
+        "optional": true
+        }
+    }
+}
+    

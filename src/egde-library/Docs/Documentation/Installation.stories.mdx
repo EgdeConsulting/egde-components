@@ -1,0 +1,85 @@
+import { Meta, Canvas } from '@storybook/addon-docs';
+import { Root } from 'egde-library';
+
+<Meta title={Root.GettingStarted + 'Installation'} />
+
+# Local Project - Installation and Setup 🔨
+
+<hr />
+
+Installation of the Egde Component Library should in theory be easy as pie since
+the project is configured with git and yarn. All that's needed is for [Node.js](https://nodejs.org/en/download/)
+to be installed and that you follow the 3 steps below.
+
+<br />
+
+## Step 1:
+
+Clone the egde-components repository by running:
+
+```
+git clone https://github.com/EgdeConsulting/egde-components.git
+```
+
+<br />
+
+## Step 2:
+
+After having cloned the repository run the following command from inside the project folder
+in order to automatically install all of the needed node-modules and project dependencies
+inside the project folder.
+
+```
+yarn install
+```
+
+**Notes ❗**
+
+> If you run into issues with yarn not being enabled on Windows 10 with `Node.js >= 16.10`,
+> open `CMD` or `Powershell` **with** admin rights and run:
+>
+> ```
+> corepack enable
+> ```
+
+> On Windows it's possible that Visual Studio Code will run into an error when trying to
+> execute yarn-commands from the internal terminal (see the error below). Deleting the
+> specified file in the error message will solve the issue.
+>
+> ![Error message for running yarn-commands in VSC terminal](https://i.imgur.com/HbfIOui.png)
+
+> Another error which can be encountered during installation is that yarn runs into network timeouts.
+> These errors are caused by bigger packages which take longer to install than the default network-timeout
+> timeframe, typical offenders are the Chakra-UI and Chakra-UI-Icons packages. To solve this issue run:
+>
+> ```
+> yarn install --network-timeout 1000000
+> ```
+
+<br />
+
+## Step 3:
+
+All the components are documented in what is called MDX-files. These are markdown files (.md) with JSX
+support. Most IDE's don't have built inn support for syntax-highlighting on MDX-files, therefore it is
+strongly advised to install an extension which add said support.
+
+-   [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx)
+-   [IntelliJ IDEA](https://plugins.jetbrains.com/plugin/14944-mdx)
+
+<br />
+
+## Step 4:
+
+To check that the installation went well, and that the component library works as expected, run the
+command shown below. It will start Storybook locally on your PC at `localhost:6006`.
+
+```
+yarn storybook
+```
+
+<br />
+
+# Add Egde-UI to a personal project 🔗
+
+All of the components can be made available for own use in your projects through the installation of this [npm-package](https://www.npmjs.com/package/egde-egde-components).

@@ -1,0 +1,21 @@
+{
+    "name": "egde-styles",
+    "version": "0.2.0",
+    "description": "Egde React Component library",
+    "author": "Egde",
+    "license": "MIT",
+    "homepage": "https://github.com/EgdeConsulting/egde-components#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EgdeConsulting/egde-components.git"
+    },
+    "dependencies": {
+        "@fontsource/lato": "^4.5.8"
+    },
+    "devDependencies": {
+        "typescript": "^4.7.4"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    }
+}

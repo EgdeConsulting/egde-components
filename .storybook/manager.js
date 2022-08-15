@@ -1,6 +1,6 @@
 import { addons } from '@storybook/addons';
 import icon from './egdeIcon.ico';
-import fonts from '../src/@egde/styles/Fonts/fonts.css'; // This import allows the fontBase in egdeTheme to load correctly
+import fonts from '../src/egde-styles/Fonts/fonts.css'; // This import allows the fontBase in egdeTheme to load correctly
 
 // Solution fetched from https://github.com/storybookjs/storybook/issues/6155
 const iconLink = document.createElement('link');

@@ -1,0 +1,34 @@
+{
+    "name": "egde-components",
+    "version": "0.2.0",
+    "description": "Egde React Component library",
+    "author": "Egde",
+    "license": "MIT",
+    "homepage": "https://github.com/EgdeConsulting/egde-components#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EgdeConsulting/egde-components.git"
+    },
+    "dependencies": {
+        "egde-icons": "0.2.0",
+        "egde-styles": "0.2.0",
+        "egde-types": "0.2.0",
+        "froala-editor": "^4.0.13",
+        "react-router-dom": "^6.3.0"
+    },
+    "devDependencies": {
+        "@chakra-ui/react": "^1.7.3",
+        "@chakra-ui/icons": "^2.0.2",
+        "react": "^17.0.1",
+        "react-datepicker": "^4.6.0",
+        "@types/react-datepicker": "^4.3.4",
+        "react-dropzone": "^14.2.1",
+        "chakra-react-select": "^3.3.8",
+        "react-froala-wysiwyg": "^4.0.10",
+        "chakra-ui-steps": "^1.7.3",
+        "typescript": "^4.7.4"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    }
+}
