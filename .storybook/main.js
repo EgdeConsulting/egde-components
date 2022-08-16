@@ -16,6 +16,7 @@ module.exports = {
         '@storybook/addon-a11y',
         '@storybook/addon-backgrounds',
         '@storybook/addon-controls',
+        'storybook-addon-designs'
     ],
     framework: '@storybook/react',
     core: {
