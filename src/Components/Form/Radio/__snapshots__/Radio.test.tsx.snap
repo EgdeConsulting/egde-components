@@ -33,17 +33,20 @@ Object {
       />
     </div>
     <div>
-      <div
-        class="css-k456he"
+      <fieldset
+        class="chakra-form-control css-k456he"
+        role="group"
       >
-        <p
-          class="chakra-text css-154u26z"
-        >
-          Radio label
-        </p>
         <div
           class="css-1o2srd0"
         >
+          <legend
+            class="chakra-form__label css-1fdniw0"
+            for="field-4"
+            id="field-4-label"
+          >
+            Radio label
+          </legend>
           <div
             class="chakra-radio-group css-1k9ek97"
             role="radiogroup"
@@ -96,13 +99,14 @@ Object {
             </div>
           </div>
         </div>
-        <p
-          class="chakra-text css-1vrfh4l"
+        <div
+          class="chakra-form__helper-text css-otpbgk"
+          id="field-4-helptext"
         >
           Caption text
-        </p>
+        </div>
         
-      </div>
+      </fieldset>
       <button
         type="button"
       >
@@ -116,17 +120,20 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div
-      class="css-k456he"
+    <fieldset
+      class="chakra-form-control css-k456he"
+      role="group"
     >
-      <p
-        class="chakra-text css-154u26z"
-      >
-        Radio label
-      </p>
       <div
         class="css-1o2srd0"
       >
+        <legend
+          class="chakra-form__label css-1fdniw0"
+          for="field-4"
+          id="field-4-label"
+        >
+          Radio label
+        </legend>
         <div
           class="chakra-radio-group css-1k9ek97"
           role="radiogroup"
@@ -179,13 +186,14 @@ Object {
           </div>
         </div>
       </div>
-      <p
-        class="chakra-text css-1vrfh4l"
+      <div
+        class="chakra-form__helper-text css-otpbgk"
+        id="field-4-helptext"
       >
         Caption text
-      </p>
+      </div>
       
-    </div>
+    </fieldset>
     <button
       type="button"
     >

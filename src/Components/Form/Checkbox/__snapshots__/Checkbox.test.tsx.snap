@@ -33,17 +33,20 @@ Object {
       />
     </div>
     <div>
-      <div
-        class="css-k456he"
+      <fieldset
+        class="chakra-form-control css-k456he"
+        role="group"
       >
-        <p
-          class="chakra-text css-154u26z"
-        >
-          Checkbox Tester
-        </p>
         <div
           class="css-1o2srd0"
         >
+          <legend
+            class="chakra-form__label css-1fdniw0"
+            for="field-1"
+            id="field-1-label"
+          >
+            Checkbox Tester
+          </legend>
           <div
             class="chakra-stack css-n21gh5"
           >
@@ -51,9 +54,11 @@ Object {
               class="chakra-checkbox css-re7v4p"
             >
               <input
+                aria-describedby="field-1-helptext"
                 aria-disabled="false"
                 aria-invalid="false"
                 class="chakra-checkbox__input"
+                id="field-1"
                 style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
                 type="checkbox"
                 value=""
@@ -72,9 +77,11 @@ Object {
               class="chakra-checkbox css-re7v4p"
             >
               <input
+                aria-describedby="field-1-helptext"
                 aria-disabled="false"
                 aria-invalid="false"
                 class="chakra-checkbox__input"
+                id="field-1"
                 style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
                 type="checkbox"
                 value=""
@@ -91,13 +98,14 @@ Object {
             </label>
           </div>
         </div>
-        <p
-          class="chakra-text css-1vrfh4l"
+        <div
+          class="chakra-form__helper-text css-otpbgk"
+          id="field-1-helptext"
         >
           Caption text
-        </p>
+        </div>
         
-      </div>
+      </fieldset>
       <button
         type="button"
       >
@@ -111,17 +119,20 @@ Object {
     </div>
   </body>,
   "container": <div>
-    <div
-      class="css-k456he"
+    <fieldset
+      class="chakra-form-control css-k456he"
+      role="group"
     >
-      <p
-        class="chakra-text css-154u26z"
-      >
-        Checkbox Tester
-      </p>
       <div
         class="css-1o2srd0"
       >
+        <legend
+          class="chakra-form__label css-1fdniw0"
+          for="field-1"
+          id="field-1-label"
+        >
+          Checkbox Tester
+        </legend>
         <div
           class="chakra-stack css-n21gh5"
         >
@@ -129,9 +140,11 @@ Object {
             class="chakra-checkbox css-re7v4p"
           >
             <input
+              aria-describedby="field-1-helptext"
               aria-disabled="false"
               aria-invalid="false"
               class="chakra-checkbox__input"
+              id="field-1"
               style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
               type="checkbox"
               value=""
@@ -150,9 +163,11 @@ Object {
             class="chakra-checkbox css-re7v4p"
           >
             <input
+              aria-describedby="field-1-helptext"
               aria-disabled="false"
               aria-invalid="false"
               class="chakra-checkbox__input"
+              id="field-1"
               style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
               type="checkbox"
               value=""
@@ -169,13 +184,14 @@ Object {
           </label>
         </div>
       </div>
-      <p
-        class="chakra-text css-1vrfh4l"
+      <div
+        class="chakra-form__helper-text css-otpbgk"
+        id="field-1-helptext"
       >
         Caption text
-      </p>
+      </div>
       
-    </div>
+    </fieldset>
     <button
       type="button"
     >

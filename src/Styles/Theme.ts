@@ -3,7 +3,10 @@ import '@fontsource/lato';
 const colors = {
     darkblue: '#002855',
     blue: '#01459E',
+    bluegrey: '#C9D6E0',
     lightblue: '#DFEEF9',
+    lightbluegrey: '#D4E2ED',
+    lightbluewhite: '#DFEEF9',
     yellow: '#FFF3CD',
     amber: '#DD6B1F',
     green: '#027A1F',
@@ -15,9 +18,11 @@ const colors = {
     red: '#CC0000',
     lightred: '#F4CBCC',
     darkred: '#660000',
+    orange: '#F0870B',
     badge: {
-        ok: '#E6F2F0',
+        ok: '#027A1F',
         wip: '#FFFAEB',
+        warning: '#C05621',
     },
     border: '#E2E8F0',
 };

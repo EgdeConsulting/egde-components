@@ -34,13 +34,16 @@ Object {
     </div>
     <div>
       <div
-        class="css-oo2x8u"
+        class="chakra-form-control css-oo2x8u"
+        role="group"
       >
-        <p
-          class="chakra-text css-1dinzzv"
+        <label
+          class="chakra-form__label css-60lnuh"
+          for="field-2"
+          id="field-2-label"
         >
           RichTextAreaInput label
-        </p>
+        </label>
         <div
           class="css-0"
         >
@@ -79,7 +82,7 @@ Object {
                     aria-haspopup="true"
                     aria-readonly="true"
                     class="css-mohuvp-dummyInput-DummyInput"
-                    id="react-select-3-input"
+                    id="field-2"
                     inputmode="none"
                     role="combobox"
                     tabindex="0"
@@ -114,13 +117,16 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-oo2x8u"
+      class="chakra-form-control css-oo2x8u"
+      role="group"
     >
-      <p
-        class="chakra-text css-1dinzzv"
+      <label
+        class="chakra-form__label css-60lnuh"
+        for="field-2"
+        id="field-2-label"
       >
         RichTextAreaInput label
-      </p>
+      </label>
       <div
         class="css-0"
       >
@@ -159,7 +165,7 @@ Object {
                   aria-haspopup="true"
                   aria-readonly="true"
                   class="css-mohuvp-dummyInput-DummyInput"
-                  id="react-select-3-input"
+                  id="field-2"
                   inputmode="none"
                   role="combobox"
                   tabindex="0"
