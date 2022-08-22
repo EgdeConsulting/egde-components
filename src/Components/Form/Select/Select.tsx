@@ -1,8 +1,7 @@
 import React from 'react';
-// import { Select as ChakraSelect } from '@chakra-ui/react';
 import { Select as ChakraSelect } from 'chakra-react-select';
 import { SystemStyleObject } from '@chakra-ui/react';
-import { SelectProps, SelectOption } from 'Types';
+import { SelectOption, SelectProps } from 'Types';
 import { BaseInput } from 'Components';
 
 const DEFAULT_SELECT_PLACEHOLDER = 'Velg fra listen';
@@ -49,7 +48,7 @@ const Select = (props: SelectProps): JSX.Element => {
         isDisabled,
         placeholder,
         value,
-        /*
+        /*  
        // TODO: Make these props do something
        backgroundColor,
         autoFocus, */
@@ -59,7 +58,7 @@ const Select = (props: SelectProps): JSX.Element => {
         <BaseInput {...props}>
             <ChakraSelect
                 isInvalid={!!invalidText}
-                errorBorderColor="red"
+                errorBorderColor='red'
                 options={options}
                 hideSelectedOptions
                 closeMenuOnSelect

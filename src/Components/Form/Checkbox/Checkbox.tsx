@@ -1,21 +1,28 @@
 import React, { ReactElement } from 'react';
-import { Checkbox as ChakraCheckbox, Stack } from '@chakra-ui/react';
+import { Checkbox as ChakraCheckbox, FormLabel, Stack } from '@chakra-ui/react';
 import { CheckboxProps } from 'Types';
 import { BaseInput } from 'Components';
 
-const Checkbox = (props: CheckboxProps): ReactElement => {
+export function Checkbox(props: CheckboxProps): ReactElement {
     const {
+        label,
+        labelTextMargin,
         direction = 'column',
         options,
         value,
         onChange,
         invalidText,
         isDisabled,
+        captionText,
+        margin,
+        padding,
+        width,
+        minWidth,
         backgroundColor,
         autoFocus,
     } = props;
 
-    const handleOnChange = (optionIndex: number): void => {
+    function handleOnChange(optionIndex: number): void {
         let newValue = [];
         if (value.includes(optionIndex)) {
             newValue = value.filter((e) => e !== optionIndex);
@@ -23,10 +30,26 @@ const Checkbox = (props: CheckboxProps): ReactElement => {
             newValue = [...value, optionIndex];
         }
         onChange(newValue);
-    };
+    }
 
     return (
-        <BaseInput {...props}>
+        <BaseInput
+            invalidText={invalidText}
+            captionText={captionText}
+            margin={margin}
+            padding={padding}
+            width={width}
+            minWidth={minWidth}
+            isGroup
+        >
+            <FormLabel
+                fontWeight='bold'
+                color='darkgrey'
+                margin={labelTextMargin || '0 0 8px 0'}
+                as='legend'
+            >
+                {label}
+            </FormLabel>
             <Stack direction={direction}>
                 {options.map((option, index) => {
                     return (
@@ -46,6 +69,4 @@ const Checkbox = (props: CheckboxProps): ReactElement => {
             </Stack>
         </BaseInput>
     );
-};
-
-export { Checkbox };
+}

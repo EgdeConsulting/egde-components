@@ -1,6 +1,7 @@
 export * from './TextStyles';
 export * from './HeadingStyles';
 export * from './ButtonStyles';
+export * from './IconButtonStyles';
 export * from './CardStyles';
 export * from './TabStyles';
 export * from './CheckboxStyles';

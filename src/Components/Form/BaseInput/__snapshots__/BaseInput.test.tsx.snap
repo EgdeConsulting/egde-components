@@ -34,13 +34,17 @@ Object {
     </div>
     <div>
       <div
-        class="css-k456he"
+        class="chakra-form-control css-k456he"
+        role="group"
       >
-        <p
-          class="chakra-text css-154u26z"
+        <label
+          class="chakra-form__label css-1fdniw0"
+          data-invalid=""
+          for="field-2"
+          id="field-2-label"
         >
           label
-        </p>
+        </label>
         <div
           class="css-1o2srd0"
         >
@@ -48,28 +52,35 @@ Object {
             It works
           </div>
         </div>
-        <p
-          class="chakra-text css-1vrfh4l"
+        <div
+          class="chakra-form__helper-text css-118rzv9"
+          id="field-2-helptext"
         >
           caption
-        </p>
-        <p
-          class="chakra-text css-dyeksd"
+        </div>
+        <div
+          aria-live="polite"
+          class="chakra-form__error-message css-1v4y527"
+          id="field-2-feedback"
         >
           invalidText
-        </p>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="css-k456he"
+      class="chakra-form-control css-k456he"
+      role="group"
     >
-      <p
-        class="chakra-text css-154u26z"
+      <label
+        class="chakra-form__label css-1fdniw0"
+        data-invalid=""
+        for="field-2"
+        id="field-2-label"
       >
         label
-      </p>
+      </label>
       <div
         class="css-1o2srd0"
       >
@@ -77,16 +88,19 @@ Object {
           It works
         </div>
       </div>
-      <p
-        class="chakra-text css-1vrfh4l"
+      <div
+        class="chakra-form__helper-text css-118rzv9"
+        id="field-2-helptext"
       >
         caption
-      </p>
-      <p
-        class="chakra-text css-dyeksd"
+      </div>
+      <div
+        aria-live="polite"
+        class="chakra-form__error-message css-1v4y527"
+        id="field-2-feedback"
       >
         invalidText
-      </p>
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -177,13 +191,17 @@ Object {
     </div>
     <div>
       <div
-        class="css-k456he"
+        class="chakra-form-control css-k456he"
+        role="group"
       >
-        <p
-          class="chakra-text css-154u26z"
+        <label
+          class="chakra-form__label css-1fdniw0"
+          data-invalid=""
+          for="field-1"
+          id="field-1-label"
         >
           label
-        </p>
+        </label>
         <div
           class="css-1o2srd0"
         >
@@ -191,28 +209,35 @@ Object {
             It works
           </div>
         </div>
-        <p
-          class="chakra-text css-1vrfh4l"
+        <div
+          class="chakra-form__helper-text css-118rzv9"
+          id="field-1-helptext"
         >
           caption
-        </p>
-        <p
-          class="chakra-text css-dyeksd"
+        </div>
+        <div
+          aria-live="polite"
+          class="chakra-form__error-message css-1v4y527"
+          id="field-1-feedback"
         >
           invalidText
-        </p>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="css-k456he"
+      class="chakra-form-control css-k456he"
+      role="group"
     >
-      <p
-        class="chakra-text css-154u26z"
+      <label
+        class="chakra-form__label css-1fdniw0"
+        data-invalid=""
+        for="field-1"
+        id="field-1-label"
       >
         label
-      </p>
+      </label>
       <div
         class="css-1o2srd0"
       >
@@ -220,16 +245,19 @@ Object {
           It works
         </div>
       </div>
-      <p
-        class="chakra-text css-1vrfh4l"
+      <div
+        class="chakra-form__helper-text css-118rzv9"
+        id="field-1-helptext"
       >
         caption
-      </p>
-      <p
-        class="chakra-text css-dyeksd"
+      </div>
+      <div
+        aria-live="polite"
+        class="chakra-form__error-message css-1v4y527"
+        id="field-1-feedback"
       >
         invalidText
-      </p>
+      </div>
     </div>
   </div>,
   "debug": [Function],

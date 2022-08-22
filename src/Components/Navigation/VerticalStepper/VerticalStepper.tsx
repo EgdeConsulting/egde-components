@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { ReactElement } from 'react';
 import {
     Menu,
@@ -15,7 +14,7 @@ import {
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { StepperProps } from 'Types';
 
-const EditIcon = (): ReactElement => {
+function EditIcon(): ReactElement {
     return (
         <svg
             width='40'
@@ -36,7 +35,7 @@ const EditIcon = (): ReactElement => {
     );
 }
 
-const CheckIcon = (): ReactElement => {
+function CheckIcon(): ReactElement {
     return (
         <svg
             width='41'
@@ -55,9 +54,9 @@ const CheckIcon = (): ReactElement => {
             />
         </svg>
     );
-};
+}
 
-export const VerticalStepper = (props: StepperProps): ReactElement => {
+export function VerticalStepper(props: StepperProps): ReactElement {
     const {
         activeStep,
         setActiveStep,
@@ -149,27 +148,14 @@ export const VerticalStepper = (props: StepperProps): ReactElement => {
                 </Center>
             ) : (
                 <Flex width='100%' direction='column'>
-                    {activeStep !== 0 && (
-                        <Button
-                            variant='secondary'
-                            marginStart='0.75rem'
-                            marginBottom='1rem'
-                            onClick={() => {
-                                setActiveStep((prev) => prev - 1);
-                                window.scrollTo(0, 227);
-                            }}
-                        >
-                            {previous}
-                        </Button>
-                    )}
-
                     <Button
                         isDisabled={
-                            isCompleteButtonDisabled
-                            && activeStep === stepsContent.length - 1
+                            isCompleteButtonDisabled &&
+                            activeStep === stepsContent.length - 1
                         }
                         variant='primary'
                         marginStart='0.75rem'
+                        marginBottom='1rem'
                         onClick={
                             activeStep === stepsContent.length - 1
                                 ? () => {
@@ -186,6 +172,18 @@ export const VerticalStepper = (props: StepperProps): ReactElement => {
                             ? complete
                             : next}
                     </Button>
+                    {activeStep !== 0 && (
+                        <Button
+                            variant='secondary'
+                            marginStart='0.75rem'
+                            onClick={() => {
+                                setActiveStep((prev) => prev - 1);
+                                window.scrollTo(0, 227);
+                            }}
+                        >
+                            {previous}
+                        </Button>
+                    )}
                     {buttonCaption && (
                         <Text color={buttonCaption.color}>
                             {buttonCaption.text}
@@ -195,4 +193,4 @@ export const VerticalStepper = (props: StepperProps): ReactElement => {
             )}
         </Flex>
     );
-};
+}

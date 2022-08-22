@@ -34,7 +34,8 @@ Object {
     </div>
     <div>
       <div
-        class="css-oo2x8u"
+        class="chakra-form-control css-oo2x8u"
+        role="group"
       >
         <div
           class="css-0"
@@ -63,7 +64,8 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-oo2x8u"
+      class="chakra-form-control css-oo2x8u"
+      role="group"
     >
       <div
         class="css-0"

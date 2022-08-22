@@ -1,24 +1,52 @@
 import React, { ReactElement } from 'react';
-import { Radio as ChakraRadio, RadioGroup, Stack } from '@chakra-ui/react';
+import {
+    FormLabel,
+    Radio as ChakraRadio,
+    RadioGroup,
+    Stack,
+} from '@chakra-ui/react';
 import { RadioProps } from 'Types';
 import { BaseInput } from 'Components';
 
-export const Radio = (props: RadioProps): ReactElement => {
+export function Radio(props: RadioProps): ReactElement {
     const {
+        label,
+        labelTextMargin,
         direction = 'column',
         options,
         value,
         onChange,
         invalidText,
+        captionText,
         isDisabled,
+        margin,
+        padding,
+        width,
+        minWidth,
         backgroundColor,
     } = props;
 
     return (
-        <BaseInput {...props}>
+        <BaseInput
+            invalidText={invalidText}
+            captionText={captionText}
+            margin={margin}
+            padding={padding}
+            width={width}
+            minWidth={minWidth}
+            isGroup
+        >
+            <FormLabel
+                fontWeight='bold'
+                color='darkgrey'
+                margin={labelTextMargin || '0 0 8px 0'}
+                as='legend'
+            >
+                {label}
+            </FormLabel>
             <RadioGroup
                 isDisabled={isDisabled}
-                onChange={(e: any) => onChange(+e)}
+                onChange={(e) => onChange(+e)}
                 value={value}
                 backgroundColor={backgroundColor}
             >
@@ -38,4 +66,4 @@ export const Radio = (props: RadioProps): ReactElement => {
             </RadioGroup>
         </BaseInput>
     );
-};
+}

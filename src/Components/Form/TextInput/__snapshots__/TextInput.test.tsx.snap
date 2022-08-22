@@ -34,27 +34,33 @@ Object {
     </div>
     <div>
       <div
-        class="css-k456he"
+        class="chakra-form-control css-k456he"
+        role="group"
       >
-        <p
-          class="chakra-text css-154u26z"
+        <label
+          class="chakra-form__label css-1fdniw0"
+          for="field-1"
+          id="field-1-label"
         >
           Text area label
-        </p>
+        </label>
         <div
           class="css-1o2srd0"
         >
           <input
+            aria-describedby="field-1-helptext"
             class="chakra-input css-on4zzd"
+            id="field-1"
             placeholder="Text area placeholder"
             value=""
           />
         </div>
-        <p
-          class="chakra-text css-2ppov4"
+        <div
+          class="chakra-form__helper-text css-otpbgk"
+          id="field-1-helptext"
         >
           Caption text area
-        </p>
+        </div>
         
       </div>
       <button
@@ -71,27 +77,33 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="css-k456he"
+      class="chakra-form-control css-k456he"
+      role="group"
     >
-      <p
-        class="chakra-text css-154u26z"
+      <label
+        class="chakra-form__label css-1fdniw0"
+        for="field-1"
+        id="field-1-label"
       >
         Text area label
-      </p>
+      </label>
       <div
         class="css-1o2srd0"
       >
         <input
+          aria-describedby="field-1-helptext"
           class="chakra-input css-on4zzd"
+          id="field-1"
           placeholder="Text area placeholder"
           value=""
         />
       </div>
-      <p
-        class="chakra-text css-2ppov4"
+      <div
+        class="chakra-form__helper-text css-otpbgk"
+        id="field-1-helptext"
       >
         Caption text area
-      </p>
+      </div>
       
     </div>
     <button

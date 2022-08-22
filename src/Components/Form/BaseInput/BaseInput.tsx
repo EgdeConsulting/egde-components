@@ -1,13 +1,19 @@
 import React, { ReactElement } from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import {
+    Box,
+    FormControl,
+    FormErrorMessage,
+    FormHelperText,
+    FormLabel,
+} from '@chakra-ui/react';
 import { BaseInputProps } from 'Types';
 
-/*
+/* 
     Wrapper for all input components
     Not to be used directly
 */
 
-const BaseInput = (props: BaseInputProps): ReactElement => {
+export function BaseInput(props: BaseInputProps): ReactElement {
     const {
         label,
         labelTextMargin,
@@ -19,34 +25,47 @@ const BaseInput = (props: BaseInputProps): ReactElement => {
         padding,
         width,
         minWidth,
+        isGroup,
     } = props;
     return (
-        <Box
-            display="flex"
-            flexDirection="column"
+        <FormControl
+            display='flex'
+            flexDirection='column'
             margin={margin}
             padding={padding || '32px 0 0 0'}
+            as={isGroup ? 'fieldset' : undefined}
+            isInvalid={!!invalidText}
         >
             {label && (
-                <Text fontWeight="bold" margin={labelTextMargin || '0 0 8px 0'}>
+                <FormLabel
+                    fontWeight='bold'
+                    color='darkgrey'
+                    margin={labelTextMargin || '0 0 8px 0'}
+                >
                     {label}
-                </Text>
+                </FormLabel>
             )}
             <Box width={width} minWidth={minWidth}>
                 {children}
             </Box>
             {captionText && (
-                <Text margin={captionTextMargin || '8px 0 0 0'} color="darkgrey">
+                <FormHelperText
+                    margin={captionTextMargin || '10px 0 4px 0'}
+                    color='darkgrey'
+                    fontSize='md'
+                >
                     {captionText}
-                </Text>
+                </FormHelperText>
             )}
             {invalidText && (
-                <Text marginTop="8px" color="red">
+                <FormErrorMessage
+                    margin='10px 0 4px 0'
+                    color='red'
+                    fontSize='md'
+                >
                     {invalidText}
-                </Text>
+                </FormErrorMessage>
             )}
-        </Box>
+        </FormControl>
     );
-};
-
-export { BaseInput };
+}
