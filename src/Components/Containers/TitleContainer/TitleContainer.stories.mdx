@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { DocsPageHeader, DocsPageBodyComponents } from 'Docs';
+import { LibPath } from 'Types';
+import { TitleContainer } from 'Components';
+
+export const Template = (args) => {
+    return (
+            <TitleContainer title={'Title'} />
+    );
+};
+
+export const componentName = 'TitleContainer';
+
+<Meta
+    title={LibPath.Containers + componentName}
+    component={TitleContainer}
+/>
+
+<DocsPageHeader
+    title={componentName}
+    description="This component shows the use of a titleContainer"
+    addImportantNote={false}
+    variant="stable"
+/>
+
+
+<Canvas withToolbar>
+    <Story name="Base">{Template.bind({})}</Story>
+</Canvas>
+
+
+
