@@ -11,9 +11,9 @@ const StyledDatePicker = chakra(DatePicker);
 
 const CalendarContainer = (props: { children: ReactNode[] }): JSX.Element => {
     const { children } = props;
-    const datePickerStyles = useMultiStyleConfig('DatePicker', {});
+    const datePicker = useMultiStyleConfig('DatePicker', {});
 
-    const themeStyles = {
+    const theme = {
         ...datePickerStyles,
         '.react-datepicker__day': datePickerStyles.day,
         '.react-datepicker__header': datePickerStyles.header,
@@ -28,7 +28,7 @@ const CalendarContainer = (props: { children: ReactNode[] }): JSX.Element => {
     };
 
     return (
-        <Box position='absolute' __css={themeStyles}>
+        <Box position="absolute" __css={themeStyles}>
             {children}
         </Box>
     );
@@ -56,7 +56,7 @@ const DatePickerInput = (props: DatePickerProps): JSX.Element => {
         shouldCloseOnSelect,
     } = props;
 
-    const datePickerStyles = useMultiStyleConfig('DatePicker', {});
+    const datePicker = useMultiStyleConfig('DatePicker', {});
 
     return (
         <BaseInput
@@ -70,16 +70,16 @@ const DatePickerInput = (props: DatePickerProps): JSX.Element => {
             width={width}
             minWidth={minWidth}
         >
-            <Box textTransform='capitalize'>
+            <Box textTransform="capitalize">
                 <StyledDatePicker
                     shouldCloseOnSelect={shouldCloseOnSelect}
                     __css={datePickerStyles.inputContainer}
-                    locale='nb'
+                    locale="nb"
                     disabled={isDisabled}
                     onChange={(e: Date) => onChange(e as Date)}
-                    dropdownMode='select'
+                    dropdownMode="select"
                     placeholderText={placeholder}
-                    dateFormat='dd/MM/yyyy'
+                    dateFormat="dd/MM/yyyy"
                     selected={value}
                     calendarContainer={CalendarContainer}
                     maxDate={maxDate}

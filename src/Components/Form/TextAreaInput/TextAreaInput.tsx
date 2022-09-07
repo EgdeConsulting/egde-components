@@ -32,7 +32,7 @@ const TextAreaInput = (props: TextInputProps): ReactElement => {
         padding,
         width,
         minWidth,
-        backgroundColor,
+        variant,
         autoFocus,
     } = props;
     return (
@@ -50,9 +50,9 @@ const TextAreaInput = (props: TextInputProps): ReactElement => {
                 isInvalid={!!invalidText}
                 isDisabled={isDisabled}
                 placeholder={placeholder}
-                onChange={(e: any) => onChange(e.target.value as string)}
+                onChange={(e) => onChange(e.target.value)}
                 value={value}
-                backgroundColor={backgroundColor}
+                variant={variant}
                 autoFocus={autoFocus}
             />
         </BaseInput>

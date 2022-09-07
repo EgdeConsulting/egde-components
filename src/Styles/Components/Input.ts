@@ -1,4 +1,4 @@
-const InputStyles = {
+const Input = {
     variants: {
         outline: {
             field: {
@@ -15,4 +15,4 @@ const InputStyles = {
     },
 };
 
-export { InputStyles };
+export { Input };

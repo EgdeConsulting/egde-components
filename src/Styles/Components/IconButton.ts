@@ -1,4 +1,4 @@
-const IconButtonStyles = {
+const IconButton = {
     baseStyle: {
         color: 'blue',
         _hover: {
@@ -9,7 +9,7 @@ const IconButtonStyles = {
         },
         _active: {
             backgroundColor: 'bluegrey',
-        }
+        },
     },
     variants: {
         solid: {
@@ -19,9 +19,8 @@ const IconButtonStyles = {
             backgroundColor: 'white',
             outlineColor: 'lightblue',
         },
-        ghost: {
-        }
+        ghost: {},
     },
 };
 
-export { IconButtonStyles };
+export { IconButton };

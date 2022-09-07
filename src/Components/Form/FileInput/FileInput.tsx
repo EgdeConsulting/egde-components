@@ -19,7 +19,7 @@ import {
     UploadIconHover,
 } from 'Icons';
 
-import { FileInputStyles } from 'Styles/Components/FileInputStyles';
+import { FileInput as FileInputStyles } from 'Styles/Components/FileInput';
 
 export const FileInput = (props: FileUploadProps): ReactElement => {
     const {
@@ -35,7 +35,7 @@ export const FileInput = (props: FileUploadProps): ReactElement => {
         variant,
     } = props;
 
-    const fileInputStyles = useMultiStyleConfig('FileInput', { size, variant });
+    const fileInput = useMultiStyleConfig('FileInput', { size, variant });
 
     const [totalUploadSizeReached, setTotalUploadSizeReached] =
         useState<boolean>(false);
@@ -92,7 +92,7 @@ export const FileInput = (props: FileUploadProps): ReactElement => {
     const getValidationText = (isDragActive: boolean) => {
         return (
             <Box
-                __css={fileInputStyles}
+                sx={fileInput}
                 onMouseEnter={() =>
                     variant !== 'disabled' ?? setHoverUploadBox(true)
                 }

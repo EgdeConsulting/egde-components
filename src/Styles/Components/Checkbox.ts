@@ -1,8 +1,9 @@
-const RadioStyles = {
+const Checkbox = {
     baseStyle: {
         control: {
             backgroundColor: 'white',
             borderColor: 'blue',
+            borderRadius: 'sm',
             _checked: {
                 backgroundColor: 'blue',
                 borderColor: 'blue',
@@ -17,7 +18,7 @@ const RadioStyles = {
                 _invalid: {
                     backgroundColor: 'white',
                     borderColor: 'red',
-                    borderWidth: '1px',
+                    borderWidth: '2px',
                 },
             },
             _disabled: {
@@ -38,18 +39,16 @@ const RadioStyles = {
                     borderColor: 'lightblue',
                 },
                 _invalid: {
-                    backgroundColor: 'white',
-                    borderWidth: '1px',
+                    borderWidth: '2px',
                     borderColor: 'red',
                 },
             },
             _invalid: {
-                backgroundColor: 'white',
-                borderWidth: '1px',
+                borderWidth: '2px',
                 borderColor: 'red',
             },
         },
     },
 };
 
-export { RadioStyles };
+export { Checkbox };

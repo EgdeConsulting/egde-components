@@ -1,11 +1,6 @@
 /* eslint-disable */
 
-import {
-    Dispatch,
-    MutableRefObject,
-    SetStateAction,
-    ReactElement,
-} from 'react';
+import { MutableRefObject, ReactElement } from 'react';
 
 type Direction = 'row' | 'column';
 
@@ -38,64 +33,34 @@ enum AlertDialogIconType {
     Warning = 'warning',
 }
 
-type PageContainerProps = {
-    title: string;
-    titleAlignment?: 'left' | 'right' | 'center';
-    titleTextColor?: string;
-    subtitle?: string;
-    subtitleAlignment?: 'left' | 'right' | 'center';
-    subtitleTextColor?: string;
-    children: JSX.Element[] | JSX.Element;
-    containerPadding?: string | (string | number)[];
-    containerMargin?: string | (string | number)[];
-    containerSideMargins?: string | (string | number)[];
-    contentPadding?: string | (string | number)[];
-    contentMargin?: string | (string | number)[];
-    subtitlePadding?: string | (string | number)[];
-    titlePadding?: string | (string | number)[];
-    titleMargin?: string | (string | number)[];
-    borderColor?: string;
-    borderWidth?: string | (string | number)[];
-    contentBorderColor?: string;
-    contentBorderWidth?: string;
-    titleBadge?: { badgeColor: string; textColor: string; label: string };
-    backgroundColor?: string;
-    contentColor?: string;
-    titlesColor?: string;
-    height?: string | (string | number)[];
-    width?: string | (string | number)[];
-    containerMinWidth?: string | (string | number)[];
-    containerMaxWidth?: string | (string | number)[];
-    shouldContentFillContainer?: boolean;
-    /** Use a single or array of 'ch' values, such as '60ch' or ['50ch', '60ch', '80ch'] for responsive breakpoints */
-    containerSize?: string | string[];
-};
+type ResponsiveStyleValue = string | (string | number)[];
 
 interface BaseInputProps extends InputProps {
     children: JSX.Element[] | JSX.Element;
+    isGroup?: boolean;
 }
 
 type InputProps = {
     label?: string;
-    labelTextMargin?: string;
+    labelTextMargin?: ResponsiveStyleValue;
     invalidText?: string;
     captionText?: string;
     captionTextMargin?: string;
-    margin?: string;
-    padding?: string;
-    width?: string;
-    minWidth?: string;
-    maxWidth?: string;
+    margin?: ResponsiveStyleValue;
+    padding?: ResponsiveStyleValue;
+    width?: ResponsiveStyleValue;
+    minWidth?: ResponsiveStyleValue;
+    maxWidth?: ResponsiveStyleValue;
+    variant?: string;
 };
 interface InputComponentProps extends InputProps {
     isDisabled?: boolean;
-    backgroundColor?: string;
     autoFocus?: boolean;
 }
 interface TextInputProps extends InputComponentProps {
     placeholder?: string;
     value: string;
-    onChange: Dispatch<SetStateAction<string>>;
+    onChange: (value: string) => void;
     characterLimit?: number;
     textAlign?: 'right' | 'center';
 }
@@ -104,7 +69,7 @@ interface NumberInputProps extends InputComponentProps {
     placeholder?: string;
     allowNegative?: boolean;
     value: string;
-    onChange: Dispatch<SetStateAction<string>>;
+    onChange: (value: string) => void;
     maxValue?: string;
     maxValueLength?: number;
     isCurrency?: boolean;
@@ -115,12 +80,16 @@ interface NumberInputProps extends InputComponentProps {
 type CardProps = {
     title: string;
     body: string;
+    textColors?: string;
+    titleTextColor?: string;
+    bodyTextColor?: string;
+    titleTextSize?: string;
+    bodyTextSize?: string;
     onClick?: () => void;
     titleIcon?: ReactElement;
     actionIcon?: ReactElement;
-    cardHeight?: string;
-    cardWidth?: string;
-    titleSize?: string;
+    cardHeight?: ResponsiveStyleValue;
+    cardWidth?: ResponsiveStyleValue;
 };
 
 type ModalProps = {
@@ -134,7 +103,7 @@ type ModalProps = {
     hasCloseButton?: boolean;
     onClose: () => void;
     errorMessage?: string;
-    width?: string;
+    width?: ResponsiveStyleValue;
 };
 
 type ModalButtons = {
@@ -153,14 +122,14 @@ interface RadioProps extends InputComponentProps {
     direction?: Direction;
     options: string[];
     value: number;
-    onChange: Dispatch<SetStateAction<number>>;
+    onChange: (value: number) => void;
 }
 
 interface CheckboxProps extends InputComponentProps {
     direction?: Direction;
     options: string[];
     value: number[];
-    onChange: Dispatch<SetStateAction<number[]>>;
+    onChange: (value: number[]) => void;
 }
 
 type AccordionProps = {
@@ -191,18 +160,17 @@ type Tab = {
 
 type StepperProps = {
     activeStep: number;
-    setActiveStep: Dispatch<SetStateAction<number>>;
+    setActiveStep: (value: number) => void;
     stepsContent: StepContent[];
     buttonTexts: StepperButtonTexts;
     finalStep: finalStep;
     buttonAlignment?: 'left' | 'center' | 'right';
-    buttonMargin?: string;
+    buttonMargin?: ResponsiveStyleValue;
     clickableSteps?: boolean;
     completedSteps?: number[];
     onFinalStep: () => void;
     onFinalize: () => void;
     isCompleteButtonDisabled?: boolean;
-    buttonCaption?: { text: string; color: string };
 };
 
 type StepContent = {
@@ -252,14 +220,14 @@ interface BaseSelectProps extends InputComponentProps {
 }
 
 interface SelectProps extends BaseSelectProps {
-    onChange: Dispatch<SetStateAction<SelectOption | undefined>>;
+    onChange: (value: SelectOption) => void;
     value?: SelectOption;
 }
 
 interface MultiSelectProps extends BaseSelectProps {
     submitText?: string;
     cancelText?: string;
-    onChange: Dispatch<SetStateAction<SelectOption[]>>;
+    onChange: (value: SelectOption[]) => void;
     value: SelectOption[];
 }
 
@@ -270,7 +238,7 @@ type SelectOption = {
 
 interface DatePickerProps extends InputComponentProps {
     placeholder?: string;
-    onChange: React.Dispatch<React.SetStateAction<Date | undefined>>;
+    onChange: (value: Date) => void;
     value?: Date;
     maxDate?: Date;
     minDate?: Date;
@@ -318,16 +286,14 @@ interface RichTextAreaProps extends TextInputProps {
         undo?: boolean;
         redo?: boolean;
         fullscreen?: boolean;
-        print?: boolean;    
+        print?: boolean;
         getPDF?: boolean;
         spellChecker?: boolean;
         selectAll?: boolean;
         html?: boolean;
         help?: boolean;
-        
     };
 }
-
 
 interface FileUploadProps extends InputProps {
     uploadLabel?: string;
@@ -339,11 +305,10 @@ interface FileUploadProps extends InputProps {
     disabled?: boolean;
     showIcon?: boolean;
     size?: string;
-    variant?: string; 
+    variant?: string;
 }
 
 export type {
-    PageContainerProps,
     BaseInputProps,
     TextInputProps,
     NumberInputProps,

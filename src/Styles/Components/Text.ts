@@ -1,4 +1,4 @@
-const TextStyles = {
+const Text = {
     baseStyle: {
         color: 'darkgrey',
         fontSize: '16px',
@@ -12,4 +12,4 @@ const TextStyles = {
     },
 };
 
-export { TextStyles };
+export { Text };

@@ -1,7 +1,7 @@
-const HeadingStyles = {
+const Heading = {
     baseStyle: {
         color: 'darkgrey',
     },
 };
 
-export { HeadingStyles };
+export { Heading };

@@ -1,4 +1,4 @@
-const FileInputStyles = {
+const FileInput = {
     baseStyle: {
         padding: '16px',
         border: 'dashed 1px #01459E',
@@ -32,4 +32,4 @@ const FileInputStyles = {
     },
 };
 
-export { FileInputStyles };
+export { FileInput };
