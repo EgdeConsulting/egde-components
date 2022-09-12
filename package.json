@@ -1,6 +1,8 @@
 {
     "private": true,
-    "workspaces": ["src/*"],
+    "workspaces": [
+        "src/*"
+    ],
     "scripts": {
         "rollup": "rollup -c",
         "test": "jest",
@@ -15,11 +17,16 @@
         "lint:prettier-fix": "prettier --write src/**/*{.ts,.tsx,.js,.jsx,.css,.md}"
     },
     "dependencies": {
-        "npm-run-all": "^4.1.5"
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.4.16",
+        "rollup-plugin-babel": "^4.4.0",
+        "rollup-plugin-node-builtins": "^2.1.2",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-postcss": "^4.0.2"
     },
     "devDependencies": {
-        "@chakra-ui/storybook-addon": "^4.0.4",
         "@chakra-ui/react": "^1.7.3",
+        "@chakra-ui/storybook-addon": "^4.0.4",
         "@typescript-eslint/eslint-plugin": "^5.29.0",
         "@typescript-eslint/parser": "^5.29.0",
         "eslint": "^8.18.0",
@@ -34,6 +41,7 @@
         "prettier": "2.7.1",
         "rollup": "^2.75.7",
         "rollup-plugin-dts": "^4.2.2",
+        "rollup-plugin-generate-package-json": "^3.2.0",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-terser": "^7.0.2",
         "tslib": "^2.4.0",
@@ -42,15 +50,19 @@
     "jest": {
         "testEnvironment": "jsdom",
         "transformIgnorePatterns": [
-        "node_modules/util-deprecate"
+            "node_modules/util-deprecate"
         ],
         "moduleDirectories": [
-        "node_modules",
-        "src"
+            "node_modules",
+            "src",
+            "dist"
+        ],
+        "modulePathIgnorePatterns": [
+            "<rootDir>/dist/*"
         ],
         "moduleNameMapper": {
-        "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-        "@fontsource/lato": "identity-obj-proxy"
+            "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+            "@fontsource/lato": "identity-obj-proxy"
         }
     }
 }

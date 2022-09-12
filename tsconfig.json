@@ -109,5 +109,6 @@
         "allowSyntheticDefaultImports": true,
         "emitDeclarationOnly": true,
         "baseUrl": "src"
-    }
+    },
+    "exclude": ["**/egde-library"]
 }

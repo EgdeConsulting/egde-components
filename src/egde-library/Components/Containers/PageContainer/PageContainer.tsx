@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Box, Heading, Text, Badge, Center, Container } from '@chakra-ui/react';
-import { PageContainerProps } from 'Types';
-
+import { PageContainerProps } from 'egde-types';
 
 const Content = (props: PageContainerProps) => {
     const {
@@ -37,7 +36,7 @@ const Content = (props: PageContainerProps) => {
             <Box
                 borderColor={borderColor}
                 borderWidth={borderWidth}
-                borderRadius='5px'
+                borderRadius="5px"
                 minWidth={containerMinWidth}
                 maxWidth={containerMaxWidth}
                 backgroundColor={titlesColor || 'white'}
@@ -45,30 +44,30 @@ const Content = (props: PageContainerProps) => {
                 <Box
                     margin={titleMargin}
                     padding={titlePadding}
-                    id='titles'
+                    id="titles"
                     backgroundColor={titlesColor || 'white'}
                 >
                     <Box
-                        display='flex'
+                        display="flex"
                         alignItems={
                             // eslint-disable-next-line no-nested-ternary
                             titleAlignment === 'right'
                                 ? 'end'
                                 : titleAlignment === 'left'
-                                    ? 'start'
-                                    : 'center'
+                                ? 'start'
+                                : 'center'
                         }
-                        flexDirection='column'
+                        flexDirection="column"
                     >
                         <div>
                             <Heading color={titleTextColor}>{title}</Heading>
                             {titleBadge && (
                                 <Badge
-                                    textTransform='none'
-                                    variant='solid'
+                                    textTransform="none"
+                                    variant="solid"
                                     backgroundColor={titleBadge.badgeColor}
                                     color={titleBadge.textColor}
-                                    textAlign='center'
+                                    textAlign="center"
                                 >
                                     {titleBadge.label}
                                 </Badge>
@@ -86,11 +85,11 @@ const Content = (props: PageContainerProps) => {
                     )}
                 </Box>
                 <Box
-                    id='content'
+                    id="content"
                     borderColor={contentBorderColor}
                     borderWidth={contentBorderWidth}
                     backgroundColor={contentColor || 'white'}
-                    borderRadius='5px'
+                    borderRadius="5px"
                     padding={contentPadding}
                     margin={contentMargin}
                 >
@@ -161,7 +160,7 @@ const PageContainer = (props: PageContainerProps): ReactElement => {
 
     return (
         <Box
-            id='background'
+            id="background"
             backgroundColor={backgroundColor}
             padding={containerMargin}
             paddingLeft={containerSideMargins}
@@ -172,7 +171,7 @@ const PageContainer = (props: PageContainerProps): ReactElement => {
             {containerSize ? (
                 <Container
                     padding={containerPadding}
-                    id='container'
+                    id="container"
                     centerContent
                     maxWidth={containerSize}
                 >
@@ -181,8 +180,8 @@ const PageContainer = (props: PageContainerProps): ReactElement => {
             ) : (
                 <Box
                     padding={containerPadding}
-                    id='container'
-                    alignContent='center'
+                    id="container"
+                    alignContent="center"
                 >
                     <Content {...contentProps} />
                 </Box>

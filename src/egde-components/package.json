@@ -1,6 +1,9 @@
 {
     "name": "egde-components",
-    "version": "0.2.0",
+    "version": "0.2.1",
+    "main": "dist/cjs/index.ts",
+    "module": "dist/esm/index.ts",
+    "types": "index.d.ts",
     "description": "Egde React Component library",
     "author": "Egde",
     "license": "MIT",
@@ -19,7 +22,6 @@
     "devDependencies": {
         "@chakra-ui/react": "^1.7.3",
         "@chakra-ui/icons": "^2.0.2",
-        "react": "^17.0.1",
         "react-datepicker": "^4.6.0",
         "@types/react-datepicker": "^4.3.4",
         "react-dropzone": "^14.2.1",

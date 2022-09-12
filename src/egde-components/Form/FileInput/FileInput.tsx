@@ -19,7 +19,7 @@ import {
     UploadIconHover,
 } from 'egde-icons';
 
-import { FileInputStyles } from 'egde-styles';
+import { FileInputStyles } from 'egde-styles/ComponentStyles/FileInputStyles';
 
 export const FileInput = (props: FileUploadProps): ReactElement => {
     const {

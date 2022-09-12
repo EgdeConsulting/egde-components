@@ -1,6 +1,9 @@
 {
     "name": "egde-icons",
     "version": "0.2.0",
+    "main": "dist/cjs/index.ts",
+    "module": "dist/esm/index.ts",
+    "types": "dist/index.d.ts",
     "description": "Egde React Component library",
     "author": "Egde",
     "license": "MIT",
