@@ -2390,10 +2390,10 @@
     is-module "^1.0.0"
     resolve "^1.19.0"
 
-"@rollup/plugin-typescript@^8.3.3":
-  version "8.3.4"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-typescript/-/plugin-typescript-8.3.4.tgz#45cdc0787b658b37d0362c705d8de86bc8bc040e"
-  integrity sha512-wt7JnYE9antX6BOXtsxGoeVSu4dZfw0dU3xykfOQ4hC3EddxRbVG/K0xiY1Wup7QOHJcjLYXWAn0Kx9Z1SBHHg==
+"@rollup/plugin-typescript@^8.5.0":
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-typescript/-/plugin-typescript-8.5.0.tgz#7ea11599a15b0a30fa7ea69ce3b791d41b862515"
+  integrity sha512-wMv1/scv0m/rXx21wD2IsBbJFba8wGF3ErJIr6IKRfRj49S85Lszbxb4DCo8iILpluTjk2GAAu9CoZt4G3ppgQ==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     resolve "^1.17.0"
@@ -5676,6 +5676,11 @@ core-js@^3.0.4, core-js@^3.6.5, core-js@^3.8.2:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.24.1.tgz#cf7724d41724154010a6576b7b57d94c5d66e64f"
   integrity sha512-0QTBSYSUZ6Gq21utGzkfITDylE8jWC9Ne1D2MrhvlsZBI1x39OdDIVbzSqtgMndIy6BlHxBXpMGqzZmnztg2rg==
 
+core-js@^3.1.3:
+  version "3.25.1"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.25.1.tgz#5818e09de0db8956e16bf10e2a7141e931b7c69c"
+  integrity sha512-sr0FY4lnO1hkQ4gLDr24K0DGnweGO1QwSj5BpfQjpSJPdqWalja4cTps29Y/PJVG/P7FYlPDkH3hO+Tr0CvDgQ==
+
 core-util-is@~1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
@@ -6313,13 +6318,11 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 egde-components@0.2.0:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/egde-components/-/egde-components-0.2.4.tgz#d62a9c0fb00203400c63eeae36767fb7632d2299"
-  integrity sha512-fGeylCIzWp3agR6fLEEOHSDay+WlLlKDD+39R5JeEHRf3sb5PSZBYsE5T3eaZJUBJtlqNgZRDhj3TPmT/h24Ow==
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/egde-components/-/egde-components-0.2.8.tgz#049bf16609bf0f317f4f451cccbeec7fef1f9682"
+  integrity sha512-qFDO12tHtgQozVC2ur/80CKfquq2+/JJCkikcLqSC+oILHWpj0D2Y4Hdqq/bbNWEMJJu+pHsYd2XtvXCwdOKuw==
   dependencies:
-    egde-icons "0.2.0"
-    egde-styles "0.2.0"
-    egde-types "0.2.0"
+    "@emotion/is-prop-valid" "^1.2.0"
     froala-editor "^4.0.13"
     react-router-dom "^6.3.0"
 
@@ -6915,6 +6918,17 @@ fast-glob@^2.2.6:
     is-glob "^4.0.0"
     merge2 "^1.2.3"
     micromatch "^3.1.10"
+
+fast-glob@^3.0.0:
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.12.tgz#7f39ec99c2e6ab030337142da9e0c18f37afae80"
+  integrity sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==
+  dependencies:
+    "@nodelib/fs.stat" "^2.0.2"
+    "@nodelib/fs.walk" "^1.2.3"
+    glob-parent "^5.1.2"
+    merge2 "^1.3.0"
+    micromatch "^4.0.4"
 
 fast-glob@^3.2.9:
   version "3.2.11"
@@ -9371,7 +9385,7 @@ lodash.uniq@4.5.0, lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
 
-lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
+lodash@^4.17.11, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -11889,6 +11903,15 @@ rollup-plugin-generate-package-json@^3.2.0:
   dependencies:
     read-pkg "^5.2.0"
     write-pkg "^4.0.0"
+
+rollup-plugin-multi-input@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-multi-input/-/rollup-plugin-multi-input-1.3.1.tgz#07b903b618c005871fea1bd0c4efae7d1aac4fa1"
+  integrity sha512-bPsxHR6dUney7zsCAAlfkq7lbuy5xph2CvUstSv88oqhtRiLWXwVjiA1Gb4HVjC6I9sJI2eZeQlozXa+GXJKDA==
+  dependencies:
+    core-js "^3.1.3"
+    fast-glob "^3.0.0"
+    lodash "^4.17.11"
 
 rollup-plugin-node-builtins@^2.1.2:
   version "2.1.2"

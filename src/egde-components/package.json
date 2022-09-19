@@ -1,8 +1,8 @@
 {
     "name": "egde-components",
-    "version": "0.2.1",
-    "main": "dist/cjs/index.ts",
-    "module": "dist/esm/index.ts",
+    "version": "0.2.11",
+    "main": "cjs/index.ts",
+    "module": "esm/index.ts",
     "types": "index.d.ts",
     "description": "Egde React Component library",
     "author": "Egde",
@@ -13,9 +13,7 @@
         "url": "git+https://github.com/EgdeConsulting/egde-components.git"
     },
     "dependencies": {
-        "egde-icons": "0.2.0",
-        "egde-styles": "0.2.0",
-        "egde-types": "0.2.0",
+        "@emotion/is-prop-valid": "^1.2.0",
         "froala-editor": "^4.0.13",
         "react-router-dom": "^6.3.0"
     },
