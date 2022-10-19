@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select as ChakraSelect } from 'chakra-react-select';
 import { SystemStyleObject } from '@chakra-ui/react';
-import { SelectOption, SelectProps } from 'Types';
+import { SelectOption, SelectProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 const DEFAULT_SELECT_PLACEHOLDER = 'Velg fra listen';

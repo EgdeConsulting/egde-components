@@ -2,7 +2,7 @@ import React,{ ReactElement, useState } from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { IconTestID, ModalButtons, ModalIconType } from 'Types';
+import { IconTestID, ModalButtons, ModalIconType } from 'SharedTypes';
 import { Modal } from './Modal';
 import ReactDOM from 'react-dom';
 

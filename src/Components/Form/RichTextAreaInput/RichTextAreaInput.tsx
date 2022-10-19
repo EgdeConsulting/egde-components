@@ -5,7 +5,7 @@ import 'froala-editor/js/plugins.pkgd.min.js';
 // eslint-disable-next-line
 import 'froala-editor/js/languages/nb.js';
 import FroalaEditor from 'react-froala-wysiwyg';
-import { RichTextAreaProps } from 'Types';
+import { RichTextAreaProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 // eslint-disable-next-line complexity

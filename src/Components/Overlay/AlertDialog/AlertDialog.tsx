@@ -12,7 +12,7 @@ import {
     Text,
 } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
-import { AlertDialogProps, IconTestID, AlertDialogIconType } from 'Types';
+import { AlertDialogProps, IconTestID, AlertDialogIconType } from 'SharedTypes';
 import { Warning } from 'Icons';
 
 export const AlertDialog = (props: AlertDialogProps): ReactElement => {

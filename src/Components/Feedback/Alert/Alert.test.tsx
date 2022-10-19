@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { IconTestID } from 'Types';
+import { IconTestID } from 'SharedTypes';
 import { Alert } from './Alert';
 import ReactDOM from 'react-dom';
 

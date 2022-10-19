@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render} from '@testing-library/react';
 import React, { useState } from 'react';
 import { MultiSelect } from 'Components';
-import { SelectOption } from 'Types';
+import { SelectOption } from 'SharedTypes';
 import ReactDOM from 'react-dom';
 
 const MULTISELECT_PLACEHOLDER = 'DatePicker placeholder';

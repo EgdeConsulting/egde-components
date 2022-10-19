@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import { Modal } from 'Components';
-import { ModalButtons } from 'Types';
+import { ModalButtons } from 'SharedTypes';
 import React from 'react';
 
 const DeleteModal = (props: {

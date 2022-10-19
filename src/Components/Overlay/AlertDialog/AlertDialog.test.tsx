@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ReactElement, useRef, useState } from 'react';
-import { AlertDialogButton, AlertDialogIconType, IconTestID } from 'Types';
+import { AlertDialogButton, AlertDialogIconType, IconTestID } from 'SharedTypes';
 import { AlertDialog } from './AlertDialog';
 import ReactDOM from 'react-dom';
 

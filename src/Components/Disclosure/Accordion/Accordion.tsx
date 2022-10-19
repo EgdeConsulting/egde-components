@@ -10,7 +10,7 @@ import {
     Stack,
     Text,
 } from '@chakra-ui/react';
-import { AccordionProps, AccordionBadgeEnum } from 'Types';
+import { AccordionProps, AccordionBadgeEnum } from 'SharedTypes';
 
 /*
     EXAMPLE USE:

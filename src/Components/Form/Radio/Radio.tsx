@@ -5,7 +5,7 @@ import {
     RadioGroup,
     Stack,
 } from '@chakra-ui/react';
-import { RadioProps } from 'Types';
+import { RadioProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 export function Radio(props: RadioProps): ReactElement {

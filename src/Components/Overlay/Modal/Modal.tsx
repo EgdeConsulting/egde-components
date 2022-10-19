@@ -13,7 +13,7 @@ import {
     Icon,
     Text,
 } from '@chakra-ui/react';
-import { ModalProps, IconTestID, ModalIconType } from 'Types';
+import { ModalProps, IconTestID, ModalIconType } from 'SharedTypes';
 import { PriorityHighRounded, CheckRounded } from 'Icons';
 
 /*

@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Box, Heading, Text, Badge, Center, Container } from '@chakra-ui/react';
-import { PageContainerProps } from 'Types';
+import { PageContainerProps } from 'SharedTypes';
 
 
 const Content = (props: PageContainerProps) => {

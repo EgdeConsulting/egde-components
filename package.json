@@ -113,11 +113,6 @@
       "optional": true
     }
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
   "jest": {
     "testEnvironment": "jsdom",
     "transformIgnorePatterns": [
@@ -132,9 +127,10 @@
       "@fontsource/lato": "identity-obj-proxy"
     }
   },
-  "types": "dist/index.d.ts",
-  "moduleDirectories": [
-    "node_modules",
-    "src"
-  ]
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
 }

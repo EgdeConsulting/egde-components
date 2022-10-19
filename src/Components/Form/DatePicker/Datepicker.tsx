@@ -3,7 +3,7 @@ import DatePicker, { registerLocale } from 'react-datepicker';
 import nb from 'date-fns/locale/nb';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Box, chakra, useMultiStyleConfig } from '@chakra-ui/react';
-import { DatePickerProps } from 'Types';
+import { DatePickerProps } from 'SharedTypes';
 import { BaseInput } from '../BaseInput';
 
 registerLocale('nb', nb);
