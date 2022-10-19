@@ -73,6 +73,7 @@ type PageContainerProps = {
 
 interface BaseInputProps extends InputProps {
     children: JSX.Element[] | JSX.Element;
+    isGroup?: boolean;
 }
 
 type InputProps = {
