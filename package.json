@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/EgdeConsulting/egde-components#readme",
   "dependencies": {
-    "framer-motion": "^6",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
@@ -73,7 +72,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-storybook": "^0.6.3",
-    
     "froala-editor": "^4.0.13",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.1",
