@@ -67,7 +67,7 @@ const Template: Story = (args) => {
                         iconVariant={undefined}
                         onClose={handleClose}
                         text="You'll be contacted when your application has been processed."
-                        cancelRef={React.useRef()}
+                        // cancelRef={React.useRef()}
                         isOpen={isOpen}
                     />
                 </Button>

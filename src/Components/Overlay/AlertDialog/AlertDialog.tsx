@@ -16,12 +16,12 @@ import { AlertDialogProps, IconTestID, AlertDialogIconType } from 'SharedTypes';
 import { Warning } from 'Icons';
 
 export const AlertDialog = (props: AlertDialogProps): ReactElement => {
+    const cancelRef = React.useRef(null)
     const {
         iconVariant,
         heading,
         text,
         isOpen,
-        cancelRef,
         onClose,
         buttons } = props;
 
@@ -37,7 +37,7 @@ export const AlertDialog = (props: AlertDialogProps): ReactElement => {
     return (
         <ChakraAlertDialog
             isOpen={isOpen}
-            leastDestructiveRef={cancelRef.current}
+            leastDestructiveRef={cancelRef}
             onClose={onClose}
         >
             <AlertDialogOverlay>

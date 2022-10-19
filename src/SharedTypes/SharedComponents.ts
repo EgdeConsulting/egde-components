@@ -235,7 +235,6 @@ type AlertDialogProps = {
     heading: string;
     text: string;
     isOpen: boolean;
-    cancelRef: MutableRefObject<undefined>;
     onClose: () => void;
     buttons: AlertDialogButton[];
 };
