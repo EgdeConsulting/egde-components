@@ -206,7 +206,7 @@ const MultiSelect = (props: MultiSelectProps): JSX.Element => {
                     onChange={(e) => onChange(e as SelectOption[])}
                     value={value}
                     noOptionsMessage={() => DEFAULT_SELECT_NO_OPTIONS_TEXT}
-                    // chakraStyles={MULTI_SELECT_STYLES}
+                    chakraStyles={MULTI_SELECT_STYLES}
                 />
             </div>
         </BaseInput>

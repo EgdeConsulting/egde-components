@@ -33,7 +33,7 @@ const AlertDialogTester = (): ReactElement =>{
                 heading={ALERT_DIALOG_TESTER_HEADING}
                 text={ALERT_DIALOG_TESTER_TEXT}
                 isOpen={isOpen}
-                // cancelRef={cancelRef}
+                cancelRef={cancelRef}
                 onClose={() => setIsOpen(false)}
                 buttons={warningAlertButtons}
             />

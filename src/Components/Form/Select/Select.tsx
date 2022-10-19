@@ -73,7 +73,7 @@ const Select = (props: SelectProps): JSX.Element => {
                 }}
                 value={value}
                 noOptionsMessage={() => DEFAULT_SELECT_NO_OPTIONS_TEXT}
-                // chakraStyles={SINGLE_SELECT_STYLES}
+                chakraStyles={SINGLE_SELECT_STYLES}
             />
         </BaseInput>
     );
