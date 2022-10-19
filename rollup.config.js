@@ -29,7 +29,7 @@ export default [
         ],
         plugins: [
             css(),
-            peerDepsExternal(),
+            // peerDepsExternal(),
             resolve(),
             // postcss({
             //     plugins: [],
