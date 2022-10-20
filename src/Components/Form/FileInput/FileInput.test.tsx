@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import { FileInput } from './FileInput';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const FILEINPUT_LABEL = 'FileInput label';
 const FILEINPUT_VARIANT = 'default';
@@ -39,7 +39,8 @@ describe('Snapshot FileInput', () => {
   });
   it('renders without chrashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<FileInputTester/>, div);
+    const root = createRoot(div);
+        root.render(<FileInputTester/>)
 })
 });
 

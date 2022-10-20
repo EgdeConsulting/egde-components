@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Tabs } from './Tabs';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const TAB_TITLES: string[] = ['First', 'Second', 'Third'];
 const TAB_CONTENT: string[] = ['FirstContent', 'SecondContent', 'ThirdContent'];
@@ -40,7 +40,9 @@ describe('Tabs component test', () => {
       });
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<TabsTester/>, div);
+const root = createRoot(div);
+
+root.render(<TabsTester/>);
     })
 
     it('default tab selected, only first content visible', () => {

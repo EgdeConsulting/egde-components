@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Select } from './Select';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 
 const SELECT_PLACEHOLDER = 'Select placeholder';
@@ -41,7 +41,8 @@ describe('Snapshot Select', () => {
   });
   it('renders without chrashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<SelectTester/>, div);
+    const root = createRoot(div);
+        root.render(<SelectTester/>)
 })
 });
 

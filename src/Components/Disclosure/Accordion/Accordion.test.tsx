@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Accordion } from './Accordion';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 
 const ACCORDION_TITLES: string[] = ['First', 'Second', 'Third'];
@@ -32,7 +32,9 @@ describe('Accordion component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<AccordionTester/>, div);
+const root = createRoot(div);
+
+root.render(<AccordionTester/>);
     })
 
     it('should render accordions unexpanded, and show no content', () => {

@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { BaseInput } from './BaseInput';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 // Snapshot Test
 describe('Snapshot BaseInput', () => {
@@ -50,7 +50,9 @@ describe('BaseInput test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<BaseInputTester/>, div);
+const root = createRoot(div);
+
+root.render(<BaseInputTester/>);
     })
 
     it('should render with title, caption text and invalid text', () => {

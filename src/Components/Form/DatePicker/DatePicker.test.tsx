@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import React, { useState } from 'react';
 import { DatePicker } from 'Components';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const DATEPICKER_PLACEHOLDER = 'DatePicker placeholder';
 
@@ -28,7 +28,9 @@ describe('DatePicker component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<DatePickerTester/>, div);
+const root = createRoot(div);
+
+root.render(<DatePickerTester/>);
     })
     it('Check that the placeholder is visible!', () => {
         render(<DatePickerTester />);

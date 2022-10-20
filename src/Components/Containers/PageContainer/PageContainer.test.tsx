@@ -2,7 +2,7 @@ import React, { ReactElement }  from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { PageContainer } from './PageContainer';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const PAGE_CONTAINER_TESTER_TITLE = 'PageContainerTitle';
 const PAGE_CONTAINER_TESTER_SUBTITLE = 'PageContainerSubtitle';
@@ -79,7 +79,9 @@ describe('PageContainer component test', () => {
       });
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<PageContainerTester/>, div);
+const root = createRoot(div);
+
+root.render(<PageContainerTester/>);
     })
 
     it('should render with title, subtitle and contnet', () => {

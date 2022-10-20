@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render} from '@testing-library/react';
 import React, { useState } from 'react';
 import { RichTextAreaInput } from 'Components';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const RICHTEXTAREAINPUT_PLACEHOLDER = 'DatePicker placeholder';
 const RICHTEXTAREAINPUT_LABEL = 'RichTextAreaInput label';
@@ -30,6 +30,8 @@ describe('RichTextAreaInput component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<RichTextAreaInputTester/>, div);
+const root = createRoot(div);
+
+root.render(<RichTextAreaInputTester/>);
     })
 });

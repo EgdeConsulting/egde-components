@@ -46,13 +46,7 @@ Object {
         </label>
         <div
           class="css-0"
-        >
-          <div>
-            <div>
-              <div />
-            </div>
-          </div>
-        </div>
+        />
       </div>
     </div>
   </body>,
@@ -70,13 +64,7 @@ Object {
       </label>
       <div
         class="css-0"
-      >
-        <div>
-          <div>
-            <div />
-          </div>
-        </div>
-      </div>
+      />
     </div>
   </div>,
   "debug": [Function],

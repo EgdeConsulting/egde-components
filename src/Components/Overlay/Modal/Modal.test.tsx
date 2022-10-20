@@ -4,7 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IconTestID, ModalButtons, ModalIconType } from 'SharedTypes';
 import { Modal } from './Modal';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const MODAL_TESTER_ICON_VARIANT = ModalIconType.Check;
 const MODAL_TESTER_TITLE = 'ModalTitle';
@@ -73,7 +73,9 @@ describe('Modal component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<ModalTester submitFunc={submitFunc}/>, div);
+const root = createRoot(div);
+
+root.render(<ModalTester submitFunc={submitFunc}/>);
     })
     it.skip('assert content is null, modal opens when button clicked, and modal content is visible', async () => {
         render(<ModalTester submitFunc={submitFunc} />);
