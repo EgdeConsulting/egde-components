@@ -64,7 +64,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
     "@types/react": "^18.0.21",
-    "@types/react-datepicker": "^4.3.4",
+    "@types/react-datepicker": "^4.4.2",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
