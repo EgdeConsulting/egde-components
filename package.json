@@ -29,7 +29,6 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "framer-motion": "^6",
-    "froala-editor": "^4.0.13",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
@@ -37,7 +36,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.18.6",
-    "@chakra-ui/icons": "^2.0.2",
+    "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^1.7.3",
     "@chakra-ui/storybook-addon": "^4.0.4",
     "@fontsource/lato": "^4.5.8",
@@ -65,6 +64,7 @@
     "@testing-library/react": "^12.1.5",
     "@types/react": "^18.0.15",
     "@types/react-datepicker": "^4.3.4",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "chakra-react-select": "^3.3.8",
@@ -84,7 +84,6 @@
     "react-datepicker": "^4.6.0",
     "react-dom": "^18.0.1",
     "react-dropzone": "^14.2.1",
-    "react-froala-wysiwyg": "^4.0.10",
     "require-from-string": "^2.0.2",
     "rollup": "^2.75.7",
     "rollup-plugin-dts": "^4.2.2",
