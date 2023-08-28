@@ -2,20 +2,19 @@ import { extendTheme } from '@chakra-ui/react';
 import { colors, fonts } from './Theme';
 
 import {
-    TextStyles as Text,
-    HeadingStyles as Heading,
-    ButtonStyles as Button,
-    IconButtonStyles as IconButton,
-    CardStyles as Card,
-    TabStyles as Tabs,
-    CheckboxStyles as Checkbox,
-    RadioStyles as Radio,
-    StepsStyles as Steps,
-    // DatePickerStyles as DatePicker,
-    InputStyles as Input,
-    TextareaStyles as Textarea,
-    TableStyles as Table,
-    FileInputStyles as FileInput,
+    Text,
+    Heading,
+    Button,
+    IconButton,
+    Card,
+    Tabs,
+    Checkbox,
+    Radio,
+    Steps,
+    Input,
+    Textarea,
+    Table,
+    FileInput,
 } from './Components';
 
 const overrides = {

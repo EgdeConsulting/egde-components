@@ -1,4 +1,4 @@
-const TableStyles = {
+const Table = {
     variants: {
         'simple': {
             th: {
@@ -11,4 +11,4 @@ const TableStyles = {
     },
 };
 
-export { TableStyles };
+export { Table };

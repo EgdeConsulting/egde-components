@@ -1,4 +1,4 @@
-const ButtonStyles = {
+const Button = {
     baseStyle: {
         marginEnd: '0.75rem',
     },
@@ -65,4 +65,4 @@ const ButtonStyles = {
     },
 };
 
-export { ButtonStyles };
+export { Button };

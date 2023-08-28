@@ -28,7 +28,7 @@ const NumberInput = (props: NumberInputProps): ReactElement => {
         padding,
         width,
         minWidth,
-        backgroundColor,
+        variant,
         autoFocus,
         textAlign,
     } = props;
@@ -80,7 +80,7 @@ const NumberInput = (props: NumberInputProps): ReactElement => {
                 }}
                 value={formatValue(value)}
                 maxLength={maxValueLength}
-                backgroundColor={backgroundColor}
+                variant={variant}
                 autoFocus={autoFocus}
             />
         </BaseInput>

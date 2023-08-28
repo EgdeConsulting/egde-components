@@ -1,21 +1,6 @@
 import { Heading, Box, Flex, Text, useStyleConfig } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
-
-type CardProps = {
-  title: string;
-  body: string;
-  textColors?: string;
-  titleTextColor?: string;
-  bodyTextColor?: string;
-  titleTextSize?: string;
-  bodyTextSize?: string;
-  onClick?: () => void;
-  titleIcon?: ReactElement;
-  actionIcon?: ReactElement;
-  cardHeight?: string | (number | string)[];
-  cardWidth?: string | (number | string)[];
-
-};
+import { CardProps } from 'Types';
 
 const Card = (props: CardProps): ReactElement => {
     const {
@@ -31,17 +16,16 @@ const Card = (props: CardProps): ReactElement => {
         actionIcon,
         cardHeight,
         cardWidth,
-
     } = props;
 
     const cardStyles = useStyleConfig('Card');
 
     return (
         <Box
-            __css={cardStyles}
+            sx={cardStyles}
             onClick={onClick}
-            height={cardHeight || undefined}
-            width={cardWidth || undefined}
+            height={cardHeight}
+            width={cardWidth}
         >
             <Flex direction="column" justify="space-between">
                 <Flex width="100%" direction="row" align="center">

@@ -25,9 +25,9 @@ export const TextInput = (props: TextInputProps): ReactElement => {
         padding,
         width,
         minWidth,
-        backgroundColor,
         autoFocus,
         textAlign,
+        variant,
     } = props;
     return (
         <BaseInput
@@ -47,8 +47,8 @@ export const TextInput = (props: TextInputProps): ReactElement => {
                 placeholder={placeholder}
                 onChange={(e: any) => onChange(e.target.value as string)}
                 value={value}
-                backgroundColor={backgroundColor}
                 autoFocus={autoFocus}
+                variant={variant}
             />
         </BaseInput>
     );

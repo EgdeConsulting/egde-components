@@ -1,7 +1,7 @@
 import { StyleFunctionProps } from '@chakra-ui/theme-tools';
 import { StepsStyleConfig } from 'chakra-ui-steps';
 
-const StepsStyles = {
+const Steps = {
     ...StepsStyleConfig,
     baseStyle: (props: StyleFunctionProps): unknown => {
         return {
@@ -39,4 +39,4 @@ const StepsStyles = {
     },
 };
 
-export { StepsStyles };
+export { Steps };

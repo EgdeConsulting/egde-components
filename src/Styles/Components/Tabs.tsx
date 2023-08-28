@@ -1,4 +1,4 @@
-const TabStyles = {
+const Tabs = {
     variants: {
         'line': {
             tab: {
@@ -17,4 +17,4 @@ const TabStyles = {
     },
 };
 
-export { TabStyles };
+export { Tabs };

@@ -23,7 +23,7 @@ export function Radio(props: RadioProps): ReactElement {
         padding,
         width,
         minWidth,
-        backgroundColor,
+        variant,
     } = props;
 
     return (
@@ -37,10 +37,10 @@ export function Radio(props: RadioProps): ReactElement {
             isGroup
         >
             <FormLabel
-                fontWeight='bold'
-                color='darkgrey'
+                fontWeight="bold"
+                color="darkgrey"
                 margin={labelTextMargin || '0 0 8px 0'}
-                as='legend'
+                as="legend"
             >
                 {label}
             </FormLabel>
@@ -48,7 +48,7 @@ export function Radio(props: RadioProps): ReactElement {
                 isDisabled={isDisabled}
                 onChange={(e) => onChange(+e)}
                 value={value}
-                backgroundColor={backgroundColor}
+                variant={variant}
             >
                 <Stack direction={direction}>
                     {options.map((option, index) => {

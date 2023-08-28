@@ -1,4 +1,4 @@
-const TextareaStyles = {
+const Textarea = {
     variants: {
         outline: {
             borderColor: 'darkgrey',
@@ -13,4 +13,4 @@ const TextareaStyles = {
     },
 };
 
-export { TextareaStyles };
+export { Textarea };

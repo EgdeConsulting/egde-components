@@ -18,7 +18,7 @@ export function Checkbox(props: CheckboxProps): ReactElement {
         padding,
         width,
         minWidth,
-        backgroundColor,
+        variant,
         autoFocus,
     } = props;
 
@@ -43,10 +43,10 @@ export function Checkbox(props: CheckboxProps): ReactElement {
             isGroup
         >
             <FormLabel
-                fontWeight='bold'
-                color='darkgrey'
+                fontWeight="bold"
+                color="darkgrey"
                 margin={labelTextMargin || '0 0 8px 0'}
-                as='legend'
+                as="legend"
             >
                 {label}
             </FormLabel>
@@ -59,7 +59,7 @@ export function Checkbox(props: CheckboxProps): ReactElement {
                             key={`chk${index}`}
                             onChange={() => handleOnChange(index)}
                             isChecked={value.includes(index)}
-                            backgroundColor={backgroundColor}
+                            variant={variant}
                             autoFocus={autoFocus}
                         >
                             {option}

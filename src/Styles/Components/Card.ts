@@ -1,4 +1,4 @@
-const CardStyles = {
+const Card = {
     baseStyle: {
         backgroundColor: 'lightblue',
         borderRadius: '6px',
@@ -15,4 +15,4 @@ const CardStyles = {
     },
 };
 
-export { CardStyles };
+export { Card };
