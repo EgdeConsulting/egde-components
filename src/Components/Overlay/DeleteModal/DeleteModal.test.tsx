@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { DeleteModal } from './DeleteModal';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 
 const TITLE = 'title';
@@ -44,7 +44,9 @@ describe('DeleteModal component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<DeleteModalTester submitFunc={submitFunc}/>, div);
+const root = createRoot(div);
+
+root.render(<DeleteModalTester submitFunc={submitFunc}/>);
     })
     it.skip('should only render button, open modal when button clicked, and then modal content is visible', async () => {
         render(<DeleteModalTester submitFunc={submitFunc} />);

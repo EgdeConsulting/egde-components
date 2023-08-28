@@ -6,7 +6,7 @@ import {
     FormHelperText,
     FormLabel,
 } from '@chakra-ui/react';
-import { BaseInputProps } from 'Types';
+import { BaseInputProps } from 'SharedTypes';
 
 /* 
     Wrapper for all input components

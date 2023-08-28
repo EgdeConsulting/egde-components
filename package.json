@@ -26,25 +26,26 @@
   },
   "homepage": "https://github.com/EgdeConsulting/egde-components#readme",
   "dependencies": {
-    "@chakra-ui/icons": "^2.0.2",
-    "@fontsource/lato": "^4.5.8",
-    "froala-editor": "^4.0.13",
-    "npm-run-all": "^4.1.5",
-    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@types/react-dom": "^18.0.6",
+    "framer-motion": "^6",
+    "react-router-dom": "^5.2.0",
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.18.6",
-    "@chakra-ui/icons": "^2.0.2",
+    "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^1.7.3",
     "@chakra-ui/storybook-addon": "^4.0.4",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
+    "@fontsource/lato": "^4.5.8",
     "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-json": "^5.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
+    "@rollup/plugin-url": "^8.0.0",
     "@storybook/addon-a11y": "^6.5.10",
     "@storybook/addon-backgrounds": "^6.5.10",
     "@storybook/addon-controls": "^6.5.10",
@@ -62,8 +63,9 @@
     "@storybook/theming": "^6.5.10",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
-    "@types/react": "^18.0.15",
-    "@types/react-datepicker": "^4.3.4",
+    "@types/react": "^18.0.21",
+    "@types/react-datepicker": "^4.4.2",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "chakra-react-select": "^3.3.8",
@@ -73,20 +75,22 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-storybook": "^0.6.3",
-    "framer-motion": "^6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.18",
     "prettier": "2.7.1",
-    "react": "^17.0.1",
+    "react": "18.2.0",
     "react-datepicker": "^4.6.0",
-    "react-dom": "^17.0.1",
+    "react-dom": "18.2.0",
     "react-dropzone": "^14.2.1",
-    "react-froala-wysiwyg": "^4.0.10",
     "require-from-string": "^2.0.2",
     "rollup": "^2.75.7",
     "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-import-css": "^3.0.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "storybook-addon-designs": "^6.3.1",
     "storybook-dark-mode": "^1.1.0",
@@ -109,11 +113,6 @@
       "optional": true
     }
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
   "jest": {
     "testEnvironment": "jsdom",
     "transformIgnorePatterns": [
@@ -128,9 +127,10 @@
       "@fontsource/lato": "identity-obj-proxy"
     }
   },
-  "types": "dist/index.d.ts",
-  "moduleDirectories": [
-    "node_modules",
-    "src"
-  ]
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
 }

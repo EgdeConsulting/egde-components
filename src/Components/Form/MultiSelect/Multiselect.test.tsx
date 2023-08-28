@@ -2,8 +2,8 @@ import '@testing-library/jest-dom';
 import { render} from '@testing-library/react';
 import React, { useState } from 'react';
 import { MultiSelect } from 'Components';
-import { SelectOption } from 'Types';
-import ReactDOM from 'react-dom';
+import { SelectOption } from 'SharedTypes';
+import { createRoot } from "react-dom/client";
 
 const MULTISELECT_PLACEHOLDER = 'DatePicker placeholder';
 const MULTISELECT_LABEL = 'RichTextAreaInput label';
@@ -32,7 +32,9 @@ const MultiSelectTester = (): JSX.Element => {
 describe('MultiSelect component test', () => {
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<MultiSelectTester/>, div);
+const root = createRoot(div);
+
+root.render(<MultiSelectTester/>);
     })
     it('matches snapshot', () => {
         const tree = render(<MultiSelectTester/>);

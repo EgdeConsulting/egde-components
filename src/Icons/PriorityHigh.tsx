@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Icon } from '@chakra-ui/icons';
 import React from 'react';
-import { IconType } from 'Types';
+import { IconType } from 'SharedTypes';
 
 function PriorityHigh(props: IconType) {
     return (

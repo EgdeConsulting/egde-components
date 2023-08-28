@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
+// import 'froala-editor/css/froala_editor.pkgd.min.css';
 // eslint-disable-next-line
-import 'froala-editor/js/plugins.pkgd.min.js';
+// import 'froala-editor/js/plugins.pkgd.min.js';
 // eslint-disable-next-line
-import 'froala-editor/js/languages/nb.js';
-import FroalaEditor from 'react-froala-wysiwyg';
-import { RichTextAreaProps } from 'Types';
+// import 'froala-editor/js/languages/nb.js';
+// import FroalaEditor from 'react-froala-wysiwyg';
+import { RichTextAreaProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 // eslint-disable-next-line complexity
@@ -118,11 +118,11 @@ export const RichTextAreaInput = (props: RichTextAreaProps): ReactElement => {
             width={width}
             minWidth={minWidth}
         >
-            <FroalaEditor
+            {/* <FroalaEditor
                 config={config}
                 model={value}
                 onModelChange={onChange}
-            />
+            /> */}
         </BaseInput>
     );
 };

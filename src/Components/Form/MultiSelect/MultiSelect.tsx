@@ -8,7 +8,7 @@ import {
     Box,
     SystemStyleObject,
 } from '@chakra-ui/react';
-import { SelectOption, MultiSelectProps } from 'Types';
+import { SelectOption, MultiSelectProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 const DEFAULT_SELECT_PLACEHOLDER = 'Velg fra listen';

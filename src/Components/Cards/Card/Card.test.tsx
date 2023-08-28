@@ -1,9 +1,8 @@
-import React, { ReactElement } from 'react';
-import { render,  screen  } from '@testing-library/react';
+import React, {  ReactElement } from 'react';
+import {  render,  screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Card } from './Card';
-import ReactDOM from 'react-dom';
-
+import {  Card } from './Card';
+import {  createRoot } from 'react-dom/client';
 
 const CARD_TESTER_TITLE = 'CardTitle';
 const CARD_TESTER_BODY = 'CardBody';
@@ -33,32 +32,29 @@ function CardTester(props: { mockOnClick: () => void }): ReactElement {
             bodyTextSize={BODY_TEXT_SIZE_TEST}
             cardHeight={CARD_HEIGHT_TEST}
             cardWidth={CARD_WIDTH_TEST}
-            
         />
     );
 }
-
 
 // TEST
 describe('Card component test', () => {
     const mockOnClick = jest.fn();
     it('matches snapshot', () => {
-        const tree = render(
-        <CardTester mockOnClick={mockOnClick} />);
+        const tree = render(<CardTester mockOnClick={mockOnClick} />);
         expect(tree).toMatchSnapshot();
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<CardTester mockOnClick={mockOnClick} />, div);
-    })
+        const root = createRoot(div);
+
+        root.render(<CardTester mockOnClick={mockOnClick} />);
+    });
 
     it('should render with title, icon and body', () => {
-        render(<CardTester mockOnClick={mockOnClick} />);        
+        render(<CardTester mockOnClick={mockOnClick} />);
         expect(screen.getByText(CARD_TESTER_TITLE)).toBeVisible();
         expect(screen.getByText(CARD_TESTER_BODY)).toBeVisible();
         expect(screen.getByTestId(ACTION_ICON_TESTID)).toBeVisible();
         expect(screen.getByTestId(TITLE_ICON_TESTID)).toBeVisible();
     });
-
 });
-

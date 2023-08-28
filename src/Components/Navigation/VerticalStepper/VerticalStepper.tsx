@@ -12,7 +12,7 @@ import {
     Link,
 } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { StepperProps } from 'Types';
+import { StepperProps } from 'SharedTypes';
 
 function EditIcon(): ReactElement {
     return (

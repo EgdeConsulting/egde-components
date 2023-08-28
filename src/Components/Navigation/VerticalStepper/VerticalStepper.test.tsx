@@ -5,7 +5,7 @@ import { VerticalStepper } from './VerticalStepper';
 import userEvent from '@testing-library/user-event';
 import { ChakraProvider } from '@chakra-ui/react';
 import { styles } from 'Styles';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 
 const FIRST_STEP_LABEL = 'first step';
@@ -111,7 +111,9 @@ describe('UnclickableVerticalStepper component test', () => {
       });
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<UnclickableVerticalStepperTester/>, div);
+const root = createRoot(div);
+
+root.render(<UnclickableVerticalStepperTester/>);
     })
      
     it('should render UnclickableVerticalStepper with only next button and first step content', () => {
@@ -185,7 +187,9 @@ describe('ClickableVerticalStepper component test', () => {
 
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<ClickableVerticalStepperTester/>, div);
+const root = createRoot(div);
+
+root.render(<ClickableVerticalStepperTester/>);
     })
 
     it.skip('should jump to third step when thirdStepLabelButton is clicked, and show third step content. Should then reveal buttonCaptionText when nextButton is clicked', async () => {

@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Checkbox } from './Checkbox';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const CHECKBOX_TESTER_LABEL = 'Checkbox Tester';
 const CHECKBOX_TESTER_INVALID_TEXT = 'Invalid text';
@@ -66,7 +66,8 @@ describe('Checkbox component test', () => {
   });
   it('renders without chrashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<CheckboxTester/>, div);
+const root = createRoot(div);
+    root.render(<CheckboxTester/>)
 })
 
     it('should render title, caption, and exactly two checkbox options, and all should be unchecked initially', () => {

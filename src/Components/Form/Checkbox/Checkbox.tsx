@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Checkbox as ChakraCheckbox, FormLabel, Stack } from '@chakra-ui/react';
-import { CheckboxProps } from 'Types';
+import { CheckboxProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 export function Checkbox(props: CheckboxProps): ReactElement {

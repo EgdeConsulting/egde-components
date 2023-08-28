@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { NumberInput } from './NumberInput';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const NUMBER_TESTER_LABEL = 'Number label';
 const NUMBER_TESTER_PLACEHOLDER = 'Number placeholder';
@@ -80,7 +80,9 @@ describe('NumberInput component test', () => {
       });
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<NumberInputTester/>, div);
+const root = createRoot(div);
+
+root.render(<NumberInputTester/>);
     })
     it('should render NumberInput with title, placeholder and caption', () => {
         render(<NumberInputTester />);

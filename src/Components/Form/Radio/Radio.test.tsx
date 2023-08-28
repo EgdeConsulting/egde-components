@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor  } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Radio } from './Radio';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const RADIO_TESTER_LABEL = 'Radio label';
 const RADIO_TESTER_INVALID_TEXT = 'Invalid text';
@@ -65,7 +65,9 @@ describe('Radio component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<RadioTester/>, div);
+const root = createRoot(div);
+
+root.render(<RadioTester/>);
     })
     it('should render title, caption, and all radio buttons should be unchecked initially', () => {
         render(<RadioTester />);

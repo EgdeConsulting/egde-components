@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { Input } from '@chakra-ui/react';
-import { NumberInputProps } from 'Types';
+import { NumberInputProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 /*

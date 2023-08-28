@@ -105,7 +105,6 @@ Object {
         >
           Caption text
         </div>
-        
       </fieldset>
       <button
         type="button"
@@ -192,7 +191,6 @@ Object {
       >
         Caption text
       </div>
-      
     </fieldset>
     <button
       type="button"

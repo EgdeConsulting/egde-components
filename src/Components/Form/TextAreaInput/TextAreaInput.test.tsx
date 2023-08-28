@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor  } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { TextAreaInput } from './TextAreaInput';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 
 
@@ -71,7 +71,9 @@ describe('TextAreaInput component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<TextAreaInputTester/>, div);
+const root = createRoot(div);
+
+root.render(<TextAreaInputTester/>);
     })
     it('should render TextAreaInput with title, placeholder and caption', () => {
         render(<TextAreaInputTester />);

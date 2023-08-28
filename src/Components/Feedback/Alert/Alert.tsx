@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { AlertProps, IconTestID } from 'Types';
+import { AlertProps, IconTestID } from 'SharedTypes';
 import {
     Alert as ChakraAlert,
     AlertIcon,

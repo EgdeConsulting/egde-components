@@ -2,9 +2,9 @@ import React, { ReactElement, useState } from 'react';
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { IconTestID } from 'Types';
+import { IconTestID } from 'SharedTypes';
 import { Alert } from './Alert';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 
 const ALERT_TESTER_ICON = IconTestID.AlertWarning;
@@ -38,7 +38,9 @@ describe('Alert component test', () => {
       });
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<AlertTester/>, div);
+const root = createRoot(div);
+
+root.render(<AlertTester/>);
     })
 
     it('should render with icon, description, link and close button', async () => {

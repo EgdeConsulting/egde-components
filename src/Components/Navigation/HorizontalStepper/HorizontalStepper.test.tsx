@@ -5,7 +5,7 @@ import { HorizontalStepper } from './HorizontalStepper';
 import userEvent from '@testing-library/user-event';
 import { ChakraProvider } from '@chakra-ui/react';
 import { styles } from 'Styles';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 
 const FIRST_STEP_LABEL = 'first step';
@@ -107,7 +107,9 @@ describe('UnclickableHorizontalStepper component test', () => {
 
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<UnclickableHorizontalStepperTester/>, div);
+const root = createRoot(div);
+
+root.render(<UnclickableHorizontalStepperTester/>);
     })
      
     it('should render UnclickableHorizontalStepper with only next button, step labels and first step content', () => {
@@ -182,7 +184,9 @@ describe('ClickableHorizontalStepper component test', () => {
       });
       it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<ClickableHorizontalStepperTester/>, div);
+const root = createRoot(div);
+
+root.render(<ClickableHorizontalStepperTester/>);
     })
 
     it('should jump to third step when thirdStepLabelButton is clicked, and show third step content. Should then reveal buttonCaptionText when nextButton is clicked', async () => {

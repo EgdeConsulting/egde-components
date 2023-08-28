@@ -3,9 +3,9 @@ import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ReactElement, useRef, useState } from 'react';
-import { AlertDialogButton, AlertDialogIconType, IconTestID } from 'Types';
+import { AlertDialogButton, AlertDialogIconType, IconTestID } from 'SharedTypes';
 import { AlertDialog } from './AlertDialog';
-import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const ALERT_DIALOG_TESTER_ICON_ID = IconTestID.AlertDialog;
 const ALERT_DIALOG_TESTER_HEADING = 'This is the heading';
@@ -47,7 +47,9 @@ describe('Alert component test', () => {
     });
     it('renders without chrashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<AlertDialogTester/>, div);
+const root = createRoot(div);
+
+root.render(<AlertDialogTester/>);
     })
     it.skip('assert content is null, alert dialog opens when button clicked, and alert dialog content is visible', async () => {
         render(<AlertDialogTester />);

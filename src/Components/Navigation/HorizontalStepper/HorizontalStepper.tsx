@@ -1,7 +1,7 @@
 import { Flex, Center, Heading, Button, Text } from '@chakra-ui/react';
 import { EditIcon } from 'Icons';
 import { Step, Steps } from 'chakra-ui-steps';
-import { StepperProps } from 'Types';
+import { StepperProps } from 'SharedTypes';
 import React, { ReactElement } from 'react';
 
 const HorizontalStepper = (props: StepperProps): ReactElement => {

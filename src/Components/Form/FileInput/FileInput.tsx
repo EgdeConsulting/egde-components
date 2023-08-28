@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { ReactElement, useState } from 'react';
 import { BaseInput } from 'Components';
-import { FileUploadProps } from 'Types';
+import { FileUploadProps } from 'SharedTypes';
 import Dropzone from 'react-dropzone';
 import {
     Box,

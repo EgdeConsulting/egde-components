@@ -62,7 +62,6 @@ Object {
         >
           Caption text
         </div>
-        
       </div>
       <button
         type="button"
@@ -106,7 +105,6 @@ Object {
       >
         Caption text
       </div>
-      
     </div>
     <button
       type="button"

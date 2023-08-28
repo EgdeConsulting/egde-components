@@ -1,6 +1,6 @@
 import { Textarea } from '@chakra-ui/react';
 import React, { ReactElement } from 'react';
-import { TextInputProps } from 'Types';
+import { TextInputProps } from 'SharedTypes';
 import { BaseInput } from 'Components';
 
 /*
